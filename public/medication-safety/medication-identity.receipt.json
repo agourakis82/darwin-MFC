@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "darwin.medication-identity-receipt.v1",
+  "bundleVersion": "2026-07-31.1",
+  "generatedAt": "2026-07-31T21:00:00.000Z",
+  "hashes": {
+    "identityBundleSha256": "efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011",
+    "compactSearchIndexSha256": "93d7244cae603bec39b194b5001fb0dfbd5239eff27f66e77e52ee132ddb70f0",
+    "sourceManifestSha256": "c808b22d753e4cc2a384102e2a464bd5f01900cda5e711cfd44f6cd83b292de6",
+    "reconciliationOverridesSha256": "1d280c3611820088fd14a40b1138a3f924c70f1031fc7bfb8f7d345c92bb85d6",
+    "parserSourceSha256": "b561e844c9d32928d0917671d90bff596f6e69abbd9c69ac010b2db2a45917bb"
+  },
+  "sourceHashes": {
+    "anvisa-dcb-in-439-2026": "0eb2fa86ece3b520e55f8a6224f705a403aea18d53373f2c9d29987ca159b20e",
+    "ms-rename-2024-2ed": "b1b0d582cb68fc96fcbe04fd65c1c697d5206b7dce8886f1c6ddb06374fd5201",
+    "ms-rename-landing-2026-07-31": "df6dfd5ea45178cb2a29d08ed8401f0a1aedf5db41d70361e5b60b5e809c3d6d",
+    "anvisa-medication-register-query-2026-07-31": "d9d01d716e65d76c6c039bbc66bcf0ab860dcff74b6cfcd84eaa4370b7dc8271",
+    "who-atc-2026-index-metadata": "9fd3894ad6c493c1b491fc447118aeb160d71a4bf01b11e3e1927127ac782a8f"
+  },
+  "gates": {
+    "exactLegacyAliases": true,
+    "allAliasesResolveExactlyOnce": true,
+    "presentationsFullyPartitioned": true,
+    "duplicateAtcGroupsAccounted": true,
+    "interactionsFullyReconciled": true,
+    "severityConflictsNotPromoted": true,
+    "supabaseClinicalOverridesForbidden": true,
+    "doseRulesEmpty": true,
+    "productionAuthorized": false
+  },
+  "signature": null
+}

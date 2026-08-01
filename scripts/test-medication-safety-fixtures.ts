@@ -7,6 +7,10 @@ import { analyzeMedicationIds, INTERACTION_KNOWLEDGE_STATUS } from '../lib/utils
 import { toFhirMedicationRequestDraft } from '../lib/medication-safety/fhir';
 import type { StructuredPrescriptionDraftV2 } from '../lib/medication-safety/types';
 import { convertMedicamentoRowToMedicamento } from '../lib/supabase/transforms/medicamentos';
+import {
+  getUnknownMedicationCandidateIds,
+  mergeMedicamentoCatalogs,
+} from '../lib/supabase/merge-medicamentos';
 
 const root = process.cwd();
 const publicDir = resolve(root, 'public/medication-safety');
@@ -23,11 +27,20 @@ const rulesBytes = readFileSync(resolve(clinicalDir, 'dose-rules.v1.json'));
 const sourceBytes = readFileSync(resolve(clinicalDir, 'medication-safety-kernel.sio'));
 const codegenBytes = readFileSync(resolve(clinicalDir, 'medication-safety-kernel-codegen.sio'));
 const vectorBytes = readFileSync(resolve(clinicalDir, 'test-vectors.v1.json'));
+const identityBundleBytes = readFileSync(resolve(publicDir, 'medication-identity-bundle.json'));
+const identityReceiptBytes = readFileSync(resolve(publicDir, 'medication-identity.receipt.json'));
+const searchIndexBytes = readFileSync(resolve(publicDir, 'medication-search-index.json'));
+const sourceManifestBytes = readFileSync(resolve(clinicalDir, 'source-manifest.v2.json'));
+const reconciliationOverridesBytes = readFileSync(resolve(clinicalDir, 'reconciliation-overrides.v1.json'));
+const identityParserBytes = readFileSync(resolve(root, 'scripts/build-medication-identity-bundle.ts'));
 const receipt = JSON.parse(receiptBytes.toString('utf8'));
 const bundle = JSON.parse(bundleBytes.toString('utf8'));
 const compilerReceipt = JSON.parse(compilerBytes.toString('utf8'));
 const keyRegistry = JSON.parse(keyRegistryBytes.toString('utf8'));
 const vectors = JSON.parse(vectorBytes.toString('utf8'));
+const identityBundle = JSON.parse(identityBundleBytes.toString('utf8'));
+const identityReceipt = JSON.parse(identityReceiptBytes.toString('utf8'));
+const searchIndex = JSON.parse(searchIndexBytes.toString('utf8'));
 
 assert.equal(medicamentosConsolidados.length, 717);
 assert.equal(new Set(medicamentosConsolidados.map(item => item.id)).size, 717);
@@ -36,6 +49,40 @@ assert.equal(new Set(bundle.medications.map((item: { medicationId: string }) => 
 assert.equal(bundle.doseRules.length, 0);
 assert.equal(bundle.audit.doseReviewedCount, 0);
 assert.equal(bundle.signature, null);
+assert.equal(bundle.schemaVersion, 'darwin.medication-knowledge-bundle.v2');
+assert.equal(identityBundle.schemaVersion, 'darwin.medication-identity-bundle.v1');
+assert.equal(identityReceipt.schemaVersion, 'darwin.medication-identity-receipt.v1');
+assert.equal(identityBundle.aliases.length, 717);
+assert.equal(new Set(identityBundle.aliases.map((item: { id: string }) => item.id)).size, 717);
+assert.equal(identityBundle.products.length, 1415);
+assert.equal(identityBundle.audit.duplicateAtcGroupCount, 78);
+assert.equal(identityBundle.audit.duplicateAtcLegacyRecordCount, 171);
+assert.equal(identityBundle.audit.legacyInteractionCount, 176);
+assert.equal(identityBundle.interactions.length, 152);
+assert.equal(identityBundle.interactions.filter((item: { legacyRuleIds: string[] }) => item.legacyRuleIds.length > 1).length, 23);
+assert.equal(identityBundle.interactions.filter((item: { severityConflict: boolean }) => item.severityConflict).length, 7);
+assert.equal(identityBundle.interactions.every((item: { promotionStatus: string }) => item.promotionStatus === 'not-promoted'), true);
+assert.equal(identityBundle.audit.clinicalRulesPromoted, 0);
+assert.equal(identityReceipt.signature, null);
+assert.equal(identityReceipt.gates.productionAuthorized, false);
+assert.equal(searchIndex.entries.length, identityBundle.concepts.length);
+assert.equal(hash(identityBundleBytes), identityReceipt.hashes.identityBundleSha256);
+assert.equal(hash(searchIndexBytes), identityReceipt.hashes.compactSearchIndexSha256);
+assert.equal(hash(sourceManifestBytes), identityReceipt.hashes.sourceManifestSha256);
+assert.equal(hash(reconciliationOverridesBytes), identityReceipt.hashes.reconciliationOverridesSha256);
+assert.equal(hash(identityParserBytes), identityReceipt.hashes.parserSourceSha256);
+assert.equal(identityBundle.aliases.every((alias: { id: string; conceptId: string }) => (
+  alias.id !== alias.conceptId
+    && identityBundle.concepts.some((concept: { id: string }) => concept.id === alias.conceptId)
+)), true);
+assert.equal(identityBundle.products.every((product: { status: string; route: string | null }) => (
+  product.route !== null || product.status === 'review-required'
+)), true);
+assert.equal(identityBundle.products.every((product: { strength: { numeratorUnit: string; denominatorUnit: string | null } | null }) => (
+  product.strength === null
+    || ['microgram', 'milligram', 'gram', 'unit'].includes(product.strength.numeratorUnit)
+      && (product.strength.denominatorUnit === null || ['milliliter', 'dose', 'gram'].includes(product.strength.denominatorUnit))
+)), true);
 
 const expectedHashes: Array<[Buffer, string]> = [
   [bundleBytes, receipt.hashes.medicationKnowledgeBundleSha256],
@@ -47,6 +94,10 @@ const expectedHashes: Array<[Buffer, string]> = [
   [sourceBytes, receipt.hashes.sounioSourceSha256],
   [codegenBytes, receipt.hashes.sounioCodegenSha256],
   [vectorBytes, receipt.hashes.testVectorsSha256],
+  [identityBundleBytes, receipt.hashes.medicationIdentityBundleSha256],
+  [identityReceiptBytes, receipt.hashes.medicationIdentityReceiptSha256],
+  [sourceManifestBytes, receipt.hashes.medicationSourceManifestSha256],
+  [reconciliationOverridesBytes, receipt.hashes.medicationReconciliationOverridesSha256],
 ];
 for (const [bytes, expected] of expectedHashes) {
   assert.equal(hash(bytes), expected);
@@ -55,7 +106,7 @@ for (const [bytes, expected] of expectedHashes) {
   assert.notEqual(hash(tampered), expected);
 }
 
-assert.equal(receipt.schemaVersion, 'darwin.sounio.medication-safety-receipt.v1');
+assert.equal(receipt.schemaVersion, 'darwin.sounio.medication-safety-receipt.v2');
 assert.equal(receipt.status, 'reference-only');
 assert.equal(receipt.gates.compilerReconciled, true);
 assert.equal(receipt.gates.nativeOracleExecuted, true);
@@ -94,7 +145,41 @@ assert.equal(treatmentSource.includes('O Darwin Rx não interpreta, calcula nem 
 assert.equal(soapSource.includes('posologiaCompleta'), false);
 assert.equal(soapSource.includes("verificationStatus: 'legacy-unverified'"), false);
 assert.equal(interactionSource.includes('INTERACTION_DATABASE'), false);
-assert.equal(interactionSource.includes("from '@/lib/data/interacoes-medicamentosas'"), true);
+assert.equal(interactionSource.includes('getMedicationIdentityBundle'), true);
+assert.equal(interactionSource.includes('promotionStatus'), true);
+
+const conceptForAlias = (id: string) => identityBundle.aliases.find((alias: { id: string }) => alias.id === id)?.conceptId;
+assert.equal(conceptForAlias('amoxicilina'), conceptForAlias('amoxicilina-suspensao'));
+assert.notEqual(conceptForAlias('amoxicilina'), conceptForAlias('amoxicilina-clavulanato'));
+assert.equal(new Set(['colecalciferol', 'vitamina-d', 'vitamina-d3', 'vitamina-d-gotas'].map(conceptForAlias)).size, 1);
+assert.equal(new Set(['nistatina', 'nistatina-oral', 'nistatina-topica'].map(conceptForAlias)).size, 1);
+const nystatinProducts = identityBundle.products.filter((product: { conceptId: string }) => product.conceptId === conceptForAlias('nistatina'));
+assert.equal(nystatinProducts.some((product: { route: string }) => product.route === 'oral'), true);
+assert.equal(nystatinProducts.some((product: { route: string }) => product.route === 'topical'), true);
+assert.notEqual(conceptForAlias('sofosbuvir-velpatasvir'), conceptForAlias('glecaprevir-pibrentasvir'));
+assert.equal(identityBundle.duplicateAtcGroups.find((group: { atcCode: string }) => group.atcCode === 'J05AP57')?.classification, 'conflict');
+
+const localOverlayFixture = medicamentosConsolidados[0];
+const maliciousRemote = {
+  ...localOverlayFixture,
+  nomeGenerico: 'REMOTE CLINICAL OVERRIDE',
+  rename: !localOverlayFixture.rename,
+  apresentacoes: [],
+  interacoes: [],
+  contraindicacoes: [],
+  nomesComerciais: ['Alias editorial Supabase'],
+  tags: ['overlay-editorial'],
+};
+const overlaid = mergeMedicamentoCatalogs([localOverlayFixture], [maliciousRemote])[0];
+assert.equal(overlaid.nomeGenerico, localOverlayFixture.nomeGenerico);
+assert.equal(overlaid.rename, localOverlayFixture.rename);
+assert.deepEqual(overlaid.apresentacoes, localOverlayFixture.apresentacoes);
+assert.deepEqual(overlaid.interacoes, localOverlayFixture.interacoes);
+assert.deepEqual(overlaid.contraindicacoes, localOverlayFixture.contraindicacoes);
+assert.equal(overlaid.nomesComerciais?.includes('Alias editorial Supabase'), true);
+assert.equal(overlaid.tags?.includes('overlay-editorial'), true);
+assert.deepEqual(getUnknownMedicationCandidateIds([localOverlayFixture], [{ ...maliciousRemote, id: 'remote-unknown' }]), ['remote-unknown']);
+assert.equal(mergeMedicamentoCatalogs([localOverlayFixture], [{ ...maliciousRemote, id: 'remote-unknown' }]).length, 1);
 
 const canonicalInteraction = analyzeMedicationIds(['varfarina', 'aas']);
 assert.equal(canonicalInteraction.length, 1);

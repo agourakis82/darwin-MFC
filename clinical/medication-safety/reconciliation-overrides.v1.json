@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "darwin.medication-reconciliation-overrides.v1",
+  "version": "2026-07-31.1",
+  "ingredientSynonyms": {
+    "acetaminofeno": "paracetamol",
+    "aas": "acido acetilsalicilico",
+    "butilescopolamina": "brometo de butilescopolamina",
+    "colecalciferol vitamina d3": "colecalciferol",
+    "cetrizina": "cetirizina",
+    "dipirona sodica metamizol": "dipirona sodica",
+    "insulina aspart": "insulina asparte",
+    "lactulose": "lactulose",
+    "litio": "carbonato de litio",
+    "sugammadex": "sugamadex",
+    "vitamina b1 tiamina": "tiamina",
+    "vitamina b6 piridoxina": "piridoxina",
+    "vitamina b9 acido folico": "acido folico"
+  },
+  "conceptGroups": [
+    { "preferredName": "Amoxicilina", "ingredientNames": ["amoxicilina"], "legacyIds": ["amoxicilina", "amoxicilina-suspensao"] },
+    { "preferredName": "Colecalciferol", "ingredientNames": ["colecalciferol"], "legacyIds": ["colecalciferol", "vitamina-d", "vitamina-d3", "vitamina-d-gotas"] },
+    { "preferredName": "Nistatina", "ingredientNames": ["nistatina"], "legacyIds": ["nistatina", "nistatina-oral", "nistatina-topica"] },
+    { "preferredName": "Sulfato ferroso", "ingredientNames": ["sulfato ferroso"], "legacyIds": ["ferro-sulfato", "sulfato-ferroso", "sulfato-ferroso-adulto", "sulfato-ferroso-gotas"] },
+    { "preferredName": "Sulfametoxazol + trimetoprima", "ingredientNames": ["sulfametoxazol", "trimetoprima"], "legacyIds": ["sulfametoxazol-trimetoprima", "trimetoprima-sulfametoxazol"] }
+  ],
+  "knownDistinctAtcGroups": {
+    "A06AD11": "Legacy ATC groups lactulona and lactulose without confirmed DCB equivalence.",
+    "J05AP57": "Different fixed-dose antiviral combinations share one legacy ATC code.",
+    "N07AA01": "Neostigmine and physostigmine are different active ingredients.",
+    "N07CA02": "Meclizine and cinnarizine are different active ingredients.",
+    "S01XA20": "Carmellose and hypromellose are different active ingredients."
+  },
+  "exposures": {
+    "alcool": "Alcool",
+    "contraste-iodado": "Contraste iodado",
+    "tabaco": "Tabaco"
+  }
+}

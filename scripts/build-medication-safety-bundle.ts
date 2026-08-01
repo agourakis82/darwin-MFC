@@ -6,7 +6,7 @@ import { medicamentosConsolidados } from '../lib/data/medicamentos/index';
 import { medicationHasIncompleteReferenceData } from '../lib/medication-safety/catalog';
 import type {
   MedicationDoseRuleV1,
-  MedicationKnowledgeBundleV1,
+  MedicationKnowledgeBundleV2,
   MedicationKnowledgeEntryV1,
   MedicationPresentationV1,
   MedicationSourceSnapshotV1,
@@ -19,9 +19,11 @@ const sourceRegistryPath = resolve(clinicalDir, 'source-registry.v1.json');
 const doseRulesPath = resolve(clinicalDir, 'dose-rules.v1.json');
 const bundlePath = resolve(publicDir, 'medication-knowledge-bundle.json');
 const auditPath = resolve(publicDir, 'catalog-audit.json');
+const identityBundlePath = resolve(publicDir, 'medication-identity-bundle.json');
+const identityReceiptPath = resolve(publicDir, 'medication-identity.receipt.json');
 
 const EXPECTED_MEDICATION_COUNT = 717;
-const BUNDLE_SCHEMA = 'darwin.medication-knowledge-bundle.v1';
+const BUNDLE_SCHEMA = 'darwin.medication-knowledge-bundle.v2';
 
 function canonicalize(value: unknown): string {
   if (value === null || typeof value !== 'object') return JSON.stringify(value);
@@ -63,6 +65,20 @@ const doseRuleBundle = readJson(doseRulesPath) as {
     legacyTextCanCalculate: boolean;
   };
 };
+const identityBundleBytes = readFileSync(identityBundlePath);
+const identityReceiptBytes = readFileSync(identityReceiptPath);
+const identityBundle = JSON.parse(identityBundleBytes.toString('utf8')) as {
+  schemaVersion: string;
+  bundleVersion: string;
+  concepts: unknown[];
+  aliases: unknown[];
+  audit: { clinicalRulesPromoted: number };
+};
+const identityReceipt = JSON.parse(identityReceiptBytes.toString('utf8')) as {
+  schemaVersion: string;
+  hashes: { identityBundleSha256: string };
+  gates: { productionAuthorized: boolean };
+};
 
 requireCondition(
   sourceRegistry.schemaVersion === 'darwin.medication-source-registry.v1',
@@ -72,6 +88,12 @@ requireCondition(
   doseRuleBundle.schemaVersion === 'darwin.medication-dose-rules.v1',
   'Medication dose rule bundle schema mismatch.',
 );
+requireCondition(identityBundle.schemaVersion === 'darwin.medication-identity-bundle.v1', 'Medication identity bundle schema mismatch.');
+requireCondition(identityReceipt.schemaVersion === 'darwin.medication-identity-receipt.v1', 'Medication identity receipt schema mismatch.');
+requireCondition(sha256(identityBundleBytes) === identityReceipt.hashes.identityBundleSha256, 'Medication identity hash mismatch.');
+requireCondition(identityBundle.aliases.length === EXPECTED_MEDICATION_COUNT, 'Medication identity alias count mismatch.');
+requireCondition(identityBundle.audit.clinicalRulesPromoted === 0, 'Identity reconciliation cannot promote clinical rules.');
+requireCondition(identityReceipt.gates.productionAuthorized === false, 'Identity receipt cannot authorize production.');
 requireCondition(
   doseRuleBundle.promotionPolicy.minimumIndependentReviewers === 2,
   'Dose rules require exactly the locked two-reviewer minimum.',
@@ -218,7 +240,7 @@ const audit = {
   )).length,
 };
 
-const bundle: MedicationKnowledgeBundleV1 = {
+const bundle: MedicationKnowledgeBundleV2 = {
   schemaVersion: BUNDLE_SCHEMA,
   bundleVersion: doseRuleBundle.bundleVersion,
   generatedAt: sourceRegistry.bundleGeneratedAt,
@@ -226,6 +248,15 @@ const bundle: MedicationKnowledgeBundleV1 = {
     ? 'reviewed'
     : 'unsigned-reference-only',
   intendedUse: 'APS/SUS medication reference with fail-closed structured dosing eligibility.',
+  identity: {
+    schemaVersion: 'darwin.medication-identity-bundle.v1',
+    bundleVersion: identityBundle.bundleVersion,
+    identityBundleSha256: sha256(identityBundleBytes),
+    identityReceiptSha256: sha256(identityReceiptBytes),
+    canonicalConceptCount: identityBundle.concepts.length,
+    legacyAliasCount: 717,
+    clinicalRulesPromoted: 0,
+  },
   sourceSnapshots: sourceRegistry.sources,
   medications: entries,
   doseRules: doseRuleBundle.rules,
@@ -259,6 +290,8 @@ const auditReport = {
   bundleSha256: sha256(bundleBytes),
   sourceRegistrySha256: sha256(readFileSync(sourceRegistryPath)),
   doseRuleBundleSha256: sha256(readFileSync(doseRulesPath)),
+  medicationIdentityBundleSha256: sha256(identityBundleBytes),
+  medicationIdentityReceiptSha256: sha256(identityReceiptBytes),
   catalog: audit,
   gates: {
     exactMedicationCount: true,
@@ -267,6 +300,8 @@ const auditReport = {
     automaticExtractionCannotApprove: true,
     unsignedRulesCannotCalculate: true,
     legacyTextCannotCalculate: true,
+    identityBundleHashBound: bundle.identity.identityBundleSha256 === identityReceipt.hashes.identityBundleSha256,
+    identityCannotPromoteClinicalRules: bundle.identity.clinicalRulesPromoted === 0,
     allUnreviewedMedicationsReferenceOnly: bundle.audit.doseReviewedCount === 0,
   },
 };

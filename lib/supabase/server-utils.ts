@@ -17,21 +17,28 @@ import {
   getMedicamentoById as getLocalMedicamentoById,
 } from '@/lib/data/medicamentos/index';
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
-import { mergeMedicamentoCatalogs } from '@/lib/supabase/merge-medicamentos';
+import {
+  applyMedicationEditorialOverlay,
+  mergeMedicamentoCatalogs,
+  toMedicationEditorialOverlay,
+} from '@/lib/supabase/merge-medicamentos';
 
 /**
  * Get a medication by ID (server-side)
  * Falls back to TypeScript constants if Supabase is not configured
  */
 export async function getMedicamentoServer(id: string): Promise<Medicamento | null> {
+  const localMedication = getLocalMedicamentoById(id) || null;
+  // Unknown remote rows are audit candidates, never automatic catalog entries.
+  if (!localMedication) return null;
   // For static builds or when Supabase is not configured, use local data
   if (!isSupabaseConfigured) {
-    return getLocalMedicamentoById(id) || null;
+    return localMedication;
   }
 
   const supabase = createServerSupabaseClient();
   if (!supabase) {
-    return getLocalMedicamentoById(id) || null;
+    return localMedication;
   }
 
   try {
@@ -46,13 +53,16 @@ export async function getMedicamentoServer(id: string): Promise<Medicamento | nu
         console.error('Error fetching medicamento from Supabase:', error);
       }
       // Fallback to local data
-      return getLocalMedicamentoById(id) || null;
+      return localMedication;
     }
 
-    return convertMedicamentoRowToMedicamento(data);
+    return applyMedicationEditorialOverlay(
+      localMedication,
+      toMedicationEditorialOverlay(convertMedicamentoRowToMedicamento(data)),
+    );
   } catch (err) {
     console.error('Error in getMedicamentoServer:', err);
-    return getLocalMedicamentoById(id) || null;
+    return localMedication;
   }
 }
 
@@ -108,28 +118,5 @@ export async function medicamentoExists(id: string): Promise<boolean> {
   const localMed = getLocalMedicamentoById(id);
   if (localMed) return true;
 
-  // If not in local data, check Supabase
-  if (!isSupabaseConfigured) {
-    return false;
-  }
-
-  const supabase = createServerSupabaseClient();
-  if (!supabase) {
-    return false;
-  }
-
-  try {
-    const { count, error } = await supabase
-      .from('medicamentos')
-      .select('*', { count: 'exact', head: true })
-      .eq('id', id);
-
-    if (error) {
-      return false;
-    }
-
-    return (count || 0) > 0;
-  } catch {
-    return false;
-  }
+  return false;
 }
