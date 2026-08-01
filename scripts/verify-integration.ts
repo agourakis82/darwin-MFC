@@ -394,6 +394,28 @@ if (
   });
 }
 
+const medicationReviewStudio = spawnSync(
+  'pnpm',
+  ['exec', 'tsx', resolve(process.cwd(), 'scripts/test-medication-review-studio.ts')],
+  { cwd: process.cwd(), encoding: 'utf8' },
+);
+if (
+  medicationReviewStudio.status === 0
+  && medicationReviewStudio.stdout.includes('MEDICATION_REVIEW_STUDIO_VALID')
+  && medicationReviewStudio.stdout.includes('"taskCount": 177')
+  && medicationReviewStudio.stdout.includes('"severityConflicts": 7')
+  && medicationReviewStudio.stdout.includes('"deferredPresentations": 295')
+  && medicationReviewStudio.stdout.includes('"doseReviewTasks": 5')
+  && medicationReviewStudio.stdout.includes('"productionAuthorized": false')
+) {
+  pass('Darwin Rx Evidence Review Studio', '177 alvos, cinco candidatos de dose, RLS e recibos preservam revisão independente sem ativação clínica');
+} else {
+  fail('Darwin Rx Evidence Review Studio', 'Fila, integridade, governança ou contrato FHIR do Review Studio falhou', {
+    status: medicationReviewStudio.status,
+    output: medicationReviewStudio.stdout || medicationReviewStudio.stderr,
+  });
+}
+
 const calibrationScript = resolve(process.cwd(), 'scripts/calibrate-epistemic-firewall.mjs');
 const fixtureValidation = spawnSync(
   process.execPath,

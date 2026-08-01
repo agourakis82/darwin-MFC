@@ -696,6 +696,16 @@ export interface Medicamento {
   
   /** Orientações ao paciente */
   orientacoesPaciente?: string[];
+
+  /** Resumo editorial do overlay governado; nunca substitui conteúdo clínico */
+  editorialSummary?: string;
+
+  /** Referências editoriais aprovadas pelo Review Studio */
+  editorialReferences?: Array<{
+    title: string;
+    url: string;
+    accessedAt: string;
+  }>;
   
   /** IDs das doenças relacionadas */
   doencasRelacionadas: string[];
@@ -824,4 +834,3 @@ export function isAvailableInPublicSystem(
   }
   return regionalData.availableInPublicSystem;
 }
-

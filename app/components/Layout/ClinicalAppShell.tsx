@@ -8,6 +8,7 @@ import {
   ChevronDown,
   CircleUserRound,
   FileText,
+  FileSearch2,
   Home,
   Menu,
   MoreHorizontal,
@@ -36,6 +37,7 @@ const primaryNavigation = [
 
 const secondaryNavigation = [
   { href: '/protocolos', label: 'Protocolos APS', icon: FileText },
+  { href: '/rx/revisao', label: 'Revisão Darwin Rx', icon: FileSearch2 },
   { href: '/medicamentos/interacoes', label: 'Interações', icon: ShieldCheck },
   { href: '/bibliografia', label: 'Bibliografia', icon: BookOpen },
   { href: '/adultos', label: 'Rastreamentos SUS', icon: Activity },

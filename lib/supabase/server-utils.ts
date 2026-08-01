@@ -19,9 +19,11 @@ import {
 import { convertMedicamentoRowToMedicamento } from '@/lib/supabase/transforms/medicamentos';
 import {
   applyMedicationEditorialOverlay,
+  applyMedicationEditorialOverlaysV2,
   mergeMedicamentoCatalogs,
   toMedicationEditorialOverlay,
 } from '@/lib/supabase/merge-medicamentos';
+import { getMedicationEditorialOverlaysV2 } from './services/medication-editorial-overlays';
 
 /**
  * Get a medication by ID (server-side)
@@ -56,10 +58,12 @@ export async function getMedicamentoServer(id: string): Promise<Medicamento | nu
       return localMedication;
     }
 
-    return applyMedicationEditorialOverlay(
+    const merged = applyMedicationEditorialOverlay(
       localMedication,
       toMedicationEditorialOverlay(convertMedicamentoRowToMedicamento(data)),
     );
+    const overlays = await getMedicationEditorialOverlaysV2(supabase as any, [id]);
+    return applyMedicationEditorialOverlaysV2([merged], overlays)[0];
   } catch (err) {
     console.error('Error in getMedicamentoServer:', err);
     return localMedication;
@@ -92,10 +96,12 @@ export async function getMedicamentosServer(): Promise<Medicamento[]> {
       return medicamentosConsolidados;
     }
 
-    return mergeMedicamentoCatalogs(
+    const merged = mergeMedicamentoCatalogs(
       medicamentosConsolidados,
       data.map(convertMedicamentoRowToMedicamento)
     );
+    const overlays = await getMedicationEditorialOverlaysV2(supabase as any, merged.map(item => item.id));
+    return applyMedicationEditorialOverlaysV2(merged, overlays);
   } catch (err) {
     console.error('Error in getMedicamentosServer:', err);
     return medicamentosConsolidados;
