@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "darwin.sounio.medication-assurance-receipt.v1",
+  "receiptId": "darwin-rx-envelope-ce116034dfb1-2033d33940af",
+  "generatedAt": "2026-07-31T21:00:00.000Z",
+  "intendedUse": "Validate a professional-created medication action against reviewed and delimited constraints.",
+  "hashes": {
+    "evidenceGraphSha256": "b363accdd5592b5b0e42a502767d7ddda6562e34f842783e425057f70599500b",
+    "evidenceGraphMerkleRootSha256": "2033d33940afbeb6e0090aa60c683aab261ab52b88cf31dddbcf4f9279f486b4",
+    "artifactBundleSha256": "38be6f601442d329d7c553f747e572ccdc1fd63644074425cb4df3ae8c8e0243",
+    "benchmarkSha256": "2fac98e1145f46ff8c74fb01164b6f7d8f97a61ff2e9ea86a2038f96df3c3809",
+    "buildScriptSha256": "8ddc11b1ba9eaf9923fa4575abec8ae29051fda3d108b7a49c4d1cd135a21e6a",
+    "identityBundleSha256": "efced17ce7a0fa8fdce66d94f4e9fc0cfd2096c9ae676d0a58532767c80b7011",
+    "reviewSeedSha256": "bbb933c91c404096efb26bae31ae6791cc46c3bd75df5f50f0cbb33404142db7",
+    "adversarialAiPolicySha256": "5b30bd41eacd6e70fc17e090866f59c910434e1a082a54f3ab9df1039e0d4879",
+    "testVectorsSha256": "506d6b7a5f0edbcdc6172efffdb6456ebbc277348e502a3adf3c4a107b8c31ad",
+    "sounioSourceSha256": "14dc9eb04ca2e9ca6f7e3ab11802ed12bae8e403f2819b7f338f87386b2b3c20",
+    "sounioCodegenSha256": "cc2e1e52774a89e9ecb39716252788c4341cde77314eb4b8128ae39025cc0173",
+    "compilerSourceReceiptSha256": "f071869e8c8070f169fd0086df3b8e3501e0504d4f04485cba614e07a678907c",
+    "compilerSha256": "4511a6ed2055524df877de0a8fd140993904e44cf65ebe43c70d827b3edc2dfc",
+    "wasmSha256": "ce116034dfb1ed4b7c88f2e8be576bb5bfbcba929da96e5acdd04e2a348f0885",
+    "nativeOracleSha256": "1714b9b18c3da68724de7e01713792ec09b243c8bfe697282733e1a5c5ff4dab",
+    "formalToolchainManifestSha256": "a9d1a1656758102403d965f5635469b624361ae1b6e03caf4305a3ce9a72cbaa",
+    "smtInvariantSha256": "f6b8261416b7dd9f6438afbc605e64113f4aba22ecca7152951d29079806b325",
+    "leanSemanticsSourceSha256": "1e00a5f55b58aa866f4daecd1d2074d86f3955d618216105b89f2c03fd670203",
+    "cvc5BinarySha256": "fae4cef47a4e82e3b37f8928b5cb275c8a86d138a33e49d54a9933a157b57f74",
+    "ethosBinarySha256": "2fdda9736abbcfca24523722a03af632f56807f50484f0535a53f805401e1e13",
+    "z3BinarySha256": "ac9f4265e04c10e5a57b2c0c91955e58bcc640bfc0d6da16e631b46eca6b6633",
+    "leanBinarySha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "cpcDefinitionSha256": "26ad2f290cf2d23032d190fef31e571d012d913815198bbd32367b6b7862e9a8",
+    "cvc5ProofSha256": "88df11cfc16b9ef06947df59effbb2478121c99a6b7ba71d9c50e9986da8de37",
+    "ethosCheckReceiptSha256": "c18cd171e38844aa242c76b24b92acdaa8983700def200bc6a367b492a37d8a8",
+    "z3CountermodelReportSha256": "17e97aa7df71642034d97f956856b1db32414a1db908b5c34a8e93cbe6ac7ca4",
+    "leanProofReceiptSha256": "9b0225ae09bdec07612ac8b70c5b38b5f248ea49a86c22b4d2e0300e58de9328",
+    "trustedPilotKeysSha256": "9a4ff380470e2286b22008d68ebf5df2f86736fcd16b11fa1d26403dc484cb9f"
+  },
+  "abi": {
+    "inputCount": 16,
+    "outputCount": 8,
+    "integerRepresentation": "signed-i64-little-endian",
+    "imports": [],
+    "exports": [
+      "memory",
+      "evaluate"
+    ]
+  },
+  "gates": {
+    "graphIntegrity": true,
+    "graphCycleFree": true,
+    "allEvidenceCurrent": true,
+    "exactArtifactCount": true,
+    "exactBenchmarkCount": true,
+    "compilerReconciled": true,
+    "nativeOracleExecuted": true,
+    "wasmInstantiated": true,
+    "nativeWasmExactParity": true,
+    "cvc5ProofVerified": true,
+    "ethosProofVerified": true,
+    "z3CountermodelAgreement": true,
+    "leanSemanticsVerified": true,
+    "solverAgreement": true,
+    "pilotCredentialKeyAvailable": false,
+    "pilotAuthorized": false,
+    "productionAuthorized": false
+  },
+  "testResults": [
+    {
+      "id": "within-reviewed-envelope",
+      "output": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "proved-constraint-violation",
+      "output": [
+        1,
+        0,
+        4,
+        0,
+        0,
+        4,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "incomplete-coverage-review",
+      "output": [
+        2,
+        0,
+        0,
+        9,
+        2,
+        9,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "stale-evidence-refuse",
+      "output": [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "expired-credential-refuse",
+      "output": [
+        0,
+        128,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "overflow-refuse",
+      "output": [
+        0,
+        2048,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "dimension-mismatch-refuse",
+      "output": [
+        0,
+        4096,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      "exactParity": true
+    },
+    {
+      "id": "production-separation-refuse",
+      "output": [
+        0,
+        1024,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "exactParity": true
+    }
+  ],
+  "installedFormalToolVersions": {
+    "cvc5": "This is cvc5 version 1.3.3 [git 8ff882e on branch HEAD]\ncompiled with GCC version Apple LLVM 17.0.0 (clang-1700.0.13.5)\non Feb 26 2026 01:24:24\n\nCopyright (c) 2009-2025 by the authors and their institutional\naffiliations listed at https://cvc5.github.io/people.html\n\ncvc5 is open-source and is covered by the BSD license (modified).\n\nTHIS SOFTWARE IS PROVIDED AS-IS, WITHOUT ANY WARRANTIES.\nUSE AT YOUR OWN RISK.\n\nThis version of cvc5 is linked against the following non-(L)GPL'ed\nthird party libraries.\n\n  CaDiCaL - Simplified Satisfiability Solver\n  See https://github.com/arminbiere/cadical for copyright information.\n\n  Editline Library\n  See https://thrysoee.dk/editline\n  for copyright information.\n\n  SymFPU - The Symbolic Floating Point Unit\n  See https://github.com/martin-cs/symfpu/tree/CVC4 for copyright information.\n\nThis version of cvc5 is linked against the following third party\nlibraries covered by the LGPLv3 license.\nSee licenses/lgpl-3.0.txt for more information.\n\n  GMP - Gnu Multi Precision Arithmetic Library\n  See http://gmplib.org for copyright information.\n\n  LibPoly polynomial library\n  See https://github.com/SRI-CSL/libpoly for copyright and\n  licensing information.\n\ncvc5 is statically linked against these libraries. To recompile\nthis version of cvc5 with different versions of these libraries\nfollow the instructions on https://github.com/cvc5/cvc5/blob/main/INSTALL.md\n\nSee the file COPYING (distributed with the source code, and with\nall binaries) for the full cvc5 copyright, licensing, and (lack of)\nwarranty information.",
+    "ethos": "This is ethos version 0.2.3.\n\n     tracing : no",
+    "z3": "Z3 version 5.0.0 - 64 bit",
+    "lean": "Lean (version 4.32.1, arm64-apple-darwin24.6.0, commit f054605aea4b840552cca2e725580bffd1e1b704, Release)"
+  },
+  "refusalReasons": [
+    "pilot-signing-key-absent",
+    "seventeen-artifacts-evidence-required",
+    "independent-human-consensus-absent",
+    "pilot-signature-absent",
+    "production-authorization-forbidden"
+  ],
+  "signature": null
+}

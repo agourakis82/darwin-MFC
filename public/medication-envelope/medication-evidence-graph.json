@@ -1,0 +1,2844 @@
+{
+  "schemaVersion": "darwin.medication-evidence-graph.v1",
+  "generatedAt": "2026-07-31T21:00:00.000Z",
+  "intendedUse": "Trace reviewed medication claims into executable constraints without inferring treatment.",
+  "nodes": [
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-000f7699a15a699455ceed45494d5c9d51e1a4a37e9271421a2ffeec08a0c246",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "source": {
+          "candidateId": "dose-candidate-salbutamol-asma-pediatrica",
+          "warning": "No legacy posology text was parsed or promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "07fd501287b8ca5295ac56697b3531e39c1eff32e5492fcb66fdc4cb8c670566",
+      "parentIds": [],
+      "nodeSha256": "000f7699a15a699455ceed45494d5c9d51e1a4a37e9271421a2ffeec08a0c246"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-05988c273f09e0c7d8aba1e35c6226669338d245ba5a60bc5b2f787cbd1a68de",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-95eb36076c0adf6f",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "f248a0cf61d70f134dfe49ec06e36ec6a54a1d3900314b5e7a136343de48f5c5",
+      "parentIds": [
+        "rxeg-64c38419ccd14f843fd9e1f4df4c620eca07745cffe8baf85fb9f06ceb562cb0"
+      ],
+      "nodeSha256": "05988c273f09e0c7d8aba1e35c6226669338d245ba5a60bc5b2f787cbd1a68de"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-063452c4f1ff5761809069bbf2ef05ae1f28c2a3097cdb184acdfab0bc12498a",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_MONITORING",
+          "label": "Nível sérico e tempo de coleta obrigatórios",
+          "severity": "REVIEW",
+          "observationCode": "LITHIUM_LEVEL"
+        },
+        "executable": false
+      },
+      "payloadSha256": "a77e69fb7c16204d617ec9c72ddc2855951d260bf05b4459eba2c4e6cab0014d",
+      "parentIds": [
+        "rxeg-b15835a62f71a0d761eb9ea828ac67d74b13fbee6698f049a2e77619c90f6220"
+      ],
+      "nodeSha256": "063452c4f1ff5761809069bbf2ef05ae1f28c2a3097cdb184acdfab0bc12498a"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-078f6c382375afdc37addbc1e18ff6cb335a515d4b4a46802127096fd4629144",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Quantidade em unidades obrigatória",
+          "severity": "REVIEW",
+          "variable": "activity-international-unit"
+        },
+        "executable": false
+      },
+      "payloadSha256": "28549e51762fa51a10d9c4fc92eaa4e90a2322d44ab2e78ab4e54c74812b8539",
+      "parentIds": [
+        "rxeg-0918a49c6d95ceb92284ac0f202923101b4005a18a253f50ffad7e450942a89b"
+      ],
+      "nodeSha256": "078f6c382375afdc37addbc1e18ff6cb335a515d4b4a46802127096fd4629144"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-0918a49c6d95ceb92284ac0f202923101b4005a18a253f50ffad7e450942a89b",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Quantidade em unidades obrigatória"
+      },
+      "payloadSha256": "3c71a27da150b0de639b372a38091d479fa2304f1004198fdb79be7164bbb774",
+      "parentIds": [
+        "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe"
+      ],
+      "nodeSha256": "0918a49c6d95ceb92284ac0f202923101b4005a18a253f50ffad7e450942a89b"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-093bcfd09ee40d8edc9efc3a5ae6dc9b271e124a22289ceee2497d2430d54790",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-22efee5bbaceda9f",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-claritromicina",
+          "rightConceptId": "med-sinvastatina"
+        },
+        "executable": false
+      },
+      "payloadSha256": "464a8affb2e6c4121b3b7b4d26797231db94f305eeefb7bb8ca698142c762540",
+      "parentIds": [
+        "rxeg-5c81ecb5d7913870ffe6b8b0d30838cab0f63e42c69fa72bc7afa42c1ba18d9b"
+      ],
+      "nodeSha256": "093bcfd09ee40d8edc9efc3a5ae6dc9b271e124a22289ceee2497d2430d54790"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-096b53f4f9b45939dddf156fa76f01015bfe20d0f13b0ec87fc8b5e24cd855c6",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade deve ser informada e revisada",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "d5f9a1f8c04964a747636e4277863f3fcb3c7698ee059ae0f3ce9f4a74c14ed4",
+      "parentIds": [
+        "rxeg-a937cacf9b54f5d7697700b25f6c994b67c4880a62f70aeaba7019bdd246cb8c"
+      ],
+      "nodeSha256": "096b53f4f9b45939dddf156fa76f01015bfe20d0f13b0ec87fc8b5e24cd855c6"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-0b0a973a5bf6e54c81e9055bcfa8d1682339cf6c33725dc3d9cec354b2661f86",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_MONITORING",
+          "label": "INR e plano de monitoramento obrigatórios",
+          "severity": "REVIEW",
+          "observationCode": "INR"
+        },
+        "executable": false
+      },
+      "payloadSha256": "1da8e57edad3357699486027c93d4cb9ce6bc03fb1983208d0bbfd6d2a50b3b2",
+      "parentIds": [
+        "rxeg-f58e415f296166a019cbf8f65b2b2755469587299a4875923ef692193f2c4acb"
+      ],
+      "nodeSha256": "0b0a973a5bf6e54c81e9055bcfa8d1682339cf6c33725dc3d9cec354b2661f86"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-0c541d9b8f86c39108cbb5ca2fbf37140303b6895c49654b3bad3bd6d283d1b1",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Frequência precisa de reconciliação formal"
+      },
+      "payloadSha256": "69a1c88a5e344f6998e2588613ca6572c65560571dab4e6f407113826996447f",
+      "parentIds": [
+        "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45"
+      ],
+      "nodeSha256": "0c541d9b8f86c39108cbb5ca2fbf37140303b6895c49654b3bad3bd6d283d1b1"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-0dda6651f284da7d32cfa7f80d03a6a35527d7ee1b306828afccd3fbb008811d",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade obrigatória"
+      },
+      "payloadSha256": "ab8b4f00df54337bc55650078a13f179739908a2d5d40749f68c0771e02016ec",
+      "parentIds": [
+        "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea"
+      ],
+      "nodeSha256": "0dda6651f284da7d32cfa7f80d03a6a35527d7ee1b306828afccd3fbb008811d"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-157a7dc74974d62c8deec0dddd623d0c5828cbc2131218bd9ceebabe2beb45d0",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "source": {
+          "legacyId": "carbonato-litio",
+          "hazardClassOnly": true,
+          "warning": "Structural hazard sentinel; no clinical boundary is promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "0949697fcafd13a86ab7344362b2e0a17e50129185f4eac14b91c168417ab5e9",
+      "parentIds": [],
+      "nodeSha256": "157a7dc74974d62c8deec0dddd623d0c5828cbc2131218bd9ceebabe2beb45d0"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "wave": "pediatric-respiratory",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "c240d525ecfe6c234a9ac33dc2c21c4633182513ae296f2031f375469ad0f4e2",
+      "parentIds": [
+        "rxeg-28e725064797f59cfd1b94267ad0219eb19c9526f05e47f6ae96c5f1d6315754",
+        "rxeg-39cfe38aa38561d92a888e5ccc453bd5e26cf2b603ffce3f6e3649dd65531c38",
+        "rxeg-de4e247f5faf9fdb20eb6e9c33aaef3490adeabdb3cd335830e3698433770486"
+      ],
+      "nodeSha256": "175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-1ce26211e24d9d903a9fa778e2011bb0afc4dd146857505683d7737003fb5f90",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 2,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Via e apresentação devem ser selecionadas"
+      },
+      "payloadSha256": "edc0e20052276591633a478bcfe3c83a4c31517e970227477c54ce33bcd92f62",
+      "parentIds": [
+        "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630"
+      ],
+      "nodeSha256": "1ce26211e24d9d903a9fa778e2011bb0afc4dd146857505683d7737003fb5f90"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-2061f8943a4c3ba239ec730d3e66c40877bcd68c24c47dc8f101add572b90c80",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "wave": "high-risk-sentinel",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "898ca68520883aff3d6786fc03d90e8c1d1899bbfc937fee9f9d2c8811487b86",
+      "parentIds": [
+        "rxeg-98a616cf39c6169f98a7f128a209192f453dcb0c99c15ca190a012516714d0aa",
+        "rxeg-feca75deeebfa4c77c32da24a6b4d9bd543d318aea19704efd5a9bcc0dae6262"
+      ],
+      "nodeSha256": "2061f8943a4c3ba239ec730d3e66c40877bcd68c24c47dc8f101add572b90c80"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-22d35d7f5e2243b7cca21613cc6a9f777c41d1f938121e3703988b143cadebcf",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "source": {
+          "legacyId": "metotrexato",
+          "hazardClassOnly": true,
+          "warning": "Structural hazard sentinel; no clinical boundary is promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "8362e2b355bba19fa9e7867828aa64dcbd5ba36c2b967f0e70807aa6a962ec7d",
+      "parentIds": [],
+      "nodeSha256": "22d35d7f5e2243b7cca21613cc6a9f777c41d1f938121e3703988b143cadebcf"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-238ca8317e2ce3b21192c02268fadf763eace7717f367935cfddb043c0662fa8",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-e49ea35bbdabf4d4",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-metronidazol",
+          "rightConceptId": "interaction-e49ea35bbdabf4d4"
+        },
+        "executable": false
+      },
+      "payloadSha256": "bf1929ed85d50f406b94c526f9d82e675cceb14cea098b175f9eca9f6f2a8209",
+      "parentIds": [
+        "rxeg-ec0665572c5e2b7242e4d58f21a2f684e713a114c609f1a8385e62d6f03fc28c"
+      ],
+      "nodeSha256": "238ca8317e2ce3b21192c02268fadf763eace7717f367935cfddb043c0662fa8"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-24145fc2bc599ba47665d1c27e89bf0376d039346ca4c566a0f228f4ae6f46cd",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Concentração em unidade/mL obrigatória",
+          "severity": "REVIEW",
+          "variable": "concentration-unit-per-milliliter"
+        },
+        "executable": false
+      },
+      "payloadSha256": "fcbb363421377840ad26db109c806f06d5aabf601a7b54ca2361f0a1fdfa2076",
+      "parentIds": [
+        "rxeg-8b7a64430ef17d184a9212dbfaec0d09191013ebf97a59517d2470422f00ad45"
+      ],
+      "nodeSha256": "24145fc2bc599ba47665d1c27e89bf0376d039346ca4c566a0f228f4ae6f46cd"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-2745ca9145b6333a37b0404388496752a670aec9b45b96a5e608ac6abd4b0fc6",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Peso deve ser informado quando a regra revisada exigir"
+      },
+      "payloadSha256": "4d6b5753345b0df857beb2c508e36ccf9e5442a1ada3fd330c142bf07f1cb5e5",
+      "parentIds": [
+        "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2"
+      ],
+      "nodeSha256": "2745ca9145b6333a37b0404388496752a670aec9b45b96a5e608ac6abd4b0fc6"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-27516cb6c28f4b2c7ffaf00ea36070284d1484698dc742156ff7311c53bc34ce",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Peso deve ser informado quando a regra revisada exigir",
+          "severity": "REVIEW",
+          "variable": "body-mass-gram"
+        },
+        "executable": false
+      },
+      "payloadSha256": "ca741949f655d67558aee5871535f86fc914acb5275a6c7ce9948e7bb3fbd085",
+      "parentIds": [
+        "rxeg-c2f0f79c9f8a77154a847a81283ae6260dc55b13323096fde9cae35ab9de84e5"
+      ],
+      "nodeSha256": "27516cb6c28f4b2c7ffaf00ea36070284d1484698dc742156ff7311c53bc34ce"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-28e725064797f59cfd1b94267ad0219eb19c9526f05e47f6ae96c5f1d6315754",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 2,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Via e apresentação devem ser selecionadas",
+          "severity": "REVIEW",
+          "variable": "route-and-presentation"
+        },
+        "executable": false
+      },
+      "payloadSha256": "c948b38519c5cc54adb4b43d03bb79038eb3e78871e179b6f7b3f64a8592e2c0",
+      "parentIds": [
+        "rxeg-1ce26211e24d9d903a9fa778e2011bb0afc4dd146857505683d7737003fb5f90"
+      ],
+      "nodeSha256": "28e725064797f59cfd1b94267ad0219eb19c9526f05e47f6ae96c5f1d6315754"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "wave": "pediatric-respiratory",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "037457eba35ce75cfe05efb8b4aa221519a50ce4a57670bacf828d9ea0703750",
+      "parentIds": [
+        "rxeg-5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29",
+        "rxeg-616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa",
+        "rxeg-deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41"
+      ],
+      "nodeSha256": "32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-3627205300d2ce1316ecb342d3b9485e59a9492e5e3a332fe05be6ff3c55c7c0",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Função renal obrigatória",
+          "severity": "REVIEW",
+          "variable": "egfr-milliliter-per-minute-per-1.73m2"
+        },
+        "executable": false
+      },
+      "payloadSha256": "a6368597e07abff08e7c4140a69b8206ce32a561a1bf6c71268154d8bfa77e0f",
+      "parentIds": [
+        "rxeg-6ba7e7c40fa4e126f3a8577f0bc98dfde38571eba8607a68e66739ceaa1e31cb"
+      ],
+      "nodeSha256": "3627205300d2ce1316ecb342d3b9485e59a9492e5e3a332fe05be6ff3c55c7c0"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "wave": "pediatric-respiratory",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "620adab3f87efde5577d2e5e9b8c405554c8b4b22ae61fed65835481827c8e0c",
+      "parentIds": [
+        "rxeg-27516cb6c28f4b2c7ffaf00ea36070284d1484698dc742156ff7311c53bc34ce",
+        "rxeg-bd48bb6b93008b57acc5bd02c1375c7600938822ca46d5103ebc322d2fb7583b",
+        "rxeg-d8a506563b30a817b363036f9c2273b90d13ea34017a5488d14587c76c9845b3"
+      ],
+      "nodeSha256": "36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-39cfe38aa38561d92a888e5ccc453bd5e26cf2b603ffce3f6e3649dd65531c38",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade deve ser informada e revisada",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "d94da488511c39590aece4dfd5fbc39c3db8d57c2a880e7c635f4f94de29e5ba",
+      "parentIds": [
+        "rxeg-f8a8fee932ea55526be664aa66b4527c073138b308d3e990fa423bd3c6351107"
+      ],
+      "nodeSha256": "39cfe38aa38561d92a888e5ccc453bd5e26cf2b603ffce3f6e3649dd65531c38"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-3d642c0b058a5880dd92d9967f869c19aeec882cc7f0c66adb0a47caef2fe86f",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade deve ser informada e revisada",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "0a08b0cb0d6f5a36ae2f6f98ef23736eec20416933a72048cc77a884e2fc3b86",
+      "parentIds": [
+        "rxeg-5017f54c4d6d8c0fc2caea14955079a888b80f02c7500a8b4e3583bd429170f5"
+      ],
+      "nodeSha256": "3d642c0b058a5880dd92d9967f869c19aeec882cc7f0c66adb0a47caef2fe86f"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-40b79ec5cec8f31a4d75940cf5912cb8c49f9a0df67ace5392cb20e009096620",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-460500c3bc5a1259",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "6cbba02a90ef043c5f3183b800107263333bf88aa7a60b8cdf288f3ed5ce59e1",
+      "parentIds": [
+        "rxeg-782f952e8311555d06a1d6a33d4c71b6d39768867ddd5f0b5bcc8ffd35c4263d"
+      ],
+      "nodeSha256": "40b79ec5cec8f31a4d75940cf5912cb8c49f9a0df67ace5392cb20e009096620"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-43e4cbec380d032799294a1cab68c3194261b967ed2b4b30aa2510a4e75bf80f",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-e49ea35bbdabf4d4",
+        "statement": "Alcool + Metronidazol",
+        "locator": "rxr-03362b5d145eb8606c8e4e02",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "aec851c0397d387c036eee69f0da81d7339ecd6e594bd810e1543a71f8856174",
+      "parentIds": [
+        "rxeg-e5a509846df0695639b409fcee8ee19e7b10086ea1b5be05bbf7afe59660a4fc"
+      ],
+      "nodeSha256": "43e4cbec380d032799294a1cab68c3194261b967ed2b4b30aa2510a4e75bf80f"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4463b006acd965f2eecd3ba15a699ff1372b8c50d44a9b653be52f7df0bf5ddc",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 2,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Via e apresentação devem ser selecionadas",
+          "severity": "REVIEW",
+          "variable": "route-and-presentation"
+        },
+        "executable": false
+      },
+      "payloadSha256": "13b7e9e6809146708b9ab026a3de502430d83c0a2c932b2b50519ee7a9ec5f8d",
+      "parentIds": [
+        "rxeg-c92be2d79a7b7dee165dc85d444abd6bb3561f27f38c20a9e6ad419331e93aac"
+      ],
+      "nodeSha256": "4463b006acd965f2eecd3ba15a699ff1372b8c50d44a9b653be52f7df0bf5ddc"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4612f58bdde4d5205e78f508bea73d0b81a8d6514cf6b46bd817a64d91708f42",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-460500c3bc5a1259",
+        "statement": "Dabigatrana + Verapamil",
+        "locator": "rxr-a92c82783c716cb77d7b8937",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "a02c7383a03fed38bf7c2ac7cf270350342223fbadbdbe6b05ffa08a58ae00cd",
+      "parentIds": [
+        "rxeg-c6429f39245be67afd9d9d515bd37f1383a56f31c9d7f8397be2264128f9a506"
+      ],
+      "nodeSha256": "4612f58bdde4d5205e78f508bea73d0b81a8d6514cf6b46bd817a64d91708f42"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Peso deve ser informado quando a regra revisada exigir"
+      },
+      "payloadSha256": "a7d88df0a2f9d27201817e7e396337a3d8047fd0c6005a87fc0c4b90e8d26065",
+      "parentIds": [
+        "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920"
+      ],
+      "nodeSha256": "4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "statement": "Varfarina",
+        "locator": "varfarina",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "814ab8a790585dbcaf536eb7d0bd037003d7dd9072cfc4ae37f00188eaa22677",
+      "parentIds": [
+        "rxeg-ca9db11aaf5504e8a8b48e364a1f2116b676db3248dcb2c984a96a343cafa830"
+      ],
+      "nodeSha256": "4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "statement": "Carbonato de lítio",
+        "locator": "carbonato-litio",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "909ffd046974da5a656c249dc17e9523580330bfcc49b714fd84eff8ba2ca74c",
+      "parentIds": [
+        "rxeg-157a7dc74974d62c8deec0dddd623d0c5828cbc2131218bd9ceebabe2beb45d0"
+      ],
+      "nodeSha256": "4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-4ed683ea2fdcbea2b2de71d7b7345c04494f9a5fdfbf8105e96625d413731f39",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-37bf980e4f66a9db",
+        "source": {
+          "taskId": "rxr-e33b9ce0eba69eb66784baab",
+          "targetDigest": "a3089c95cc8c5cd384a238bc6ec3c67e4c3fcc5bdea5f89c37a1f60d7b559ca0",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Prolongamento QT aditivo e efeitos extrapiramidais aumentados Conduta legada: Evitar combinação. Usar antiemético alternativo",
+              "source": "UpToDate; FDA"
+            },
+            {
+              "label": "moderada",
+              "value": "Efeitos extrapiramidais aditivos. Ambos bloqueiam dopamina Conduta legada: Evitar combinação. Alto risco de discinesia",
+              "source": "FDA Warning; UpToDate"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "c372a0cc7abec0a2521c0a719a67b6cecf027d054c553d7a70b066b44b6de83a",
+      "parentIds": [],
+      "nodeSha256": "4ed683ea2fdcbea2b2de71d7b7345c04494f9a5fdfbf8105e96625d413731f39"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5017f54c4d6d8c0fc2caea14955079a888b80f02c7500a8b4e3583bd429170f5",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade deve ser informada e revisada"
+      },
+      "payloadSha256": "8ad2f6bc8ac91ea95342b2474fec7e5b923d9a7986f2b407895981752b12bc35",
+      "parentIds": [
+        "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2"
+      ],
+      "nodeSha256": "5017f54c4d6d8c0fc2caea14955079a888b80f02c7500a8b4e3583bd429170f5"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 2,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Via e apresentação devem ser selecionadas"
+      },
+      "payloadSha256": "8ccc8aecb3c9de837f12ae338b71db6cdac5e43e38962d2322869d97e28a8ec9",
+      "parentIds": [
+        "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920"
+      ],
+      "nodeSha256": "5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5a235a20a24740886ff5693a6e51f79c5f23c632381bdc8f63827a6c279ac7cf",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-551dee6b91b5782c",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-metotrexato",
+          "rightConceptId": "med-sulfametoxazol--mais--trimetoprima"
+        },
+        "executable": false
+      },
+      "payloadSha256": "ac4b366db9ed7f592154140dca5a1de8dd32781d35e599fe840249bb1e2bfb08",
+      "parentIds": [
+        "rxeg-60773a514b72dcf3481979a01b28b3f74f872f9bdb2c66d49c0d87d946a0ad29"
+      ],
+      "nodeSha256": "5a235a20a24740886ff5693a6e51f79c5f23c632381bdc8f63827a6c279ac7cf"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5ac012d8eb5782b3745edfe99ce53035fdaae5a251c57eb5a011122671bd2262",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-22efee5bbaceda9f",
+        "source": {
+          "taskId": "rxr-ce9e80068cfa03aa91314d38",
+          "targetDigest": "74aa12d6bcf007dc807e0d2a9439b0a2eb558627ecc8f5c7e3a520f08d62c655",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Aumento de 10x nos níveis de sinvastatina, risco de rabdomiólise Conduta legada: CONTRAINDICADO. Usar pravastatina ou rosuvastatina durante antibioticoterapia",
+              "source": "FDA; UpToDate"
+            },
+            {
+              "label": "contraindicada",
+              "value": "Aumento massivo de estatina por inibição de CYP3A4. Rabdomiólise Conduta legada: CONTRAINDICADO. Suspender estatina durante tratamento com macrolídeo",
+              "source": "FDA Label; ACC/AHA Statin Guidelines"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "83d4cfa50a0f6cee7a05be497c47df698da84cfd55574689b49d1a8b23e0242e",
+      "parentIds": [],
+      "nodeSha256": "5ac012d8eb5782b3745edfe99ce53035fdaae5a251c57eb5a011122671bd2262"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5c81ecb5d7913870ffe6b8b0d30838cab0f63e42c69fa72bc7afa42c1ba18d9b",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-22efee5bbaceda9f",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "6fb7904a71c8ef845a7a539df837387edb0ec71df65b07789042b30c4d8af854",
+      "parentIds": [
+        "rxeg-be981ae0c8f4188914b9f9a8af28d1ed3dbffea2327fd35d63e29edc72d869bd"
+      ],
+      "nodeSha256": "5c81ecb5d7913870ffe6b8b0d30838cab0f63e42c69fa72bc7afa42c1ba18d9b"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 2,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Via e apresentação devem ser selecionadas",
+          "severity": "REVIEW",
+          "variable": "route-and-presentation"
+        },
+        "executable": false
+      },
+      "payloadSha256": "2428b86715b8ee9e87547a74ab3b8d03bf0b1703e9bca583c386e9b2ed127075",
+      "parentIds": [
+        "rxeg-5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db"
+      ],
+      "nodeSha256": "5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-60773a514b72dcf3481979a01b28b3f74f872f9bdb2c66d49c0d87d946a0ad29",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-551dee6b91b5782c",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "cca76a13a879a2bd048e45a7a5a0bbe77b4dd10eb91d4c779b08258532fb5e5c",
+      "parentIds": [
+        "rxeg-e23d020431b586fc73d31cb9492e6b6e813a0aaef5948e93538d5b8857d9ac74"
+      ],
+      "nodeSha256": "60773a514b72dcf3481979a01b28b3f74f872f9bdb2c66d49c0d87d946a0ad29"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Peso deve ser informado quando a regra revisada exigir",
+          "severity": "REVIEW",
+          "variable": "body-mass-gram"
+        },
+        "executable": false
+      },
+      "payloadSha256": "5a0e76c55217dce44ebf1c3c7b43389cf992a2047c246ed84bd94b0a6936bd10",
+      "parentIds": [
+        "rxeg-4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917"
+      ],
+      "nodeSha256": "616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-649e6a025459ce697cc9184fe41a0d6aa4806d08b2535a625586e646919b2372",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_MONITORING",
+          "label": "Monitoramento obrigatório precisa ser delimitado",
+          "severity": "REVIEW",
+          "observationCode": "CBC_RENAL_HEPATIC"
+        },
+        "executable": false
+      },
+      "payloadSha256": "38a7f7dd73ad8b43a77ee1ddbc73cfee6e962d387eeeb1c556389676ffe818d8",
+      "parentIds": [
+        "rxeg-98e375649b030d49c6573269fee701a545a91627203bd60df721ada2d0a321fa"
+      ],
+      "nodeSha256": "649e6a025459ce697cc9184fe41a0d6aa4806d08b2535a625586e646919b2372"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-64c38419ccd14f843fd9e1f4df4c620eca07745cffe8baf85fb9f06ceb562cb0",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-95eb36076c0adf6f",
+        "statement": "Tabaco + clozapina",
+        "locator": "rxr-c6352058353d94d51a6ca507",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "bbb2cc8abad7310b819f64d4f91c0d75d50eb35f9f7c2f3700355e8e07b02489",
+      "parentIds": [
+        "rxeg-7f5ec70e338a54f1a5be16f53d256a3f24276166fb72cb94d68c5cb9da72ee6e"
+      ],
+      "nodeSha256": "64c38419ccd14f843fd9e1f4df4c620eca07745cffe8baf85fb9f06ceb562cb0"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-6615b657037993c92576db59005a7b2672e2ab99e77fbebeb251344d0dc04667",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-551dee6b91b5782c",
+        "source": {
+          "taskId": "rxr-a4e485cd6ce93a7595249694",
+          "targetDigest": "5bc0c19480c83d6bbc1fac5f898d28c7ebfb1182a10bccdbdeea461cf1bc12c7",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Toxicidade hematológica sinérgica (ambos inibem folato) Conduta legada: Evitar combinação. Se necessário, suplementar ácido folínico",
+              "source": "ACR Guidelines; UpToDate"
+            },
+            {
+              "label": "contraindicada",
+              "value": "Aumento de toxicidade do MTX por redução da excreção renal Conduta legada: EVITAR. Casos fatais de pancitopenia relatados",
+              "source": "ACR Guidelines; FDA Alert"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "6894af12d9ac58692627bc693f01b1f670f344a3891d8ca57b27aed413cd641d",
+      "parentIds": [],
+      "nodeSha256": "6615b657037993c92576db59005a7b2672e2ab99e77fbebeb251344d0dc04667"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "statement": "Metotrexato oral semanal",
+        "locator": "metotrexato",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "dea77819e96fdea6c8e10dba555cfffa25fb87a436df9f73e13ab841a5270832",
+      "parentIds": [
+        "rxeg-22d35d7f5e2243b7cca21613cc6a9f777c41d1f938121e3703988b143cadebcf"
+      ],
+      "nodeSha256": "67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-6ba7e7c40fa4e126f3a8577f0bc98dfde38571eba8607a68e66739ceaa1e31cb",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Função renal obrigatória"
+      },
+      "payloadSha256": "53ae1158bd9259492f5c42fdcb6ebd11f3fd335aa5fc5d49d6f15a472b00be3b",
+      "parentIds": [
+        "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c"
+      ],
+      "nodeSha256": "6ba7e7c40fa4e126f3a8577f0bc98dfde38571eba8607a68e66739ceaa1e31cb"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7408fcd8eced9b102e103e8c0980eea407046d30b83851510a11402aefc0c91b",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-0bff291db45d5881",
+        "statement": "Cloridrato de fluoxetina + Fosfato de codeína",
+        "locator": "rxr-16a2661c5b294affd56c27d9",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "cc1189c6185ed43262ffed738ecd35db5484ae5be07d41dd554bc89d6a4bb40e",
+      "parentIds": [
+        "rxeg-f687044f786cc05e6261dcffb07ae76eb6ae7e42fd694727912b5a54b00c8329"
+      ],
+      "nodeSha256": "7408fcd8eced9b102e103e8c0980eea407046d30b83851510a11402aefc0c91b"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-77dbee1903f88f2e67b6ece28d9a992c349ff414ee5fdcce42746e356da0f955",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-0bff291db45d5881",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-cloridrato-de-fluoxetina",
+          "rightConceptId": "med-fosfato-de-codeina"
+        },
+        "executable": false
+      },
+      "payloadSha256": "c2ee2f2d4001559c98f6f836ef114a477068c7808228a77341429faee8b5e91f",
+      "parentIds": [
+        "rxeg-8e118274c9a4506ab2576157024cc7808415ee5a8d29442c1c3cea806b9cb5e0"
+      ],
+      "nodeSha256": "77dbee1903f88f2e67b6ece28d9a992c349ff414ee5fdcce42746e356da0f955"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-782f952e8311555d06a1d6a33d4c71b6d39768867ddd5f0b5bcc8ffd35c4263d",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-460500c3bc5a1259",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-dabigatrana",
+          "rightConceptId": "med-verapamil"
+        },
+        "executable": false
+      },
+      "payloadSha256": "7d5f98f36721117dadeca7c7ad158efc77fe1ecfb8ac4f571b4a8d32ebba3db3",
+      "parentIds": [
+        "rxeg-7cffbd0717f7d4b5eefe66edb7982deeaf86b03d8bb5989610dab77007cb1fdb"
+      ],
+      "nodeSha256": "782f952e8311555d06a1d6a33d4c71b6d39768867ddd5f0b5bcc8ffd35c4263d"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-78efacd68970b1c30a252f686a31d87ef698ca4fdc9c4479a0907ec630b0d2bc",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade deve ser informada e revisada"
+      },
+      "payloadSha256": "1c3d711d02e39046ad35ed5245aa281cd6cf328e9b14d47d736a6524aeff30ce",
+      "parentIds": [
+        "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e"
+      ],
+      "nodeSha256": "78efacd68970b1c30a252f686a31d87ef698ca4fdc9c4479a0907ec630b0d2bc"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade deve ser informada e revisada"
+      },
+      "payloadSha256": "d009c21a7f1e2de2046f9d8455f1faeeea725b10f88ff0e61a3a804e265c73d0",
+      "parentIds": [
+        "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920"
+      ],
+      "nodeSha256": "79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7a12c7b552503347df78d64d7344afa5305c1cab6d7859e20a64af62c8407911",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-95eb36076c0adf6f",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "d45e675807d5364d75c8c6df0dcedc2fc3fa0c23adf7eec30097c23f84d5f7db",
+      "parentIds": [
+        "rxeg-c81db228c9c5cf398add9a90911afea40fefa8cc9e221466e1b4861a16a68405"
+      ],
+      "nodeSha256": "7a12c7b552503347df78d64d7344afa5305c1cab6d7859e20a64af62c8407911"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7bd59de4fb446a4e4708b45580da289a72f2ff838514102d02f5084d047789e8",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "source": {
+          "candidateId": "dose-candidate-azitromicina-coqueluche-pediatrica",
+          "warning": "No legacy posology text was parsed or promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "25e0c8f5d3cbb69dce924edbeffeb311eb6a8a5ce2e7938f9c6cc20403c2d840",
+      "parentIds": [],
+      "nodeSha256": "7bd59de4fb446a4e4708b45580da289a72f2ff838514102d02f5084d047789e8"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7cffbd0717f7d4b5eefe66edb7982deeaf86b03d8bb5989610dab77007cb1fdb",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-460500c3bc5a1259",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "12765b6f9ab0b76fe90c6344220070b0458904f24ba8c8940b99543d1fa9ee81",
+      "parentIds": [
+        "rxeg-4612f58bdde4d5205e78f508bea73d0b81a8d6514cf6b46bd817a64d91708f42"
+      ],
+      "nodeSha256": "7cffbd0717f7d4b5eefe66edb7982deeaf86b03d8bb5989610dab77007cb1fdb"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7d9fd4672de808a391e2ab2094cb0fe3c215879bd0f032f3fcd5248f51e1d707",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Plano de titulação obrigatório",
+          "severity": "REVIEW",
+          "variable": "dose-titration-plan"
+        },
+        "executable": false
+      },
+      "payloadSha256": "42a0c994cb6e6bd6fcfca155edd6be7c009b04c369729bcfdb62844d50345ae4",
+      "parentIds": [
+        "rxeg-dd6dee2c76953db932ca1ef7b03c4e99f8ee24cf850a4cfaa974673e60164fec"
+      ],
+      "nodeSha256": "7d9fd4672de808a391e2ab2094cb0fe3c215879bd0f032f3fcd5248f51e1d707"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-7f5ec70e338a54f1a5be16f53d256a3f24276166fb72cb94d68c5cb9da72ee6e",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-95eb36076c0adf6f",
+        "source": {
+          "taskId": "rxr-c6352058353d94d51a6ca507",
+          "targetDigest": "7742549eb93263e90b381356243adb49893f67900ac03cfaa448de03e1335a85",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Tabagismo induz CYP1A2, reduzindo níveis de clozapina em 50% Conduta legada: Se parar de fumar, reduzir dose de clozapina em até 50% para evitar toxicidade",
+              "source": "FDA; UpToDate"
+            },
+            {
+              "label": "moderada",
+              "value": "Tabagismo induz CYP1A2, reduzindo níveis de clozapina em 50% Conduta legada: Ajustar dose de clozapina se paciente parar/iniciar tabagismo",
+              "source": "UpToDate; APA Guidelines"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "7dc03da73701bebb30195ea83646279ca0baa759c7fafd1a82fdc513dc7c4a50",
+      "parentIds": [],
+      "nodeSha256": "7f5ec70e338a54f1a5be16f53d256a3f24276166fb72cb94d68c5cb9da72ee6e"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "statement": "Digoxina",
+        "locator": "digoxina",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "eeee61621836471898fdd3e95c3c3ed81dbf1b9b50ab87d75b4c8187a89ed4a7",
+      "parentIds": [
+        "rxeg-988fef92e76749ef85e434e11cddf03c23531e009beb1742c94d0c3db4b1b2d5"
+      ],
+      "nodeSha256": "84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-8b7a64430ef17d184a9212dbfaec0d09191013ebf97a59517d2470422f00ad45",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Concentração em unidade/mL obrigatória"
+      },
+      "payloadSha256": "415e67d1f2bb749157c3154070893cb78decc9e686921fc45037489d5a926491",
+      "parentIds": [
+        "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe"
+      ],
+      "nodeSha256": "8b7a64430ef17d184a9212dbfaec0d09191013ebf97a59517d2470422f00ad45"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-8e118274c9a4506ab2576157024cc7808415ee5a8d29442c1c3cea806b9cb5e0",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-0bff291db45d5881",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "7c328f6adb9cdcd257b5fb5905e9ac7e6c42f0b4dc1dd0aa989f7c6617320e7b",
+      "parentIds": [
+        "rxeg-7408fcd8eced9b102e103e8c0980eea407046d30b83851510a11402aefc0c91b"
+      ],
+      "nodeSha256": "8e118274c9a4506ab2576157024cc7808415ee5a8d29442c1c3cea806b9cb5e0"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-8f9e66eb492c28828ef5107aa6ae7530172866092c94bcc9b3752650e9163195",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "wave": "high-risk-sentinel",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "4adee438cc9149b5d9558705e74eb2f28ebba1b395e384c47ec047378d0b7c2e",
+      "parentIds": [
+        "rxeg-0b0a973a5bf6e54c81e9055bcfa8d1682339cf6c33725dc3d9cec354b2661f86",
+        "rxeg-7d9fd4672de808a391e2ab2094cb0fe3c215879bd0f032f3fcd5248f51e1d707"
+      ],
+      "nodeSha256": "8f9e66eb492c28828ef5107aa6ae7530172866092c94bcc9b3752650e9163195"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-94a3a53db31a70fa7fe28beb3362c194834f7b41152e66bd42438683ab9e8b0d",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-37bf980e4f66a9db",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "6a0221c4998f1106a1f3ebc9f62fcdae9efa5a0fd2330e4582a48a439dceef72",
+      "parentIds": [
+        "rxeg-ccd6c82b1c3529f356c020fe44a1fe5a7eb496af151c2ae05a9975f0a39beeaf"
+      ],
+      "nodeSha256": "94a3a53db31a70fa7fe28beb3362c194834f7b41152e66bd42438683ab9e8b0d"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-988fef92e76749ef85e434e11cddf03c23531e009beb1742c94d0c3db4b1b2d5",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "source": {
+          "legacyId": "digoxina",
+          "hazardClassOnly": true,
+          "warning": "Structural hazard sentinel; no clinical boundary is promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "4463e55aa0264fdaba466bc1ba4d9dc00d2b3e34150f3950d00f6d80a87d854d",
+      "parentIds": [],
+      "nodeSha256": "988fef92e76749ef85e434e11cddf03c23531e009beb1742c94d0c3db4b1b2d5"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-98a616cf39c6169f98a7f128a209192f453dcb0c99c15ca190a012516714d0aa",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade obrigatória",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "c12a30a13c79982f2cfa02abdb2d026e319827bd210f354140db3b8774768e29",
+      "parentIds": [
+        "rxeg-0dda6651f284da7d32cfa7f80d03a6a35527d7ee1b306828afccd3fbb008811d"
+      ],
+      "nodeSha256": "98a616cf39c6169f98a7f128a209192f453dcb0c99c15ca190a012516714d0aa"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-98e375649b030d49c6573269fee701a545a91627203bd60df721ada2d0a321fa",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Monitoramento obrigatório precisa ser delimitado"
+      },
+      "payloadSha256": "ef9b550c48028be3fa04fd7c39baa07707e0f6bb04117f6b238ce181670aa558",
+      "parentIds": [
+        "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45"
+      ],
+      "nodeSha256": "98e375649b030d49c6573269fee701a545a91627203bd60df721ada2d0a321fa"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-9924fb41cb49c2ed27ddf50424b2a9caa5363c6ce3a46e6b56958a6441ad0a80",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "wave": "high-risk-sentinel",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "1834e210205fd534f3df79d9ffd9e63beb3011fc9df9e106a438566c13d00f0b",
+      "parentIds": [
+        "rxeg-078f6c382375afdc37addbc1e18ff6cb335a515d4b4a46802127096fd4629144",
+        "rxeg-24145fc2bc599ba47665d1c27e89bf0376d039346ca4c566a0f228f4ae6f46cd"
+      ],
+      "nodeSha256": "9924fb41cb49c2ed27ddf50424b2a9caa5363c6ce3a46e6b56958a6441ad0a80"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-99c043efbeddc0b0427a6bc349b5f62cbb19d377b7a46ba42fbc5fcd0b9dc6fa",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 2,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Via e apresentação devem ser selecionadas",
+          "severity": "REVIEW",
+          "variable": "route-and-presentation"
+        },
+        "executable": false
+      },
+      "payloadSha256": "d98b7c9fcb7789ebd44e746cff7032a0f440f297e891380a440bca2b78a2f5d3",
+      "parentIds": [
+        "rxeg-a399fb61c1ae0bc45b25f738383354ba37b6f36d5ec9c92e34847b95e47ef270"
+      ],
+      "nodeSha256": "99c043efbeddc0b0427a6bc349b5f62cbb19d377b7a46ba42fbc5fcd0b9dc6fa"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-9b3eb8847cf1c71428f6d4c98c8da9f581cf372646af724998e50e0015302cfc",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 2,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Via e apresentação devem ser selecionadas"
+      },
+      "payloadSha256": "a445f581422a8980bc1642c332ff044c5256071df15957b299cbe4f2cda5b310",
+      "parentIds": [
+        "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e"
+      ],
+      "nodeSha256": "9b3eb8847cf1c71428f6d4c98c8da9f581cf372646af724998e50e0015302cfc"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "statement": "Coqueluche em pediatria",
+        "locator": "dose-candidate-azitromicina-coqueluche-pediatrica",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "b58cd4432c637b12238c1191af0174cf1c78a1780602513c3f9bd387fa9cf039",
+      "parentIds": [
+        "rxeg-7bd59de4fb446a4e4708b45580da289a72f2ff838514102d02f5084d047789e8"
+      ],
+      "nodeSha256": "a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-a399fb61c1ae0bc45b25f738383354ba37b6f36d5ec9c92e34847b95e47ef270",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 2,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Via e apresentação devem ser selecionadas"
+      },
+      "payloadSha256": "0466972cacd4c41fb26a798229461e5f64809f1a80b910ab88163861b07cd1d3",
+      "parentIds": [
+        "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc"
+      ],
+      "nodeSha256": "a399fb61c1ae0bc45b25f738383354ba37b6f36d5ec9c92e34847b95e47ef270"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-a937cacf9b54f5d7697700b25f6c994b67c4880a62f70aeaba7019bdd246cb8c",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade deve ser informada e revisada"
+      },
+      "payloadSha256": "6937fec9f06851659cfd799e8de2ee03bee05d46e39e23bb65cf3707c2abf8cd",
+      "parentIds": [
+        "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc"
+      ],
+      "nodeSha256": "a937cacf9b54f5d7697700b25f6c994b67c4880a62f70aeaba7019bdd246cb8c"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ac3e80d3956f58cf6dc0f4efbabaa1794a699457b513c72741b345ec77b3b6ae",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-37bf980e4f66a9db",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "med-cloridrato-de-metoclopramida",
+          "rightConceptId": "med-haloperidol"
+        },
+        "executable": false
+      },
+      "payloadSha256": "f30079a2b8b1926bbb985c4d2217dc5ee311d2520be7bbfd98ab694ca5fd8409",
+      "parentIds": [
+        "rxeg-94a3a53db31a70fa7fe28beb3362c194834f7b41152e66bd42438683ab9e8b0d"
+      ],
+      "nodeSha256": "ac3e80d3956f58cf6dc0f4efbabaa1794a699457b513c72741b345ec77b3b6ae"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-b15835a62f71a0d761eb9ea828ac67d74b13fbee6698f049a2e77619c90f6220",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Nível sérico e tempo de coleta obrigatórios"
+      },
+      "payloadSha256": "8df78566bef7de1ef64620caf23f02a9264a761e5c13e6237f9a23c205e200c3",
+      "parentIds": [
+        "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c"
+      ],
+      "nodeSha256": "b15835a62f71a0d761eb9ea828ac67d74b13fbee6698f049a2e77619c90f6220"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-b239bfe0404eba88e4ccfb996b715888d8fbcd506e1bb8ec6649061d719a6c1a",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-e49ea35bbdabf4d4",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "6a519b41350e725e37d64fbd769d061dd11e5f1d4fdf7eb123618a4be776e609",
+      "parentIds": [
+        "rxeg-238ca8317e2ce3b21192c02268fadf763eace7717f367935cfddb043c0662fa8"
+      ],
+      "nodeSha256": "b239bfe0404eba88e4ccfb996b715888d8fbcd506e1bb8ec6649061d719a6c1a"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-b606ead6a23548b2021228658393bc257d13be062281b3b61fb17f1d4cd77c1f",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "source": {
+          "candidateId": "dose-candidate-amoxicilina-pac-pediatrica",
+          "warning": "No legacy posology text was parsed or promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "5036fc02c28410f3710f2e6637656d7ce4794b56e7d38c5e5429f37aa0db2360",
+      "parentIds": [],
+      "nodeSha256": "b606ead6a23548b2021228658393bc257d13be062281b3b61fb17f1d4cd77c1f"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ba7dc186c603fb52b7b81947e544f6ce620ba0c0d37e1146e07692ea894b02f2",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Função renal obrigatória"
+      },
+      "payloadSha256": "086dcc6d379d71d7632d04440fd781f03b69eaad83a70a858057f0b8dfcc4e9a",
+      "parentIds": [
+        "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea"
+      ],
+      "nodeSha256": "ba7dc186c603fb52b7b81947e544f6ce620ba0c0d37e1146e07692ea894b02f2"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "statement": "Insulina humana regular",
+        "locator": "insulina-regular",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "b86d9c2ff7cc8fcf86094448bc59184d48d4d435d2573c43032ea461ff4e21f0",
+      "parentIds": [
+        "rxeg-cc37e042d8377dc5bc6fa0823b5a8f2b5497933fc3a6e8a4ae8de2332b9f45ce"
+      ],
+      "nodeSha256": "bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-bd48bb6b93008b57acc5bd02c1375c7600938822ca46d5103ebc322d2fb7583b",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 2,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Via e apresentação devem ser selecionadas",
+          "severity": "REVIEW",
+          "variable": "route-and-presentation"
+        },
+        "executable": false
+      },
+      "payloadSha256": "764563a2a48ceb623d584e373e31724f1df95e7ba19ea2f2f872642c1db3f092",
+      "parentIds": [
+        "rxeg-9b3eb8847cf1c71428f6d4c98c8da9f581cf372646af724998e50e0015302cfc"
+      ],
+      "nodeSha256": "bd48bb6b93008b57acc5bd02c1375c7600938822ca46d5103ebc322d2fb7583b"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-bde5b139c9ff206947c86e1d73b3082afd7889a8a7111ea6635c44d6231b8eaa",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "EXACT_FREQUENCY",
+          "label": "Frequência precisa de reconciliação formal",
+          "severity": "REVIEW",
+          "variable": "frequency-per-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "b622e48aaf7d8c83d9004e76f08ce46a957faa56a38a5e9202749d70930179b3",
+      "parentIds": [
+        "rxeg-0c541d9b8f86c39108cbb5ca2fbf37140303b6895c49654b3bad3bd6d283d1b1"
+      ],
+      "nodeSha256": "bde5b139c9ff206947c86e1d73b3082afd7889a8a7111ea6635c44d6231b8eaa"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-be981ae0c8f4188914b9f9a8af28d1ed3dbffea2327fd35d63e29edc72d869bd",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-22efee5bbaceda9f",
+        "statement": "Claritromicina + Sinvastatina",
+        "locator": "rxr-ce9e80068cfa03aa91314d38",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "659b7ef1446a393f1162ae972d1542f6ed54048f3b419bfbfd5460c607c66ade",
+      "parentIds": [
+        "rxeg-5ac012d8eb5782b3745edfe99ce53035fdaae5a251c57eb5a011122671bd2262"
+      ],
+      "nodeSha256": "be981ae0c8f4188914b9f9a8af28d1ed3dbffea2327fd35d63e29edc72d869bd"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c05788da3af76a8346b349d940d42315a275d4b7825176a0ba2431dc3e1ec150",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Peso deve ser informado quando a regra revisada exigir",
+          "severity": "REVIEW",
+          "variable": "body-mass-gram"
+        },
+        "executable": false
+      },
+      "payloadSha256": "ee94ffd0084c7fe82f136e74623ef7bbe5705384963e4fd05cfaeca80331e6d2",
+      "parentIds": [
+        "rxeg-fea29191c640cce66851afc83f0d5a60f168904ccfde8c8eddeb4645ade5c483"
+      ],
+      "nodeSha256": "c05788da3af76a8346b349d940d42315a275d4b7825176a0ba2431dc3e1ec150"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c2f0f79c9f8a77154a847a81283ae6260dc55b13323096fde9cae35ab9de84e5",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Peso deve ser informado quando a regra revisada exigir"
+      },
+      "payloadSha256": "d604255f03abbba5cb5d12b37c503b973c731a4eaa1f5612101a580c66be5d96",
+      "parentIds": [
+        "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e"
+      ],
+      "nodeSha256": "c2f0f79c9f8a77154a847a81283ae6260dc55b13323096fde9cae35ab9de84e5"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "wave": "pediatric-respiratory",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "52c85e90a54e9a1b55ac9506795a3242e48d30d61e435fc00a4240cf0a5ffe41",
+      "parentIds": [
+        "rxeg-096b53f4f9b45939dddf156fa76f01015bfe20d0f13b0ec87fc8b5e24cd855c6",
+        "rxeg-99c043efbeddc0b0427a6bc349b5f62cbb19d377b7a46ba42fbc5fcd0b9dc6fa",
+        "rxeg-c05788da3af76a8346b349d940d42315a275d4b7825176a0ba2431dc3e1ec150"
+      ],
+      "nodeSha256": "c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c6429f39245be67afd9d9d515bd37f1383a56f31c9d7f8397be2264128f9a506",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-460500c3bc5a1259",
+        "source": {
+          "taskId": "rxr-a92c82783c716cb77d7b8937",
+          "targetDigest": "de57dc354adb8f5591a9f1cec2fa6d74f5bb4e19eef38572e680cc4f057a185e",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Aumento significativo (até 180%) dos níveis de dabigatrana Conduta legada: Reduzir dabigatrana para 110mg 2x/dia. Administrar 2h antes do verapamil",
+              "source": "EMA; Micromedex"
+            },
+            {
+              "label": "moderada",
+              "value": "Aumento de 60% na exposição à dabigatrana por inibição de P-gp Conduta legada: Reduzir dose de dabigatrana para 110mg 2x/dia em FA",
+              "source": "Bula Pradaxa; ESC Guidelines"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "077588529857803b873430a3cdd39572bd71d4969b6b67b5de680d5d0a2d307c",
+      "parentIds": [],
+      "nodeSha256": "c6429f39245be67afd9d9d515bd37f1383a56f31c9d7f8397be2264128f9a506"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c81db228c9c5cf398add9a90911afea40fefa8cc9e221466e1b4861a16a68405",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-95eb36076c0adf6f",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "FORBIDDEN_PAIR",
+          "label": "Par com conflito crítico legado; delimitação clínica pendente",
+          "severity": "BLOCK",
+          "leftConceptId": "unresolved-left",
+          "rightConceptId": "interaction-95eb36076c0adf6f"
+        },
+        "executable": false
+      },
+      "payloadSha256": "44aecde7c06f0f4b514311e7105ffa1937392ad3900743bf0480c1f3103574a7",
+      "parentIds": [
+        "rxeg-05988c273f09e0c7d8aba1e35c6226669338d245ba5a60bc5b2f787cbd1a68de"
+      ],
+      "nodeSha256": "c81db228c9c5cf398add9a90911afea40fefa8cc9e221466e1b4861a16a68405"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c92be2d79a7b7dee165dc85d444abd6bb3561f27f38c20a9e6ad419331e93aac",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 2,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Via e apresentação devem ser selecionadas"
+      },
+      "payloadSha256": "f13ee23fc24f0bbaf3190415d90925ace2c5d9aeab02422aaa02f9da67d78a11",
+      "parentIds": [
+        "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2"
+      ],
+      "nodeSha256": "c92be2d79a7b7dee165dc85d444abd6bb3561f27f38c20a9e6ad419331e93aac"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-c9e312fba7f269d1d889e1c34d979197e102fb7c45018f52d7788a8cf74b94bd",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-37bf980e4f66a9db",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "91908ce254842dbd2d9075b8ac8f830e918357b0bcc3ffe7815f5d2d457c5396",
+      "parentIds": [
+        "rxeg-ac3e80d3956f58cf6dc0f4efbabaa1794a699457b513c72741b345ec77b3b6ae"
+      ],
+      "nodeSha256": "c9e312fba7f269d1d889e1c34d979197e102fb7c45018f52d7788a8cf74b94bd"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ca9db11aaf5504e8a8b48e364a1f2116b676db3248dcb2c984a96a343cafa830",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "source": {
+          "legacyId": "varfarina",
+          "hazardClassOnly": true,
+          "warning": "Structural hazard sentinel; no clinical boundary is promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "5d5668d8daa604ee0d4877b4079da746ba7ef8e1a0232a432f728515de5573cc",
+      "parentIds": [],
+      "nodeSha256": "ca9db11aaf5504e8a8b48e364a1f2116b676db3248dcb2c984a96a343cafa830"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-cc37e042d8377dc5bc6fa0823b5a8f2b5497933fc3a6e8a4ae8de2332b9f45ce",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-insulin-regular",
+        "source": {
+          "legacyId": "insulina-regular",
+          "hazardClassOnly": true,
+          "warning": "Structural hazard sentinel; no clinical boundary is promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "540519262d5f34c6f5d22b7c276a4829114303c4396bf0841b73db9348151e62",
+      "parentIds": [],
+      "nodeSha256": "cc37e042d8377dc5bc6fa0823b5a8f2b5497933fc3a6e8a4ae8de2332b9f45ce"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ccd6c82b1c3529f356c020fe44a1fe5a7eb496af151c2ae05a9975f0a39beeaf",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-37bf980e4f66a9db",
+        "statement": "Cloridrato de metoclopramida + Haloperidol",
+        "locator": "rxr-e33b9ce0eba69eb66784baab",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "9bf38087d0db0760fb67832e552b1a7924d3f09e31d5f33076f4aa13005a4381",
+      "parentIds": [
+        "rxeg-4ed683ea2fdcbea2b2de71d7b7345c04494f9a5fdfbf8105e96625d413731f39"
+      ],
+      "nodeSha256": "ccd6c82b1c3529f356c020fe44a1fe5a7eb496af151c2ae05a9975f0a39beeaf"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-cdc212cba1f855377674676a6ae533e32a40a5e7a37cdc4c733922c4eff47a06",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "source": {
+          "candidateId": "dose-candidate-amoxicilina-oma-pediatrica",
+          "warning": "No legacy posology text was parsed or promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "d49614c8239af8568f9a15c06af84a0e54104a6ce45bd53270154fc4af0cf6f6",
+      "parentIds": [],
+      "nodeSha256": "cdc212cba1f855377674676a6ae533e32a40a5e7a37cdc4c733922c4eff47a06"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-d8a506563b30a817b363036f9c2273b90d13ea34017a5488d14587c76c9845b3",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade deve ser informada e revisada",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "448299d9b85d15708bc58028f1a0fbca02f274f3e74d2be41535a19215bea3ff",
+      "parentIds": [
+        "rxeg-78efacd68970b1c30a252f686a31d87ef698ca4fdc9c4479a0907ec630b0d2bc"
+      ],
+      "nodeSha256": "d8a506563b30a817b363036f9c2273b90d13ea34017a5488d14587c76c9845b3"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "statement": "Otite média aguda em pediatria",
+        "locator": "dose-candidate-amoxicilina-oma-pediatrica",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "a9f51b31b08ea88458360d10a6d65639c6c77ffb4a12039f5e80ef3a2095317a",
+      "parentIds": [
+        "rxeg-cdc212cba1f855377674676a6ae533e32a40a5e7a37cdc4c733922c4eff47a06"
+      ],
+      "nodeSha256": "dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-dcd3b2e82f4199a5b7452355f582c8105564ab1ff55628cdaa0e64749b736f26",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Peso deve ser informado quando a regra revisada exigir"
+      },
+      "payloadSha256": "3d2bfa40e7e987f35ecc1c7512e155baf277a7a427b97404ad7193bba887acc2",
+      "parentIds": [
+        "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630"
+      ],
+      "nodeSha256": "dcd3b2e82f4199a5b7452355f582c8105564ab1ff55628cdaa0e64749b736f26"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-dd07be0cd50a00727791f9e820005b641c438e0895f41cc8ea41faa496d38f17",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "source": {
+          "candidateId": "dose-candidate-dexametasona-crupe-pediatrica",
+          "warning": "No legacy posology text was parsed or promoted."
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "51c7bde576226a1a8a8d3ebb10a07da88b7e1a3f353153ef9f8a7e9d3502362c",
+      "parentIds": [],
+      "nodeSha256": "dd07be0cd50a00727791f9e820005b641c438e0895f41cc8ea41faa496d38f17"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-dd6dee2c76953db932ca1ef7b03c4e99f8ee24cf850a4cfaa974673e60164fec",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Plano de titulação obrigatório"
+      },
+      "payloadSha256": "32c92080051a49b68c17798a43df66a185c55c7908113c605171aad509429ced",
+      "parentIds": [
+        "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c"
+      ],
+      "nodeSha256": "dd6dee2c76953db932ca1ef7b03c4e99f8ee24cf850a4cfaa974673e60164fec"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-de4e247f5faf9fdb20eb6e9c33aaef3490adeabdb3cd335830e3698433770486",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Peso deve ser informado quando a regra revisada exigir",
+          "severity": "REVIEW",
+          "variable": "body-mass-gram"
+        },
+        "executable": false
+      },
+      "payloadSha256": "532a681071e4846f6adae3e710aabfa742c739ec9c71d9edd6d2e579f5675dc7",
+      "parentIds": [
+        "rxeg-dcd3b2e82f4199a5b7452355f582c8105564ab1ff55628cdaa0e64749b736f26"
+      ],
+      "nodeSha256": "de4e247f5faf9fdb20eb6e9c33aaef3490adeabdb3cd335830e3698433770486"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "constraintIndex": 0,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Idade deve ser informada e revisada",
+          "severity": "REVIEW",
+          "variable": "age-day"
+        },
+        "executable": false
+      },
+      "payloadSha256": "b0844b0441ac91cc416184dbe0233ed7732bf516d6be8dbe15210d8039f5c1ae",
+      "parentIds": [
+        "rxeg-79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb"
+      ],
+      "nodeSha256": "deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e037ee92061a3859b76175ac481f3fd8c793e6cf5fb79b3615ede1115171ea0a",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-551dee6b91b5782c",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "0292d8c46a08242772bdc1bfd9371b95586ca7a07285f4cdb302955140f15329",
+      "parentIds": [
+        "rxeg-5a235a20a24740886ff5693a6e51f79c5f23c632381bdc8f63827a6c279ac7cf"
+      ],
+      "nodeSha256": "e037ee92061a3859b76175ac481f3fd8c793e6cf5fb79b3615ede1115171ea0a"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e23d020431b586fc73d31cb9492e6b6e813a0aaef5948e93538d5b8857d9ac74",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-551dee6b91b5782c",
+        "statement": "Metotrexato + Sulfametoxazol + Trimetoprima",
+        "locator": "rxr-a4e485cd6ce93a7595249694",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "65b5471a38c6bf62eaa0497fdb42c54d6879f35d686184f410ed2c6299aaabdd",
+      "parentIds": [
+        "rxeg-6615b657037993c92576db59005a7b2672e2ab99e77fbebeb251344d0dc04667"
+      ],
+      "nodeSha256": "e23d020431b586fc73d31cb9492e6b6e813a0aaef5948e93538d5b8857d9ac74"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e46c6e699aab2cc0a54e1442787499527b985f8e7781f476dae8e6576a9a7698",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-0bff291db45d5881",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "8abb3264f87bea30ae135328ef1f76fb3f109cf27915a9486a434d635e321e20",
+      "parentIds": [
+        "rxeg-77dbee1903f88f2e67b6ece28d9a992c349ff414ee5fdcce42746e356da0f955"
+      ],
+      "nodeSha256": "e46c6e699aab2cc0a54e1442787499527b985f8e7781f476dae8e6576a9a7698"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e5a509846df0695639b409fcee8ee19e7b10086ea1b5be05bbf7afe59660a4fc",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-e49ea35bbdabf4d4",
+        "source": {
+          "taskId": "rxr-03362b5d145eb8606c8e4e02",
+          "targetDigest": "cc44b7c2ebf8910f6034b8b5b23681f03069e6e7a4de56ecdb24d3fecda15116",
+          "legacyValues": [
+            {
+              "label": "moderada",
+              "value": "Reação dissulfiram-like: náusea, vômito, cefaleia, rubor Conduta legada: Orientar abstinência de álcool durante tratamento e até 48h após",
+              "source": "UpToDate; Lexicomp"
+            },
+            {
+              "label": "grave",
+              "value": "Reação tipo dissulfiram (náusea, vômito, rubor, taquicardia) Conduta legada: Evitar álcool durante tratamento e até 48h após término",
+              "source": "UpToDate; Micromedex"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "c8b3092957f860518c827b72e73590eac448542dc6622bdd09a17aedc0cb8ae5",
+      "parentIds": [],
+      "nodeSha256": "e5a509846df0695639b409fcee8ee19e7b10086ea1b5be05bbf7afe59660a4fc"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "wave": "pediatric-respiratory",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "693751d2b7bef78e83ef56ab43e9ac3bed3d2fc1cd35ac98e7d8c5611ca40a00",
+      "parentIds": [
+        "rxeg-3d642c0b058a5880dd92d9967f869c19aeec882cc7f0c66adb0a47caef2fe86f",
+        "rxeg-4463b006acd965f2eecd3ba15a699ff1372b8c50d44a9b653be52f7df0bf5ddc",
+        "rxeg-e81f9f0551a0d5367a42bcf3216932393fba5e67c103fe6e759e1b0f0a9781ca"
+      ],
+      "nodeSha256": "e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-e81f9f0551a0d5367a42bcf3216932393fba5e67c103fe6e759e1b0f0a9781ca",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Peso deve ser informado quando a regra revisada exigir",
+          "severity": "REVIEW",
+          "variable": "body-mass-gram"
+        },
+        "executable": false
+      },
+      "payloadSha256": "c70800917fd89788de45e8cb3fec9143681aafa995de94647d83d9fd6b17375b",
+      "parentIds": [
+        "rxeg-2745ca9145b6333a37b0404388496752a670aec9b45b96a5e608ac6abd4b0fc6"
+      ],
+      "nodeSha256": "e81f9f0551a0d5367a42bcf3216932393fba5e67c103fe6e759e1b0f0a9781ca"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ec0665572c5e2b7242e4d58f21a2f684e713a114c609f1a8385e62d6f03fc28c",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-e49ea35bbdabf4d4",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Par com conflito crítico legado; delimitação clínica pendente"
+      },
+      "payloadSha256": "35c722386a3d0d6381a9085b33b401b0105ecd6423db356440f391fe6e5be52b",
+      "parentIds": [
+        "rxeg-43e4cbec380d032799294a1cab68c3194261b967ed2b4b30aa2510a4e75bf80f"
+      ],
+      "nodeSha256": "ec0665572c5e2b7242e4d58f21a2f684e713a114c609f1a8385e62d6f03fc28c"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-dexametasona-crupe-pediatrica",
+        "statement": "Crupe em pediatria",
+        "locator": "dose-candidate-dexametasona-crupe-pediatrica",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "6a5a7b15b2331a28dda0a8cc0cef0ece2702cc260a225e54ec8d4f3f66fee4db",
+      "parentIds": [
+        "rxeg-dd07be0cd50a00727791f9e820005b641c438e0895f41cc8ea41faa496d38f17"
+      ],
+      "nodeSha256": "ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-salbutamol-asma-pediatrica",
+        "statement": "Asma ou sibilância em pediatria",
+        "locator": "dose-candidate-salbutamol-asma-pediatrica",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "cfa9609fb6714290e6d583120aa6285161fc915b7f52e874fea136053224a794",
+      "parentIds": [
+        "rxeg-000f7699a15a699455ceed45494d5c9d51e1a4a37e9271421a2ffeec08a0c246"
+      ],
+      "nodeSha256": "f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f58e415f296166a019cbf8f65b2b2755469587299a4875923ef692193f2c4acb",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-warfarin",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "INR e plano de monitoramento obrigatórios"
+      },
+      "payloadSha256": "84ad87a92b5ac6f512c5727f6ebe11691a5fb014001b7e4b5759887aa86452c1",
+      "parentIds": [
+        "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c"
+      ],
+      "nodeSha256": "f58e415f296166a019cbf8f65b2b2755469587299a4875923ef692193f2c4acb"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f687044f786cc05e6261dcffb07ae76eb6ae7e42fd694727912b5a54b00c8329",
+      "kind": "source",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-0bff291db45d5881",
+        "source": {
+          "taskId": "rxr-16a2661c5b294affd56c27d9",
+          "targetDigest": "0c4826f40205ca8c137942533aa5c6b73080932359ba4c273f65d7eea5ffc7bf",
+          "legacyValues": [
+            {
+              "label": "grave",
+              "value": "Fluoxetina inibe CYP2D6, impedindo conversão de codeína em morfina ativa Conduta legada: Analgesia inadequada. Usar morfina direta ou analgésico não-opioide",
+              "source": "UpToDate; CPIC Guidelines"
+            },
+            {
+              "label": "moderada",
+              "value": "Inibição de CYP2D6 reduz conversão de codeína em morfina Conduta legada: Codeína pode ser ineficaz. Considerar analgésico alternativo",
+              "source": "PharmGKB; UpToDate"
+            }
+          ]
+        },
+        "trustBoundary": "unreviewed-input-data"
+      },
+      "payloadSha256": "22dcd56ccd7f964c26064b95866895f1dbf198d9b0c12cb3e96a363593a568af",
+      "parentIds": [],
+      "nodeSha256": "f687044f786cc05e6261dcffb07ae76eb6ae7e42fd694727912b5a54b00c8329"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2",
+      "kind": "claim",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-pac-pediatrica",
+        "statement": "Pneumonia adquirida na comunidade em pediatria",
+        "locator": "dose-candidate-amoxicilina-pac-pediatrica",
+        "extraction": "deterministic-existing-bundle"
+      },
+      "payloadSha256": "2a850f227b698394e5fba0d31a9686985cc2f9e0c38be016de7bebd80b6b7e0e",
+      "parentIds": [
+        "rxeg-b606ead6a23548b2021228658393bc257d13be062281b3b61fb17f1d4cd77c1f"
+      ],
+      "nodeSha256": "f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f8a8fee932ea55526be664aa66b4527c073138b308d3e990fa423bd3c6351107",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-azitromicina-coqueluche-pediatrica",
+        "constraintIndex": 0,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Idade deve ser informada e revisada"
+      },
+      "payloadSha256": "b674d63503517f1f32488ff445363fd49babf58bbd4fde1f7a5fa76529a29626",
+      "parentIds": [
+        "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630"
+      ],
+      "nodeSha256": "f8a8fee932ea55526be664aa66b4527c073138b308d3e990fa423bd3c6351107"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f954d186c83d2212ee97535a3e67d808dc2ddb3a94a33f0f9134591b8882d911",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-interaction-22efee5bbaceda9f",
+        "wave": "interaction-conflict",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "d3f267ca337fb7d736093136dce099fe8b6e27fb33c1606303116e76a685379a",
+      "parentIds": [
+        "rxeg-093bcfd09ee40d8edc9efc3a5ae6dc9b271e124a22289ceee2497d2430d54790"
+      ],
+      "nodeSha256": "f954d186c83d2212ee97535a3e67d808dc2ddb3a94a33f0f9134591b8882d911"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-f9ab04b37d6e8ce3bcd49ec0447e7719960ca135d82b1be63a3eee563fbd1205",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-methotrexate-weekly",
+        "wave": "high-risk-sentinel",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "1d3497b0138acf1ca98ebfc1f91285e1455116bf868ee30d1cb09b2c912de5d4",
+      "parentIds": [
+        "rxeg-649e6a025459ce697cc9184fe41a0d6aa4806d08b2535a625586e646919b2372",
+        "rxeg-bde5b139c9ff206947c86e1d73b3082afd7889a8a7111ea6635c44d6231b8eaa"
+      ],
+      "nodeSha256": "f9ab04b37d6e8ce3bcd49ec0447e7719960ca135d82b1be63a3eee563fbd1205"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-fea29191c640cce66851afc83f0d5a60f168904ccfde8c8eddeb4645ade5c483",
+      "kind": "interpretation",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-dose-candidate-amoxicilina-oma-pediatrica",
+        "constraintIndex": 1,
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "statement": "Peso deve ser informado quando a regra revisada exigir"
+      },
+      "payloadSha256": "68ea013b78762f3c849db81f664b0e35985f40b867d57fea56e062d0468e5ce7",
+      "parentIds": [
+        "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc"
+      ],
+      "nodeSha256": "fea29191c640cce66851afc83f0d5a60f168904ccfde8c8eddeb4645ade5c483"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-feca75deeebfa4c77c32da24a6b4d9bd543d318aea19704efd5a9bcc0dae6262",
+      "kind": "constraint",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-digoxin",
+        "constraintIndex": 1,
+        "candidate": {
+          "kind": "REQUIRED_CONTEXT",
+          "label": "Função renal obrigatória",
+          "severity": "REVIEW",
+          "variable": "egfr-milliliter-per-minute-per-1.73m2"
+        },
+        "executable": false
+      },
+      "payloadSha256": "1380e5a97649f26b2790cf79be05f01b21ba7bea0108e612a2da1290c48f6c52",
+      "parentIds": [
+        "rxeg-ba7dc186c603fb52b7b81947e544f6ce620ba0c0d37e1146e07692ea894b02f2"
+      ],
+      "nodeSha256": "feca75deeebfa4c77c32da24a6b4d9bd543d318aea19704efd5a9bcc0dae6262"
+    },
+    {
+      "schemaVersion": "darwin.medication-evidence-node.v1",
+      "id": "rxeg-ff0525bae08205c38904e981e2cc85cb6f3d7d0c6200f82fb27a6bf18c7ef4c4",
+      "kind": "artifact",
+      "status": "CURRENT",
+      "payload": {
+        "artifactId": "rxenv-high-risk-lithium",
+        "wave": "high-risk-sentinel",
+        "reviewStatus": "EVIDENCE_REQUIRED",
+        "pilotAuthorized": false,
+        "productionAuthorized": false
+      },
+      "payloadSha256": "42b2f61ccd7f3cbdc0c7f5bc52e10d1d8a9ace4f519185266f800f142ee6d3ff",
+      "parentIds": [
+        "rxeg-063452c4f1ff5761809069bbf2ef05ae1f28c2a3097cdb184acdfab0bc12498a",
+        "rxeg-3627205300d2ce1316ecb342d3b9485e59a9492e5e3a332fe05be6ff3c55c7c0"
+      ],
+      "nodeSha256": "ff0525bae08205c38904e981e2cc85cb6f3d7d0c6200f82fb27a6bf18c7ef4c4"
+    }
+  ],
+  "edges": [
+    {
+      "from": "rxeg-000f7699a15a699455ceed45494d5c9d51e1a4a37e9271421a2ffeec08a0c246",
+      "to": "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-05988c273f09e0c7d8aba1e35c6226669338d245ba5a60bc5b2f787cbd1a68de",
+      "to": "rxeg-c81db228c9c5cf398add9a90911afea40fefa8cc9e221466e1b4861a16a68405",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-063452c4f1ff5761809069bbf2ef05ae1f28c2a3097cdb184acdfab0bc12498a",
+      "to": "rxeg-ff0525bae08205c38904e981e2cc85cb6f3d7d0c6200f82fb27a6bf18c7ef4c4",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-078f6c382375afdc37addbc1e18ff6cb335a515d4b4a46802127096fd4629144",
+      "to": "rxeg-9924fb41cb49c2ed27ddf50424b2a9caa5363c6ce3a46e6b56958a6441ad0a80",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-0918a49c6d95ceb92284ac0f202923101b4005a18a253f50ffad7e450942a89b",
+      "to": "rxeg-078f6c382375afdc37addbc1e18ff6cb335a515d4b4a46802127096fd4629144",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-093bcfd09ee40d8edc9efc3a5ae6dc9b271e124a22289ceee2497d2430d54790",
+      "to": "rxeg-f954d186c83d2212ee97535a3e67d808dc2ddb3a94a33f0f9134591b8882d911",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-096b53f4f9b45939dddf156fa76f01015bfe20d0f13b0ec87fc8b5e24cd855c6",
+      "to": "rxeg-c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-0b0a973a5bf6e54c81e9055bcfa8d1682339cf6c33725dc3d9cec354b2661f86",
+      "to": "rxeg-8f9e66eb492c28828ef5107aa6ae7530172866092c94bcc9b3752650e9163195",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-0c541d9b8f86c39108cbb5ca2fbf37140303b6895c49654b3bad3bd6d283d1b1",
+      "to": "rxeg-bde5b139c9ff206947c86e1d73b3082afd7889a8a7111ea6635c44d6231b8eaa",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-0dda6651f284da7d32cfa7f80d03a6a35527d7ee1b306828afccd3fbb008811d",
+      "to": "rxeg-98a616cf39c6169f98a7f128a209192f453dcb0c99c15ca190a012516714d0aa",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-157a7dc74974d62c8deec0dddd623d0c5828cbc2131218bd9ceebabe2beb45d0",
+      "to": "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-1ce26211e24d9d903a9fa778e2011bb0afc4dd146857505683d7737003fb5f90",
+      "to": "rxeg-28e725064797f59cfd1b94267ad0219eb19c9526f05e47f6ae96c5f1d6315754",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-22d35d7f5e2243b7cca21613cc6a9f777c41d1f938121e3703988b143cadebcf",
+      "to": "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-238ca8317e2ce3b21192c02268fadf763eace7717f367935cfddb043c0662fa8",
+      "to": "rxeg-b239bfe0404eba88e4ccfb996b715888d8fbcd506e1bb8ec6649061d719a6c1a",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-24145fc2bc599ba47665d1c27e89bf0376d039346ca4c566a0f228f4ae6f46cd",
+      "to": "rxeg-9924fb41cb49c2ed27ddf50424b2a9caa5363c6ce3a46e6b56958a6441ad0a80",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-2745ca9145b6333a37b0404388496752a670aec9b45b96a5e608ac6abd4b0fc6",
+      "to": "rxeg-e81f9f0551a0d5367a42bcf3216932393fba5e67c103fe6e759e1b0f0a9781ca",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-27516cb6c28f4b2c7ffaf00ea36070284d1484698dc742156ff7311c53bc34ce",
+      "to": "rxeg-36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-28e725064797f59cfd1b94267ad0219eb19c9526f05e47f6ae96c5f1d6315754",
+      "to": "rxeg-175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-3627205300d2ce1316ecb342d3b9485e59a9492e5e3a332fe05be6ff3c55c7c0",
+      "to": "rxeg-ff0525bae08205c38904e981e2cc85cb6f3d7d0c6200f82fb27a6bf18c7ef4c4",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-39cfe38aa38561d92a888e5ccc453bd5e26cf2b603ffce3f6e3649dd65531c38",
+      "to": "rxeg-175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-3d642c0b058a5880dd92d9967f869c19aeec882cc7f0c66adb0a47caef2fe86f",
+      "to": "rxeg-e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-43e4cbec380d032799294a1cab68c3194261b967ed2b4b30aa2510a4e75bf80f",
+      "to": "rxeg-ec0665572c5e2b7242e4d58f21a2f684e713a114c609f1a8385e62d6f03fc28c",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4463b006acd965f2eecd3ba15a699ff1372b8c50d44a9b653be52f7df0bf5ddc",
+      "to": "rxeg-e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-4612f58bdde4d5205e78f508bea73d0b81a8d6514cf6b46bd817a64d91708f42",
+      "to": "rxeg-7cffbd0717f7d4b5eefe66edb7982deeaf86b03d8bb5989610dab77007cb1fdb",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917",
+      "to": "rxeg-616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c",
+      "to": "rxeg-dd6dee2c76953db932ca1ef7b03c4e99f8ee24cf850a4cfaa974673e60164fec",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c",
+      "to": "rxeg-f58e415f296166a019cbf8f65b2b2755469587299a4875923ef692193f2c4acb",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c",
+      "to": "rxeg-6ba7e7c40fa4e126f3a8577f0bc98dfde38571eba8607a68e66739ceaa1e31cb",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4d80997cdbe72ec1967a907fa10800d71a2fff6c9b3177c3779af26c5dd5a12c",
+      "to": "rxeg-b15835a62f71a0d761eb9ea828ac67d74b13fbee6698f049a2e77619c90f6220",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-4ed683ea2fdcbea2b2de71d7b7345c04494f9a5fdfbf8105e96625d413731f39",
+      "to": "rxeg-ccd6c82b1c3529f356c020fe44a1fe5a7eb496af151c2ae05a9975f0a39beeaf",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-5017f54c4d6d8c0fc2caea14955079a888b80f02c7500a8b4e3583bd429170f5",
+      "to": "rxeg-3d642c0b058a5880dd92d9967f869c19aeec882cc7f0c66adb0a47caef2fe86f",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db",
+      "to": "rxeg-5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-5a235a20a24740886ff5693a6e51f79c5f23c632381bdc8f63827a6c279ac7cf",
+      "to": "rxeg-e037ee92061a3859b76175ac481f3fd8c793e6cf5fb79b3615ede1115171ea0a",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-5ac012d8eb5782b3745edfe99ce53035fdaae5a251c57eb5a011122671bd2262",
+      "to": "rxeg-be981ae0c8f4188914b9f9a8af28d1ed3dbffea2327fd35d63e29edc72d869bd",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-5c81ecb5d7913870ffe6b8b0d30838cab0f63e42c69fa72bc7afa42c1ba18d9b",
+      "to": "rxeg-093bcfd09ee40d8edc9efc3a5ae6dc9b271e124a22289ceee2497d2430d54790",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-5e08c17aac067a22db7d51a904ce77a0b59e005ec4a960c6c819663710bc4c29",
+      "to": "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-60773a514b72dcf3481979a01b28b3f74f872f9bdb2c66d49c0d87d946a0ad29",
+      "to": "rxeg-5a235a20a24740886ff5693a6e51f79c5f23c632381bdc8f63827a6c279ac7cf",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-616707cf7d875980a9dc16cdd918dbe61d68f8cd9c5ef6754aec86e3aa7fe3fa",
+      "to": "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-649e6a025459ce697cc9184fe41a0d6aa4806d08b2535a625586e646919b2372",
+      "to": "rxeg-f9ab04b37d6e8ce3bcd49ec0447e7719960ca135d82b1be63a3eee563fbd1205",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-64c38419ccd14f843fd9e1f4df4c620eca07745cffe8baf85fb9f06ceb562cb0",
+      "to": "rxeg-05988c273f09e0c7d8aba1e35c6226669338d245ba5a60bc5b2f787cbd1a68de",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-6615b657037993c92576db59005a7b2672e2ab99e77fbebeb251344d0dc04667",
+      "to": "rxeg-e23d020431b586fc73d31cb9492e6b6e813a0aaef5948e93538d5b8857d9ac74",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45",
+      "to": "rxeg-0c541d9b8f86c39108cbb5ca2fbf37140303b6895c49654b3bad3bd6d283d1b1",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-67918b891444390997db4c535e35587c897156b084a2d37803d0abe837862e45",
+      "to": "rxeg-98e375649b030d49c6573269fee701a545a91627203bd60df721ada2d0a321fa",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-6ba7e7c40fa4e126f3a8577f0bc98dfde38571eba8607a68e66739ceaa1e31cb",
+      "to": "rxeg-3627205300d2ce1316ecb342d3b9485e59a9492e5e3a332fe05be6ff3c55c7c0",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-7408fcd8eced9b102e103e8c0980eea407046d30b83851510a11402aefc0c91b",
+      "to": "rxeg-8e118274c9a4506ab2576157024cc7808415ee5a8d29442c1c3cea806b9cb5e0",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-77dbee1903f88f2e67b6ece28d9a992c349ff414ee5fdcce42746e356da0f955",
+      "to": "rxeg-e46c6e699aab2cc0a54e1442787499527b985f8e7781f476dae8e6576a9a7698",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-782f952e8311555d06a1d6a33d4c71b6d39768867ddd5f0b5bcc8ffd35c4263d",
+      "to": "rxeg-40b79ec5cec8f31a4d75940cf5912cb8c49f9a0df67ace5392cb20e009096620",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-78efacd68970b1c30a252f686a31d87ef698ca4fdc9c4479a0907ec630b0d2bc",
+      "to": "rxeg-d8a506563b30a817b363036f9c2273b90d13ea34017a5488d14587c76c9845b3",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb",
+      "to": "rxeg-deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-7bd59de4fb446a4e4708b45580da289a72f2ff838514102d02f5084d047789e8",
+      "to": "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-7cffbd0717f7d4b5eefe66edb7982deeaf86b03d8bb5989610dab77007cb1fdb",
+      "to": "rxeg-782f952e8311555d06a1d6a33d4c71b6d39768867ddd5f0b5bcc8ffd35c4263d",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-7d9fd4672de808a391e2ab2094cb0fe3c215879bd0f032f3fcd5248f51e1d707",
+      "to": "rxeg-8f9e66eb492c28828ef5107aa6ae7530172866092c94bcc9b3752650e9163195",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-7f5ec70e338a54f1a5be16f53d256a3f24276166fb72cb94d68c5cb9da72ee6e",
+      "to": "rxeg-64c38419ccd14f843fd9e1f4df4c620eca07745cffe8baf85fb9f06ceb562cb0",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea",
+      "to": "rxeg-0dda6651f284da7d32cfa7f80d03a6a35527d7ee1b306828afccd3fbb008811d",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea",
+      "to": "rxeg-ba7dc186c603fb52b7b81947e544f6ce620ba0c0d37e1146e07692ea894b02f2",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-8b7a64430ef17d184a9212dbfaec0d09191013ebf97a59517d2470422f00ad45",
+      "to": "rxeg-24145fc2bc599ba47665d1c27e89bf0376d039346ca4c566a0f228f4ae6f46cd",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-8e118274c9a4506ab2576157024cc7808415ee5a8d29442c1c3cea806b9cb5e0",
+      "to": "rxeg-77dbee1903f88f2e67b6ece28d9a992c349ff414ee5fdcce42746e356da0f955",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-94a3a53db31a70fa7fe28beb3362c194834f7b41152e66bd42438683ab9e8b0d",
+      "to": "rxeg-ac3e80d3956f58cf6dc0f4efbabaa1794a699457b513c72741b345ec77b3b6ae",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-988fef92e76749ef85e434e11cddf03c23531e009beb1742c94d0c3db4b1b2d5",
+      "to": "rxeg-84bc3538fd45cc550e9ca98e65d85df07a11a9013867c73766d84168ee3deaea",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-98a616cf39c6169f98a7f128a209192f453dcb0c99c15ca190a012516714d0aa",
+      "to": "rxeg-2061f8943a4c3ba239ec730d3e66c40877bcd68c24c47dc8f101add572b90c80",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-98e375649b030d49c6573269fee701a545a91627203bd60df721ada2d0a321fa",
+      "to": "rxeg-649e6a025459ce697cc9184fe41a0d6aa4806d08b2535a625586e646919b2372",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-99c043efbeddc0b0427a6bc349b5f62cbb19d377b7a46ba42fbc5fcd0b9dc6fa",
+      "to": "rxeg-c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-9b3eb8847cf1c71428f6d4c98c8da9f581cf372646af724998e50e0015302cfc",
+      "to": "rxeg-bd48bb6b93008b57acc5bd02c1375c7600938822ca46d5103ebc322d2fb7583b",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630",
+      "to": "rxeg-1ce26211e24d9d903a9fa778e2011bb0afc4dd146857505683d7737003fb5f90",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630",
+      "to": "rxeg-dcd3b2e82f4199a5b7452355f582c8105564ab1ff55628cdaa0e64749b736f26",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-a01190aee908e819b488589c4a2135ea47958f4ed730c9ff6a1388ed31d1e630",
+      "to": "rxeg-f8a8fee932ea55526be664aa66b4527c073138b308d3e990fa423bd3c6351107",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-a399fb61c1ae0bc45b25f738383354ba37b6f36d5ec9c92e34847b95e47ef270",
+      "to": "rxeg-99c043efbeddc0b0427a6bc349b5f62cbb19d377b7a46ba42fbc5fcd0b9dc6fa",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-a937cacf9b54f5d7697700b25f6c994b67c4880a62f70aeaba7019bdd246cb8c",
+      "to": "rxeg-096b53f4f9b45939dddf156fa76f01015bfe20d0f13b0ec87fc8b5e24cd855c6",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-ac3e80d3956f58cf6dc0f4efbabaa1794a699457b513c72741b345ec77b3b6ae",
+      "to": "rxeg-c9e312fba7f269d1d889e1c34d979197e102fb7c45018f52d7788a8cf74b94bd",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-b15835a62f71a0d761eb9ea828ac67d74b13fbee6698f049a2e77619c90f6220",
+      "to": "rxeg-063452c4f1ff5761809069bbf2ef05ae1f28c2a3097cdb184acdfab0bc12498a",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-b606ead6a23548b2021228658393bc257d13be062281b3b61fb17f1d4cd77c1f",
+      "to": "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-ba7dc186c603fb52b7b81947e544f6ce620ba0c0d37e1146e07692ea894b02f2",
+      "to": "rxeg-feca75deeebfa4c77c32da24a6b4d9bd543d318aea19704efd5a9bcc0dae6262",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe",
+      "to": "rxeg-0918a49c6d95ceb92284ac0f202923101b4005a18a253f50ffad7e450942a89b",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe",
+      "to": "rxeg-8b7a64430ef17d184a9212dbfaec0d09191013ebf97a59517d2470422f00ad45",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-bd48bb6b93008b57acc5bd02c1375c7600938822ca46d5103ebc322d2fb7583b",
+      "to": "rxeg-36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-bde5b139c9ff206947c86e1d73b3082afd7889a8a7111ea6635c44d6231b8eaa",
+      "to": "rxeg-f9ab04b37d6e8ce3bcd49ec0447e7719960ca135d82b1be63a3eee563fbd1205",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-be981ae0c8f4188914b9f9a8af28d1ed3dbffea2327fd35d63e29edc72d869bd",
+      "to": "rxeg-5c81ecb5d7913870ffe6b8b0d30838cab0f63e42c69fa72bc7afa42c1ba18d9b",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-c05788da3af76a8346b349d940d42315a275d4b7825176a0ba2431dc3e1ec150",
+      "to": "rxeg-c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-c2f0f79c9f8a77154a847a81283ae6260dc55b13323096fde9cae35ab9de84e5",
+      "to": "rxeg-27516cb6c28f4b2c7ffaf00ea36070284d1484698dc742156ff7311c53bc34ce",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-c6429f39245be67afd9d9d515bd37f1383a56f31c9d7f8397be2264128f9a506",
+      "to": "rxeg-4612f58bdde4d5205e78f508bea73d0b81a8d6514cf6b46bd817a64d91708f42",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-c81db228c9c5cf398add9a90911afea40fefa8cc9e221466e1b4861a16a68405",
+      "to": "rxeg-7a12c7b552503347df78d64d7344afa5305c1cab6d7859e20a64af62c8407911",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-c92be2d79a7b7dee165dc85d444abd6bb3561f27f38c20a9e6ad419331e93aac",
+      "to": "rxeg-4463b006acd965f2eecd3ba15a699ff1372b8c50d44a9b653be52f7df0bf5ddc",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-ca9db11aaf5504e8a8b48e364a1f2116b676db3248dcb2c984a96a343cafa830",
+      "to": "rxeg-4d3d6fc75cb3d24672a6a1a3470e9101560ec88bbd2d058f94c738b92611752c",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-cc37e042d8377dc5bc6fa0823b5a8f2b5497933fc3a6e8a4ae8de2332b9f45ce",
+      "to": "rxeg-bc5e92d00fd9271268f91a05cfc8cd8be63ad6f90d97e4229e3f6156fedab3fe",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-ccd6c82b1c3529f356c020fe44a1fe5a7eb496af151c2ae05a9975f0a39beeaf",
+      "to": "rxeg-94a3a53db31a70fa7fe28beb3362c194834f7b41152e66bd42438683ab9e8b0d",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-cdc212cba1f855377674676a6ae533e32a40a5e7a37cdc4c733922c4eff47a06",
+      "to": "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-d8a506563b30a817b363036f9c2273b90d13ea34017a5488d14587c76c9845b3",
+      "to": "rxeg-36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc",
+      "to": "rxeg-a399fb61c1ae0bc45b25f738383354ba37b6f36d5ec9c92e34847b95e47ef270",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc",
+      "to": "rxeg-a937cacf9b54f5d7697700b25f6c994b67c4880a62f70aeaba7019bdd246cb8c",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-dc68b227c671e47af956648e20b6d51d0555a1a911d2e9abe73f40e021bbbecc",
+      "to": "rxeg-fea29191c640cce66851afc83f0d5a60f168904ccfde8c8eddeb4645ade5c483",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-dcd3b2e82f4199a5b7452355f582c8105564ab1ff55628cdaa0e64749b736f26",
+      "to": "rxeg-de4e247f5faf9fdb20eb6e9c33aaef3490adeabdb3cd335830e3698433770486",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-dd07be0cd50a00727791f9e820005b641c438e0895f41cc8ea41faa496d38f17",
+      "to": "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-dd6dee2c76953db932ca1ef7b03c4e99f8ee24cf850a4cfaa974673e60164fec",
+      "to": "rxeg-7d9fd4672de808a391e2ab2094cb0fe3c215879bd0f032f3fcd5248f51e1d707",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-de4e247f5faf9fdb20eb6e9c33aaef3490adeabdb3cd335830e3698433770486",
+      "to": "rxeg-175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-deb51e0d57ed5b155fb476777c65761615616b264c60e0ff560e1b28fa90bb41",
+      "to": "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-e23d020431b586fc73d31cb9492e6b6e813a0aaef5948e93538d5b8857d9ac74",
+      "to": "rxeg-60773a514b72dcf3481979a01b28b3f74f872f9bdb2c66d49c0d87d946a0ad29",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-e5a509846df0695639b409fcee8ee19e7b10086ea1b5be05bbf7afe59660a4fc",
+      "to": "rxeg-43e4cbec380d032799294a1cab68c3194261b967ed2b4b30aa2510a4e75bf80f",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-e81f9f0551a0d5367a42bcf3216932393fba5e67c103fe6e759e1b0f0a9781ca",
+      "to": "rxeg-e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9",
+      "kind": "compiles-to"
+    },
+    {
+      "from": "rxeg-ec0665572c5e2b7242e4d58f21a2f684e713a114c609f1a8385e62d6f03fc28c",
+      "to": "rxeg-238ca8317e2ce3b21192c02268fadf763eace7717f367935cfddb043c0662fa8",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e",
+      "to": "rxeg-78efacd68970b1c30a252f686a31d87ef698ca4fdc9c4479a0907ec630b0d2bc",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e",
+      "to": "rxeg-9b3eb8847cf1c71428f6d4c98c8da9f581cf372646af724998e50e0015302cfc",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-ef90050cb733bb872a97855fe51217a72336d9460fd4f5ea8a13e02bddc8899e",
+      "to": "rxeg-c2f0f79c9f8a77154a847a81283ae6260dc55b13323096fde9cae35ab9de84e5",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920",
+      "to": "rxeg-4a7f3496e72c6c4e0c3093a78c493ce6374686f4bf992359b36e62766c855917",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920",
+      "to": "rxeg-5355550716be17916466ab809da3f2f50b3a727dbad73b0cb4212bd5a534d7db",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f4878fa39b767e4400a1f4709ff84680737e307a86f2e4b2de173ac79efb0920",
+      "to": "rxeg-79d632d94ffa53dbdcd3baf612f85d0e27be2e57707204a84a9195776f8685fb",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f58e415f296166a019cbf8f65b2b2755469587299a4875923ef692193f2c4acb",
+      "to": "rxeg-0b0a973a5bf6e54c81e9055bcfa8d1682339cf6c33725dc3d9cec354b2661f86",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f687044f786cc05e6261dcffb07ae76eb6ae7e42fd694727912b5a54b00c8329",
+      "to": "rxeg-7408fcd8eced9b102e103e8c0980eea407046d30b83851510a11402aefc0c91b",
+      "kind": "supports"
+    },
+    {
+      "from": "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2",
+      "to": "rxeg-2745ca9145b6333a37b0404388496752a670aec9b45b96a5e608ac6abd4b0fc6",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2",
+      "to": "rxeg-5017f54c4d6d8c0fc2caea14955079a888b80f02c7500a8b4e3583bd429170f5",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f6f09e9d674270763a95518c676e0d8f298fbc95ea275c1829e30982865de4b2",
+      "to": "rxeg-c92be2d79a7b7dee165dc85d444abd6bb3561f27f38c20a9e6ad419331e93aac",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-f8a8fee932ea55526be664aa66b4527c073138b308d3e990fa423bd3c6351107",
+      "to": "rxeg-39cfe38aa38561d92a888e5ccc453bd5e26cf2b603ffce3f6e3649dd65531c38",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-fea29191c640cce66851afc83f0d5a60f168904ccfde8c8eddeb4645ade5c483",
+      "to": "rxeg-c05788da3af76a8346b349d940d42315a275d4b7825176a0ba2431dc3e1ec150",
+      "kind": "derives"
+    },
+    {
+      "from": "rxeg-feca75deeebfa4c77c32da24a6b4d9bd543d318aea19704efd5a9bcc0dae6262",
+      "to": "rxeg-2061f8943a4c3ba239ec730d3e66c40877bcd68c24c47dc8f101add572b90c80",
+      "kind": "compiles-to"
+    }
+  ],
+  "roots": [
+    "rxeg-175db11e574e3ac94afe1e1c36e77908b9e88074c6cb3472789a62813466e22e",
+    "rxeg-2061f8943a4c3ba239ec730d3e66c40877bcd68c24c47dc8f101add572b90c80",
+    "rxeg-32f1ddcc13fbaf1f9cc854596d5761a1bfb90f3caf85b2afc7f6ea6bdcb0188e",
+    "rxeg-36fb119119adef87bc04fa191d524bd83c1306780c75d875a4634205bdbe9c87",
+    "rxeg-40b79ec5cec8f31a4d75940cf5912cb8c49f9a0df67ace5392cb20e009096620",
+    "rxeg-7a12c7b552503347df78d64d7344afa5305c1cab6d7859e20a64af62c8407911",
+    "rxeg-8f9e66eb492c28828ef5107aa6ae7530172866092c94bcc9b3752650e9163195",
+    "rxeg-9924fb41cb49c2ed27ddf50424b2a9caa5363c6ce3a46e6b56958a6441ad0a80",
+    "rxeg-b239bfe0404eba88e4ccfb996b715888d8fbcd506e1bb8ec6649061d719a6c1a",
+    "rxeg-c3b4222e4788ac64623b9f7c07c9e74714885089021667b03e08dd7f71b2d402",
+    "rxeg-c9e312fba7f269d1d889e1c34d979197e102fb7c45018f52d7788a8cf74b94bd",
+    "rxeg-e037ee92061a3859b76175ac481f3fd8c793e6cf5fb79b3615ede1115171ea0a",
+    "rxeg-e46c6e699aab2cc0a54e1442787499527b985f8e7781f476dae8e6576a9a7698",
+    "rxeg-e63b707afc2ac6d3c67ed5bd974dc5f43b9f1fad90147ead703a0ea6ce3bd5f9",
+    "rxeg-f954d186c83d2212ee97535a3e67d808dc2ddb3a94a33f0f9134591b8882d911",
+    "rxeg-f9ab04b37d6e8ce3bcd49ec0447e7719960ca135d82b1be63a3eee563fbd1205",
+    "rxeg-ff0525bae08205c38904e981e2cc85cb6f3d7d0c6200f82fb27a6bf18c7ef4c4"
+  ],
+  "merkleRootSha256": "2033d33940afbeb6e0090aa60c683aab261ab52b88cf31dddbcf4f9279f486b4",
+  "audit": {
+    "nodeCount": 115,
+    "edgeCount": 113,
+    "staleNodeCount": 0,
+    "cycleFree": true,
+    "contentAddressed": true
+  }
+}

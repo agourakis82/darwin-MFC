@@ -1,0 +1,366 @@
+//@ run-pass
+// Sounio emitter for the envelope gate WebAssembly module. The emitted module
+// has no imports and exposes only memory plus evaluate(input_ptr, output_ptr).
+
+var B0: [i8; 32768] = [0; 32768]
+var B1: [i8; 32768] = [0; 32768]
+var B2: [i8; 32768] = [0; 32768]
+var B3: [i8; 32768] = [0; 32768]
+var B4: [i8; 32768] = [0; 32768]
+var B5: [i8; 32768] = [0; 32768]
+var B6: [i8; 32768] = [0; 32768]
+var B7: [i8; 32768] = [0; 32768]
+var BLEN: [i64; 8] = [0; 8]
+var BNEXT: i64 = 0
+var STAGE: [i8; 32768] = [0; 32768]
+
+fn buf_new() -> i64 with Mut, Panic {
+    let id = BNEXT
+    BNEXT = BNEXT + 1
+    BLEN[id as usize] = 0
+    id
+}
+
+fn byte_at(b: i64, index: i64) -> i8 with Panic {
+    if b == 0 { B0[index as usize] }
+    else if b == 1 { B1[index as usize] }
+    else if b == 2 { B2[index as usize] }
+    else if b == 3 { B3[index as usize] }
+    else if b == 4 { B4[index as usize] }
+    else if b == 5 { B5[index as usize] }
+    else if b == 6 { B6[index as usize] }
+    else { B7[index as usize] }
+}
+
+fn set_byte(b: i64, index: i64, byte: i8) with Mut, Panic {
+    if b == 0 { B0[index as usize] = byte }
+    else if b == 1 { B1[index as usize] = byte }
+    else if b == 2 { B2[index as usize] = byte }
+    else if b == 3 { B3[index as usize] = byte }
+    else if b == 4 { B4[index as usize] = byte }
+    else if b == 5 { B5[index as usize] = byte }
+    else if b == 6 { B6[index as usize] = byte }
+    else { B7[index as usize] = byte }
+}
+
+fn buf_len(b: i64) -> i64 with Panic { BLEN[b as usize] }
+
+fn push(b: i64, byte: i64) -> i64 with Mut, Panic, Div {
+    let len = buf_len(b)
+    if len < 32768 {
+        set_byte(b, len, (byte & 255) as i8)
+        BLEN[b as usize] = len + 1
+    }
+    b
+}
+
+fn uleb(b: i64, value: i64) -> i64 with Mut, Panic, Div {
+    var out = b
+    var v = value
+    while v > 127 {
+        out = push(out, (v & 127) | 128)
+        v = v / 128
+    }
+    push(out, v & 127)
+}
+
+fn sleb(b: i64, value: i64) -> i64 with Mut, Panic, Div {
+    var out = b
+    var v = value
+    var more = true
+    while more {
+        let byte = v & 127
+        v = v / 128
+        let sign_set = (byte & 64) != 0
+        if (v == 0 && !sign_set) || (v == -1 && sign_set) {
+            more = false
+            out = push(out, byte)
+        } else {
+            out = push(out, byte | 128)
+        }
+    }
+    out
+}
+
+fn append(dst: i64, src: i64) -> i64 with Mut, Panic, Div {
+    var out = dst
+    var index: i64 = 0
+    while index < buf_len(src) {
+        out = push(out, byte_at(src, index) as i64)
+        index = index + 1
+    }
+    out
+}
+
+fn section(dst: i64, id: i64, payload: i64) -> i64 with Mut, Panic, Div {
+    var out = push(dst, id)
+    out = uleb(out, buf_len(payload))
+    append(out, payload)
+}
+
+fn ascii_memory(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 6)
+    out = push(out, 109)
+    out = push(out, 101)
+    out = push(out, 109)
+    out = push(out, 111)
+    out = push(out, 114)
+    push(out, 121)
+}
+
+fn ascii_evaluate(b: i64) -> i64 with Mut, Panic, Div {
+    var out = uleb(b, 8)
+    out = push(out, 101)
+    out = push(out, 118)
+    out = push(out, 97)
+    out = push(out, 108)
+    out = push(out, 117)
+    out = push(out, 97)
+    out = push(out, 116)
+    push(out, 101)
+}
+
+fn local_get(b: i64, index: i64) -> i64 with Mut, Panic, Div { uleb(push(b, 32), index) }
+fn local_set(b: i64, index: i64) -> i64 with Mut, Panic, Div { uleb(push(b, 33), index) }
+fn i64_const(b: i64, value: i64) -> i64 with Mut, Panic, Div { sleb(push(b, 66), value) }
+fn if_start(b: i64) -> i64 with Mut, Panic, Div { push(push(b, 4), 64) }
+fn else_start(b: i64) -> i64 with Mut, Panic, Div { push(b, 5) }
+fn end_block(b: i64) -> i64 with Mut, Panic, Div { push(b, 11) }
+
+fn input_load(b: i64, index: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 0)
+    out = push(out, 41)
+    out = uleb(out, 3)
+    uleb(out, index * 8)
+}
+
+fn output_store_local(b: i64, index: i64, local_index: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 1)
+    out = local_get(out, local_index)
+    out = push(out, 55)
+    out = uleb(out, 3)
+    uleb(out, index * 8)
+}
+
+fn output_store_input(b: i64, output_index: i64, input_index: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, 1)
+    out = input_load(out, input_index)
+    out = push(out, 55)
+    out = uleb(out, 3)
+    uleb(out, output_index * 8)
+}
+
+fn set_mask_local(b: i64, local_index: i64, bit: i64) -> i64 with Mut, Panic, Div {
+    var out = local_get(b, local_index)
+    out = i64_const(out, bit)
+    out = push(out, 132)
+    local_set(out, local_index)
+}
+
+fn refuse_if_not_one(b: i64, input_index: i64, bit: i64) -> i64 with Mut, Panic, Div {
+    var out = input_load(b, input_index)
+    out = i64_const(out, 1)
+    out = push(out, 82)
+    out = if_start(out)
+    out = set_mask_local(out, 2, bit)
+    end_block(out)
+}
+
+fn refuse_if_nonzero(b: i64, input_index: i64, bit: i64) -> i64 with Mut, Panic, Div {
+    var out = input_load(b, input_index)
+    out = i64_const(out, 0)
+    out = push(out, 82)
+    out = if_start(out)
+    out = set_mask_local(out, 2, bit)
+    end_block(out)
+}
+
+fn build_evaluate_body() -> i64 with Mut, Panic, Div {
+    var body = buf_new()
+    body = uleb(body, 1)
+    body = uleb(body, 5)
+    body = push(body, 126)
+
+    body = input_load(body, 12)
+    body = local_set(body, 3)
+    body = input_load(body, 13)
+    body = local_set(body, 4)
+
+    body = refuse_if_not_one(body, 0, 1)
+    body = refuse_if_not_one(body, 1, 2)
+    body = refuse_if_not_one(body, 2, 4)
+    body = refuse_if_not_one(body, 3, 8)
+    body = refuse_if_not_one(body, 4, 16)
+    body = refuse_if_not_one(body, 5, 32)
+    body = refuse_if_not_one(body, 6, 64)
+    body = refuse_if_not_one(body, 7, 128)
+    body = refuse_if_not_one(body, 8, 256)
+    body = refuse_if_not_one(body, 9, 512)
+    body = refuse_if_not_one(body, 10, 1024)
+    body = refuse_if_nonzero(body, 14, 2048)
+    body = refuse_if_not_one(body, 15, 4096)
+
+    body = input_load(body, 11)
+    body = i64_const(body, 0)
+    body = push(body, 83)
+    body = input_load(body, 11)
+    body = i64_const(body, 64)
+    body = push(body, 85)
+    body = push(body, 114)
+    body = if_start(body)
+    body = set_mask_local(body, 2, 8192)
+    body = end_block(body)
+
+    body = input_load(body, 12)
+    body = i64_const(body, 0)
+    body = push(body, 83)
+    body = input_load(body, 13)
+    body = i64_const(body, 0)
+    body = push(body, 83)
+    body = push(body, 114)
+    body = if_start(body)
+    body = set_mask_local(body, 2, 16384)
+    body = end_block(body)
+
+    body = input_load(body, 11)
+    body = i64_const(body, 0)
+    body = push(body, 85)
+    body = if_start(body)
+    body = set_mask_local(body, 4, 1)
+    body = end_block(body)
+
+    body = i64_const(body, 3)
+    body = local_set(body, 5)
+    body = local_get(body, 4)
+    body = i64_const(body, 0)
+    body = push(body, 82)
+    body = if_start(body)
+    body = i64_const(body, 2)
+    body = local_set(body, 5)
+    body = end_block(body)
+    body = local_get(body, 3)
+    body = i64_const(body, 0)
+    body = push(body, 82)
+    body = if_start(body)
+    body = i64_const(body, 1)
+    body = local_set(body, 5)
+    body = end_block(body)
+    body = local_get(body, 2)
+    body = i64_const(body, 0)
+    body = push(body, 82)
+    body = if_start(body)
+    body = i64_const(body, 0)
+    body = local_set(body, 5)
+    body = end_block(body)
+
+    body = local_get(body, 3)
+    body = i64_const(body, 0)
+    body = push(body, 82)
+    body = if_start(body)
+    body = local_get(body, 3)
+    body = local_set(body, 6)
+    body = else_start(body)
+    body = local_get(body, 4)
+    body = local_set(body, 6)
+    body = end_block(body)
+
+    body = output_store_local(body, 0, 5)
+    body = output_store_local(body, 1, 2)
+    body = output_store_local(body, 2, 3)
+    body = output_store_local(body, 3, 4)
+    body = output_store_input(body, 4, 11)
+    body = output_store_local(body, 5, 6)
+
+    body = local_get(body, 1)
+    body = input_load(body, 1)
+    body = input_load(body, 4)
+    body = push(body, 124)
+    body = input_load(body, 6)
+    body = push(body, 124)
+    body = push(body, 55)
+    body = uleb(body, 3)
+    body = uleb(body, 48)
+
+    body = local_get(body, 1)
+    body = input_load(body, 0)
+    body = input_load(body, 10)
+    body = push(body, 124)
+    body = push(body, 55)
+    body = uleb(body, 3)
+    body = uleb(body, 56)
+
+    body = push(body, 65)
+    body = push(body, 0)
+    push(body, 11)
+}
+
+fn build_module() -> i64 with Mut, Panic, Div {
+    var wasm = buf_new()
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 97)
+    wasm = push(wasm, 115)
+    wasm = push(wasm, 109)
+    wasm = push(wasm, 1)
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 0)
+    wasm = push(wasm, 0)
+
+    var types = buf_new()
+    types = uleb(types, 1)
+    types = push(types, 96)
+    types = uleb(types, 2)
+    types = push(types, 127)
+    types = push(types, 127)
+    types = uleb(types, 1)
+    types = push(types, 127)
+    wasm = section(wasm, 1, types)
+
+    var functions = buf_new()
+    functions = uleb(functions, 1)
+    functions = uleb(functions, 0)
+    wasm = section(wasm, 3, functions)
+
+    var memory = buf_new()
+    memory = uleb(memory, 1)
+    memory = uleb(memory, 0)
+    memory = uleb(memory, 1)
+    wasm = section(wasm, 5, memory)
+
+    var exports = buf_new()
+    exports = uleb(exports, 2)
+    exports = ascii_evaluate(exports)
+    exports = push(exports, 0)
+    exports = uleb(exports, 0)
+    exports = ascii_memory(exports)
+    exports = push(exports, 2)
+    exports = uleb(exports, 0)
+    wasm = section(wasm, 7, exports)
+
+    let evaluate_body = build_evaluate_body()
+    var code = buf_new()
+    code = uleb(code, 1)
+    code = uleb(code, buf_len(evaluate_body))
+    code = append(code, evaluate_body)
+    section(wasm, 10, code)
+}
+
+fn main() -> i64 with IO, Mut, Panic, Div {
+    let wasm = build_module()
+    if arg_count() <= 0 {
+        println("medication-envelope-kernel-codegen: missing output path")
+        return 2
+    }
+    let output_path = get_arg(0)
+    var index: i64 = 0
+    while index < buf_len(wasm) {
+        STAGE[index as usize] = byte_at(wasm, index)
+        index = index + 1
+    }
+    let rc = write_file(output_path, STAGE, buf_len(wasm))
+    if rc == 0 {
+        print("medication-envelope-kernel-codegen: wrote ")
+        print_int(buf_len(wasm))
+        println(" bytes")
+    }
+    rc
+}

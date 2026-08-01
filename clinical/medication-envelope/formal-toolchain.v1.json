@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "darwin.medication-envelope-formal-toolchain.v1",
+  "tools": [
+    {
+      "name": "cvc5",
+      "requiredVersion": "1.3.3",
+      "mode": "safe",
+      "proofFormat": "CPC",
+      "proofChecker": "Ethos"
+    },
+    {
+      "name": "ethos",
+      "requiredVersion": "0.2.3",
+      "mode": "independent-cpc-checker"
+    },
+    {
+      "name": "z3",
+      "requiredVersion": "5.0.0",
+      "mode": "countermodel-oracle"
+    },
+    {
+      "name": "lean",
+      "requiredVersion": "4.32.1",
+      "mode": "constraint-ir-semantics"
+    }
+  ],
+  "policy": {
+    "solverDisagreement": "REFUSE",
+    "missingProof": "REFUSE",
+    "unverifiedProof": "REFUSE",
+    "versionMismatch": "REFUSE"
+  }
+}

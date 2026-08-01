@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "darwin.medication-envelope-test-vectors.v1",
+  "inputCount": 16,
+  "outputCount": 8,
+  "vectors": [
+    {
+      "id": "within-reviewed-envelope",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+      "expected": [3, 0, 0, 0, 0, 0, 3, 2]
+    },
+    {
+      "id": "proved-constraint-violation",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 0, 0, 1],
+      "expected": [1, 0, 4, 0, 0, 4, 3, 2]
+    },
+    {
+      "id": "incomplete-coverage-review",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 8, 0, 1],
+      "expected": [2, 0, 0, 9, 2, 9, 3, 2]
+    },
+    {
+      "id": "stale-evidence-refuse",
+      "input": [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+      "expected": [0, 4, 0, 0, 0, 0, 3, 2]
+    },
+    {
+      "id": "expired-credential-refuse",
+      "input": [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
+      "expected": [0, 128, 0, 0, 0, 0, 3, 2]
+    },
+    {
+      "id": "overflow-refuse",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1],
+      "expected": [0, 2048, 0, 0, 0, 0, 3, 2]
+    },
+    {
+      "id": "dimension-mismatch-refuse",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+      "expected": [0, 4096, 0, 0, 0, 0, 3, 2]
+    },
+    {
+      "id": "production-separation-refuse",
+      "input": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+      "expected": [0, 1024, 0, 0, 0, 0, 3, 1]
+    }
+  ]
+}
