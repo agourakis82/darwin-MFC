@@ -1,0 +1,192 @@
+{
+  "schema": "darwin.auctoritas.protocol-execution-evidence.v0.6",
+  "generatedAt": "2026-08-02T21:42:14Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parent": {
+    "path": "docs/research/auctoritas/formal/auctoritas-gate.receipt.v0.5.json",
+    "sha256": "2ac52cbd098df137ba1154f9643293ba3422b02ea73feff3fe369955a638f697"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "darwinRepository": {
+    "branch": "codex/darwin-auctoritas-v06",
+    "baseCommit": "4644a24d582aea597f472b5bfe95dd619019c878",
+    "baseTree": "3e61640acb1c420d2ee0ab7b014222cedc44b732"
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryUrl": "https://github.com/Sounio-lang/sounio.git",
+    "repositoryBranch": "codex/madaros-wasm-deontic-v3-20260802",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "checkoutMode": "DETACHED",
+    "repositoryCleanAtBuild": true,
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "compilerReconciled": true,
+    "diagnosticGatePassed": true,
+    "warningClean": false
+  },
+  "source": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/sounio/auctoritas_protocol_v0_6.sio",
+    "remotePath": "/tmp/darwin-auctoritas-protocol-v06.sio",
+    "bytes": 11486,
+    "sha256": "f272310997f1d7b194de2887ed932718dd299f0dbbb66b8f8793d613c4c455de",
+    "remoteCopySha256": "f272310997f1d7b194de2887ed932718dd299f0dbbb66b8f8793d613c4c455de"
+  },
+  "build": {
+    "remotePlatform": "Linux 7.0.2-5-pve x86_64",
+    "commands": [
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend wasm -o <wasm-a>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend wasm -o <wasm-b>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend native -o <native-a>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend native -o <native-b>"
+    ],
+    "wasmCompileExitCodes": [0, 0],
+    "nativeCompileExitCodes": [0, 0]
+  },
+  "wasm": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/wasm/auctoritas_protocol.v0.6.wasm",
+    "remotePath": "/tmp/darwin-auctoritas-protocol-v06-a.wasm",
+    "repeatRemotePath": "/tmp/darwin-auctoritas-protocol-v06-b.wasm",
+    "bytes": 7137,
+    "sha256": "fa9ded1e4fee72531d818eb12337863fb68b2f939dccf4b59322c9b392f9fead",
+    "repeatSha256": "fa9ded1e4fee72531d818eb12337863fb68b2f939dccf4b59322c9b392f9fead",
+    "deterministic": true,
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "ap_candidate_score",
+      "ap_candidate_sufficient",
+      "ap_certificate",
+      "ap_check_encoded_index",
+      "ap_contains_q0",
+      "ap_contains_q1",
+      "ap_contains_q2",
+      "ap_difference_mask",
+      "ap_exhaustive_self_check",
+      "ap_exhaustive_walk",
+      "ap_identifies3",
+      "ap_minimal_expansion",
+      "ap_pack_certificate",
+      "ap_pair_separated",
+      "ap_popcount",
+      "ap_reference_certificate",
+      "ap_reference_minimal_expansion",
+      "ap_valid_inputs",
+      "ap_valid_mask",
+      "ap_valid_recommendation",
+      "ap_verify_case",
+      "main",
+      "memory"
+    ],
+    "internalCanonicalStatesChecked": 32768,
+    "exhaustiveSelfCheckResult": 0,
+    "mainResult": 96
+  },
+  "native": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/native/auctoritas_protocol.v0.6.linux-x86_64",
+    "remotePath": "/tmp/darwin-auctoritas-protocol-v06-a.native",
+    "repeatRemotePath": "/tmp/darwin-auctoritas-protocol-v06-b.native",
+    "bytes": 28680,
+    "sha256": "5d1b9af207e3d66d47c0b6df9a415756ae54756167077bb3b99698b37d965568",
+    "repeatSha256": "5d1b9af207e3d66d47c0b6df9a415756ae54756167077bb3b99698b37d965568",
+    "deterministic": true,
+    "internalCanonicalStatesChecked": 32768,
+    "executionExitCode": 96,
+    "repeatExecutionExitCode": 96,
+    "expectedSelfCheckCode": 96
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean 4.30.0-rc2",
+    "toolchainCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "buildPassed": true,
+    "auditPassed": true,
+    "projectDeclaredAxioms": [],
+    "source": {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/AuctoritasProtocol.lean",
+      "sha256": "36f33adeb42603d4e933a51a39744af7faba02a686f50a0a39e4b0077e8253e6"
+    },
+    "audit": {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/AuctoritasProtocolAudit.lean",
+      "sha256": "d5fce8e4855bdcba675cc5a0b41c8ef3531485fd5275332aff165f1133f4ccf8"
+    },
+    "theorems": {
+      "authorizedAnswersEqual": {"proved": true, "standardAxioms": []},
+      "compliantProtocolNeverRefuses": {"proved": true, "standardAxioms": []},
+      "adaptiveNoEscape": {"proved": true, "standardAxioms": []},
+      "adaptiveZeroErrorForcesAbstention": {"proved": true, "standardAxioms": []},
+      "seededZeroErrorForcesAbstention": {"proved": true, "standardAxioms": []},
+      "coalitionAdaptiveNoEscape": {"proved": true, "standardAxioms": []},
+      "expandedViewsEqualOfAllAnswersEqual": {
+        "proved": true,
+        "standardAxioms": ["propext", "Quot.sound"]
+      },
+      "noAuthorityExpansionEscapesZeroError": {
+        "proved": true,
+        "standardAxioms": ["propext", "Quot.sound"]
+      }
+    }
+  },
+  "hostVerifier": {
+    "path": "scripts/verify-auctoritas-protocol-v0.6.mjs",
+    "nodeVersion": "v24.9.0",
+    "platform": "Darwin 27.0.0 arm64",
+    "sha256": "ad493098eb7816f8430a233c5cbe8ff580f99990d74c39237747eafea33dd1dc"
+  },
+  "exhaustive": {
+    "boundedStatesChecked": 640000,
+    "validStatesChecked": 32768,
+    "invalidStatesRefused": 607232,
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "dispositions": {
+      "REFUSE": 607232,
+      "IDENTIFIED": 18032,
+      "EXPAND_AUTHORITY": 8976,
+      "ABSTAIN_QUERY_UNIVERSE": 5760
+    },
+    "expansionCardinality": {
+      "zero": 23792,
+      "one": 8112,
+      "two": 864,
+      "three": 0
+    }
+  },
+  "observedVectors": [
+    {"id": "invalid-authority-mask", "packed": 0, "disposition": "REFUSE", "expansionMask": 0, "cost": 0},
+    {"id": "declared-universe-cannot-separate", "packed": 4, "disposition": "ABSTAIN_QUERY_UNIVERSE", "expansionMask": 0, "cost": 0},
+    {"id": "recommendations-already-identical", "packed": 1, "disposition": "IDENTIFIED", "expansionMask": 0, "cost": 0},
+    {"id": "single-query-expansion", "packed": 74, "disposition": "EXPAND_AUTHORITY", "expansionMask": 1, "cost": 1},
+    {"id": "current-authority-sufficient", "packed": 1, "disposition": "IDENTIFIED", "expansionMask": 0, "cost": 0},
+    {"id": "cardinality-tie-breaks-to-lowest-mask", "packed": 74, "disposition": "EXPAND_AUTHORITY", "expansionMask": 1, "cost": 1},
+    {"id": "two-query-expansion", "packed": 154, "disposition": "EXPAND_AUTHORITY", "expansionMask": 3, "cost": 2},
+    {"id": "one-query-remains-after-current-authority", "packed": 82, "disposition": "EXPAND_AUTHORITY", "expansionMask": 2, "cost": 1},
+    {"id": "invalid-recommendation-symbol", "packed": 0, "disposition": "REFUSE", "expansionMask": 0, "cost": 0}
+  ],
+  "verdict": {
+    "adaptiveNoEscapeProved": true,
+    "adaptiveZeroErrorForcesAbstentionProved": true,
+    "seededZeroErrorForcesAbstentionProved": true,
+    "coalitionNoEscapeProved": true,
+    "abstractAuthorityExpansionCertificateSpecified": true,
+    "boundedCardinalityMinimalityExhaustivelyVerified": true,
+    "nativeWasmCanonicalParityEstablished": true,
+    "hostileAbiExhaustionPassed": true,
+    "compilerReconciled": true,
+    "recommendationEmitted": false,
+    "authorityGranted": false,
+    "clinicalAuthorizationEstablished": false,
+    "noveltyEstablished": false
+  }
+}

@@ -1,0 +1,329 @@
+//@ run-pass
+// Darwin Auctoritas Protocol Calculus: bounded expansion certificate v0.6.
+//
+// Three admissible worlds, three binary queries, and two uninterpreted
+// recommendation symbols. Query masks are 0..7. Recommendation symbols are
+// 1 or 2. The executable never returns a recommendation.
+//
+// Packed result:
+//   disposition = packed % 8
+//   expansion mask = (packed / 8) % 8
+//   expansion cardinality = (packed / 64) % 4
+// Dispositions: 0 REFUSE, 1 IDENTIFIED, 2 EXPAND_AUTHORITY,
+// 4 ABSTAIN_QUERY_UNIVERSE.
+//
+// Abstract research only. Clinical use is refused.
+
+fn ap_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn ap_valid_recommendation(value: i64) -> i64 {
+    if value == 1 || value == 2 { return 1 }
+    return 0
+}
+
+fn ap_contains_q0(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 || mask == 5 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ap_contains_q1(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ap_contains_q2(mask: i64) -> i64 {
+    if mask == 4 || mask == 5 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ap_difference_mask(left: i64, right: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if ap_contains_q0(left) != ap_contains_q0(right) { result = result + 1 }
+    if ap_contains_q1(left) != ap_contains_q1(right) { result = result + 2 }
+    if ap_contains_q2(left) != ap_contains_q2(right) { result = result + 4 }
+    return result
+}
+
+fn ap_popcount(mask: i64) -> i64 with Mut {
+    var count: i64 = 0
+    if ap_contains_q0(mask) == 1 { count = count + 1 }
+    if ap_contains_q1(mask) == 1 { count = count + 1 }
+    if ap_contains_q2(mask) == 1 { count = count + 1 }
+    return count
+}
+
+fn ap_valid_inputs(
+    authority_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 {
+    if ap_valid_mask(authority_mask) == 0 { return 0 }
+    if ap_valid_mask(answers0) == 0 { return 0 }
+    if ap_valid_mask(answers1) == 0 { return 0 }
+    if ap_valid_mask(answers2) == 0 { return 0 }
+    if ap_valid_recommendation(recommendation0) == 0 { return 0 }
+    if ap_valid_recommendation(recommendation1) == 0 { return 0 }
+    if ap_valid_recommendation(recommendation2) == 0 { return 0 }
+    return 1
+}
+
+fn ap_pair_separated(
+    available_mask: i64,
+    left_answers: i64, right_answers: i64,
+    left_recommendation: i64, right_recommendation: i64
+) -> i64 with Mut {
+    if left_recommendation == right_recommendation { return 1 }
+    let difference = ap_difference_mask(left_answers, right_answers)
+    if (difference & available_mask) != 0 { return 1 }
+    return 0
+}
+
+fn ap_identifies3(
+    available_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ap_pair_separated(
+        available_mask, answers0, answers1, recommendation0, recommendation1
+    ) == 0 { return 0 }
+    if ap_pair_separated(
+        available_mask, answers0, answers2, recommendation0, recommendation2
+    ) == 0 { return 0 }
+    if ap_pair_separated(
+        available_mask, answers1, answers2, recommendation1, recommendation2
+    ) == 0 { return 0 }
+    return 1
+}
+
+fn ap_candidate_sufficient(
+    authority_mask: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if (authority_mask & candidate) != 0 { return 0 }
+    let expanded = authority_mask | candidate
+    return ap_identifies3(
+        expanded,
+        answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+}
+
+// Cardinality first, then numeric mask as the deterministic tie-break.
+fn ap_minimal_expansion(
+    authority_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ap_candidate_sufficient(
+        authority_mask, 0, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 0 }
+    if ap_candidate_sufficient(
+        authority_mask, 1, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 1 }
+    if ap_candidate_sufficient(
+        authority_mask, 2, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 2 }
+    if ap_candidate_sufficient(
+        authority_mask, 4, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 4 }
+    if ap_candidate_sufficient(
+        authority_mask, 3, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 3 }
+    if ap_candidate_sufficient(
+        authority_mask, 5, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 5 }
+    if ap_candidate_sufficient(
+        authority_mask, 6, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 6 }
+    if ap_candidate_sufficient(
+        authority_mask, 7, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 1 { return 7 }
+    return -1
+}
+
+fn ap_candidate_score(
+    authority_mask: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ap_candidate_sufficient(
+        authority_mask, candidate, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 0 { return 127 }
+    return ap_popcount(candidate) * 8 + candidate
+}
+
+// Independent oracle: score every mask and select the global minimum.
+fn ap_reference_minimal_expansion(
+    authority_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    var best = ap_candidate_score(
+        authority_mask, 0, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    let score1 = ap_candidate_score(
+        authority_mask, 1, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score1 < best { best = score1 }
+    let score2 = ap_candidate_score(
+        authority_mask, 2, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score2 < best { best = score2 }
+    let score3 = ap_candidate_score(
+        authority_mask, 3, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score3 < best { best = score3 }
+    let score4 = ap_candidate_score(
+        authority_mask, 4, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score4 < best { best = score4 }
+    let score5 = ap_candidate_score(
+        authority_mask, 5, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score5 < best { best = score5 }
+    let score6 = ap_candidate_score(
+        authority_mask, 6, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score6 < best { best = score6 }
+    let score7 = ap_candidate_score(
+        authority_mask, 7, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if score7 < best { best = score7 }
+    if best >= 127 { return -1 }
+    return best % 8
+}
+
+fn ap_pack_certificate(disposition: i64, expansion: i64) -> i64 with Mut {
+    return disposition + expansion * 8 + ap_popcount(expansion) * 64
+}
+
+fn ap_certificate(
+    authority_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ap_valid_inputs(
+        authority_mask, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 0 { return 0 }
+    let expansion = ap_minimal_expansion(
+        authority_mask, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if expansion < 0 { return 4 }
+    if expansion == 0 { return ap_pack_certificate(1, 0) }
+    return ap_pack_certificate(2, expansion)
+}
+
+fn ap_reference_certificate(
+    authority_mask: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    if ap_valid_inputs(
+        authority_mask, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 0 { return 0 }
+    let expansion = ap_reference_minimal_expansion(
+        authority_mask, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+    if expansion < 0 { return 4 }
+    if expansion == 0 { return ap_pack_certificate(1, 0) }
+    return ap_pack_certificate(2, expansion)
+}
+
+fn ap_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+// Complete canonical domain: 8 authority masks, 8^3 answer tables, 2^3
+// recommendation assignments = 32,768 states.
+fn ap_check_encoded_index(index: i64) -> i64 with Mut, Div {
+    let recommendation2 = (index % 2) + 1
+    let recommendation1 = ((index / 2) % 2) + 1
+    let recommendation0 = ((index / 4) % 2) + 1
+    let answers2 = (index / 8) % 8
+    let answers1 = (index / 64) % 8
+    let answers0 = (index / 512) % 8
+    let authority_mask = (index / 4096) % 8
+    return ap_verify_case(
+        ap_certificate(
+            authority_mask, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2
+        ),
+        ap_reference_certificate(
+            authority_mask, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2
+        )
+    )
+}
+
+fn ap_exhaustive_walk(start: i64, finish: i64) -> i64 with Mut, Div {
+    if start >= finish { return 0 }
+    if finish - start == 1 { return ap_check_encoded_index(start) }
+    let midpoint = (start + finish) / 2
+    return
+        ap_exhaustive_walk(start, midpoint) +
+        ap_exhaustive_walk(midpoint, finish)
+}
+
+fn ap_exhaustive_self_check() -> i64 with Mut, Div {
+    return ap_exhaustive_walk(0, 32768)
+}
+
+fn main() -> i64 with Mut, Div {
+    var failures = ap_exhaustive_self_check()
+    failures = failures + ap_verify_case(
+        ap_certificate(8, 0, 0, 0, 1, 2, 1), 0
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 0, 0, 1, 2, 1), 4
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 7, 3, 1, 1, 1), 1
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 1, 0, 1, 2, 1), 74
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(1, 0, 1, 0, 1, 2, 1), 1
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 3, 0, 1, 2, 1), 74
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 1, 2, 1, 2, 2), 154
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(1, 0, 1, 2, 1, 2, 2), 82
+    )
+    failures = failures + ap_verify_case(
+        ap_certificate(0, 0, 1, 2, 0, 2, 2), 0
+    )
+
+    if failures == 0 { return 96 }
+    return 1
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "darwin.auctoritas.protocol-vectors.v0.6",
+  "worlds": 3,
+  "queries": 3,
+  "queryMaskRange": [0, 7],
+  "recommendationSymbols": [1, 2],
+  "clinicalMeaning": false,
+  "packing": {
+    "disposition": "packed % 8",
+    "expansionMask": "(packed / 8) % 8",
+    "expansionCardinality": "(packed / 64) % 4"
+  },
+  "dispositions": {
+    "REFUSE": 0,
+    "IDENTIFIED": 1,
+    "EXPAND_AUTHORITY": 2,
+    "ABSTAIN_QUERY_UNIVERSE": 4
+  },
+  "cases": [
+    {
+      "id": "invalid-authority-mask",
+      "input": [8, 0, 0, 0, 1, 2, 1],
+      "expected": {"packed": 0, "disposition": "REFUSE", "expansionMask": 0, "cost": 0}
+    },
+    {
+      "id": "declared-universe-cannot-separate",
+      "input": [0, 0, 0, 0, 1, 2, 1],
+      "expected": {"packed": 4, "disposition": "ABSTAIN_QUERY_UNIVERSE", "expansionMask": 0, "cost": 0}
+    },
+    {
+      "id": "recommendations-already-identical",
+      "input": [0, 0, 7, 3, 1, 1, 1],
+      "expected": {"packed": 1, "disposition": "IDENTIFIED", "expansionMask": 0, "cost": 0}
+    },
+    {
+      "id": "single-query-expansion",
+      "input": [0, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 74, "disposition": "EXPAND_AUTHORITY", "expansionMask": 1, "cost": 1}
+    },
+    {
+      "id": "current-authority-sufficient",
+      "input": [1, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 1, "disposition": "IDENTIFIED", "expansionMask": 0, "cost": 0}
+    },
+    {
+      "id": "cardinality-tie-breaks-to-lowest-mask",
+      "input": [0, 0, 3, 0, 1, 2, 1],
+      "expected": {"packed": 74, "disposition": "EXPAND_AUTHORITY", "expansionMask": 1, "cost": 1}
+    },
+    {
+      "id": "two-query-expansion",
+      "input": [0, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 154, "disposition": "EXPAND_AUTHORITY", "expansionMask": 3, "cost": 2}
+    },
+    {
+      "id": "one-query-remains-after-current-authority",
+      "input": [1, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 82, "disposition": "EXPAND_AUTHORITY", "expansionMask": 2, "cost": 1}
+    },
+    {
+      "id": "invalid-recommendation-symbol",
+      "input": [0, 0, 1, 2, 0, 2, 2],
+      "expected": {"packed": 0, "disposition": "REFUSE", "expansionMask": 0, "cost": 0}
+    }
+  ]
+}

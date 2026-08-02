@@ -1,0 +1,12 @@
+import AuctoritasProtocol
+
+open Darwin.AuctoritasProtocol
+
+#print axioms authorizedAnswersEqual
+#print axioms compliantProtocolNeverRefuses
+#print axioms adaptiveNoEscape
+#print axioms adaptiveZeroErrorForcesAbstention
+#print axioms seededZeroErrorForcesAbstention
+#print axioms coalitionAdaptiveNoEscape
+#print axioms expandedViewsEqualOfAllAnswersEqual
+#print axioms noAuthorityExpansionEscapesZeroError

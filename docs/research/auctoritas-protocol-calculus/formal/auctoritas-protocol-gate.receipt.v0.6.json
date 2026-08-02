@@ -1,0 +1,201 @@
+{
+  "schema": "darwin.auctoritas.protocol-calculus-receipt.v0.6",
+  "generatedAt": "2026-08-02T21:42:14Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": true,
+  "nativeWasmParityEstablished": true,
+  "nativeWasmParityScope": "Both backends execute the same Sounio self-check over all 32,768 canonical three-world, three-query states and return 96; the 640,000-state hostile ABI census and independent minimum-certificate oracle execute against WASM on the host.",
+  "parent": {
+    "path": "docs/research/auctoritas/formal/auctoritas-gate.receipt.v0.5.json",
+    "sha256": "2ac52cbd098df137ba1154f9643293ba3422b02ea73feff3fe369955a638f697"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "executionEvidence": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/evidence/auctoritas-protocol-execution-evidence.v0.6.json",
+    "sha256": "86621312e64cfdc2e80159fd6d78eb62be558b2d03d413993a1ea93b94b3e7ed"
+  },
+  "formal": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "toolchainCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "adaptiveNoEscapeProved": true,
+    "adaptiveZeroErrorForcesAbstentionProved": true,
+    "seededZeroErrorForcesAbstentionProved": true,
+    "coalitionAdaptiveNoEscapeProved": true,
+    "noAuthorityExpansionEscapeProved": true,
+    "authorityExpansionCertificateSpecified": true,
+    "centralTheoremStandardAxioms": [],
+    "projectDeclaredAxioms": [],
+    "expansionCorollaryStandardAxioms": ["propext", "Quot.sound"]
+  },
+  "protocolModel": {
+    "protocols": "well-founded answer-indexed trees; finite node count requires a finite answer type",
+    "randomness": "seed-indexed zero-error strategies",
+    "coalitions": "static union of member query authorities",
+    "worldsInExecutable": 3,
+    "queriesInExecutable": 3,
+    "answerAlphabet": [0, 1],
+    "recommendationSymbols": [1, 2],
+    "recommendationReturnedByExecutable": false,
+    "authorityGrantedByExecutable": false,
+    "dispositions": {
+      "REFUSE": 0,
+      "IDENTIFIED": 1,
+      "EXPAND_AUTHORITY": 2,
+      "ABSTAIN_QUERY_UNIVERSE": 4
+    }
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da"
+  },
+  "sounio": {
+    "sourceSha256": "f272310997f1d7b194de2887ed932718dd299f0dbbb66b8f8793d613c4c455de",
+    "internalCanonicalStatesChecked": 32768,
+    "selfCheckCode": 96
+  },
+  "wasm": {
+    "sha256": "fa9ded1e4fee72531d818eb12337863fb68b2f939dccf4b59322c9b392f9fead",
+    "bytes": 7137,
+    "repeatSha256": "fa9ded1e4fee72531d818eb12337863fb68b2f939dccf4b59322c9b392f9fead",
+    "runtimeValidated": true,
+    "imports": [],
+    "mainResult": 96
+  },
+  "native": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/native/auctoritas_protocol.v0.6.linux-x86_64",
+    "sha256": "5d1b9af207e3d66d47c0b6df9a415756ae54756167077bb3b99698b37d965568",
+    "bytes": 28680,
+    "repeatSha256": "5d1b9af207e3d66d47c0b6df9a415756ae54756167077bb3b99698b37d965568",
+    "executionExitCode": 96,
+    "repeatExecutionExitCode": 96
+  },
+  "exhaustive": {
+    "boundedStatesChecked": 640000,
+    "validStatesChecked": 32768,
+    "invalidStatesRefused": 607232,
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "dispositions": {
+      "REFUSE": 607232,
+      "IDENTIFIED": 18032,
+      "EXPAND_AUTHORITY": 8976,
+      "ABSTAIN_QUERY_UNIVERSE": 5760
+    },
+    "expansionCardinality": {
+      "zero": 23792,
+      "one": 8112,
+      "two": 864,
+      "three": 0
+    }
+  },
+  "claims": {
+    "established": [
+      "Well-founded authority-compliant adaptive protocols cannot escape equality of maximal legitimate views.",
+      "Zero-error sound adaptive protocols must abstain when indistinguishable worlds require different recommendations.",
+      "The no-escape result holds seed-wise and for static authority coalitions.",
+      "No grant over an answer-identical declared query universe can avoid zero-error abstention.",
+      "The bounded Sounio kernel returns a sufficient, disjoint, cardinality-minimal authority expansion with deterministic tie-breaking.",
+      "Native and WASM builds are deterministic and pass the scoped 32,768-state internal parity gate.",
+      "WASM agrees with the independent host oracle over 640,000 bounded ABI states."
+    ],
+    "notEstablished": [
+      "Novelty of the individual components or their conjunction.",
+      "A new complexity result or scalable solution for minimum query sets.",
+      "Average-error, Bayesian, PAC, noisy, or continuous-observation guarantees.",
+      "Dynamic delegation, revocation, strategic-agent, or side-channel guarantees.",
+      "Correctness or legitimacy of a real authority policy or query ontology.",
+      "Clinical validity, safety, efficacy, utility, or authorization.",
+      "Production readiness or cryptographic authenticity."
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/README.md",
+      "sha256": "7b06977e276f96c18d8103a8eb470c7704bd4a9399e32e93905c450b9b9fe165",
+      "bytes": 1776
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/prior-art-frontier-v0.6.md",
+      "sha256": "7e4700242663b4ef813bb3f3bd5a5f39247c92a4f57cc341c313e782a0158e0d",
+      "bytes": 3512
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/protocol-calculus-theory-v0.6.md",
+      "sha256": "e7b355b647a6231b1b3459635fd8cb0ddcd0caae7a7c6240c2b6cdd256f96671",
+      "bytes": 6110
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/closure-v0.6.md",
+      "sha256": "ab3bc2d231b20ebce88851a738bbeab234b38786f4a99453587f862213968a41",
+      "bytes": 1956
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/evidence/auctoritas-protocol-execution-evidence.v0.6.json",
+      "sha256": "86621312e64cfdc2e80159fd6d78eb62be558b2d03d413993a1ea93b94b3e7ed",
+      "bytes": 8240
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/AuctoritasProtocol.lean",
+      "sha256": "36f33adeb42603d4e933a51a39744af7faba02a686f50a0a39e4b0077e8253e6",
+      "bytes": 14336
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/AuctoritasProtocolAudit.lean",
+      "sha256": "d5fce8e4855bdcba675cc5a0b41c8ef3531485fd5275332aff165f1133f4ccf8",
+      "bytes": 406
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/lake-manifest.json",
+      "sha256": "1618d93271a7c94ee9a28bcac640fbc785c9e3fef07e8fe807ed9bef18c258f7",
+      "bytes": 150
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/lakefile.lean",
+      "sha256": "27fab196927f79c5b491dbeb8dd6b3cd55fe221a9ff5626bca17e489af829533",
+      "bytes": 141
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/native/auctoritas_protocol.v0.6.linux-x86_64",
+      "sha256": "5d1b9af207e3d66d47c0b6df9a415756ae54756167077bb3b99698b37d965568",
+      "bytes": 28680
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/sounio/auctoritas_protocol_v0_6.sio",
+      "sha256": "f272310997f1d7b194de2887ed932718dd299f0dbbb66b8f8793d613c4c455de",
+      "bytes": 11486
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/vectors/auctoritas-protocol-v0.6.json",
+      "sha256": "e6ad01a49f01915b1422d7d061a286d17965fcaf31b6c74bad3f8593c8c5a94d",
+      "bytes": 2189
+    },
+    {
+      "path": "docs/research/auctoritas-protocol-calculus/formal/wasm/auctoritas_protocol.v0.6.wasm",
+      "sha256": "fa9ded1e4fee72531d818eb12337863fb68b2f939dccf4b59322c9b392f9fead",
+      "bytes": 7137
+    },
+    {
+      "path": "scripts/verify-auctoritas-protocol-v0.6.mjs",
+      "sha256": "ad493098eb7816f8430a233c5cbe8ff580f99990d74c39237747eafea33dd1dc",
+      "bytes": 22571
+    }
+  ]
+}
