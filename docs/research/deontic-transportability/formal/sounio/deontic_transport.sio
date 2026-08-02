@@ -1,0 +1,173 @@
+//@ run-pass
+//@ expect-stdout: ALL PASS
+// Deontic transportability: finite research-only executable core.
+//
+// Two abstract actions are encoded as a decision-set mask:
+//   0 = REFUSE/empty, 1 = A only, 2 = B only, 3 = both.
+// Identification state:
+//   0 = REFUSED, 1 = IDENTIFIED_A, 2 = IDENTIFIED_B,
+//   3 = PARTIAL_ABSTAIN.
+//
+// No action has a clinical meaning. There are no medications, doses,
+// diagnoses, patient fields, or production authorization in this program.
+
+fn score2(outcome1: i64, outcome2: i64, weight1: i64, weight2: i64) -> i64 {
+    return outcome1 * weight1 + outcome2 * weight2
+}
+
+fn choose(score_a: i64, score_b: i64, feasible_mask: i64) -> i64 {
+    if feasible_mask == 0 { return 0 }
+    if feasible_mask == 1 { return 1 }
+    if feasible_mask == 2 { return 2 }
+    if score_a > score_b { return 1 }
+    if score_b > score_a { return 2 }
+    return 3
+}
+
+fn contains_a(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 { return 1 }
+    return 0
+}
+
+fn contains_b(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 { return 1 }
+    return 0
+}
+
+fn union_masks(left: i64, right: i64) -> i64 {
+    var result: i64 = 0
+    if contains_a(left) == 1 || contains_a(right) == 1 {
+        result = result + 1
+    }
+    if contains_b(left) == 1 || contains_b(right) == 1 {
+        result = result + 2
+    }
+    return result
+}
+
+fn intersect_masks(left: i64, right: i64) -> i64 {
+    var result: i64 = 0
+    if contains_a(left) == 1 && contains_a(right) == 1 {
+        result = result + 1
+    }
+    if contains_b(left) == 1 && contains_b(right) == 1 {
+        result = result + 2
+    }
+    return result
+}
+
+fn classify(identified: i64, core: i64) -> i64 {
+    if identified == 0 { return 0 }
+    if identified == 1 && core == 1 { return 1 }
+    if identified == 2 && core == 2 { return 2 }
+    return 3
+}
+
+fn verify_case(
+    decision1: i64,
+    decision2: i64,
+    identified: i64,
+    core: i64,
+    state: i64
+) -> i64 {
+    var failures: i64 = 0
+    if decision1 != 1 { failures = failures + 1 }
+    if decision2 != 2 { failures = failures + 1 }
+    if identified != 3 { failures = failures + 1 }
+    if core != 0 { failures = failures + 1 }
+    if state != 3 { failures = failures + 1 }
+    return failures
+}
+
+fn main() -> i32 with IO, Mut {
+    var failures: i64 = 0
+
+    // DT-001: values/weights change; evidence is fixed.
+    let dt001_a1 = score2(8, 4, 2, -1)
+    let dt001_b1 = score2(5, 1, 2, -1)
+    let dt001_a2 = score2(8, 4, 1, -2)
+    let dt001_b2 = score2(5, 1, 1, -2)
+    if dt001_a1 != 12 || dt001_b1 != 9 { failures = failures + 1 }
+    if dt001_a2 != 0 || dt001_b2 != 3 { failures = failures + 1 }
+    let dt001_d1 = choose(dt001_a1, dt001_b1, 3)
+    let dt001_d2 = choose(dt001_a2, dt001_b2, 3)
+    let dt001_id = union_masks(dt001_d1, dt001_d2)
+    let dt001_core = intersect_masks(dt001_d1, dt001_d2)
+    let dt001_state = classify(dt001_id, dt001_core)
+    failures = failures + verify_case(dt001_d1, dt001_d2, dt001_id, dt001_core, dt001_state)
+    println("CASE DT-001")
+    println(dt001_d1)
+    println(dt001_d2)
+    println(dt001_id)
+    println(dt001_core)
+    println(dt001_state)
+
+    // DT-002: source-preferred A is infeasible in target context 2.
+    let dt002_a1 = score2(10, 7, 2, -1)
+    let dt002_b1 = score2(6, 2, 2, -1)
+    let dt002_a2 = score2(10, 7, 2, -1)
+    let dt002_b2 = score2(6, 2, 2, -1)
+    if dt002_a1 != 13 || dt002_b1 != 10 { failures = failures + 1 }
+    if dt002_a2 != 13 || dt002_b2 != 10 { failures = failures + 1 }
+    let dt002_d1 = choose(dt002_a1, dt002_b1, 3)
+    let dt002_d2 = choose(dt002_a2, dt002_b2, 2)
+    let dt002_id = union_masks(dt002_d1, dt002_d2)
+    let dt002_core = intersect_masks(dt002_d1, dt002_d2)
+    let dt002_state = classify(dt002_id, dt002_core)
+    failures = failures + verify_case(dt002_d1, dt002_d2, dt002_id, dt002_core, dt002_state)
+    println("CASE DT-002")
+    println(dt002_d1)
+    println(dt002_d2)
+    println(dt002_id)
+    println(dt002_core)
+    println(dt002_state)
+
+    // DT-003: equity-sensitive weighting changes the target decision.
+    let dt003_a1 = score2(10, 8, 1, 0)
+    let dt003_b1 = score2(7, 1, 1, 0)
+    let dt003_a2 = score2(10, 8, 1, -1)
+    let dt003_b2 = score2(7, 1, 1, -1)
+    if dt003_a1 != 10 || dt003_b1 != 7 { failures = failures + 1 }
+    if dt003_a2 != 2 || dt003_b2 != 6 { failures = failures + 1 }
+    let dt003_d1 = choose(dt003_a1, dt003_b1, 3)
+    let dt003_d2 = choose(dt003_a2, dt003_b2, 3)
+    let dt003_id = union_masks(dt003_d1, dt003_d2)
+    let dt003_core = intersect_masks(dt003_d1, dt003_d2)
+    let dt003_state = classify(dt003_id, dt003_core)
+    failures = failures + verify_case(dt003_d1, dt003_d2, dt003_id, dt003_core, dt003_state)
+    println("CASE DT-003")
+    println(dt003_d1)
+    println(dt003_d2)
+    println(dt003_id)
+    println(dt003_core)
+    println(dt003_state)
+
+    // DT-004: population and individual authorities use different weights.
+    let dt004_a1 = score2(9, 4, 2, -1)
+    let dt004_b1 = score2(6, 1, 2, -1)
+    let dt004_a2 = score2(9, 4, 1, -3)
+    let dt004_b2 = score2(6, 1, 1, -3)
+    if dt004_a1 != 14 || dt004_b1 != 11 { failures = failures + 1 }
+    if dt004_a2 != -3 || dt004_b2 != 3 { failures = failures + 1 }
+    let dt004_d1 = choose(dt004_a1, dt004_b1, 3)
+    let dt004_d2 = choose(dt004_a2, dt004_b2, 3)
+    let dt004_id = union_masks(dt004_d1, dt004_d2)
+    let dt004_core = intersect_masks(dt004_d1, dt004_d2)
+    let dt004_state = classify(dt004_id, dt004_core)
+    failures = failures + verify_case(dt004_d1, dt004_d2, dt004_id, dt004_core, dt004_state)
+    println("CASE DT-004")
+    println(dt004_d1)
+    println(dt004_d2)
+    println(dt004_id)
+    println(dt004_core)
+    println(dt004_state)
+
+    if failures == 0 {
+        println("ALL PASS")
+        return 0
+    }
+    println("FAILURES")
+    println(failures)
+    return 1
+}
+

@@ -1,0 +1,198 @@
+{
+  "schema": "darwin.deontic-transport-counterexamples.v0.1",
+  "benchmarkId": "deontic-transport-counterexamples-4",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "mathematics": "EXACT_RATIONAL_DOT_PRODUCT",
+  "actionsAreClinical": false,
+  "cases": [
+    {
+      "id": "DT-001",
+      "proposition": "CAUSAL_TRANSPORT_INSUFFICIENT_UNDER_VALUE_SHIFT",
+      "actions": ["A", "B"],
+      "outcomeVectorByAction": {
+        "A": {"benefit": 8, "burden": 4},
+        "B": {"benefit": 5, "burden": 1}
+      },
+      "evidenceSha256": "8ceb8a202dd140c5223ab887e44a56d102d917429e2bd716141ef9693649238c",
+      "contexts": [
+        {
+          "id": "DT-001-C1",
+          "decisionAuthority": "TARGET_PANEL_1",
+          "weights": {
+            "benefit": {"numerator": 2, "denominator": 1},
+            "burden": {"numerator": -1, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 12, "denominator": 1},
+            "B": {"numerator": 9, "denominator": 1}
+          },
+          "expectedDecision": ["A"]
+        },
+        {
+          "id": "DT-001-C2",
+          "decisionAuthority": "TARGET_PANEL_2",
+          "weights": {
+            "benefit": {"numerator": 1, "denominator": 1},
+            "burden": {"numerator": -2, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 0, "denominator": 1},
+            "B": {"numerator": 3, "denominator": 1}
+          },
+          "expectedDecision": ["B"]
+        }
+      ],
+      "expected": {
+        "sameCausalEvidenceAcrossContexts": true,
+        "decisionSetChanges": true,
+        "identifiedActionSet": ["A", "B"],
+        "robustActionCore": []
+      }
+    },
+    {
+      "id": "DT-002",
+      "proposition": "FEASIBILITY_BREAKS_RECOMMENDATION_TRANSPORT",
+      "actions": ["A", "B"],
+      "outcomeVectorByAction": {
+        "A": {"effectiveness": 10, "resourceUse": 7},
+        "B": {"effectiveness": 6, "resourceUse": 2}
+      },
+      "evidenceSha256": "60d8e326bb078e5274506b74ca8d4d3f253920db19b9f978dba4fa08d0cb7d71",
+      "contexts": [
+        {
+          "id": "DT-002-C1",
+          "decisionAuthority": "SOURCE_PANEL",
+          "weights": {
+            "effectiveness": {"numerator": 2, "denominator": 1},
+            "resourceUse": {"numerator": -1, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 13, "denominator": 1},
+            "B": {"numerator": 10, "denominator": 1}
+          },
+          "expectedDecision": ["A"]
+        },
+        {
+          "id": "DT-002-C2",
+          "decisionAuthority": "RESOURCE_CONSTRAINED_TARGET_PANEL",
+          "weights": {
+            "effectiveness": {"numerator": 2, "denominator": 1},
+            "resourceUse": {"numerator": -1, "denominator": 1}
+          },
+          "feasibleActions": ["B"],
+          "expectedScores": {
+            "A": {"numerator": 13, "denominator": 1},
+            "B": {"numerator": 10, "denominator": 1}
+          },
+          "expectedDecision": ["B"]
+        }
+      ],
+      "expected": {
+        "sameCausalEvidenceAcrossContexts": true,
+        "decisionSetChanges": true,
+        "identifiedActionSet": ["A", "B"],
+        "robustActionCore": []
+      }
+    },
+    {
+      "id": "DT-003",
+      "proposition": "EQUITY_OBJECTIVE_CAN_REVERSE_POPULATION_CHOICE",
+      "actions": ["A", "B"],
+      "outcomeVectorByAction": {
+        "A": {"totalBenefit": 10, "inequityBurden": 8},
+        "B": {"totalBenefit": 7, "inequityBurden": 1}
+      },
+      "evidenceSha256": "2aae8f336a89f9c22ac3a6531f2e68ba108c7080bcff1e1d655dd9162b2a5d15",
+      "contexts": [
+        {
+          "id": "DT-003-C1",
+          "decisionAuthority": "AVERAGE_BENEFIT_PANEL",
+          "weights": {
+            "totalBenefit": {"numerator": 1, "denominator": 1},
+            "inequityBurden": {"numerator": 0, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 10, "denominator": 1},
+            "B": {"numerator": 7, "denominator": 1}
+          },
+          "expectedDecision": ["A"]
+        },
+        {
+          "id": "DT-003-C2",
+          "decisionAuthority": "EQUITY_SENSITIVE_PANEL",
+          "weights": {
+            "totalBenefit": {"numerator": 1, "denominator": 1},
+            "inequityBurden": {"numerator": -1, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 2, "denominator": 1},
+            "B": {"numerator": 6, "denominator": 1}
+          },
+          "expectedDecision": ["B"]
+        }
+      ],
+      "expected": {
+        "sameCausalEvidenceAcrossContexts": true,
+        "decisionSetChanges": true,
+        "identifiedActionSet": ["A", "B"],
+        "robustActionCore": []
+      }
+    },
+    {
+      "id": "DT-004",
+      "proposition": "POPULATION_VALUES_DO_NOT_IDENTIFY_INDIVIDUAL_PREFERENCE",
+      "actions": ["A", "B"],
+      "outcomeVectorByAction": {
+        "A": {"outcomeQuality": 9, "treatmentBurden": 4},
+        "B": {"outcomeQuality": 6, "treatmentBurden": 1}
+      },
+      "evidenceSha256": "396674a956422f3240217d8a1b544dac5c358144e33efe5dd59a636671ee3a97",
+      "contexts": [
+        {
+          "id": "DT-004-C1",
+          "decisionAuthority": "POPULATION_GUIDELINE_PANEL",
+          "weights": {
+            "outcomeQuality": {"numerator": 2, "denominator": 1},
+            "treatmentBurden": {"numerator": -1, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": 14, "denominator": 1},
+            "B": {"numerator": 11, "denominator": 1}
+          },
+          "expectedDecision": ["A"]
+        },
+        {
+          "id": "DT-004-C2",
+          "decisionAuthority": "INDIVIDUAL_PATIENT",
+          "weights": {
+            "outcomeQuality": {"numerator": 1, "denominator": 1},
+            "treatmentBurden": {"numerator": -3, "denominator": 1}
+          },
+          "feasibleActions": ["A", "B"],
+          "expectedScores": {
+            "A": {"numerator": -3, "denominator": 1},
+            "B": {"numerator": 3, "denominator": 1}
+          },
+          "expectedDecision": ["B"]
+        }
+      ],
+      "expected": {
+        "sameCausalEvidenceAcrossContexts": true,
+        "decisionSetChanges": true,
+        "identifiedActionSet": ["A", "B"],
+        "robustActionCore": [],
+        "authorityBoundaryRequired": true
+      }
+    }
+  ]
+}

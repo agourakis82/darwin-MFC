@@ -1,0 +1,126 @@
+{
+  "schema": "darwin.deontic-transport-wasm-execution-evidence.v0.4",
+  "generatedAt": "2026-08-02T18:40:30Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parentGate": {
+    "path": "docs/research/deontic-transportability/formal/formal-wasm-gate.receipt.v0.3.json",
+    "sha256": "03d26871e56fcc1392c0f734de794c431d45ca26689b0e2650a1fdcb315391bc"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "executionEnvironment": {
+    "platform": "Linux x86_64 remote workspace",
+    "sourceWorktree": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "repositoryCleanBeforeBuild": true,
+    "repositoryCleanAfterBuild": true
+  },
+  "source": {
+    "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_4.sio",
+    "remotePath": "tests/wasm/deontic_transport_finite_wasm_v0_4.sio",
+    "sha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+    "remoteCopySha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+    "bytes": 8150,
+    "maximumContexts": 8,
+    "decisionDomain": [0, 1, 2, 3]
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "artifact": {
+      "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+      "bytes": 101651571,
+      "cleanBuilds": 2,
+      "bitIdentical": true
+    },
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "strictPinnedSeed": true,
+    "diagnosticGatePassed": true,
+    "versionJsonWellFormed": true,
+    "abiVersion": 1,
+    "runtimeVersion": "1.0.0",
+    "compilerReconciled": true
+  },
+  "wasm": {
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+    "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+    "bytes": 8324,
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "dt_active_masks_valid8",
+      "dt_case_code",
+      "dt_classify",
+      "dt_contains_a",
+      "dt_contains_b",
+      "dt_exhaustive_bounded_self_check",
+      "dt_exhaustive_walk",
+      "dt_intersect_many8",
+      "dt_intersect_masks",
+      "dt_reference_case_code",
+      "dt_union_many8",
+      "dt_union_masks",
+      "dt_valid_mask",
+      "dt_verify_case",
+      "main",
+      "memory"
+    ],
+    "mainResult": 87,
+    "reproducedByBothCompilers": true
+  },
+  "native": {
+    "remotePath": "/tmp/darwin-sourcefresh-v04/deontic_transport_finite.v0.4.v9.native",
+    "sha256": "0a4c2489960b4ce0bedbe5627ae18881177cfd6b8c36c809346f807851b3f7dd",
+    "bytes": 32776,
+    "executionExitCode": 87,
+    "reproducedByBothCompilers": true
+  },
+  "formalRefinement": {
+    "leanVersion": "4.30.0-rc2",
+    "basePath": "docs/research/deontic-transportability/formal/lean4/DeonticTransport.lean",
+    "baseSha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408",
+    "finitePath": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFinite.lean",
+    "finiteSha256": "4ec68c26b950af82ae7f0cdd89bfe02e7f38b76dc03cdd15379754ab22f9dd2b",
+    "refinementPath": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinement.lean",
+    "refinementSha256": "e9956658a37310bd697e25742fddffde352d526a60448e1dfec314d0695e5a7b",
+    "auditPath": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinementAudit.lean",
+    "auditSha256": "11ebf44b4d73c4e65f96c36ee4df982153db64b2632032553982844262f960f6",
+    "compiled": true,
+    "projectDeclaredAxioms": [],
+    "standardLeanDependencies": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "exhaustiveRefinement": {
+    "maskPairsChecked": 16,
+    "packedStatesChecked": 589824,
+    "canonicalFamiliesRepresented": 87381,
+    "invalidCountsRefused": [-1, 9],
+    "invalidActiveMaskCasesRefused": 16,
+    "invalidInactiveMaskCasesIgnored": 8,
+    "unusedSlotNoninterferenceCovered": true,
+    "verified": true
+  },
+  "verdict": {
+    "fixedPointSeedVerified": true,
+    "canonicalCompilerGateVerified": true,
+    "bootstrapChainGateVerified": true,
+    "diagnosticGateVerified": true,
+    "compilerBuildDeterministic": true,
+    "compilerReconciled": true,
+    "sourceWasmIdentityEstablished": true,
+    "nativeWasmSelfCheckParityEstablished": true,
+    "formalRefinementCompiled": true,
+    "exhaustiveRuntimeRefinementVerified": true,
+    "clinicalDisposition": "REFUSE",
+    "productionAuthorized": false
+  }
+}

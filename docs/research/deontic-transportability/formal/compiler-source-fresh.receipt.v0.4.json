@@ -1,0 +1,235 @@
+{
+  "schema": "darwin.sounio.compiler-source-receipt.v1",
+  "generatedAt": "2026-08-02T18:43:49Z",
+  "status": "SOURCE_FRESH_RECONCILED",
+  "compilerReconciled": true,
+  "signed": false,
+  "repository": {
+    "url": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "parentCommit": "670050a331f0b423c20e5d68d9fe9a3e7ad0fe70",
+    "baseCommit": "72a75264d6bc208eb9db04fc4e7eb7a33b525b7c",
+    "originMainAtBuild": "72a75264d6bc208eb9db04fc4e7eb7a33b525b7c",
+    "aheadOfOriginMain": 2,
+    "behindOriginMain": 0,
+    "checkout": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "checkoutMode": "DETACHED",
+    "clean": true,
+    "remoteBranchVerified": true,
+    "remoteBranchCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "commitUrl": "https://github.com/Sounio-lang/sounio/commit/32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "sourceFiles": [
+      {
+        "path": "bin/madaros",
+        "sha256": "1c6978a3015618043354933032e283a2f18265db36a5fa0b52dfb9d5d962b9ec"
+      },
+      {
+        "path": "bin/souc",
+        "sha256": "7ae270715eabfdb012e0c6361af661db73970e31c303f2acec229e94fd043847"
+      },
+      {
+        "path": "scripts/ci/bootstrap_chain_gate.sh",
+        "sha256": "54c4b5ba6a86a0c89c8e15e22c13720c528912809296b84edd4797e543aa2cd3"
+      },
+      {
+        "path": "scripts/ci/build_modular_madaros.sh",
+        "sha256": "828523563fb1c8a0e38161da261a680958738c5a5cb650c094090b729fbb1b06"
+      },
+      {
+        "path": "scripts/ci/item_kind_dispatch_gate.mjs",
+        "sha256": "947005c89c271a1e4743356bc3f3fe862c293366b525d87647b0c9d02c144261"
+      },
+      {
+        "path": "scripts/ci/madaros_version_json_gate.mjs",
+        "sha256": "11671a1e0e0a56c049e9a92e029d4c96eb137f0d6e4e4bbec84fb49533cf6f6c"
+      },
+      {
+        "path": "scripts/ci/madaros_wasm_backend_gate.mjs",
+        "sha256": "52f223355008239e4147a556e7a550c9ea91db2354e88aec9343a3c8c3148152"
+      },
+      {
+        "path": "self-hosted/check/check.sio",
+        "sha256": "213a1a696ea88f2e83f6a6810481f6f1ee34fe6c6a20a66cce17545f76262bae"
+      },
+      {
+        "path": "self-hosted/compiler/module_native_driver.sio",
+        "sha256": "91850ac068f86115ee0e3ef304b680b7876b92b24faa48118799740f9660b210"
+      },
+      {
+        "path": "self-hosted/io/file_write.sio",
+        "sha256": "900a870f6fb2d555a1c40b31ffdccda87cbbe67514894acaf7cefdf7d45abf9b"
+      },
+      {
+        "path": "self-hosted/ir/lower.sio",
+        "sha256": "04ed5fc507a1bd29e5c627478a03ef72405d8dbd02471b81119593f245d0f045"
+      },
+      {
+        "path": "self-hosted/resolve/imports.sio",
+        "sha256": "a48ee7ff47adafcee4f8d096fa091d4454d3dda5e8fe3bba95acb0b6a0b82245"
+      },
+      {
+        "path": "self-hosted/wasm/lower.sio",
+        "sha256": "ccd3055820a0c683c7cb006226c4a0b1e197f217c21650234a53c35170293d05"
+      },
+      {
+        "path": "tests/wasm/madaros_wasm_i64_fold.sio",
+        "sha256": "0be469873cb7700ea457c75acf60fc1317f073e96c5376024bf7b56bab60af6a"
+      },
+      {
+        "path": "tests/wasm/deontic_transport_finite_wasm_v0_3.sio",
+        "sha256": "456312117b787e4ce7202fa2f696e64b5495b9dcdf2be04f324f52f207462375"
+      },
+      {
+        "path": "tests/wasm/deontic_transport_finite_wasm_v0_4.sio",
+        "sha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78"
+      },
+      {
+        "path": "self-hosted/compiler/lean_single.sio",
+        "sha256": "b209e9bf7d1f83099ca2728cdb1bb54072630e5d7bef0ce87946bc0cb7d8640c"
+      }
+    ]
+  },
+  "environment": {
+    "host": "sounio-workspace",
+    "platform": "Linux 7.0.2-5-pve x86_64 GNU/Linux",
+    "node": "v22.22.2",
+    "cc": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "git": "git version 2.43.0"
+  },
+  "bootstrap": {
+    "source": "self-hosted/compiler/lean_single.sio",
+    "seedPath": "/tmp/sounio-lean-single-fp-deontic-v4-rebased/lean_single.stage1",
+    "seedBytes": 2548890,
+    "seedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "seedMd5": "390bdecc4f8a89a816ea850f79481e3f",
+    "fixedPointStages": [
+      {
+        "stage": 1,
+        "path": "/tmp/darwin-sourcefresh-v04/fixed-point-v11/lean_single.stage1",
+        "bytes": 2548890,
+        "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+        "md5": "390bdecc4f8a89a816ea850f79481e3f"
+      },
+      {
+        "stage": 2,
+        "path": "/tmp/darwin-sourcefresh-v04/fixed-point-v11/lean_single.stage2",
+        "bytes": 2548890,
+        "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+        "md5": "390bdecc4f8a89a816ea850f79481e3f"
+      },
+      {
+        "stage": 3,
+        "path": "/tmp/darwin-sourcefresh-v04/fixed-point-v11/lean_single.stage3",
+        "bytes": 2548890,
+        "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+        "md5": "390bdecc4f8a89a816ea850f79481e3f"
+      }
+    ],
+    "fixedPointBitIdentical": true,
+    "canonicalCompilerGateVerified": true,
+    "bootstrapChain": {
+      "passed": 8,
+      "failed": 0,
+      "notRun": 0,
+      "total": 8,
+      "peakRssKb": 3104,
+      "peakRssLimitKb": 102400
+    }
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "artifactPath": "/tmp/darwin-sourcefresh-v04/madaros-v9-clean",
+    "repeatArtifactPath": "/tmp/darwin-sourcefresh-v04/madaros-v10-clean",
+    "diagnosticArtifactPath": "/tmp/darwin-sourcefresh-v04/madaros-v11-clean",
+    "bytes": 101651571,
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "repeatSha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "diagnosticArtifactSha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "deterministic": true,
+    "pinnedSeedRequired": true,
+    "automaticSeedFallbackUsed": false,
+    "errorDiagnostics": 0,
+    "warningDiagnostics": 4072,
+    "diagnosticGatePassed": true,
+    "warningClean": false,
+    "versionJson": {
+      "abi_version": 1,
+      "runtime_version": "1.0.0",
+      "ir_max_funcs": 1024,
+      "ir_max_instrs": 128,
+      "supports_ffi": true,
+      "supports_gpu": false
+    }
+  },
+  "gates": [
+    {
+      "id": "repository-clean",
+      "verified": true
+    },
+    {
+      "id": "remote-branch-identity",
+      "verified": true
+    },
+    {
+      "id": "lean-single-fixed-point",
+      "verified": true
+    },
+    {
+      "id": "canonical-compiler",
+      "verified": true
+    },
+    {
+      "id": "bootstrap-chain-s1-s8",
+      "verified": true
+    },
+    {
+      "id": "item-kind-dispatch-27-of-27",
+      "verified": true
+    },
+    {
+      "id": "error-diagnostic-fail-closed",
+      "verified": true
+    },
+    {
+      "id": "version-json-six-fields",
+      "verified": true
+    },
+    {
+      "id": "compiler-build-determinism",
+      "verified": true
+    },
+    {
+      "id": "public-wasm-backend-zero-import-fixture",
+      "verified": true
+    }
+  ],
+  "genericWasmFixture": {
+    "source": "tests/wasm/madaros_wasm_i64_fold.sio",
+    "artifactPath": "/tmp/darwin-sourcefresh-v04/generic-v11.wasm",
+    "bytes": 585,
+    "sha256": "5f42f212cdee7ade73c19d08be249d627dd5f81f722d2d33be93f3bcc5dcd9f5",
+    "imports": [],
+    "mainResult": 3,
+    "runtimeValidated": true
+  },
+  "commands": [
+    "SOUC_BIN=<fixed-point-seed> SOUNIO_LEAN_SINGLE_FP_DIR=<external-dir> scripts/ci/lean_single_fixed_point_gate.sh",
+    "SOUNIO_CANONICAL_SOUC=<fixed-point-seed> scripts/ci/canonical_compiler_gate.sh",
+    "scripts/ci/bootstrap_chain_gate.sh",
+    "SOUNIO_MADAROS_SEED=<fixed-point-seed> SOUNIO_MADAROS_REQUIRE_PINNED_SEED=1 scripts/ci/build_modular_madaros.sh <external-artifact>",
+    "node scripts/ci/item_kind_dispatch_gate.mjs",
+    "node scripts/ci/madaros_version_json_gate.mjs <compiler>",
+    "MADAROS_RAW_BIN=<compiler> bin/madaros build tests/wasm/madaros_wasm_i64_fold.sio --backend wasm -o <external-wasm>",
+    "node scripts/ci/madaros_wasm_backend_gate.mjs <external-wasm>"
+  ],
+  "invalidation": [
+    "repository commit or tree changes",
+    "source manifest hash changes",
+    "fixed-point seed or stage hash changes",
+    "compiler artifact hash changes",
+    "origin/main divergence changes without a new receipt",
+    "any required gate ceases to be verified"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "darwin.deontic-transport-wasm-execution-evidence.v0.3",
+  "generatedAt": "2026-08-02T16:59:44Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "parentGate": {
+    "path": "docs/research/deontic-transportability/formal/formal-finite-gate.receipt.v0.2.json",
+    "sha256": "73461f001a25d080d5da14a5c2a85214b4ffb6d91abc543b3016d2575b2de6de",
+    "verifiedBeforeExtension": true
+  },
+  "executionEnvironment": {
+    "host": "sounio-workspace",
+    "platform": "Linux 7.0.2-5-pve x86_64",
+    "node": "v22.22.2",
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "worktree": "/tmp/sounio-wasm-deontic-v3",
+    "isolatedWorktree": true,
+    "sharedWorkspaceModifiedByGate": false,
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "baseCommit": "72a75264d6bc208eb9db04fc4e7eb7a33b525b7c",
+    "repositoryClean": false,
+    "patchCommitted": false
+  },
+  "source": {
+    "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_3.sio",
+    "remoteCopyPath": "/tmp/sounio-wasm-deontic-v3/tests/wasm/deontic_transport_finite_wasm_v0_3.sio",
+    "sha256": "456312117b787e4ce7202fa2f696e64b5495b9dcdf2be04f324f52f207462375",
+    "remoteCopySha256": "456312117b787e4ce7202fa2f696e64b5495b9dcdf2be04f324f52f207462375",
+    "ioEffects": false,
+    "maximumExecutableFamilySize": 8
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "fixedPointSeed": {
+      "path": "/tmp/sounio-lean-single-fp-deontic-v4-rebased/lean_single.stage1",
+      "bytes": 2548890,
+      "md5": "390bdecc4f8a89a816ea850f79481e3f",
+      "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+      "threeStageSha256Equal": true,
+      "fixedPointGateExitCode": 0,
+      "canonicalCompilerGateExitCode": 0
+    },
+    "artifact": {
+      "path": "/tmp/sounio-wasm-deontic-v3/artifacts/self-hosted/madaros-wasm-source-fresh-v5-fixed-seed",
+      "bytes": 101535545,
+      "sha256": "9f4b632bfe9a261ea406e583a79f852e339c1c270134504055036e6576c9e22c",
+      "precedingSourceBuildSha256": "9f4b632bfe9a261ea406e583a79f852e339c1c270134504055036e6576c9e22c",
+      "stableAcrossFixedPointSeedRebuild": true,
+      "buildExitCode": 0
+    },
+    "sourceChanges": [
+      {"path": "bin/madaros", "sha256": "1c6978a3015618043354933032e283a2f18265db36a5fa0b52dfb9d5d962b9ec"},
+      {"path": "bin/souc", "sha256": "7ae270715eabfdb012e0c6361af661db73970e31c303f2acec229e94fd043847"},
+      {"path": "self-hosted/compiler/module_native_driver.sio", "sha256": "91850ac068f86115ee0e3ef304b680b7876b92b24faa48118799740f9660b210"},
+      {"path": "self-hosted/wasm/lower.sio", "sha256": "ccd3055820a0c683c7cb006226c4a0b1e197f217c21650234a53c35170293d05"},
+      {"path": "scripts/ci/madaros_wasm_backend_gate.mjs", "sha256": "52f223355008239e4147a556e7a550c9ea91db2354e88aec9343a3c8c3148152"},
+      {"path": "tests/wasm/madaros_wasm_i64_fold.sio", "sha256": "0be469873cb7700ea457c75acf60fc1317f073e96c5376024bf7b56bab60af6a"}
+    ],
+    "diagnosticGatePassed": false,
+    "diagnosticErrorsObserved": [
+      "match must be exhaustive at self-hosted/resolve/imports.sio:285",
+      "missing field in struct literal at self-hosted/ir/lower.sio:1873"
+    ],
+    "versionJsonWellFormed": false,
+    "bootstrapChainGate": {
+      "exitCode": 1,
+      "completedStages": 5,
+      "totalStages": 8,
+      "status": "INCOMPLETE",
+      "blockingDependency": "/usr/bin/time"
+    },
+    "sourceFreshReceiptPresent": false,
+    "compilerReconciled": false
+  },
+  "wasm": {
+    "compileExitCode": 0,
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.3.wasm",
+    "bytes": 3165,
+    "sha256": "5dcce578712460c1fa385741d5bb25923b6511b568772ffec7eb2681bcb957f3",
+    "repeatSha256": "5dcce578712460c1fa385741d5bb25923b6511b568772ffec7eb2681bcb957f3",
+    "precedingCompilerBuildSha256": "5dcce578712460c1fa385741d5bb25923b6511b568772ffec7eb2681bcb957f3",
+    "deterministic": true,
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "dt_case_code",
+      "dt_classify",
+      "dt_contains_a",
+      "dt_contains_b",
+      "dt_intersect_many8",
+      "dt_intersect_masks",
+      "dt_union_many8",
+      "dt_union_masks",
+      "dt_verify_case",
+      "main",
+      "memory"
+    ],
+    "mainResult": 87,
+    "negativeCountsRefused": [-1, 9]
+  },
+  "native": {
+    "compileExitCode": 0,
+    "remotePath": "/tmp/sounio-wasm-deontic-v3/artifacts/native/deontic_transport_finite.v0.3.v5",
+    "bytes": 16392,
+    "sha256": "726e6bf7dca0a6d045ea555a0223fb3807c01557b0fa18f32ff87b3fa739a6d5",
+    "repeatSha256": "726e6bf7dca0a6d045ea555a0223fb3807c01557b0fa18f32ff87b3fa739a6d5",
+    "precedingCompilerBuildSha256": "726e6bf7dca0a6d045ea555a0223fb3807c01557b0fa18f32ff87b3fa739a6d5",
+    "deterministic": true,
+    "executionExitCode": 87,
+    "expectedSelfCheckCode": 87
+  },
+  "observedFamilies": [
+    {"id": "DT-FIN-001", "identifiedSet": 3, "robustCore": 0, "state": 3, "caseCode": 51},
+    {"id": "DT-FIN-002", "identifiedSet": 1, "robustCore": 1, "state": 1, "caseCode": 21},
+    {"id": "DT-FIN-003", "identifiedSet": 2, "robustCore": 2, "state": 2, "caseCode": 42},
+    {"id": "DT-FIN-004", "identifiedSet": 0, "robustCore": 3, "state": 0, "caseCode": 12}
+  ],
+  "verdict": {
+    "fixedPointSeedVerified": true,
+    "canonicalCompilerGateVerified": true,
+    "wasmRuntimeVerified": true,
+    "wasmAbiHasNoImports": true,
+    "deterministicArtifacts": true,
+    "nativeWasmParityEstablished": true,
+    "compilerReconciled": false,
+    "clinicalDisposition": "REFUSE",
+    "productionAuthorized": false
+  }
+}

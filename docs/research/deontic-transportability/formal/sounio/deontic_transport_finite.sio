@@ -1,0 +1,160 @@
+//@ run-pass
+//@ expect-stdout: ALL PASS
+// Deontic transportability: bounded finite-family executable witness.
+//
+// Decision masks: 0 = empty/refuse, 1 = A, 2 = B, 3 = A or B.
+// The ABI accepts at most eight already-contextualized decision masks. The
+// identified set is their union and the robust core is their intersection.
+// Invalid counts return -1 and must be refused by the caller.
+//
+// Research-only. No action has a clinical meaning and no production use is
+// authorized.
+
+fn contains_a(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 { return 1 }
+    return 0
+}
+
+fn contains_b(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 { return 1 }
+    return 0
+}
+
+fn union_masks(left: i64, right: i64) -> i64 {
+    var result: i64 = 0
+    if contains_a(left) == 1 || contains_a(right) == 1 {
+        result = result + 1
+    }
+    if contains_b(left) == 1 || contains_b(right) == 1 {
+        result = result + 2
+    }
+    return result
+}
+
+fn intersect_masks(left: i64, right: i64) -> i64 {
+    var result: i64 = 0
+    if contains_a(left) == 1 && contains_a(right) == 1 {
+        result = result + 1
+    }
+    if contains_b(left) == 1 && contains_b(right) == 1 {
+        result = result + 2
+    }
+    return result
+}
+
+fn classify(identified: i64, core: i64) -> i64 {
+    if identified == 0 { return 0 }
+    if identified == 1 && core == 1 { return 1 }
+    if identified == 2 && core == 2 { return 2 }
+    return 3
+}
+
+fn union_many8(
+    d0: i64, d1: i64, d2: i64, d3: i64,
+    d4: i64, d5: i64, d6: i64, d7: i64,
+    count: i64
+) -> i64 with Mut {
+    if count < 0 || count > 8 { return -1 }
+    var result: i64 = 0
+    if count > 0 { result = union_masks(result, d0) }
+    if count > 1 { result = union_masks(result, d1) }
+    if count > 2 { result = union_masks(result, d2) }
+    if count > 3 { result = union_masks(result, d3) }
+    if count > 4 { result = union_masks(result, d4) }
+    if count > 5 { result = union_masks(result, d5) }
+    if count > 6 { result = union_masks(result, d6) }
+    if count > 7 { result = union_masks(result, d7) }
+    return result
+}
+
+fn intersect_many8(
+    d0: i64, d1: i64, d2: i64, d3: i64,
+    d4: i64, d5: i64, d6: i64, d7: i64,
+    count: i64
+) -> i64 with Mut {
+    if count < 0 || count > 8 { return -1 }
+    var result: i64 = 3
+    if count > 0 { result = intersect_masks(result, d0) }
+    if count > 1 { result = intersect_masks(result, d1) }
+    if count > 2 { result = intersect_masks(result, d2) }
+    if count > 3 { result = intersect_masks(result, d3) }
+    if count > 4 { result = intersect_masks(result, d4) }
+    if count > 5 { result = intersect_masks(result, d5) }
+    if count > 6 { result = intersect_masks(result, d6) }
+    if count > 7 { result = intersect_masks(result, d7) }
+    return result
+}
+
+fn verify_family(
+    identified: i64,
+    core: i64,
+    state: i64,
+    expected_identified: i64,
+    expected_core: i64,
+    expected_state: i64
+) -> i64 {
+    var failures: i64 = 0
+    if identified != expected_identified { failures = failures + 1 }
+    if core != expected_core { failures = failures + 1 }
+    if state != expected_state { failures = failures + 1 }
+    return failures
+}
+
+fn main() -> i32 with IO, Mut {
+    var failures: i64 = 0
+
+    let mixed_id = union_many8(1, 1, 2, 1, 0, 0, 0, 0, 4)
+    let mixed_core = intersect_many8(1, 1, 2, 1, 0, 0, 0, 0, 4)
+    let mixed_state = classify(mixed_id, mixed_core)
+    failures = failures + verify_family(mixed_id, mixed_core, mixed_state, 3, 0, 3)
+    println("FAMILY DT-FIN-001")
+    println(4)
+    println(mixed_id)
+    println(mixed_core)
+    println(mixed_state)
+
+    let robust_a_id = union_many8(1, 1, 1, 0, 0, 0, 0, 0, 3)
+    let robust_a_core = intersect_many8(1, 1, 1, 0, 0, 0, 0, 0, 3)
+    let robust_a_state = classify(robust_a_id, robust_a_core)
+    failures = failures + verify_family(robust_a_id, robust_a_core, robust_a_state, 1, 1, 1)
+    println("FAMILY DT-FIN-002")
+    println(3)
+    println(robust_a_id)
+    println(robust_a_core)
+    println(robust_a_state)
+
+    let robust_b_id = union_many8(2, 2, 0, 0, 0, 0, 0, 0, 2)
+    let robust_b_core = intersect_many8(2, 2, 0, 0, 0, 0, 0, 0, 2)
+    let robust_b_state = classify(robust_b_id, robust_b_core)
+    failures = failures + verify_family(robust_b_id, robust_b_core, robust_b_state, 2, 2, 2)
+    println("FAMILY DT-FIN-003")
+    println(2)
+    println(robust_b_id)
+    println(robust_b_core)
+    println(robust_b_state)
+
+    let empty_id = union_many8(0, 0, 0, 0, 0, 0, 0, 0, 0)
+    let empty_core = intersect_many8(0, 0, 0, 0, 0, 0, 0, 0, 0)
+    let empty_state = classify(empty_id, empty_core)
+    failures = failures + verify_family(empty_id, empty_core, empty_state, 0, 3, 0)
+    println("FAMILY DT-FIN-004")
+    println(0)
+    println(empty_id)
+    println(empty_core)
+    println(empty_state)
+
+    if union_many8(0, 0, 0, 0, 0, 0, 0, 0, -1) != -1 {
+        failures = failures + 1
+    }
+    if intersect_many8(0, 0, 0, 0, 0, 0, 0, 0, 9) != -1 {
+        failures = failures + 1
+    }
+
+    if failures == 0 {
+        println("ALL PASS")
+        return 0
+    }
+    println("FAILURES")
+    println(failures)
+    return 1
+}

@@ -1,0 +1,193 @@
+{
+  "schema": "darwin.deontic-transport-finite-execution-evidence.v2",
+  "evidenceId": "deontic-transport-finite-2026-08-02-v2",
+  "capturedDate": "2026-08-02",
+  "status": "RESEARCH_EXECUTION_EVIDENCE",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "parentGate": {
+    "path": "docs/research/deontic-transportability/formal/formal-gate.receipt.v0.1.json",
+    "schema": "darwin.deontic-transport-formal-gate-receipt.v0.1",
+    "sha256": "366f915f222c3b68d9549d5b91e75f52e716c54d13df183065c986abf96ecc47",
+    "verifiedBeforeExtension": true
+  },
+  "executionEnvironment": {
+    "transport": "SSH",
+    "workspaceHostAlias": "sounio-workspace",
+    "repositoryPath": "/workspace/sounio",
+    "repositoryBranch": "research/zd-fiber-antisymmetry-lemma-20260731",
+    "repositoryCommit": "1a0be42463c53dfb4cf7d46177c0402f16047569",
+    "repositoryTree": "98eda6775fd2875a790c9c394bd414552853b2e3",
+    "repositoryClean": false,
+    "temporaryDirectory": "/tmp/darwin-deontic-transport-v2",
+    "workspaceModifiedByGate": false
+  },
+  "sounio": {
+    "source": {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite.sio",
+      "sha256": "e07fb550f0b2312a0b42c9cb7faf33b2e790344416e24d911d393b881e0db8f9",
+      "remoteCopySha256": "e07fb550f0b2312a0b42c9cb7faf33b2e790344416e24d911d393b881e0db8f9"
+    },
+    "compiler": {
+      "identity": "Madaros v0.80.0 -- the Sounio self-hosted compiler",
+      "soucLauncher": {
+        "path": "/workspace/sounio/bin/souc",
+        "sha256": "ad3ee58b3835cccfbf9382fba01498bc61bdcb8402c8ef47c1c3abf26099c008",
+        "bytes": 10234
+      },
+      "madarosWrapper": {
+        "path": "/workspace/sounio/bin/madaros",
+        "sha256": "b5acb8376bf83d4e657b652d62feec965f80a8cdc7c229f86e2bb9c12c3292d7",
+        "bytes": 23958
+      },
+      "rawElf": {
+        "path": "/workspace/sounio/artifacts/self-hosted/madaros",
+        "sha256": "6303ec70187bbfe6b190b52b5843b61a49316a98c0bcefd7c248c7f0d3f7f5cb",
+        "bytes": 102192341
+      },
+      "sourceFreshReceiptPresent": false,
+      "sourceArtifactIdentityEstablished": false,
+      "compilerReconciled": false
+    },
+    "check": {
+      "command": "/workspace/sounio/bin/souc check /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.sio",
+      "exitCode": 0,
+      "normalizedResult": "check: OK"
+    },
+    "compile": {
+      "command": "/workspace/sounio/bin/souc compile /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.sio -o /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.elf",
+      "exitCode": 0,
+      "backend": "native-elf",
+      "artifactSha256": "6eb17a1e3ef501fd56b97a55eba91a34c9e5eca40859e34f20adf07e3e4d7932",
+      "artifactBytes": 24584
+    },
+    "directExecution": {
+      "command": "/tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.elf",
+      "exitCode": 0,
+      "stdoutLines": [
+        "FAMILY DT-FIN-001",
+        "4",
+        "3",
+        "0",
+        "3",
+        "FAMILY DT-FIN-002",
+        "3",
+        "1",
+        "1",
+        "1",
+        "FAMILY DT-FIN-003",
+        "2",
+        "2",
+        "2",
+        "2",
+        "FAMILY DT-FIN-004",
+        "0",
+        "0",
+        "3",
+        "0",
+        "ALL PASS"
+      ]
+    },
+    "wasm": {
+      "attempted": true,
+      "publicCliAttempt": {
+        "command": "/workspace/sounio/bin/souc build /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.sio --backend wasm -o /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.wasm",
+        "exitCode": 2,
+        "normalizedResult": "error: madaros build: unsupported backend: wasm",
+        "artifactProduced": false
+      },
+      "rawCompilerAttempt": {
+        "command": "/workspace/sounio/artifacts/self-hosted/madaros /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.sio -t wasm -o /tmp/darwin-deontic-transport-v2/sounio/deontic_transport_finite.direct.wasm",
+        "exitCode": 255,
+        "normalizedResult": "type checking completed; process exited before artifact write",
+        "artifactProduced": false
+      },
+      "driverBoundary": {
+        "path": "/workspace/sounio/self-hosted/compiler/module_native_driver.sio",
+        "sha256": "db21cf961bfee96126294409d6f2acba4c61265b68f691e81cc0ed6e434f2028",
+        "bytes": 52739,
+        "observedGuard": "WASM backend is not yet split into module_native_driver"
+      },
+      "gapReport": "docs/research/deontic-transportability/formal/wasm/wasm-backend-gap-v0.1.md",
+      "artifactProduced": false,
+      "nativeWasmParityEstablished": false
+    }
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, x86_64-unknown-linux-gnu, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)",
+    "temporaryElanHome": "/tmp/darwin-deontic-elan",
+    "sourceCopies": [
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransport.lean",
+        "sha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408",
+        "remoteCopySha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408"
+      },
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFinite.lean",
+        "sha256": "4ec68c26b950af82ae7f0cdd89bfe02e7f38b76dc03cdd15379754ab22f9dd2b",
+        "remoteCopySha256": "4ec68c26b950af82ae7f0cdd89bfe02e7f38b76dc03cdd15379754ab22f9dd2b"
+      },
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFiniteAudit.lean",
+        "sha256": "2bf900c06b41ae71e9e5fb91b2b58f51727f41a4b42f1d50140d356c60af8e0f",
+        "remoteCopySha256": "2bf900c06b41ae71e9e5fb91b2b58f51727f41a4b42f1d50140d356c60af8e0f"
+      }
+    ],
+    "baseBuild": {
+      "command": "lake build",
+      "exitCode": 0,
+      "normalizedResult": "Build completed successfully (3 jobs)."
+    },
+    "finiteBuild": {
+      "command": "lake env lean -o .lake/build/lib/lean/DeonticTransportFinite.olean DeonticTransportFinite.lean",
+      "exitCode": 0,
+      "oleanSha256": "ec13e3b6547b4b3fda85ab903aa176d7beffe338824b3d546b57d33854b84630",
+      "oleanBytes": 296200
+    },
+    "axiomAudit": {
+      "command": "lake env lean DeonticTransportFiniteAudit.lean",
+      "exitCode": 0,
+      "sorryAxPresent": false,
+      "nativeDecideAxiomPresent": false,
+      "newAxiomsDeclared": false,
+      "dependencies": {
+        "decision_ext": ["propext"],
+        "contains_unionDecision": ["propext"],
+        "contains_intersectDecision": ["propext"],
+        "contains_identifiedSetMany_iff": ["propext", "Quot.sound"],
+        "contains_robustCoreMany_iff": ["propext", "Quot.sound"],
+        "robustDominanceManyA": ["propext"],
+        "robustDominanceManyB": ["propext"],
+        "noEvidenceOnlyOperatorFamily": [],
+        "dtFinite001_mixed_family": ["propext"],
+        "dtFinite002_robust_a": ["propext"],
+        "dtFinite003_robust_b": ["propext"],
+        "dtFinite004_empty_family": ["propext"]
+      }
+    }
+  },
+  "verdict": {
+    "parentGateVerified": true,
+    "arbitraryFiniteFamilySemanticsVerified": true,
+    "leanBuildVerified": true,
+    "leanAxiomAuditVerified": true,
+    "sounioBoundedFoldVerified": true,
+    "leanSounioAggregationAgreement": true,
+    "compilerReconciled": false,
+    "nativeWasmParityEstablished": false,
+    "clinicalDisposition": "REFUSE",
+    "productionAuthorized": false
+  },
+  "invalidationConditions": [
+    "The parent v0.1 receipt hash changes or fails its verifier.",
+    "Any v0.2 source, vector, executable, proof object, evidence, or receipt hash changes.",
+    "The captured Lean or Sounio source differs from its remotely executed copy.",
+    "Any theorem gains sorryAx, a native_decide axiom, or an undeclared axiom dependency.",
+    "A WASM or parity claim is made without a real independently validated artifact.",
+    "The bounded executable fold is represented as a proof for unbounded runtime input.",
+    "The abstract research model is connected to patient, prescription, dose, or production workflows."
+  ]
+}

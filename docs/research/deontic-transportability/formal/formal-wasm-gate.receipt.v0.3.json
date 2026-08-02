@@ -1,0 +1,79 @@
+{
+  "schema": "darwin.deontic-transport-wasm-gate-receipt.v0.3",
+  "generatedAt": "2026-08-02T16:59:44Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "compilerReconciled": false,
+  "nativeWasmParityEstablished": true,
+  "signed": false,
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-finite-gate.receipt.v0.2.json",
+    "sha256": "73461f001a25d080d5da14a5c2a85214b4ffb6d91abc543b3016d2575b2de6de"
+  },
+  "model": {
+    "formalContextCardinality": "ARBITRARY_FINITE_LIST",
+    "executableMaximumContexts": 8,
+    "expectedSelfCheckCode": 87
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "sha256": "9f4b632bfe9a261ea406e583a79f852e339c1c270134504055036e6576c9e22c",
+    "bytes": 101535545,
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "fixedPointSeedVerified": true,
+    "canonicalCompilerGateVerified": true,
+    "diagnosticGatePassed": false,
+    "versionJsonWellFormed": false,
+    "bootstrapChainGate": "INCOMPLETE",
+    "sourceFreshReceiptPresent": false
+  },
+  "wasm": {
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.3.wasm",
+    "sha256": "5dcce578712460c1fa385741d5bb25923b6511b568772ffec7eb2681bcb957f3",
+    "bytes": 3165,
+    "runtimeValidated": true,
+    "imports": [],
+    "mainResult": 87
+  },
+  "native": {
+    "remotePath": "/tmp/sounio-wasm-deontic-v3/artifacts/native/deontic_transport_finite.v0.3.v5",
+    "sha256": "726e6bf7dca0a6d045ea555a0223fb3807c01557b0fa18f32ff87b3fa739a6d5",
+    "bytes": 16392,
+    "executionExitCode": 87
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/formal/evidence/wasm-execution-evidence.v0.3.json",
+      "sha256": "075d7ab635f6f73d9748bd0d1a87eaaa764e097fdfb445c3db646b47de90dd4e",
+      "bytes": 5737
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_3.sio",
+      "sha256": "456312117b787e4ce7202fa2f696e64b5495b9dcdf2be04f324f52f207462375",
+      "bytes": 4105
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/vectors/deontic-transport-finite-vectors.v2.json",
+      "sha256": "b980d9e41948e31fe8f2a34527843c380903c554e989010b2f545e1373216d96",
+      "bytes": 1554
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.3.wasm",
+      "sha256": "5dcce578712460c1fa385741d5bb25923b6511b568772ffec7eb2681bcb957f3",
+      "bytes": 3165
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/wasm-backend-closure-v0.3.md",
+      "sha256": "9d2bff74d0787e50ba42fde08ea3f5cda316ddfd5c54468dd343878fb57219e3",
+      "bytes": 1549
+    },
+    {
+      "path": "scripts/verify-deontic-wasm-gate.mjs",
+      "sha256": "f647881ce7a7e71240d3267222e8322355c3646910519b3bce696ea522075d7f",
+      "bytes": 9287
+    }
+  ]
+}

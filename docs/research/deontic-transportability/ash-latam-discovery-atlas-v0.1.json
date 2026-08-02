@@ -1,0 +1,159 @@
+{
+  "schema": "darwin.deontic-transport-atlas.v0.1",
+  "atlasId": "ash-latam-vte-prevention-discovery-10",
+  "asOfDate": "2026-08-02",
+  "status": "DISCOVERY_METADATA_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "sourceSnapshotStatus": "EXTERNAL_BYTES_HASHED_NOT_REDISTRIBUTED",
+  "source": {
+    "publisher": "American Society of Hematology",
+    "title": "ASH Clinical Practice Guidelines: Venous Thromboembolism - Prevention in Latin America",
+    "url": "https://www.hematology.org/-/media/hematology/files/clinicians/guidelines/vte/la-ash-slides-vte-prevention_033122-en.pdf",
+    "locator": "PDF page 46, Changes to the source recommendations",
+    "pageIndexZeroBased": 45,
+    "sha256": "022088fed26944b1f8347da3ce0ab33b27dab7cb44ecdf76c6f98673aac9f6c0",
+    "bytes": 1508712,
+    "mediaType": "application/pdf",
+    "pages": 47,
+    "representation": "PARAPHRASED_METADATA",
+    "recommendationTextIncluded": false
+  },
+  "reportedPopulation": {
+    "totalRecommendations": 21,
+    "changedDirection": 6,
+    "changedStrength": 4
+  },
+  "pilotSummary": {
+    "rows": 10,
+    "changePropertyCounts": {
+      "DIRECTION": 6,
+      "STRENGTH": 4
+    },
+    "reportedDriverGroupCounts": {
+      "ADDITIONAL_INDIRECT_EVIDENCE": 2,
+      "RESOURCE_ACCESS_EQUITY": 6,
+      "VALUES_PREFERENCES": 2
+    }
+  },
+  "records": [
+    {
+      "id": "ASH-LATAM-PREV-REC-02",
+      "recommendationNumber": 2,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "ADDITIONAL_INDIRECT_EVIDENCE",
+      "reportedRationaleParaphrase": "The target panel considered indirect evidence about mechanical prophylaxis beyond the source panel's pharmacological focus.",
+      "sourceLocator": "PDF page 46, fourth bullet",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-06",
+      "recommendationNumber": 6,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "ADDITIONAL_INDIRECT_EVIDENCE",
+      "reportedRationaleParaphrase": "The target panel considered indirect evidence about mechanical prophylaxis beyond the source panel's pharmacological focus.",
+      "sourceLocator": "PDF page 46, fourth bullet",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-09",
+      "recommendationNumber": 9,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-10",
+      "recommendationNumber": 10,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-11",
+      "recommendationNumber": 11,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-12",
+      "recommendationNumber": 12,
+      "changeProperty": "STRENGTH",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-13",
+      "recommendationNumber": 13,
+      "changeProperty": "DIRECTION",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-16",
+      "recommendationNumber": 16,
+      "changeProperty": "STRENGTH",
+      "reportedDriverGroup": "RESOURCE_ACCESS_EQUITY",
+      "reportedRationaleParaphrase": "The reported evidence differences were judged too small to justify implementation resources, with additional access and equity concerns.",
+      "sourceLocator": "PDF page 46, second and third bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-18",
+      "recommendationNumber": 18,
+      "changeProperty": "STRENGTH",
+      "reportedDriverGroup": "VALUES_PREFERENCES",
+      "reportedRationaleParaphrase": "The target panel assigned greater importance to how patients may value oral alternatives.",
+      "sourceLocator": "PDF page 46, fifth and sixth bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    },
+    {
+      "id": "ASH-LATAM-PREV-REC-19",
+      "recommendationNumber": 19,
+      "changeProperty": "STRENGTH",
+      "reportedDriverGroup": "VALUES_PREFERENCES",
+      "reportedRationaleParaphrase": "The target panel assigned greater importance to how patients may value oral alternatives.",
+      "sourceLocator": "PDF page 46, fifth and sixth bullets",
+      "effectTransportStatus": "NOT_ADJUDICATED",
+      "picoAlignmentStatus": "NOT_ADJUDICATED",
+      "confirmatoryEligible": false
+    }
+  ],
+  "limitations": [
+    "The official summary reports change categories and grouped rationales, not a frozen pairwise evidence-lineage adjudication.",
+    "No record in this discovery atlas establishes causal-effect transportability.",
+    "The atlas omits recommendation text and cannot support a clinical decision.",
+    "Records remain outside confirmatory analysis until source and adapted EtD packets are independently extracted."
+  ]
+}

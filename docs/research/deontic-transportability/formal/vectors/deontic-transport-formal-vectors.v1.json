@@ -1,0 +1,105 @@
+{
+  "schema": "darwin.deontic-transport-formal-vectors.v1",
+  "vectorSetId": "deontic-transport-finite-2x2-v1",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "arithmetic": "SIGNED_INTEGER_DOT_PRODUCT",
+  "decisionMask": {
+    "REFUSE": 0,
+    "ONLY_A": 1,
+    "ONLY_B": 2,
+    "BOTH": 3
+  },
+  "identificationState": {
+    "REFUSED": 0,
+    "IDENTIFIED_A": 1,
+    "IDENTIFIED_B": 2,
+    "PARTIAL_ABSTAIN": 3
+  },
+  "vectors": [
+    {
+      "id": "DT-001",
+      "proposition": "CAUSAL_TRANSPORT_INSUFFICIENT_UNDER_VALUE_SHIFT",
+      "evidenceSha256": "8ceb8a202dd140c5223ab887e44a56d102d917429e2bd716141ef9693649238c",
+      "evidence": {
+        "actionA": [8, 4],
+        "actionB": [5, 1]
+      },
+      "contexts": [
+        {"weights": [2, -1], "feasibleMask": 3, "authority": 1},
+        {"weights": [1, -2], "feasibleMask": 3, "authority": 2}
+      ],
+      "expected": {
+        "scores": [[12, 9], [0, 3]],
+        "decisions": [1, 2],
+        "identifiedSet": 3,
+        "robustCore": 0,
+        "state": 3
+      }
+    },
+    {
+      "id": "DT-002",
+      "proposition": "FEASIBILITY_BREAKS_RECOMMENDATION_TRANSPORT",
+      "evidenceSha256": "60d8e326bb078e5274506b74ca8d4d3f253920db19b9f978dba4fa08d0cb7d71",
+      "evidence": {
+        "actionA": [10, 7],
+        "actionB": [6, 2]
+      },
+      "contexts": [
+        {"weights": [2, -1], "feasibleMask": 3, "authority": 3},
+        {"weights": [2, -1], "feasibleMask": 2, "authority": 4}
+      ],
+      "expected": {
+        "scores": [[13, 10], [13, 10]],
+        "decisions": [1, 2],
+        "identifiedSet": 3,
+        "robustCore": 0,
+        "state": 3
+      }
+    },
+    {
+      "id": "DT-003",
+      "proposition": "EQUITY_OBJECTIVE_CAN_REVERSE_POPULATION_CHOICE",
+      "evidenceSha256": "2aae8f336a89f9c22ac3a6531f2e68ba108c7080bcff1e1d655dd9162b2a5d15",
+      "evidence": {
+        "actionA": [10, 8],
+        "actionB": [7, 1]
+      },
+      "contexts": [
+        {"weights": [1, 0], "feasibleMask": 3, "authority": 5},
+        {"weights": [1, -1], "feasibleMask": 3, "authority": 6}
+      ],
+      "expected": {
+        "scores": [[10, 7], [2, 6]],
+        "decisions": [1, 2],
+        "identifiedSet": 3,
+        "robustCore": 0,
+        "state": 3
+      }
+    },
+    {
+      "id": "DT-004",
+      "proposition": "POPULATION_VALUES_DO_NOT_IDENTIFY_INDIVIDUAL_PREFERENCE",
+      "evidenceSha256": "396674a956422f3240217d8a1b544dac5c358144e33efe5dd59a636671ee3a97",
+      "evidence": {
+        "actionA": [9, 4],
+        "actionB": [6, 1]
+      },
+      "contexts": [
+        {"weights": [2, -1], "feasibleMask": 3, "authority": 7},
+        {"weights": [1, -3], "feasibleMask": 3, "authority": 8}
+      ],
+      "expected": {
+        "scores": [[14, 11], [-3, 3]],
+        "decisions": [1, 2],
+        "identifiedSet": 3,
+        "robustCore": 0,
+        "state": 3
+      }
+    }
+  ]
+}
+

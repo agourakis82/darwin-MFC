@@ -1,0 +1,50 @@
+{
+  "schema": "darwin.deontic-transport-finite-vectors.v2",
+  "vectorSetId": "darwin-deontic-transport-finite-2026-08-02",
+  "parentVectorSchema": "darwin.deontic-transport-formal-vectors.v1",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "decisionEncoding": {
+    "0": "EMPTY_OR_REFUSE",
+    "1": "ONLY_A",
+    "2": "ONLY_B",
+    "3": "BOTH"
+  },
+  "identificationStateEncoding": {
+    "0": "REFUSED",
+    "1": "IDENTIFIED_A",
+    "2": "IDENTIFIED_B",
+    "3": "PARTIAL_ABSTAIN"
+  },
+  "maximumExecutableFamilySize": 8,
+  "families": [
+    {
+      "id": "DT-FIN-001",
+      "description": "Four-member family containing opposing unique decisions",
+      "decisions": [1, 1, 2, 1],
+      "expected": {"identifiedSet": 3, "robustCore": 0, "state": 3}
+    },
+    {
+      "id": "DT-FIN-002",
+      "description": "Three-member family unanimously selecting A",
+      "decisions": [1, 1, 1],
+      "expected": {"identifiedSet": 1, "robustCore": 1, "state": 1}
+    },
+    {
+      "id": "DT-FIN-003",
+      "description": "Two-member family unanimously selecting B",
+      "decisions": [2, 2],
+      "expected": {"identifiedSet": 2, "robustCore": 2, "state": 2}
+    },
+    {
+      "id": "DT-FIN-004",
+      "description": "Explicit empty-family algebraic convention; clinical disposition remains REFUSE",
+      "decisions": [],
+      "expected": {"identifiedSet": 0, "robustCore": 3, "state": 0}
+    }
+  ],
+  "negativeCounts": [-1, 9]
+}

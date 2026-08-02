@@ -1,0 +1,148 @@
+{
+  "schema": "darwin.deontic-transport-semantic-evidence.v0.4",
+  "generatedAt": "2026-08-02T18:46:00Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-wasm-gate.receipt.v0.3.json",
+    "sha256": "03d26871e56fcc1392c0f734de794c431d45ca26689b0e2650a1fdcb315391bc"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "executionEnvironment": {
+    "host": "sounio-workspace",
+    "platform": "Linux 7.0.2-5-pve x86_64 GNU/Linux",
+    "node": "v22.22.2",
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "worktree": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "isolatedWorktree": true,
+    "repositoryClean": true,
+    "sharedWorkspaceModifiedByGate": false
+  },
+  "source": {
+    "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_4.sio",
+    "sounioRepositoryPath": "tests/wasm/deontic_transport_finite_wasm_v0_4.sio",
+    "sha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+    "sounioRepositorySha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+    "ioEffects": false,
+    "maximumExecutableFamilySize": 8,
+    "activeMaskDomain": [0, 1, 2, 3],
+    "invalidActiveMasksRefused": true,
+    "inactivePaddingIgnored": true
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "bytes": 101651571,
+    "threeCleanBuildsBitIdentical": true,
+    "errorDiagnostics": 0,
+    "warningDiagnostics": 4072,
+    "warningClean": false,
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "fixedPointBitIdentical": true,
+    "canonicalCompilerGateVerified": true,
+    "bootstrapChainStagesPassed": 8,
+    "compilerReconciled": true
+  },
+  "wasm": {
+    "compileExitCode": 0,
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+    "remotePath": "/tmp/darwin-sourcefresh-v04/deontic-v04-a.wasm",
+    "repeatRemotePath": "/tmp/darwin-sourcefresh-v04/deontic-v04-b.wasm",
+    "bytes": 8324,
+    "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+    "repeatSha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+    "deterministic": true,
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "dt_active_masks_valid8",
+      "dt_case_code",
+      "dt_classify",
+      "dt_contains_a",
+      "dt_contains_b",
+      "dt_exhaustive_bounded_self_check",
+      "dt_exhaustive_walk",
+      "dt_intersect_many8",
+      "dt_intersect_masks",
+      "dt_reference_case_code",
+      "dt_union_many8",
+      "dt_union_masks",
+      "dt_valid_mask",
+      "dt_verify_case",
+      "main",
+      "memory"
+    ],
+    "mainResult": 87
+  },
+  "native": {
+    "compileExitCode": 0,
+    "remotePath": "/tmp/darwin-sourcefresh-v04/deontic-v04-a.native",
+    "repeatRemotePath": "/tmp/darwin-sourcefresh-v04/deontic-v04-b.native",
+    "bytes": 32776,
+    "sha256": "0a4c2489960b4ce0bedbe5627ae18881177cfd6b8c36c809346f807851b3f7dd",
+    "repeatSha256": "0a4c2489960b4ce0bedbe5627ae18881177cfd6b8c36c809346f807851b3f7dd",
+    "deterministic": true,
+    "executionExitCode": 87,
+    "repeatExecutionExitCode": 87,
+    "expectedSelfCheckCode": 87
+  },
+  "semanticCoverage": {
+    "pairCases": 16,
+    "validFamilies": 87381,
+    "rejectionCases": 438,
+    "boundedDomainComplete": true,
+    "independentReference": "JavaScript bitwise set algebra",
+    "sounioSelfOracle": "independent bitwise implementation",
+    "typescriptClinicalMathematics": false
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean 4.30.0-rc2",
+    "toolchainCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "platform": "arm64-apple-darwin24.6.0",
+    "buildVerified": true,
+    "buildJobs": 5,
+    "theoremPath": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinement.lean",
+    "theoremSha256": "e9956658a37310bd697e25742fddffde352d526a60448e1dfec314d0695e5a7b",
+    "auditPath": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinementAudit.lean",
+    "auditSha256": "11ebf44b4d73c4e65f96c36ee4df982153db64b2632032553982844262f960f6",
+    "centralTheorem": "abiCaseCodeMany8_refines",
+    "centralTheoremAxioms": [
+      "propext"
+    ],
+    "oversizedRejectionAxioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "sorryCount": 0,
+    "nativeDecideCount": 0,
+    "binarySemanticsMechanized": false
+  },
+  "verdict": {
+    "sourceCommitPubliclyReachable": true,
+    "compilerReconciled": true,
+    "nativeWasmParityEstablished": true,
+    "boundedSemanticCoverageComplete": true,
+    "leanModelRefinementEstablished": true,
+    "clinicalDisposition": "REFUSE",
+    "productionAuthorized": false,
+    "noveltyEstablished": false
+  },
+  "residualLimits": [
+    "The Lean theorem refines the modeled integer ABI, not a mechanized semantics of the emitted WASM bytes.",
+    "The executable completeness claim is bounded to masks 0 through 3 and family length at most eight.",
+    "The current backend must refuse loop-bearing control flow that it cannot lower soundly.",
+    "No receipt or artifact is signed.",
+    "No empirical, clinical, regulatory, or novelty claim is established."
+  ]
+}

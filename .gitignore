@@ -13,6 +13,9 @@
 # production
 /build
 
+# Lean build cache
+.lake/
+
 # misc
 .DS_Store
 *.pem

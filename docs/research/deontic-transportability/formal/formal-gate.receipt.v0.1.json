@@ -1,0 +1,138 @@
+{
+  "schema": "darwin.deontic-transport-formal-gate-receipt.v0.1",
+  "receiptId": "deontic-transport-formal-gate-2026-08-02-v0.1",
+  "createdDate": "2026-08-02",
+  "status": "RESEARCH_FORMAL_NATIVE_VERIFIED",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": false,
+  "nativeWasmParityEstablished": false,
+  "model": {
+    "actions": 2,
+    "outcomesPerAction": 2,
+    "contextsPerVector": 2,
+    "arithmetic": "SIGNED_INTEGER_DOT_PRODUCT",
+    "vectorCount": 4,
+    "clinicalSemanticsPresent": false
+  },
+  "lean": {
+    "status": "VERIFIED",
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "buildExitCode": 0,
+    "axiomAuditExitCode": 0,
+    "generalTheoremCount": 6,
+    "concreteWitnessCount": 4,
+    "evidenceOnlyTheoremAxiomFree": true,
+    "foundationalAxiomDependencies": ["propext"],
+    "sorryAxPresent": false,
+    "nativeDecideAxiomPresent": false,
+    "newAxiomsDeclared": false
+  },
+  "sounio": {
+    "status": "NATIVE_VERIFIED",
+    "compilerIdentity": "Madaros v0.80.0 -- the Sounio self-hosted compiler",
+    "checkExitCode": 0,
+    "compileExitCode": 0,
+    "directExecutionExitCode": 0,
+    "nativeElfSha256": "5909af37fbc0079b68e4c010b81191b391dc51865d6fe31491cba4dfa48fd196",
+    "sourceFreshReceiptPresent": false,
+    "compilerReconciled": false,
+    "wasm": {
+      "status": "BLOCKED_UNSUPPORTED_BACKEND",
+      "attempted": true,
+      "exitCode": 2,
+      "artifactProduced": false,
+      "nativeWasmParityEstablished": false
+    }
+  },
+  "crossLanguage": {
+    "status": "VECTOR_AGREEMENT_VERIFIED",
+    "leanWitnessesBuilt": true,
+    "sounioNativeOutputCaptured": true,
+    "vectorAgreement": true,
+    "wasmIncluded": false
+  },
+  "gates": {
+    "leanBuild": "PASS",
+    "leanAxiomAudit": "PASS",
+    "leanNoSorry": "PASS",
+    "leanNoNativeDecideAxiom": "PASS",
+    "sounioCheck": "PASS",
+    "sounioNativeCompile": "PASS",
+    "sounioNativeDirectRun": "PASS",
+    "leanSounioVectorAgreement": "PASS",
+    "compilerSourceFresh": "BLOCKED",
+    "sounioWasmBuild": "BLOCKED",
+    "nativeWasmParity": "BLOCKED",
+    "empiricalValidation": "NOT_STARTED",
+    "clinicalAuthorization": "REFUSE"
+  },
+  "verificationCommand": "node scripts/verify-deontic-formal-gate.mjs",
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/formal/README.md",
+      "sha256": "30b233067d1ff08719082fc3baf228b056b427b5fa1ad9d356db498033a4ce46",
+      "bytes": 2035
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransport.lean",
+      "sha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408",
+      "bytes": 8218
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportAudit.lean",
+      "sha256": "c7fe883713fb6ee308dc1f009459b66930a09c9529ceaeb0956a2fb436339243",
+      "bytes": 409
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/lakefile.lean",
+      "sha256": "441eb5ea6b883114d78a480e944030b0f36da5917b12c3d51132c63986b757a7",
+      "bytes": 135
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/lean-toolchain",
+      "sha256": "2ca79bdfcf30c10b90f1bf037cf0f0d7528cf6b1f4a72a7f98ef17a2752d36af",
+      "bytes": 30
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport.sio",
+      "sha256": "2c7cf6019070e2ca5c62ca69cc04766480b6cfeaa020ccecf46879fe0f712962",
+      "bytes": 5846
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/vectors/deontic-transport-formal-vectors.v1.json",
+      "sha256": "6c6a98c80aae537c679b65c555d4747189795175299205fc601090cd02ce85b9",
+      "bytes": 2987
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/evidence/execution-evidence.v1.json",
+      "sha256": "1fa0bb8f8202086721b0fc0aa8b6666f7fd4a71146ab18ca3be6325a08b5980b",
+      "bytes": 7705
+    },
+    {
+      "path": "scripts/verify-deontic-formal-gate.mjs",
+      "sha256": "0a91a936d6c028b534bacf7a42aa4a514da8894154c183536616929dd56d435c",
+      "bytes": 14411
+    }
+  ],
+  "limitations": [
+    "The mechanization covers a finite two-action, two-outcome, two-context model rather than a universal recommendation calculus.",
+    "The robust-dominance theorem is mechanized for two declared contexts; arbitrary context families remain future work.",
+    "Integer weights are exact research semantics and are not elicited utilities or clinical thresholds.",
+    "The Sounio compiler executed successfully but is not linked to a clean source-fresh compiler receipt.",
+    "The current Madaros CLI rejected the WASM backend, so no WASM artifact or native/WASM parity exists.",
+    "No retrospective atlas adjudication, prospective experiment, empirical validation, or novelty review is completed.",
+    "No theorem, executable, or receipt authorizes a clinical recommendation or patient use."
+  ],
+  "invalidationConditions": [
+    "Any artifact hash or byte size differs from this receipt.",
+    "Any vector no longer agrees with the original abstract counterexample evidence.",
+    "Any Lean theorem gains sorryAx, a native_decide axiom, or an undeclared dependency.",
+    "Any captured source hash differs between local and remotely executed copies.",
+    "Any claim upgrades compiler, WASM, novelty, empirical, or clinical status without a new receipt."
+  ]
+}
+

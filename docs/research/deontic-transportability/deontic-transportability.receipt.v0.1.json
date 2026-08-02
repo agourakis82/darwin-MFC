@@ -1,0 +1,88 @@
+{
+  "schema": "darwin.deontic-transport-research-receipt.v0.1",
+  "receiptId": "deontic-transportability-research-2026-08-02-v0.1",
+  "createdDate": "2026-08-02",
+  "researchProgram": "Deontic Transportability and Normative Non-Identifiability",
+  "status": "RESEARCH_PACKAGE_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "sourceSnapshotsFrozen": false,
+  "sourceBytesHashed": true,
+  "preregistered": false,
+  "signed": false,
+  "proofStatus": {
+    "finiteCounterexamplesImplemented": true,
+    "generalTheoremsMechanizedInLean": false,
+    "sounioModelImplemented": false,
+    "nativeWasmParityEstablished": false,
+    "retrospectiveCorpusValidated": false,
+    "prospectiveExperimentCompleted": false
+  },
+  "expectedGate": {
+    "counterexampleCount": 4,
+    "allCounterexamplesChangeDecisionWithEvidenceFixed": true,
+    "allCounterexampleRobustCoresEmpty": true,
+    "discoveryAtlasRecordCount": 10,
+    "discoveryAtlasDirectionChanges": 6,
+    "discoveryAtlasStrengthChanges": 4,
+    "effectTransportAdjudicated": false,
+    "confirmatoryEligible": false
+  },
+  "publicSource": {
+    "publisher": "American Society of Hematology",
+    "url": "https://www.hematology.org/-/media/hematology/files/clinicians/guidelines/vte/la-ash-slides-vte-prevention_033122-en.pdf",
+    "locator": "PDF page 46, Changes to the source recommendations",
+    "sha256": "022088fed26944b1f8347da3ce0ab33b27dab7cb44ecdf76c6f98673aac9f6c0",
+    "bytes": 1508712,
+    "mediaType": "application/pdf",
+    "pages": 47,
+    "redistributed": false
+  },
+  "verificationCommand": "node scripts/verify-deontic-transportability.mjs",
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/README.md",
+      "sha256": "2950d23d5626ee794e3fea138ca0edf55af357a9107710263b524e583cc04acd",
+      "bytes": 2914
+    },
+    {
+      "path": "docs/research/deontic-transportability/deontic-transportability-theory-v0.1.md",
+      "sha256": "1b7c0e44a4e0575ef9026c1f1a92b15708870d4c7fd30292cf41e2f16194d236",
+      "bytes": 13037
+    },
+    {
+      "path": "docs/research/deontic-transportability/preregistration-protocol-v0.1.md",
+      "sha256": "b139d15604c64be62398aeaae31806e845c0feb620e1e30cd6a2ed4df4a2f64c",
+      "bytes": 14646
+    },
+    {
+      "path": "docs/research/deontic-transportability/novelty-map-2026-08-02.md",
+      "sha256": "f8b2b80c74aecd95a0ce7589107f7c8ebb4583774100ed2127b9901d26232473",
+      "bytes": 8446
+    },
+    {
+      "path": "docs/research/deontic-transportability/ash-latam-discovery-atlas-v0.1.json",
+      "sha256": "57ee7adaef8f50edb706795b22c886f2a3876c68d3b0ac6d016c93dc10137189",
+      "bytes": 7228
+    },
+    {
+      "path": "docs/research/deontic-transportability/counterexamples-v0.1.json",
+      "sha256": "d216f3f4af49aa2362852428871d6e6b8e3cb275300f08f54fdbdd3ceb8e45b0",
+      "bytes": 6734
+    },
+    {
+      "path": "scripts/verify-deontic-transportability.mjs",
+      "sha256": "be13b8df2e369034041a78f8f6ff33b254a1273c45e02af67f0f46d62f9e25d6",
+      "bytes": 15819
+    }
+  ],
+  "limitations": [
+    "The finite counterexamples demonstrate logical insufficiency but do not establish that the full framework is novel.",
+    "The ASH atlas contains public discovery metadata only and does not adjudicate causal-effect transportability or PICO alignment.",
+    "The official source bytes were hashed, but the document is not redistributed or retained as an artifact in this package.",
+    "The protocol is a draft and has not been registered, ethically reviewed for human participation, or executed.",
+    "No clinical recommendation, patient context, prescription, or dose is authorized by this receipt."
+  ]
+}

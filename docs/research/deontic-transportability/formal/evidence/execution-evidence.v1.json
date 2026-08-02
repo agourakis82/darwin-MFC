@@ -1,0 +1,200 @@
+{
+  "schema": "darwin.deontic-transport-formal-execution-evidence.v1",
+  "evidenceId": "deontic-transport-formal-2026-08-02-v1",
+  "capturedDate": "2026-08-02",
+  "status": "RESEARCH_EXECUTION_EVIDENCE",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "executionEnvironment": {
+    "transport": "SSH",
+    "workspaceHostAlias": "sounio-workspace",
+    "repositoryPath": "/workspace/sounio",
+    "repositoryBranch": "research/zd-fiber-antisymmetry-lemma-20260731",
+    "repositoryCommit": "94673019f313a0db30a2c98617078f24da22c28e",
+    "repositoryTree": "20b7663ff4b088e51a5d00106e09ecf87e1070d7",
+    "repositoryClean": false,
+    "temporaryDirectory": "/tmp/darwin-deontic-transport-v1",
+    "workspaceModifiedByGate": false
+  },
+  "sounio": {
+    "source": {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport.sio",
+      "sha256": "2c7cf6019070e2ca5c62ca69cc04766480b6cfeaa020ccecf46879fe0f712962",
+      "remoteCopySha256": "2c7cf6019070e2ca5c62ca69cc04766480b6cfeaa020ccecf46879fe0f712962"
+    },
+    "compiler": {
+      "identity": "Madaros v0.80.0 -- the Sounio self-hosted compiler",
+      "soucLauncher": {
+        "path": "/workspace/sounio/bin/souc",
+        "sha256": "ad3ee58b3835cccfbf9382fba01498bc61bdcb8402c8ef47c1c3abf26099c008",
+        "bytes": 10234
+      },
+      "madarosWrapper": {
+        "path": "/workspace/sounio/bin/madaros",
+        "sha256": "b5acb8376bf83d4e657b652d62feec965f80a8cdc7c229f86e2bb9c12c3292d7",
+        "bytes": 23958
+      },
+      "rawElf": {
+        "path": "/workspace/sounio/artifacts/self-hosted/madaros",
+        "sha256": "6303ec70187bbfe6b190b52b5843b61a49316a98c0bcefd7c248c7f0d3f7f5cb",
+        "bytes": 102192341
+      },
+      "sourceFreshReceiptPresent": false,
+      "compilerReconciled": false
+    },
+    "check": {
+      "command": "/workspace/sounio/bin/souc check /tmp/darwin-deontic-transport-v1/sounio/deontic_transport.sio",
+      "exitCode": 0,
+      "normalizedResult": "check: OK"
+    },
+    "compile": {
+      "command": "/workspace/sounio/bin/souc compile /tmp/darwin-deontic-transport-v1/sounio/deontic_transport.sio -o /tmp/darwin-deontic-transport-v1/sounio/deontic_transport.elf",
+      "exitCode": 0,
+      "backend": "native-elf",
+      "artifactSha256": "5909af37fbc0079b68e4c010b81191b391dc51865d6fe31491cba4dfa48fd196",
+      "artifactBytes": 24584
+    },
+    "directExecution": {
+      "command": "/tmp/darwin-deontic-transport-v1/sounio/deontic_transport.elf",
+      "exitCode": 0,
+      "stdoutLines": [
+        "CASE DT-001",
+        "1",
+        "2",
+        "3",
+        "0",
+        "3",
+        "CASE DT-002",
+        "1",
+        "2",
+        "3",
+        "0",
+        "3",
+        "CASE DT-003",
+        "1",
+        "2",
+        "3",
+        "0",
+        "3",
+        "CASE DT-004",
+        "1",
+        "2",
+        "3",
+        "0",
+        "3",
+        "ALL PASS"
+      ]
+    },
+    "wasm": {
+      "attempted": true,
+      "command": "/workspace/sounio/bin/souc build /tmp/darwin-deontic-transport-v1/sounio/deontic_transport.sio --backend wasm -o /tmp/darwin-deontic-transport-v1/sounio/deontic_transport.wasm",
+      "exitCode": 2,
+      "normalizedResult": "error: madaros build: unsupported backend: wasm",
+      "artifactProduced": false,
+      "nativeWasmParityEstablished": false
+    }
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, x86_64-unknown-linux-gnu, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)",
+    "lakeVersion": "Lake version 5.0.0-src+3dc1a08 (Lean version 4.30.0-rc2)",
+    "releaseSource": "https://releases.lean-lang.org/lean4/v4.30.0-rc2/lean-4.30.0-rc2-linux.tar.zst",
+    "temporaryElanHome": "/tmp/darwin-deontic-elan",
+    "leanBinary": {
+      "sha256": "3e0d0d3d801675359f2d4cf9815bfdb417b20b92fdd9d48b3b14c95bbae28bbf",
+      "bytes": 9024
+    },
+    "lakeBinary": {
+      "sha256": "d3e1f322c08d87f0d5850132a0b0309c1edbe53d641276b344717da448c8bc8b",
+      "bytes": 13792
+    },
+    "sourceCopies": [
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransport.lean",
+        "sha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408",
+        "remoteCopySha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408"
+      },
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportAudit.lean",
+        "sha256": "c7fe883713fb6ee308dc1f009459b66930a09c9529ceaeb0956a2fb436339243",
+        "remoteCopySha256": "c7fe883713fb6ee308dc1f009459b66930a09c9529ceaeb0956a2fb436339243"
+      },
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/lakefile.lean",
+        "sha256": "441eb5ea6b883114d78a480e944030b0f36da5917b12c3d51132c63986b757a7",
+        "remoteCopySha256": "441eb5ea6b883114d78a480e944030b0f36da5917b12c3d51132c63986b757a7"
+      },
+      {
+        "path": "docs/research/deontic-transportability/formal/lean4/lean-toolchain",
+        "sha256": "2ca79bdfcf30c10b90f1bf037cf0f0d7528cf6b1f4a72a7f98ef17a2752d36af",
+        "remoteCopySha256": "2ca79bdfcf30c10b90f1bf037cf0f0d7528cf6b1f4a72a7f98ef17a2752d36af"
+      }
+    ],
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "exitCode": 1,
+        "reason": "Import was not first and PackageConfig.name was unsupported by the pinned Lake version."
+      },
+      {
+        "attempt": 2,
+        "exitCode": 0,
+        "normalizedResult": "Build completed successfully (3 jobs)."
+      },
+      {
+        "attempt": 3,
+        "exitCode": 0,
+        "normalizedResult": "Built DeonticTransport (978ms); Build completed successfully (3 jobs).",
+        "change": "Concrete witnesses changed from native_decide to decide."
+      }
+    ],
+    "build": {
+      "command": "lake build",
+      "exitCode": 0,
+      "normalizedResult": "Build completed successfully (3 jobs).",
+      "oleanSha256": "a5e619d1c98415804c05e6320f4ca27e906888f6c47490a60a12f0434757ebc4",
+      "oleanBytes": 824088
+    },
+    "axiomAudit": {
+      "command": "lake env lean DeonticTransportAudit.lean",
+      "exitCode": 0,
+      "sorryAxPresent": false,
+      "nativeDecideAxiomPresent": false,
+      "newAxiomsDeclared": false,
+      "dependencies": {
+        "noEvidenceOnlyOperator": [],
+        "infeasibleA_ne_onlyA": ["propext"],
+        "infeasibleB_ne_onlyB": ["propext"],
+        "disagreement_set_identified": ["propext"],
+        "robustDominanceA": ["propext"],
+        "robustDominanceB": ["propext"],
+        "dt001_value_shift": ["propext"],
+        "dt002_feasibility_shift": ["propext"],
+        "dt003_equity_shift": ["propext"],
+        "dt004_authority_boundary": ["propext"]
+      }
+    }
+  },
+  "verdict": {
+    "leanBuildVerified": true,
+    "leanAxiomAuditVerified": true,
+    "sounioCheckVerified": true,
+    "sounioNativeExecutionVerified": true,
+    "leanSounioVectorAgreement": true,
+    "compilerReconciled": false,
+    "nativeWasmParityEstablished": false,
+    "clinicalDisposition": "REFUSE",
+    "productionAuthorized": false
+  },
+  "invalidationConditions": [
+    "Any source, vector, toolchain, compiler, executable, evidence, or receipt hash changes.",
+    "The captured Lean source differs from the remotely built copy.",
+    "The captured Sounio source differs from the remotely compiled copy.",
+    "Any theorem gains sorryAx, a native_decide axiom, or an undeclared axiom dependency.",
+    "A WASM claim is made without a real artifact and exact observed parity.",
+    "The research-only model is connected to a patient, prescription, dose, or production workflow."
+  ]
+}
+

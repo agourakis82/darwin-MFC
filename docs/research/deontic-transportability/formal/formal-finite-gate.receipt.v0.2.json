@@ -1,0 +1,147 @@
+{
+  "schema": "darwin.deontic-transport-finite-gate-receipt.v0.2",
+  "receiptId": "deontic-transport-finite-gate-2026-08-02-v0.2",
+  "createdDate": "2026-08-02",
+  "status": "RESEARCH_FINITE_FORMAL_NATIVE_VERIFIED",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": false,
+  "nativeWasmParityEstablished": false,
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-gate.receipt.v0.1.json",
+    "schema": "darwin.deontic-transport-formal-gate-receipt.v0.1",
+    "sha256": "366f915f222c3b68d9549d5b91e75f52e716c54d13df183065c986abf96ecc47"
+  },
+  "model": {
+    "actions": 2,
+    "outcomesPerAction": 2,
+    "formalContextCardinality": "ARBITRARY_FINITE_LIST",
+    "executableMaximumContexts": 8,
+    "arithmetic": "SIGNED_INTEGER_DOT_PRODUCT_AND_DECISION_MASK_FOLD",
+    "finiteFamilyVectorCount": 4,
+    "clinicalSemanticsPresent": false
+  },
+  "lean": {
+    "status": "VERIFIED",
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "baseBuildExitCode": 0,
+    "finiteBuildExitCode": 0,
+    "axiomAuditExitCode": 0,
+    "generalTheoremCount": 8,
+    "concreteWitnessCount": 4,
+    "arbitraryFiniteFamilySemanticsVerified": true,
+    "familyEvidenceOnlyTheoremAxiomFree": true,
+    "foundationalAxiomDependencies": ["propext", "Quot.sound"],
+    "sorryAxPresent": false,
+    "nativeDecideAxiomPresent": false,
+    "newAxiomsDeclared": false
+  },
+  "sounio": {
+    "status": "BOUNDED_NATIVE_VERIFIED",
+    "compilerIdentity": "Madaros v0.80.0 -- the Sounio self-hosted compiler",
+    "maximumContexts": 8,
+    "invalidCountDisposition": "RETURN_NEGATIVE_ONE_FOR_CALLER_REFUSAL",
+    "checkExitCode": 0,
+    "compileExitCode": 0,
+    "directExecutionExitCode": 0,
+    "nativeElfSha256": "6eb17a1e3ef501fd56b97a55eba91a34c9e5eca40859e34f20adf07e3e4d7932",
+    "sourceFreshReceiptPresent": false,
+    "compilerReconciled": false,
+    "wasm": {
+      "status": "BLOCKED_PUBLIC_CLI_AND_MODULAR_DRIVER",
+      "attempted": true,
+      "publicCliExitCode": 2,
+      "rawCompilerExitCode": 255,
+      "artifactProduced": false,
+      "nativeWasmParityEstablished": false
+    }
+  },
+  "crossLanguage": {
+    "status": "FINITE_AGGREGATION_AGREEMENT_VERIFIED",
+    "leanWitnessesBuilt": true,
+    "sounioNativeOutputCaptured": true,
+    "finiteFamilyVectorAgreement": true,
+    "wasmIncluded": false
+  },
+  "gates": {
+    "parentV0_1Integrity": "PASS",
+    "leanBaseBuild": "PASS",
+    "leanFiniteBuild": "PASS",
+    "leanAxiomAudit": "PASS",
+    "leanNoSorry": "PASS",
+    "leanNoNativeDecideAxiom": "PASS",
+    "leanArbitraryFiniteSemantics": "PASS",
+    "sounioCheck": "PASS",
+    "sounioNativeCompile": "PASS",
+    "sounioNativeDirectRun": "PASS",
+    "leanSounioFiniteAggregationAgreement": "PASS",
+    "compilerSourceFresh": "BLOCKED",
+    "sounioWasmPublicBuild": "BLOCKED",
+    "sounioWasmModularDriver": "BLOCKED",
+    "nativeWasmParity": "BLOCKED",
+    "empiricalValidation": "NOT_STARTED",
+    "clinicalAuthorization": "REFUSE"
+  },
+  "verificationCommand": "node scripts/verify-deontic-finite-gate.mjs",
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/formal/finite-extension-v0.2.md",
+      "sha256": "9f27efd2ebd164888efa1996c438f410d9dca8b0bf430860f49148736222f7ed",
+      "bytes": 1994
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFinite.lean",
+      "sha256": "4ec68c26b950af82ae7f0cdd89bfe02e7f38b76dc03cdd15379754ab22f9dd2b",
+      "bytes": 8927
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFiniteAudit.lean",
+      "sha256": "2bf900c06b41ae71e9e5fb91b2b58f51727f41a4b42f1d50140d356c60af8e0f",
+      "bytes": 514
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite.sio",
+      "sha256": "e07fb550f0b2312a0b42c9cb7faf33b2e790344416e24d911d393b881e0db8f9",
+      "bytes": 5124
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/vectors/deontic-transport-finite-vectors.v2.json",
+      "sha256": "b980d9e41948e31fe8f2a34527843c380903c554e989010b2f545e1373216d96",
+      "bytes": 1554
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/evidence/finite-execution-evidence.v2.json",
+      "sha256": "a501c711433515b0d30b725aebe41319346bb58cd3ea4c7e873dec89cc05dfaa",
+      "bytes": 8174
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/wasm-backend-gap-v0.1.md",
+      "sha256": "58fce24dffbef751aac602d183ceb3de02e212aaee388c3a88e739ab83426bcb",
+      "bytes": 1660
+    },
+    {
+      "path": "scripts/verify-deontic-finite-gate.mjs",
+      "sha256": "5b5bb9bc1c09aace70f350b34d8e55f66d72fc5f4145fd5f82a02cac7a8d7c11",
+      "bytes": 16005
+    }
+  ],
+  "limitations": [
+    "The formal context family is arbitrary and finite, but the model still has only two abstract actions and two integer-valued outcomes per action.",
+    "The Sounio executable is bounded to eight already-contextualized decision masks; the parent v0.1 executable covers scoring, but a single end-to-end multi-context binary is not claimed.",
+    "The empty-family robust core is the vacuous universal set; the classifier and every clinical boundary must still refuse an empty family.",
+    "The Sounio compiler executed successfully but is not linked to a clean source-fresh compiler receipt.",
+    "Both WASM attempts failed and produced no artifact, so browser execution and native/WASM parity do not exist.",
+    "No empirical validation, novelty determination, clinical interpretation, signature, or production authorization is completed."
+  ],
+  "invalidationConditions": [
+    "The parent v0.1 receipt hash or verification result changes.",
+    "Any v0.2 artifact hash or byte size differs from this receipt.",
+    "Any finite vector no longer agrees with the Lean and Sounio aggregation semantics.",
+    "Any Lean theorem gains sorryAx, a native_decide axiom, or an undeclared dependency.",
+    "Any captured source hash differs between local and remotely executed copies.",
+    "Any claim upgrades compiler, WASM, novelty, empirical, or clinical status without a new chained receipt."
+  ]
+}

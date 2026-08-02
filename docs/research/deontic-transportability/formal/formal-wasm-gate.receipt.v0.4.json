@@ -1,0 +1,156 @@
+{
+  "schema": "darwin.deontic-transport-wasm-gate-receipt.v0.4",
+  "generatedAt": "2026-08-02T18:40:30Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "sourceFresh": true,
+  "compilerReconciled": true,
+  "nativeWasmSelfCheckParityEstablished": true,
+  "formalRefinementEstablished": true,
+  "exhaustiveRuntimeRefinementEstablished": true,
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-wasm-gate.receipt.v0.3.json",
+    "sha256": "03d26871e56fcc1392c0f734de794c431d45ca26689b0e2650a1fdcb315391bc"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "semanticReceipt": {
+    "path": "docs/research/deontic-transportability/formal/formal-semantic-refinement.receipt.v0.4.json",
+    "sha256": "e9fa226637a3d7afa3ec600e069aa95e439dc7ba6ba6833e86f4b261637d074c"
+  },
+  "executionEvidence": {
+    "path": "docs/research/deontic-transportability/formal/evidence/wasm-execution-evidence.v0.4.json",
+    "sha256": "bc38b52d8e845db836d190e4c6d8145cb734d1aa35c4f8eb5cacba3d5ba9babe"
+  },
+  "model": {
+    "formalContextCardinality": "ARBITRARY_FINITE_LIST",
+    "executableMaximumContexts": 8,
+    "decisionMasks": [0, 1, 2, 3],
+    "expectedSelfCheckCode": 87
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "bytes": 101651571,
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "cleanBuilds": 2,
+    "bitIdentical": true,
+    "canonicalCompilerGateVerified": true,
+    "bootstrapChainGateVerified": true,
+    "diagnosticGateVerified": true,
+    "versionJsonWellFormed": true,
+    "compilerReconciled": true
+  },
+  "wasm": {
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+    "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+    "bytes": 8324,
+    "runtimeValidated": true,
+    "imports": [],
+    "mainResult": 87,
+    "reproducedByBothCompilers": true
+  },
+  "native": {
+    "remotePath": "/tmp/darwin-sourcefresh-v04/deontic_transport_finite.v0.4.v9.native",
+    "sha256": "0a4c2489960b4ce0bedbe5627ae18881177cfd6b8c36c809346f807851b3f7dd",
+    "bytes": 32776,
+    "executionExitCode": 87,
+    "reproducedByBothCompilers": true
+  },
+  "formalRefinement": {
+    "leanVersion": "4.30.0-rc2",
+    "compiled": true,
+    "projectDeclaredAxioms": [],
+    "standardLeanDependencies": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "exhaustiveRefinement": {
+    "packedStatesChecked": 589824,
+    "canonicalFamiliesRepresented": 87381,
+    "invalidActiveMaskCasesRefused": 16,
+    "invalidInactiveMaskCasesIgnored": 8,
+    "verified": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+      "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+      "bytes": 8422
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/evidence/wasm-execution-evidence.v0.4.json",
+      "sha256": "bc38b52d8e845db836d190e4c6d8145cb734d1aa35c4f8eb5cacba3d5ba9babe",
+      "bytes": 4864
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/formal-semantic-refinement.receipt.v0.4.json",
+      "sha256": "e9fa226637a3d7afa3ec600e069aa95e439dc7ba6ba6833e86f4b261637d074c",
+      "bytes": 6560
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransport.lean",
+      "sha256": "6d6b399e12916d2d3d3df80c585511cd0dc8d1e69e9c597b40f6525457b45408",
+      "bytes": 8218
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFinite.lean",
+      "sha256": "4ec68c26b950af82ae7f0cdd89bfe02e7f38b76dc03cdd15379754ab22f9dd2b",
+      "bytes": 8927
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportFiniteAudit.lean",
+      "sha256": "2bf900c06b41ae71e9e5fb91b2b58f51727f41a4b42f1d50140d356c60af8e0f",
+      "bytes": 514
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinement.lean",
+      "sha256": "e9956658a37310bd697e25742fddffde352d526a60448e1dfec314d0695e5a7b",
+      "bytes": 10172
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinementAudit.lean",
+      "sha256": "11ebf44b4d73c4e65f96c36ee4df982153db64b2632032553982844262f960f6",
+      "bytes": 666
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_4.sio",
+      "sha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+      "bytes": 8150
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/vectors/deontic-transport-finite-vectors.v2.json",
+      "sha256": "b980d9e41948e31fe8f2a34527843c380903c554e989010b2f545e1373216d96",
+      "bytes": 1554
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+      "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+      "bytes": 8324
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/wasm-source-fresh-closure-v0.4.md",
+      "sha256": "ef14672cab57a18b34b98978a19c56cf55a034b87652c985c3379e83f098572c",
+      "bytes": 2277
+    },
+    {
+      "path": "scripts/verify-deontic-wasm-exhaustive.mjs",
+      "sha256": "b4cc6d20decbdcd1ed5deee5d973be7ec5d57a04a838da6c23ff31d085dd5881",
+      "bytes": 7124
+    },
+    {
+      "path": "scripts/verify-deontic-wasm-source-fresh.mjs",
+      "sha256": "bb506b9c9a92bae4f2975d8318dc02bb1f16d41cfe999eca17018ae941df3f86",
+      "bytes": 15542
+    }
+  ]
+}

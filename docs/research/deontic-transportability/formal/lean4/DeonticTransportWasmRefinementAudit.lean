@@ -1,0 +1,17 @@
+import DeonticTransportWasmRefinement
+
+open Darwin.DeonticTransport
+
+#print axioms decodeDecision_encodeDecision
+#print axioms abiUnionMasks_encodeDecision
+#print axioms abiIntersectMasks_encodeDecision
+#print axioms encodeDecision_foldl_union
+#print axioms encodeDecision_foldl_intersection
+#print axioms abiUnionMany8_refines_decisions
+#print axioms abiIntersectMany8_refines_decisions
+#print axioms abiUnionMany8_refines_identifiedSetMany
+#print axioms abiIntersectMany8_refines_robustCoreMany
+#print axioms abiClassify_refines
+#print axioms abiCaseCodeMany8_refines
+#print axioms abiUnionMany8_rejects_oversized
+#print axioms abiIntersectMany8_rejects_oversized

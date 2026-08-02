@@ -1,0 +1,172 @@
+{
+  "schema": "darwin.deontic-transport-source-fresh-gate-receipt.v0.4",
+  "generatedAt": "2026-08-02T18:46:40Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": true,
+  "nativeWasmParityEstablished": true,
+  "boundedSemanticCoverageComplete": true,
+  "formalRefinementEstablished": true,
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-wasm-gate.receipt.v0.3.json",
+    "sha256": "03d26871e56fcc1392c0f734de794c431d45ca26689b0e2650a1fdcb315391bc"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "evidence": {
+    "path": "docs/research/deontic-transportability/formal/evidence/semantic-refinement-evidence.v0.4.json",
+    "sha256": "57493189a78429acd72b5ff2f4d006ef73caad811b992b31677131595752497c",
+    "bytes": 5852
+  },
+  "model": {
+    "formalContextCardinality": "ARBITRARY_FINITE_LIST",
+    "executableMaximumContexts": 8,
+    "decisionMaskDomain": [0, 1, 2, 3],
+    "validExecutableFamilies": 87381,
+    "expectedSelfCheckCode": 87
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "bytes": 101651571,
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "fixedPointBitIdentical": true,
+    "canonicalCompilerGateVerified": true,
+    "bootstrapStagesPassed": 8,
+    "diagnosticGatePassed": true,
+    "errorDiagnostics": 0,
+    "warningDiagnostics": 4072,
+    "warningClean": false,
+    "versionJsonWellFormed": true,
+    "sourceFreshReceiptPresent": true
+  },
+  "wasm": {
+    "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+    "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+    "bytes": 8324,
+    "runtimeValidated": true,
+    "imports": [],
+    "mainResult": 87,
+    "deterministic": true,
+    "exhaustiveFamilies": 87381,
+    "rejectionCases": 438
+  },
+  "native": {
+    "remotePath": "/tmp/darwin-sourcefresh-v04/deontic-v04-a.native",
+    "sha256": "0a4c2489960b4ce0bedbe5627ae18881177cfd6b8c36c809346f807851b3f7dd",
+    "bytes": 32776,
+    "executionExitCode": 87,
+    "deterministic": true
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "buildVerified": true,
+    "centralTheorem": "abiCaseCodeMany8_refines",
+    "centralTheoremAxioms": [
+      "propext"
+    ],
+    "sorryCount": 0,
+    "nativeDecideCount": 0,
+    "binarySemanticsMechanized": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+      "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+      "bytes": 8422
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/evidence/semantic-refinement-evidence.v0.4.json",
+      "sha256": "57493189a78429acd72b5ff2f4d006ef73caad811b992b31677131595752497c",
+      "bytes": 5852
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinement.lean",
+      "sha256": "e9956658a37310bd697e25742fddffde352d526a60448e1dfec314d0695e5a7b",
+      "bytes": 10172
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/DeonticTransportWasmRefinementAudit.lean",
+      "sha256": "11ebf44b4d73c4e65f96c36ee4df982153db64b2632032553982844262f960f6",
+      "bytes": 666
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/lake-manifest.json",
+      "sha256": "d49bb6d3c7f688949938df0a9a2090f540116684ffd1767216fe2cdb4d854e7f",
+      "bytes": 148
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/lakefile.lean",
+      "sha256": "441eb5ea6b883114d78a480e944030b0f36da5917b12c3d51132c63986b757a7",
+      "bytes": 135
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/lean4/lean-toolchain",
+      "sha256": "2ca79bdfcf30c10b90f1bf037cf0f0d7528cf6b1f4a72a7f98ef17a2752d36af",
+      "bytes": 30
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/sounio/deontic_transport_finite_wasm_v0_4.sio",
+      "sha256": "e7431ff3900d9ec056140155a54fae97ea6aeab76ee496ff05324346a9ec4b78",
+      "bytes": 8150
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/deontic_transport_finite.v0.4.wasm",
+      "sha256": "f3acb60e5569e87f9117a1a0b444b0e8a0513b465a14f482689391411bda3216",
+      "bytes": 8324
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/wasm/source-fresh-semantic-closure-v0.4.md",
+      "sha256": "68c1471de39386a227600686929f1d231a9c9137b81f2938ab16742aec37b457",
+      "bytes": 2329
+    },
+    {
+      "path": "scripts/verify-deontic-semantic-refinement.mjs",
+      "sha256": "7787346774ddf979f36f060373cbcdf002f80fd272bc2c73db350da87cf6ea50",
+      "bytes": 5889
+    },
+    {
+      "path": "scripts/verify-deontic-source-fresh-gate.mjs",
+      "sha256": "35303bdba940409269e21829c212e7ee064e5aedff7ee4d783ae87bdea5a6f26",
+      "bytes": 13231
+    }
+  ],
+  "claims": {
+    "established": [
+      "clean public compiler source identity",
+      "three-stage fixed point",
+      "deterministic compiler, native, and WASM artifacts",
+      "exact native/WASM self-check parity",
+      "complete testing of the declared bounded mask domain",
+      "Lean refinement of the modeled bounded integer ABI"
+    ],
+    "notEstablished": [
+      "mechanized semantics of the emitted WASM binary",
+      "correct encoding of real-world contexts or values",
+      "scientific novelty",
+      "empirical or clinical validity",
+      "regulatory authorization",
+      "production authorization"
+    ]
+  },
+  "invalidation": [
+    "parent receipt hash changes",
+    "compiler receipt hash changes",
+    "evidence hash changes",
+    "any listed artifact hash or byte size changes",
+    "Sounio commit, tree, seed, compiler, native, or WASM hash changes",
+    "runtime exhaustive verification ceases to pass",
+    "Lean build or axiom audit changes"
+  ]
+}
