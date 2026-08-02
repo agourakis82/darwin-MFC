@@ -1,0 +1,75 @@
+{
+  "schema": "darwin.auctoritas.finite-vectors.v0.5",
+  "queryUniverse": ["q0", "q1"],
+  "maskEncoding": {
+    "none": 0,
+    "q0": 1,
+    "q1": 2,
+    "q0-and-q1": 3
+  },
+  "dispositions": {
+    "REFUSE": 0,
+    "IDENTIFIED": 1,
+    "ASK": 2,
+    "DELEGATE": 3,
+    "ABSTAIN_AUTHORITY": 4
+  },
+  "recommendationSymbols": [1, 2],
+  "clinicalMeaning": false,
+  "cases": [
+    {
+      "id": "invalid-authority-mask",
+      "input": [4, 0, 0, 0, 0, 0, 1, 2],
+      "expectedCode": 0,
+      "expectedDisposition": "REFUSE"
+    },
+    {
+      "id": "observation-outside-authority",
+      "input": [1, 2, 0, 0, 0, 1, 1, 2],
+      "expectedCode": 0,
+      "expectedDisposition": "REFUSE"
+    },
+    {
+      "id": "recommendations-agree",
+      "input": [3, 0, 0, 0, 1, 1, 1, 1],
+      "expectedCode": 1,
+      "expectedDisposition": "IDENTIFIED"
+    },
+    {
+      "id": "observed-query-distinguishes",
+      "input": [3, 1, 0, 0, 1, 0, 1, 2],
+      "expectedCode": 1,
+      "expectedDisposition": "IDENTIFIED"
+    },
+    {
+      "id": "authorized-query-remains",
+      "input": [3, 1, 0, 0, 0, 1, 1, 2],
+      "expectedCode": 2,
+      "expectedDisposition": "ASK"
+    },
+    {
+      "id": "separator-requires-delegation",
+      "input": [1, 1, 0, 0, 0, 1, 1, 2],
+      "expectedCode": 3,
+      "expectedDisposition": "DELEGATE"
+    },
+    {
+      "id": "authorized-universe-cannot-separate",
+      "input": [3, 3, 1, 1, 1, 1, 1, 2],
+      "expectedCode": 4,
+      "expectedDisposition": "ABSTAIN_AUTHORITY"
+    },
+    {
+      "id": "empty-authority-but-external-separator-exists",
+      "input": [0, 0, 0, 0, 1, 0, 1, 2],
+      "expectedCode": 3,
+      "expectedDisposition": "DELEGATE"
+    },
+    {
+      "id": "empty-authority-and-no-declared-separator",
+      "input": [0, 0, 0, 1, 0, 1, 1, 2],
+      "expectedCode": 4,
+      "expectedDisposition": "ABSTAIN_AUTHORITY"
+    }
+  ]
+}

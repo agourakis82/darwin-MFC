@@ -1,0 +1,182 @@
+{
+  "schema": "darwin.auctoritas.authority-identifiability-receipt.v0.5",
+  "generatedAt": "2026-08-02T21:01:19Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": true,
+  "nativeWasmParityEstablished": true,
+  "nativeWasmParityScope": "Both backends execute the same Sounio self-check over all 1,024 canonical two-world, two-query encoded states and return 95; the extended 147,456-state hostile ABI census is executed against WASM by the independent host oracle.",
+  "parent": {
+    "path": "docs/research/deontic-transportability/formal/formal-wasm-gate.receipt.v0.4.json",
+    "sha256": "10c3f5cf72f56a9ade5b2212c784288541fa8edb80b47714aa0d942b82cb08f0"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "executionEvidence": {
+    "path": "docs/research/auctoritas/formal/evidence/auctoritas-execution-evidence.v0.5.json",
+    "sha256": "f419470b62ce61520eaee263e81b6c5cf697b7a12b7f65776dd8e112f83612db"
+  },
+  "formal": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "toolchainCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "noLegitimateQueryProved": true,
+    "identificationRequiresLegitimateSeparationProved": true,
+    "soundnessForcesAbstentionProved": true,
+    "negativeLocalAuthorityWitnessProved": true,
+    "positiveJointAuthorityControlProved": true,
+    "centralTheoremStandardAxioms": [],
+    "projectDeclaredAxioms": []
+  },
+  "authorityModel": {
+    "worlds": 2,
+    "queries": 2,
+    "answerAlphabet": [0, 1],
+    "recommendationSymbols": [1, 2],
+    "recommendationReturnedByExecutable": false,
+    "dispositions": {
+      "REFUSE": 0,
+      "IDENTIFIED": 1,
+      "ASK": 2,
+      "DELEGATE": 3,
+      "ABSTAIN_AUTHORITY": 4
+    }
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "fixedPointSeedSha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da"
+  },
+  "sounio": {
+    "sourceSha256": "d35b3a4e3c52dcf797fe3bfd06a1e8ba4b5c88c3c03058ebe5bacadf58b5e5dd",
+    "internalCanonicalStatesChecked": 1024,
+    "selfCheckCode": 95
+  },
+  "wasm": {
+    "sha256": "42614161d8150282919fcb6408bfbcae31da2a90749cd841ba02958a586439e5",
+    "bytes": 5504,
+    "repeatSha256": "42614161d8150282919fcb6408bfbcae31da2a90749cd841ba02958a586439e5",
+    "runtimeValidated": true,
+    "imports": [],
+    "mainResult": 95
+  },
+  "native": {
+    "path": "docs/research/auctoritas/formal/native/auctoritas_finite.v0.5.linux-x86_64",
+    "sha256": "1c62b36519d6703c31f956eb55a9d6f8212367e5d2e374129f7018acc4ce0eec",
+    "bytes": 24584,
+    "repeatSha256": "1c62b36519d6703c31f956eb55a9d6f8212367e5d2e374129f7018acc4ce0eec",
+    "executionExitCode": 95,
+    "repeatExecutionExitCode": 95
+  },
+  "exhaustive": {
+    "boundedStatesChecked": 147456,
+    "validStatesChecked": 576,
+    "invalidStatesRefused": 146880,
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "dispositions": {
+      "REFUSE": 146880,
+      "IDENTIFIED": 376,
+      "ASK": 72,
+      "DELEGATE": 56,
+      "ABSTAIN_AUTHORITY": 72
+    }
+  },
+  "claims": {
+    "established": [
+      "The abstract No Legitimate Query Theorem is proved in Lean without axioms.",
+      "The Forced Abstention Theorem proves that sound partial identifiers must abstain on the indistinguishable counterexample pair.",
+      "A finite negative local-authority witness and positive joint-authority control are proved.",
+      "The bounded Sounio classifier distinguishes missing information, missing authority, and non-identifiability within the declared query universe.",
+      "Native and WASM builds are deterministic and pass the scoped 1,024-state internal parity gate.",
+      "WASM agrees with an independent host oracle over 147,456 bounded ABI states."
+    ],
+    "notEstablished": [
+      "Completeness or legitimacy of any real query-authority policy.",
+      "Clinical validity, safety, efficacy, utility, or authorization.",
+      "Production readiness or cryptographic authenticity.",
+      "Scientific novelty, patent novelty, or absence of prior art.",
+      "The result for unbounded, randomized, strategic, or multi-agent protocols."
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/auctoritas/README.md",
+      "sha256": "9e4d2fce72f0f188b4d0fd1580d46622687422b1047d3fff4136b804773753f9",
+      "bytes": 1786
+    },
+    {
+      "path": "docs/research/auctoritas/auctoritas-theory-v0.5.md",
+      "sha256": "ddfbd5af3099ceae210375e474e216b901eea97a1d2a1221723ec2502a778899",
+      "bytes": 5696
+    },
+    {
+      "path": "docs/research/auctoritas/formal/closure-v0.5.md",
+      "sha256": "367a908bc12da03a2204bd9422dfd500e9d6beeb19a9bdd72386f9efef10d2f4",
+      "bytes": 1571
+    },
+    {
+      "path": "docs/research/auctoritas/formal/evidence/auctoritas-execution-evidence.v0.5.json",
+      "sha256": "f419470b62ce61520eaee263e81b6c5cf697b7a12b7f65776dd8e112f83612db",
+      "bytes": 7157
+    },
+    {
+      "path": "docs/research/auctoritas/formal/lean4/Auctoritas.lean",
+      "sha256": "50c879e08c495aef4cb0df57075ab23eff2b1f4168d7dcdab0baf4b5b3c488b2",
+      "bytes": 10915
+    },
+    {
+      "path": "docs/research/auctoritas/formal/lean4/AuctoritasAudit.lean",
+      "sha256": "ef69d7186864ff5472893495b72ef868f45c640cfc312e402947019944dd97c1",
+      "bytes": 621
+    },
+    {
+      "path": "docs/research/auctoritas/formal/lean4/lake-manifest.json",
+      "sha256": "2ce22b173f0588bebde4efcfa783cb54b421d0999dd3c84db3d0be5cf2474105",
+      "bytes": 142
+    },
+    {
+      "path": "docs/research/auctoritas/formal/lean4/lakefile.lean",
+      "sha256": "6d82e8bd2468dfb75269df173034d77e086a075beddf67f75faf9784f1232753",
+      "bytes": 117
+    },
+    {
+      "path": "docs/research/auctoritas/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/auctoritas/formal/native/auctoritas_finite.v0.5.linux-x86_64",
+      "sha256": "1c62b36519d6703c31f956eb55a9d6f8212367e5d2e374129f7018acc4ce0eec",
+      "bytes": 24584
+    },
+    {
+      "path": "docs/research/auctoritas/formal/sounio/auctoritas_finite_v0_5.sio",
+      "sha256": "d35b3a4e3c52dcf797fe3bfd06a1e8ba4b5c88c3c03058ebe5bacadf58b5e5dd",
+      "bytes": 6454
+    },
+    {
+      "path": "docs/research/auctoritas/formal/vectors/auctoritas-v0.5.json",
+      "sha256": "b62ca725c37a8c2ea0239683fb3eb187e7947fd31a31084b1ea0cc8654a8718e",
+      "bytes": 1879
+    },
+    {
+      "path": "docs/research/auctoritas/formal/wasm/auctoritas_finite.v0.5.wasm",
+      "sha256": "42614161d8150282919fcb6408bfbcae31da2a90749cd841ba02958a586439e5",
+      "bytes": 5504
+    },
+    {
+      "path": "scripts/verify-auctoritas-v0.5.mjs",
+      "sha256": "4f5f5ada2bf783220523f3c771dc6650c81e4486a60567cdcc818f98cf0c84df",
+      "bytes": 18740
+    }
+  ]
+}

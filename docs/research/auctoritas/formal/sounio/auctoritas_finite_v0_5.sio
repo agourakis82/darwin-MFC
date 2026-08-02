@@ -1,0 +1,209 @@
+//@ run-pass
+// Darwin Auctoritas: two-world, two-query authority witness v0.5.
+//
+// Query masks: 0 = none, 1 = q0, 2 = q1, 3 = q0 and q1.
+// Answers are binary 0/1. Recommendation symbols are 1/2.
+// Dispositions: 0 REFUSE, 1 IDENTIFIED, 2 ASK, 3 DELEGATE,
+// 4 ABSTAIN_AUTHORITY.
+//
+// The executable classifies identifiability only. It never returns a
+// recommendation. Abstract research only; clinical use is refused.
+
+fn ax_valid_mask(mask: i64) -> i64 {
+    if mask == 0 || mask == 1 || mask == 2 || mask == 3 { return 1 }
+    return 0
+}
+
+fn ax_valid_bit(value: i64) -> i64 {
+    if value == 0 || value == 1 { return 1 }
+    return 0
+}
+
+fn ax_valid_recommendation(value: i64) -> i64 {
+    if value == 1 || value == 2 { return 1 }
+    return 0
+}
+
+fn ax_contains_q0(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 { return 1 }
+    return 0
+}
+
+fn ax_contains_q1(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 { return 1 }
+    return 0
+}
+
+fn ax_valid_inputs(
+    authority_mask: i64, observed_mask: i64,
+    q0_world0: i64, q1_world0: i64,
+    q0_world1: i64, q1_world1: i64,
+    recommendation0: i64, recommendation1: i64
+) -> i64 {
+    if ax_valid_mask(authority_mask) == 0 { return 0 }
+    if ax_valid_mask(observed_mask) == 0 { return 0 }
+    if ax_contains_q0(observed_mask) == 1 && ax_contains_q0(authority_mask) == 0 {
+        return 0
+    }
+    if ax_contains_q1(observed_mask) == 1 && ax_contains_q1(authority_mask) == 0 {
+        return 0
+    }
+    if ax_valid_bit(q0_world0) == 0 || ax_valid_bit(q1_world0) == 0 {
+        return 0
+    }
+    if ax_valid_bit(q0_world1) == 0 || ax_valid_bit(q1_world1) == 0 {
+        return 0
+    }
+    if ax_valid_recommendation(recommendation0) == 0 { return 0 }
+    if ax_valid_recommendation(recommendation1) == 0 { return 0 }
+    return 1
+}
+
+fn ax_difference_mask(
+    q0_world0: i64, q1_world0: i64,
+    q0_world1: i64, q1_world1: i64
+) -> i64 with Mut {
+    var result: i64 = 0
+    if q0_world0 != q0_world1 { result = result + 1 }
+    if q1_world0 != q1_world1 { result = result + 2 }
+    return result
+}
+
+fn ax_disposition(
+    authority_mask: i64, observed_mask: i64,
+    q0_world0: i64, q1_world0: i64,
+    q0_world1: i64, q1_world1: i64,
+    recommendation0: i64, recommendation1: i64
+) -> i64 with Mut {
+    if ax_valid_inputs(
+        authority_mask, observed_mask,
+        q0_world0, q1_world0, q0_world1, q1_world1,
+        recommendation0, recommendation1
+    ) == 0 {
+        return 0
+    }
+
+    if recommendation0 == recommendation1 { return 1 }
+
+    if ax_contains_q0(observed_mask) == 1 && q0_world0 != q0_world1 {
+        return 1
+    }
+    if ax_contains_q1(observed_mask) == 1 && q1_world0 != q1_world1 {
+        return 1
+    }
+
+    if ax_contains_q0(authority_mask) == 1 && q0_world0 != q0_world1 {
+        return 2
+    }
+    if ax_contains_q1(authority_mask) == 1 && q1_world0 != q1_world1 {
+        return 2
+    }
+
+    let difference_mask = ax_difference_mask(
+        q0_world0, q1_world0, q0_world1, q1_world1
+    )
+    if difference_mask != 0 { return 3 }
+    return 4
+}
+
+// Independent finite-domain oracle using an explicit difference mask and
+// integer bitwise intersections rather than query membership predicates.
+fn ax_reference_disposition(
+    authority_mask: i64, observed_mask: i64,
+    q0_world0: i64, q1_world0: i64,
+    q0_world1: i64, q1_world1: i64,
+    recommendation0: i64, recommendation1: i64
+) -> i64 with Mut {
+    if ax_valid_inputs(
+        authority_mask, observed_mask,
+        q0_world0, q1_world0, q0_world1, q1_world1,
+        recommendation0, recommendation1
+    ) == 0 {
+        return 0
+    }
+    if recommendation0 == recommendation1 { return 1 }
+
+    let difference_mask = ax_difference_mask(
+        q0_world0, q1_world0, q0_world1, q1_world1
+    )
+    if (difference_mask & observed_mask) != 0 { return 1 }
+    if (difference_mask & authority_mask) != 0 { return 2 }
+    if difference_mask != 0 { return 3 }
+    return 4
+}
+
+fn ax_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+// Decode one of the 1,024 canonical states: four authority masks, four
+// observed masks, sixteen answer pairs, and four recommendation pairs.
+fn ax_check_encoded_index(index: i64) -> i64 with Mut, Div {
+    let recommendation1 = (index % 2) + 1
+    let recommendation0 = ((index / 2) % 2) + 1
+    let q0_world0 = (index / 4) % 2
+    let q1_world0 = (index / 8) % 2
+    let q0_world1 = (index / 16) % 2
+    let q1_world1 = (index / 32) % 2
+    let observed_mask = (index / 64) % 4
+    let authority_mask = (index / 256) % 4
+    return ax_verify_case(
+        ax_disposition(
+            authority_mask, observed_mask,
+            q0_world0, q1_world0, q0_world1, q1_world1,
+            recommendation0, recommendation1
+        ),
+        ax_reference_disposition(
+            authority_mask, observed_mask,
+            q0_world0, q1_world0, q0_world1, q1_world1,
+            recommendation0, recommendation1
+        )
+    )
+}
+
+// Balanced recursion keeps stack depth logarithmic while exercising every
+// canonical state in both the native and WASM backends.
+fn ax_exhaustive_walk(start: i64, finish: i64) -> i64 with Mut, Div {
+    if start >= finish { return 0 }
+    if finish - start == 1 { return ax_check_encoded_index(start) }
+    let midpoint = (start + finish) / 2
+    return
+        ax_exhaustive_walk(start, midpoint) +
+        ax_exhaustive_walk(midpoint, finish)
+}
+
+fn ax_exhaustive_self_check() -> i64 with Mut, Div {
+    return ax_exhaustive_walk(0, 1024)
+}
+
+fn main() -> i64 with Mut, Div {
+    var failures: i64 = ax_exhaustive_self_check()
+    failures = failures + ax_verify_case(
+        ax_disposition(4, 0, 0, 0, 0, 0, 1, 2), 0
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(1, 2, 0, 0, 0, 1, 1, 2), 0
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(3, 0, 0, 0, 1, 1, 1, 1), 1
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(3, 1, 0, 0, 1, 0, 1, 2), 1
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(3, 1, 0, 0, 0, 1, 1, 2), 2
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(1, 1, 0, 0, 0, 1, 1, 2), 3
+    )
+    failures = failures + ax_verify_case(
+        ax_disposition(3, 3, 1, 1, 1, 1, 1, 2), 4
+    )
+    failures = failures + ax_verify_case(
+        ax_reference_disposition(3, 1, 0, 0, 0, 1, 1, 2), 2
+    )
+
+    if failures == 0 { return 95 }
+    return 1
+}
