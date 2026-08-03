@@ -1,0 +1,86 @@
+{
+  "schema": "darwin.normative-gauge-lean-verification.v1.0",
+  "generatedAt": "2026-08-03T04:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "toolchain": {
+    "declaration": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, arm64-apple-darwin24.6.0, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)"
+  },
+  "build": {
+    "command": "lake build",
+    "exitCode": 0,
+    "verified": true
+  },
+  "audit": {
+    "command": "lake env lean NormativeGaugeAudit.lean",
+    "exitCode": 0,
+    "observedAxioms": {
+      "Darwin.NormativeGauge.globalSectionIffHolonomyFixedPoint": [],
+      "Darwin.NormativeGauge.transformGlobalSection": [],
+      "Darwin.NormativeGauge.untransformGlobalSection": [],
+      "Darwin.NormativeGauge.globalSectionGaugeInvariant": [],
+      "Darwin.NormativeGauge.holonomyGaugeConjugacy": [
+        "propext"
+      ],
+      "Darwin.NormativeGauge.holonomyFixedPointGaugeInvariant": [
+        "propext"
+      ],
+      "Darwin.NormativeGauge.zeroErrorGaugeCovariant": [],
+      "Darwin.NormativeGauge.gaugeTransformedNoGlobalForcesAbstention": [],
+      "Darwin.NormativeGauge.seededGaugeTransformedNoGlobalForcesAbstention": [],
+      "Darwin.NormativeGauge.coordinateSensitiveAnalyzer_hasGaugeAnomaly": [
+        "propext"
+      ],
+      "Darwin.NormativeGauge.coordinateSensitiveAnalyzer_notGaugeInvariant": [
+        "propext"
+      ]
+    },
+    "allowedAxioms": [
+      "propext"
+    ],
+    "onlyApprovedAxioms": true,
+    "axiomFreeCoreEstablished": true,
+    "forbidden": {
+      "sorry": 0,
+      "nativeDecide": 0,
+      "projectAxiomDeclarations": 0,
+      "unsafeDeclarations": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/NormativeGauge.lean",
+      "sha256": "63b14214c35f051d06b731c5fd2fd4ac33c0d91cf4011b6bd90285ffdac3d8f9",
+      "bytes": 12089
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/NormativeGaugeAudit.lean",
+      "sha256": "3a5331bf8239a8dd9781204ee1ed74cf0b4043644a8a0192340b3a82dda30c4b",
+      "bytes": 788
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lakefile.lean",
+      "sha256": "6d5f88fce671455ccb26f0865592103fc944f8e0a1388f074d3581d00956363f",
+      "bytes": 151
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lake-manifest.json",
+      "sha256": "75535c67fd575837d6c061330f316abb963c8fe006d72ab077578924067c7dba",
+      "bytes": 146
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    }
+  ],
+  "executableSemanticsMechanized": false,
+  "emittedWasmSemanticsMechanized": false,
+  "verified": true,
+  "errors": []
+}

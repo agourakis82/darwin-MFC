@@ -1,0 +1,138 @@
+{
+  "schema": "darwin.normative-gauge-source-fresh-build.v1.0",
+  "generatedAt": "2026-08-03T04:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "parentReceipt": {
+    "path": "docs/research/normative-holonomy/formal/normative-holonomy-gate.receipt.v0.9.json",
+    "sha256": "d805016fc108ba4faa91063f927d33a67a6788c1df2d592e24d61fe505a657e6",
+    "bytes": 9970
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "checkout": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "checkoutClean": true,
+    "identity": "Madaros v0.80.0",
+    "path": "/tmp/darwin-sourcefresh-v04/madaros-v9-clean",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "wrapperPath": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e/bin/madaros",
+    "wrapperSha256": "1c6978a3015618043354933032e283a2f18265db36a5fa0b52dfb9d5d962b9ec",
+    "compilerReconciled": true
+  },
+  "environment": {
+    "builder": "Lima souc-linux",
+    "os": "Linux",
+    "architecture": "x86_64",
+    "sourceMountMode": "copied-to-tmp",
+    "networkRequiredDuringCompile": false
+  },
+  "source": {
+    "path": "docs/research/normative-gauge/formal/sounio/normative_gauge_v1_0.sio",
+    "remotePath": "/tmp/normative_gauge_v1_0.sio",
+    "sha256": "6b641ead1595a8248d79ec7486df9c03229affcfa0a91c5e1c12c7d811b7d80c",
+    "remoteSha256": "6b641ead1595a8248d79ec7486df9c03229affcfa0a91c5e1c12c7d811b7d80c",
+    "bytes": 32144,
+    "ioEffects": false
+  },
+  "commands": {
+    "wasm": "env MADAROS_RAW_BIN=<compiler> <wrapper> build <canonical-source> --backend wasm -o <output>",
+    "native": "env MADAROS_RAW_BIN=<compiler> <wrapper> build <canonical-source> --backend native -o <output>",
+    "nativeTranscript": "env MADAROS_RAW_BIN=<compiler> <wrapper> build <transcript-source> --backend native -o <output>",
+    "executeNative": "<native-binary>",
+    "executeTranscript": "<native-transcript-binary> > <transcript>"
+  },
+  "wasm": {
+    "path": "docs/research/normative-gauge/formal/wasm/normative_gauge.v1.0.wasm",
+    "sha256": "d345d2ccd491366817ac409f9ba1e14fd7d196964e0550bd55c5cddae913607d",
+    "repeatSha256": "d345d2ccd491366817ac409f9ba1e14fd7d196964e0550bd55c5cddae913607d",
+    "bytes": 19663,
+    "buildExitCodes": [0, 0],
+    "selfCheckResult": 110,
+    "deterministic": true
+  },
+  "native": {
+    "path": "docs/research/normative-gauge/formal/native/normative_gauge.v1.0.linux-x86_64",
+    "sha256": "325876f4bd19d5eb5755a4bb150f271eba43e947614be5785bcebc443e9b267f",
+    "repeatSha256": "325876f4bd19d5eb5755a4bb150f271eba43e947614be5785bcebc443e9b267f",
+    "bytes": 69640,
+    "buildExitCodes": [0, 0],
+    "executionExitCodes": [110, 110],
+    "deterministic": true
+  },
+  "nativeTranscript": {
+    "source": {
+      "path": "docs/research/normative-gauge/formal/transcripts/normative_gauge_transcript_v1_0.sio",
+      "remotePath": "/tmp/normative_gauge_transcript_v1_0.sio",
+      "sha256": "5e3d59409a16bdcc146a9ceb969236d4b27b5e3e83652e31d3b740bb85ee9ba5",
+      "remoteSha256": "5e3d59409a16bdcc146a9ceb969236d4b27b5e3e83652e31d3b740bb85ee9ba5",
+      "bytes": 33041
+    },
+    "binary": {
+      "path": "docs/research/normative-gauge/formal/native/normative_gauge_transcript.v1.0.linux-x86_64",
+      "sha256": "023923a8642dab649fe915ee8ecb2f51c1829f1f4c0f89e4b5e5687a8f85a4b1",
+      "repeatSha256": "023923a8642dab649fe915ee8ecb2f51c1829f1f4c0f89e4b5e5687a8f85a4b1",
+      "bytes": 77832,
+      "buildExitCodes": [0, 0],
+      "deterministic": true
+    },
+    "execution": {
+      "exitCodes": [0, 0],
+      "records": 4096,
+      "stdoutBytes": 67922,
+      "stdoutSha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf",
+      "repeatStdoutSha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf",
+      "wasmTranscriptSha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf"
+    }
+  },
+  "buildLogs": [
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-wasm-a.log",
+      "sha256": "84c5c64c07d0003d84fb3bd9304b553f567e5c709a7125fda3bab58f6ede64b9",
+      "bytes": 526
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-wasm-b.log",
+      "sha256": "157c9b6188773b6afbddb638ee89bb69868e132168fc485be04bbf2718fa39dd",
+      "bytes": 526
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-native-a.log",
+      "sha256": "677e1c8424a5dcff26aeca20b1dec592b3cb0eb61143c3033a05a0bc956b355e",
+      "bytes": 928
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-native-b.log",
+      "sha256": "ab874f9a693a86a8b99d51fa4622c7fbb2fe55bf26e1a5a20b85228818a0c64c",
+      "bytes": 928
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-transcript-a.log",
+      "sha256": "ded773f3a8e3fd2fc3c02e7d5bfbbd2d6e550862d550249ae3662cb4eed4c290",
+      "bytes": 949
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-transcript-b.log",
+      "sha256": "0d0a343a3179eb577c5b6b26ade7a1f0487babedf5d1e5ab8192a33a3673c44a",
+      "bytes": 949
+    }
+  ],
+  "parity": {
+    "nativeWasmSelfCheckParityEstablished": true,
+    "nativeWasmCanonicalTranscriptParityEstablished": true,
+    "allInternalExportParityEstablished": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "verified": true,
+  "errors": []
+}

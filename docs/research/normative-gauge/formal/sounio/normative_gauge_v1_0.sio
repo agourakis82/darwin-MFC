@@ -1,0 +1,761 @@
+//@ run-pass
+// Darwin Normative Holonomy v0.9.
+//
+// Inputs: declared edge mask, content-bound edge mask, and three Boolean map
+// codes. Map bits encode output(false) and output(true), so 1 is flip and 2
+// is identity. The kernel emits only a disposition and certificate mask. It
+// never emits a witness label. No function performs IO.
+//
+// Abstract research only: clinical use and production authorization refused.
+
+fn nhy_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn nhy_valid_map(map_code: i64) -> i64 {
+    if map_code >= 0 && map_code <= 3 { return 1 }
+    return 0
+}
+
+fn nhy_subset(subset: i64, superset: i64) -> i64 {
+    if (subset & superset) == subset { return 1 }
+    return 0
+}
+
+fn nhy_contains(mask: i64, edge: i64) -> i64 {
+    if (mask & edge) == edge { return 1 }
+    return 0
+}
+
+fn nhy_popcount(mask: i64) -> i64 {
+    var count: i64 = 0
+    if nhy_contains(mask, 1) == 1 { count = count + 1 }
+    if nhy_contains(mask, 2) == 1 { count = count + 1 }
+    if nhy_contains(mask, 4) == 1 { count = count + 1 }
+    return count
+}
+
+fn nhy_rank(mask: i64) -> i64 {
+    if mask == 0 { return 0 }
+    if mask == 1 { return 1 }
+    if mask == 2 { return 2 }
+    if mask == 4 { return 3 }
+    if mask == 3 { return 4 }
+    if mask == 5 { return 5 }
+    if mask == 6 { return 6 }
+    if mask == 7 { return 7 }
+    return 99
+}
+
+fn nhy_score(mask: i64) -> i64 {
+    return nhy_popcount(mask) * 8 + nhy_rank(mask)
+}
+
+fn nhy_apply_map(map_code: i64, input: i64) -> i64 with Div {
+    if input == 0 { return map_code % 2 }
+    return (map_code / 2) % 2
+}
+
+fn nhy_map_bijective(map_code: i64) -> i64 {
+    if map_code == 1 || map_code == 2 { return 1 }
+    return 0
+}
+
+fn nhy_abi_valid(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    if nhy_valid_mask(declared) == 0 || nhy_valid_mask(bound) == 0 { return 0 }
+    if nhy_subset(bound, declared) == 0 { return 0 }
+    if nhy_valid_map(map_ab) == 0 || nhy_valid_map(map_bc) == 0 { return 0 }
+    if nhy_valid_map(map_ca) == 0 { return 0 }
+    return 1
+}
+
+fn nhy_local_issue_mask(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    var issue: i64 = 0
+    if nhy_contains(declared, 1) == 1 && nhy_map_bijective(map_ab) == 0 {
+        issue = issue + 1
+    }
+    if nhy_contains(declared, 2) == 1 && nhy_map_bijective(map_bc) == 0 {
+        issue = issue + 2
+    }
+    if nhy_contains(declared, 4) == 1 && nhy_map_bijective(map_ca) == 0 {
+        issue = issue + 4
+    }
+    return issue
+}
+
+fn nhy_assignment_satisfies(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64,
+    assignment: i64
+) -> i64 with Div {
+    let value_a = assignment % 2
+    let value_b = (assignment / 2) % 2
+    let value_c = (assignment / 4) % 2
+    if nhy_contains(declared, 1) == 1 && value_b != nhy_apply_map(map_ab, value_a) {
+        return 0
+    }
+    if nhy_contains(declared, 2) == 1 && value_c != nhy_apply_map(map_bc, value_b) {
+        return 0
+    }
+    if nhy_contains(declared, 4) == 1 && value_a != nhy_apply_map(map_ca, value_c) {
+        return 0
+    }
+    return 1
+}
+
+fn nhy_has_global_section(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 1) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 2) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 3) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 4) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 5) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 6) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 7) == 1 { return 1 }
+    return 0
+}
+
+// A candidate basis is sufficient exactly when every assignment satisfying it
+// also satisfies the full declared network. Candidate is required to be a
+// subset of declared by the caller.
+fn nhy_basis_sufficient(
+    declared: i64, candidate: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, declared) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 0) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 1) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 1) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 2) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 2) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 3) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 3) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 4) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 4) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 5) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 5) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 6) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 6) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 7) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 7) == 0 { return 0 }
+    return 1
+}
+
+// Direct implementation: stable early-return order by cardinality, then ABI
+// rank. The independent reference below scores all candidates.
+fn nhy_minimal_basis(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(0, bound) == 1 && nhy_basis_sufficient(declared, 0, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, bound) == 1 && nhy_basis_sufficient(declared, 1, map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, bound) == 1 && nhy_basis_sufficient(declared, 2, map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, bound) == 1 && nhy_basis_sufficient(declared, 4, map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, bound) == 1 && nhy_basis_sufficient(declared, 3, map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, bound) == 1 && nhy_basis_sufficient(declared, 5, map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, bound) == 1 && nhy_basis_sufficient(declared, 6, map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, bound) == 1 && nhy_basis_sufficient(declared, 7, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+fn nhy_minimal_binding(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    let unbound = declared - (declared & bound)
+    if nhy_subset(0, unbound) == 1 && nhy_basis_sufficient(declared, bound, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, unbound) == 1 && nhy_basis_sufficient(declared, bound | 1, map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, unbound) == 1 && nhy_basis_sufficient(declared, bound | 2, map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, unbound) == 1 && nhy_basis_sufficient(declared, bound | 4, map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, unbound) == 1 && nhy_basis_sufficient(declared, bound | 3, map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, unbound) == 1 && nhy_basis_sufficient(declared, bound | 5, map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, unbound) == 1 && nhy_basis_sufficient(declared, bound | 6, map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, unbound) == 1 && nhy_basis_sufficient(declared, bound | 7, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+fn nhy_pack(disposition: i64, certificate: i64) -> i64 {
+    return disposition + certificate * 8 + nhy_popcount(certificate) * 64
+}
+
+fn nhy_analyze(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    let issue = nhy_local_issue_mask(declared, map_ab, map_bc, map_ca)
+    if issue != 0 { return nhy_pack(4, issue) }
+    if nhy_has_global_section(declared, map_ab, map_bc, map_ca) == 0 {
+        return nhy_pack(3, declared)
+    }
+    let basis = nhy_minimal_basis(declared, bound, map_ab, map_bc, map_ca)
+    if basis >= 0 { return nhy_pack(1, basis) }
+    let binding = nhy_minimal_binding(declared, bound, map_ab, map_bc, map_ca)
+    if binding >= 0 { return nhy_pack(2, binding) }
+    return 5
+}
+
+fn nhy_repair_cut(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return -1 }
+    if nhy_local_issue_mask(declared, map_ab, map_bc, map_ca) != 0 { return -1 }
+    if nhy_has_global_section(declared, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, declared) == 1 && nhy_has_global_section(declared - (declared & 1), map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, declared) == 1 && nhy_has_global_section(declared - (declared & 2), map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, declared) == 1 && nhy_has_global_section(declared - (declared & 4), map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, declared) == 1 && nhy_has_global_section(declared - (declared & 3), map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, declared) == 1 && nhy_has_global_section(declared - (declared & 5), map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, declared) == 1 && nhy_has_global_section(declared - (declared & 6), map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, declared) == 1 && nhy_has_global_section(0, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+// Independent fixed-point oracle: a locally bijective forest always admits a
+// section. Only the complete triangle requires testing composite fixed points.
+fn nhy_reference_has_global_section(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if declared != 7 { return 1 }
+    let zero_after = nhy_apply_map(map_ca,
+        nhy_apply_map(map_bc, nhy_apply_map(map_ab, 0)))
+    if zero_after == 0 { return 1 }
+    let one_after = nhy_apply_map(map_ca,
+        nhy_apply_map(map_bc, nhy_apply_map(map_ab, 1)))
+    if one_after == 1 { return 1 }
+    return 0
+}
+
+fn nhy_reference_consider_basis(
+    current: i64, candidate: i64, declared: i64, allowed: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, allowed) == 0 { return current }
+    if nhy_basis_sufficient(declared, candidate, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_best_basis(
+    declared: i64, allowed: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    var best: i64 = -1
+    best = nhy_reference_consider_basis(best, 7, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 6, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 5, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 3, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 4, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 2, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 1, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 0, declared, allowed, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_reference_consider_binding(
+    current: i64, candidate: i64,
+    declared: i64, bound: i64, unbound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, unbound) == 0 { return current }
+    if nhy_basis_sufficient(declared, bound | candidate, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_best_binding(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    let unbound = declared - (declared & bound)
+    var best: i64 = -1
+    best = nhy_reference_consider_binding(best, 7, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 6, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 5, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 3, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 4, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 2, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 1, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 0, declared, bound, unbound, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_reference_analyze(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    let issue = nhy_local_issue_mask(declared, map_ab, map_bc, map_ca)
+    if issue != 0 { return nhy_pack(4, issue) }
+    if nhy_reference_has_global_section(declared, map_ab, map_bc, map_ca) == 0 {
+        return nhy_pack(3, declared)
+    }
+    let basis = nhy_reference_best_basis(declared, bound, map_ab, map_bc, map_ca)
+    if basis >= 0 { return nhy_pack(1, basis) }
+    let binding = nhy_reference_best_binding(declared, bound, map_ab, map_bc, map_ca)
+    if binding >= 0 { return nhy_pack(2, binding) }
+    return 5
+}
+
+fn nhy_reference_consider_cut(
+    current: i64, candidate: i64, declared: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, declared) == 0 { return current }
+    let remaining = declared - (declared & candidate)
+    if nhy_reference_has_global_section(remaining, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_repair_cut(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return -1 }
+    if nhy_local_issue_mask(declared, map_ab, map_bc, map_ca) != 0 { return -1 }
+    if nhy_reference_has_global_section(declared, map_ab, map_bc, map_ca) == 1 { return 0 }
+    var best: i64 = -1
+    best = nhy_reference_consider_cut(best, 7, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 6, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 5, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 3, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 4, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 2, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 1, declared, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+fn nhy_exhaustive_walk(
+    depth: i64,
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if depth == 5 {
+        var failures: i64 = 0
+        failures = failures + nhy_verify_case(
+            nhy_analyze(declared, bound, map_ab, map_bc, map_ca),
+            nhy_reference_analyze(declared, bound, map_ab, map_bc, map_ca)
+        )
+        failures = failures + nhy_verify_case(
+            nhy_repair_cut(declared, bound, map_ab, map_bc, map_ca),
+            nhy_reference_repair_cut(declared, bound, map_ab, map_bc, map_ca)
+        )
+        return failures
+    }
+    if depth == 0 {
+        return
+            nhy_exhaustive_walk(1, 0, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 1, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 2, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 3, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 4, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 5, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 6, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 7, bound, map_ab, map_bc, map_ca)
+    }
+    if depth == 1 {
+        return
+            nhy_exhaustive_walk(2, declared, 0, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 1, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 2, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 3, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 4, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 5, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 6, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 7, map_ab, map_bc, map_ca)
+    }
+    if depth == 2 {
+        return
+            nhy_exhaustive_walk(3, declared, bound, 0, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 1, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 2, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 3, map_bc, map_ca)
+    }
+    if depth == 3 {
+        return
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 0, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 1, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 2, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 3, map_ca)
+    }
+    return
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 0) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 1) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 2) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 3)
+}
+
+fn nhy_exhaustive_self_check() -> i64 with Mut, Div {
+    return nhy_exhaustive_walk(0, 0, 0, 0, 0, 0)
+}
+
+
+// Darwin Normative Gauge v1.0.
+// A local Boolean gauge uses bits A=1, B=2, C=4. Edge maps transform by
+// conjugation: T'_uv(x') = g_v XOR T_uv(g_u XOR x').
+
+fn ng_xor(left: i64, right: i64) -> i64 {
+    if left == right { return 0 }
+    return 1
+}
+
+fn ng_gauge_bit(gauge: i64, vertex: i64) -> i64 {
+    if (gauge & vertex) == vertex { return 1 }
+    return 0
+}
+
+fn ng_transform_map(map_code: i64, source_flip: i64, target_flip: i64) -> i64 with Div {
+    let output_zero = ng_xor(target_flip,
+        nhy_apply_map(map_code, ng_xor(0, source_flip)))
+    let output_one = ng_xor(target_flip,
+        nhy_apply_map(map_code, ng_xor(1, source_flip)))
+    return output_zero + output_one * 2
+}
+
+fn ng_transform_map_ab(map_code: i64, gauge: i64) -> i64 with Div {
+    return ng_transform_map(map_code, ng_gauge_bit(gauge, 1), ng_gauge_bit(gauge, 2))
+}
+
+fn ng_transform_map_bc(map_code: i64, gauge: i64) -> i64 with Div {
+    return ng_transform_map(map_code, ng_gauge_bit(gauge, 2), ng_gauge_bit(gauge, 4))
+}
+
+fn ng_transform_map_ca(map_code: i64, gauge: i64) -> i64 with Div {
+    return ng_transform_map(map_code, ng_gauge_bit(gauge, 4), ng_gauge_bit(gauge, 1))
+}
+
+fn ng_encode_maps(map_ab: i64, map_bc: i64, map_ca: i64) -> i64 {
+    return map_ab * 16 + map_bc * 4 + map_ca
+}
+
+fn ng_transformed_encoding(
+    map_ab: i64, map_bc: i64, map_ca: i64, gauge: i64
+) -> i64 with Div {
+    return ng_encode_maps(
+        ng_transform_map_ab(map_ab, gauge),
+        ng_transform_map_bc(map_bc, gauge),
+        ng_transform_map_ca(map_ca, gauge)
+    )
+}
+
+fn ng_minimum(left: i64, right: i64) -> i64 {
+    if left < right { return left }
+    return right
+}
+
+fn ng_canonical_representative(
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    var best: i64 = ng_transformed_encoding(map_ab, map_bc, map_ca, 0)
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 1))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 2))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 3))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 4))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 5))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 6))
+    best = ng_minimum(best, ng_transformed_encoding(map_ab, map_bc, map_ca, 7))
+    return best
+}
+
+fn ng_seen_before(
+    encoding: i64, gauge: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if gauge <= 0 { return 0 }
+    let previous = gauge - 1
+    if encoding == ng_transformed_encoding(map_ab, map_bc, map_ca, previous) {
+        return 1
+    }
+    return ng_seen_before(encoding, previous, map_ab, map_bc, map_ca)
+}
+
+fn ng_orbit_cardinality_walk(
+    gauge: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if gauge >= 8 { return 0 }
+    let encoding = ng_transformed_encoding(map_ab, map_bc, map_ca, gauge)
+    var contribution: i64 = 1
+    if ng_seen_before(encoding, gauge, map_ab, map_bc, map_ca) == 1 {
+        contribution = 0
+    }
+    return contribution + ng_orbit_cardinality_walk(
+        gauge + 1, map_ab, map_bc, map_ca
+    )
+}
+
+fn ng_orbit_cardinality(map_ab: i64, map_bc: i64, map_ca: i64) -> i64 with Div {
+    return ng_orbit_cardinality_walk(0, map_ab, map_bc, map_ca)
+}
+
+fn ng_analyzer_diff_at_gauge(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64, gauge: i64
+) -> i64 with Div {
+    let baseline = nhy_analyze(declared, bound, map_ab, map_bc, map_ca)
+    let transformed = nhy_analyze(
+        declared, bound,
+        ng_transform_map_ab(map_ab, gauge),
+        ng_transform_map_bc(map_bc, gauge),
+        ng_transform_map_ca(map_ca, gauge)
+    )
+    if baseline == transformed { return 0 }
+    return 1
+}
+
+fn ng_repair_diff_at_gauge(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64, gauge: i64
+) -> i64 with Div {
+    let baseline = nhy_repair_cut(declared, bound, map_ab, map_bc, map_ca)
+    let transformed = nhy_repair_cut(
+        declared, bound,
+        ng_transform_map_ab(map_ab, gauge),
+        ng_transform_map_bc(map_bc, gauge),
+        ng_transform_map_ca(map_ca, gauge)
+    )
+    if baseline == transformed { return 0 }
+    return 1
+}
+
+fn ng_certificate_diff_at_gauge(
+    map_ab: i64, map_bc: i64, map_ca: i64, gauge: i64
+) -> i64 with Div {
+    let transformed_ab = ng_transform_map_ab(map_ab, gauge)
+    let transformed_bc = ng_transform_map_bc(map_bc, gauge)
+    let transformed_ca = ng_transform_map_ca(map_ca, gauge)
+    if ng_canonical_representative(map_ab, map_bc, map_ca) !=
+       ng_canonical_representative(transformed_ab, transformed_bc, transformed_ca) {
+        return 1
+    }
+    if ng_orbit_cardinality(map_ab, map_bc, map_ca) !=
+       ng_orbit_cardinality(transformed_ab, transformed_bc, transformed_ca) {
+        return 1
+    }
+    return 0
+}
+
+fn ng_analyzer_anomaly_mask(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    return
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 1) +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 2) * 2 +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 3) * 4 +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 4) * 8 +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 5) * 16 +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 6) * 32 +
+        ng_analyzer_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 7) * 64
+}
+
+fn ng_repair_anomaly_mask(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    return
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 1) +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 2) * 2 +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 3) * 4 +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 4) * 8 +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 5) * 16 +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 6) * 32 +
+        ng_repair_diff_at_gauge(declared, bound, map_ab, map_bc, map_ca, 7) * 64
+}
+
+fn ng_certificate_anomaly_mask(
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    return
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 1) +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 2) * 2 +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 3) * 4 +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 4) * 8 +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 5) * 16 +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 6) * 32 +
+        ng_certificate_diff_at_gauge(map_ab, map_bc, map_ca, 7) * 64
+}
+
+fn ng_pack(
+    disposition: i64, inherited: i64, canonical: i64, orbit: i64,
+    analyzer_anomaly: i64, repair_anomaly: i64, certificate_anomaly: i64
+) -> i64 {
+    return disposition + inherited * 8 + canonical * 2048 + orbit * 131072 +
+        analyzer_anomaly * 2097152 + repair_anomaly * 268435456 +
+        certificate_anomaly * 34359738368
+}
+
+fn ng_analyze(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    let inherited = nhy_analyze(declared, bound, map_ab, map_bc, map_ca)
+    let canonical = ng_canonical_representative(map_ab, map_bc, map_ca)
+    let orbit = ng_orbit_cardinality(map_ab, map_bc, map_ca)
+    let analyzer_anomaly = ng_analyzer_anomaly_mask(
+        declared, bound, map_ab, map_bc, map_ca
+    )
+    let repair_anomaly = ng_repair_anomaly_mask(
+        declared, bound, map_ab, map_bc, map_ca
+    )
+    let certificate_anomaly = ng_certificate_anomaly_mask(map_ab, map_bc, map_ca)
+    var disposition: i64 = inherited % 8
+    if analyzer_anomaly != 0 || repair_anomaly != 0 || certificate_anomaly != 0 {
+        disposition = 6
+    }
+    return ng_pack(
+        disposition, inherited, canonical, orbit,
+        analyzer_anomaly, repair_anomaly, certificate_anomaly
+    )
+}
+
+// Six deliberately coordinate-sensitive analyzers. They are not production
+// alternatives; they are falsifiers that the gauge suite must detect.
+fn ng_mutant_output(
+    mutant: i64, declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    let inherited = nhy_analyze(declared, bound, map_ab, map_bc, map_ca)
+    if mutant == 1 { return inherited * 4 + map_ab }
+    if mutant == 2 { return inherited * 4 + map_bc }
+    if mutant == 3 { return inherited * 4 + map_ca }
+    if mutant == 4 { return inherited * 64 + ng_encode_maps(map_ab, map_bc, map_ca) }
+    if mutant == 5 { return inherited * 2 + nhy_apply_map(map_ab, 0) }
+    if mutant == 6 {
+        return inherited * 2 +
+            nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0)
+    }
+    return inherited
+}
+
+fn ng_mutant_diff_at_gauge(
+    mutant: i64, declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64, gauge: i64
+) -> i64 with Div {
+    let baseline = ng_mutant_output(
+        mutant, declared, bound, map_ab, map_bc, map_ca
+    )
+    let transformed = ng_mutant_output(
+        mutant, declared, bound,
+        ng_transform_map_ab(map_ab, gauge),
+        ng_transform_map_bc(map_bc, gauge),
+        ng_transform_map_ca(map_ca, gauge)
+    )
+    if baseline == transformed { return 0 }
+    return 1
+}
+
+fn ng_mutant_anomaly_mask(
+    mutant: i64, declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    return
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 1) +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 2) * 2 +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 3) * 4 +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 4) * 8 +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 5) * 16 +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 6) * 32 +
+        ng_mutant_diff_at_gauge(mutant, declared, bound, map_ab, map_bc, map_ca, 7) * 64
+}
+
+fn ng_verify_index(index: i64) -> i64 with Div {
+    let map_ca = index % 4
+    let map_bc = (index / 4) % 4
+    let map_ab = (index / 16) % 4
+    let bound = (index / 64) % 8
+    let declared = (index / 512) % 8
+    var failures: i64 = 0
+    failures = failures + nhy_verify_case(
+        ng_analyzer_anomaly_mask(declared, bound, map_ab, map_bc, map_ca), 0
+    )
+    failures = failures + nhy_verify_case(
+        ng_repair_anomaly_mask(declared, bound, map_ab, map_bc, map_ca), 0
+    )
+    failures = failures + nhy_verify_case(
+        ng_certificate_anomaly_mask(map_ab, map_bc, map_ca), 0
+    )
+    let rich = ng_analyze(declared, bound, map_ab, map_bc, map_ca)
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 {
+        failures = failures + nhy_verify_case(rich, 0)
+    } else {
+        failures = failures + nhy_verify_case(
+            (rich / 8) % 256,
+            nhy_analyze(declared, bound, map_ab, map_bc, map_ca)
+        )
+        failures = failures + nhy_verify_case(rich % 8,
+            nhy_analyze(declared, bound, map_ab, map_bc, map_ca) % 8)
+    }
+    return failures
+}
+
+fn ng_exhaustive_walk(start: i64, finish: i64) -> i64 with Div {
+    if finish - start == 1 { return ng_verify_index(start) }
+    let midpoint = (start + finish) / 2
+    return ng_exhaustive_walk(start, midpoint) + ng_exhaustive_walk(midpoint, finish)
+}
+
+fn ng_exhaustive_self_check() -> i64 with Div {
+    return ng_exhaustive_walk(0, 4096)
+}
+
+fn ng_mutant_detected_walk(
+    mutant: i64, start: i64, finish: i64
+) -> i64 with Div {
+    if finish - start == 1 {
+        let map_ca = start % 4
+        let map_bc = (start / 4) % 4
+        let map_ab = (start / 16) % 4
+        let bound = (start / 64) % 8
+        let declared = (start / 512) % 8
+        if ng_mutant_anomaly_mask(
+            mutant, declared, bound, map_ab, map_bc, map_ca
+        ) != 0 { return 1 }
+        return 0
+    }
+    let midpoint = (start + finish) / 2
+    if ng_mutant_detected_walk(mutant, start, midpoint) == 1 { return 1 }
+    return ng_mutant_detected_walk(mutant, midpoint, finish)
+}
+
+fn ng_mutant_suite_self_check() -> i64 with Div {
+    var failures: i64 = 0
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(1, 0, 4096), 1)
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(2, 0, 4096), 1)
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(3, 0, 4096), 1)
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(4, 0, 4096), 1)
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(5, 0, 4096), 1)
+    failures = failures + nhy_verify_case(ng_mutant_detected_walk(6, 0, 4096), 1)
+    return failures
+}
+
+fn main() -> i64 with Mut, Div {
+    var failures: i64 = nhy_exhaustive_self_check()
+    failures = failures + ng_exhaustive_self_check()
+    failures = failures + ng_mutant_suite_self_check()
+    if failures == 0 { return 110 }
+    return 1
+}

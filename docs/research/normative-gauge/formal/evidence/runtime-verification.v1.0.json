@@ -1,0 +1,365 @@
+{
+  "schema": "darwin.normative-gauge-runtime-verification.v1.0",
+  "generatedAt": "2026-08-03T04:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "wasm": {
+    "path": "docs/research/normative-gauge/formal/wasm/normative_gauge.v1.0.wasm",
+    "bytes": 19663,
+    "sha256": "d345d2ccd491366817ac409f9ba1e14fd7d196964e0550bd55c5cddae913607d",
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "ng_analyze",
+      "ng_analyzer_anomaly_mask",
+      "ng_analyzer_diff_at_gauge",
+      "ng_canonical_representative",
+      "ng_certificate_anomaly_mask",
+      "ng_certificate_diff_at_gauge",
+      "ng_encode_maps",
+      "ng_exhaustive_self_check",
+      "ng_exhaustive_walk",
+      "ng_gauge_bit",
+      "ng_minimum",
+      "ng_mutant_anomaly_mask",
+      "ng_mutant_detected_walk",
+      "ng_mutant_diff_at_gauge",
+      "ng_mutant_output",
+      "ng_mutant_suite_self_check",
+      "ng_orbit_cardinality",
+      "ng_orbit_cardinality_walk",
+      "ng_pack",
+      "ng_repair_anomaly_mask",
+      "ng_repair_diff_at_gauge",
+      "ng_seen_before",
+      "ng_transform_map",
+      "ng_transform_map_ab",
+      "ng_transform_map_bc",
+      "ng_transform_map_ca",
+      "ng_transformed_encoding",
+      "ng_verify_index",
+      "ng_xor",
+      "nhy_abi_valid",
+      "nhy_analyze",
+      "nhy_apply_map",
+      "nhy_assignment_satisfies",
+      "nhy_basis_sufficient",
+      "nhy_contains",
+      "nhy_exhaustive_self_check",
+      "nhy_exhaustive_walk",
+      "nhy_has_global_section",
+      "nhy_local_issue_mask",
+      "nhy_map_bijective",
+      "nhy_minimal_basis",
+      "nhy_minimal_binding",
+      "nhy_pack",
+      "nhy_popcount",
+      "nhy_rank",
+      "nhy_reference_analyze",
+      "nhy_reference_best_basis",
+      "nhy_reference_best_binding",
+      "nhy_reference_consider_basis",
+      "nhy_reference_consider_binding",
+      "nhy_reference_consider_cut",
+      "nhy_reference_has_global_section",
+      "nhy_reference_repair_cut",
+      "nhy_repair_cut",
+      "nhy_score",
+      "nhy_subset",
+      "nhy_valid_map",
+      "nhy_valid_mask",
+      "nhy_verify_case"
+    ],
+    "expectedExportCount": 61,
+    "mainResult": 110
+  },
+  "boundedDomain": {
+    "canonicalStates": 4096,
+    "canonicalValidStates": 1728,
+    "canonicalMismatches": 0,
+    "hostileStates": 21600,
+    "hostileInvalidStates": 19872,
+    "hostileMismatches": 0,
+    "dispositionCensus": {
+      "REFUSE": 2368,
+      "GLOBALLY_FLAT": 224,
+      "BIND_TRANSLATIONS": 256,
+      "ABSTAIN_NONTRIVIAL_HOLONOMY": 32,
+      "REVIEW_LOCAL_PROOF": 1216,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0,
+      "REFUSE_GAUGE_ANOMALY": 0,
+      "RESERVED": 0
+    }
+  },
+  "gaugeOrbit": {
+    "group": "C2^3",
+    "gaugesPerState": 8,
+    "transformationChecks": 1536,
+    "transformationMismatches": 0,
+    "groupCompositionChecks": 4096,
+    "groupCompositionMismatches": 0,
+    "gaugeChecks": 32768,
+    "nontrivialGaugeChecks": 28672,
+    "gaugeMismatches": 0,
+    "mapOrbitClasses": 9,
+    "orbitCardinalityCensus": {
+      "4": 512,
+      "8": 3584
+    },
+    "canonicalAnalyzerAnomalies": 0,
+    "canonicalRepairAnomalies": 0,
+    "canonicalCertificateAnomalies": 0
+  },
+  "mutationAdequacy": {
+    "mutants": 6,
+    "killed": 6,
+    "results": [
+      {
+        "mutant": 1,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 4096,
+        "gaugeViolations": 16384,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 2,
+          "anomalyMask": 102
+        }
+      },
+      {
+        "mutant": 2,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 4096,
+        "gaugeViolations": 16384,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 4,
+          "anomalyMask": 120
+        }
+      },
+      {
+        "mutant": 3,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 4096,
+        "gaugeViolations": 16384,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 85
+        }
+      },
+      {
+        "mutant": 4,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 4096,
+        "gaugeViolations": 28160,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 127
+        }
+      },
+      {
+        "mutant": 5,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 4096,
+        "gaugeViolations": 16384,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 2,
+          "anomalyMask": 102
+        }
+      },
+      {
+        "mutant": 6,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 3552,
+        "gaugeViolations": 11632,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 512,
+          "input": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 2,
+          "anomalyMask": 102
+        }
+      }
+    ]
+  },
+  "transcript": {
+    "path": "docs/research/normative-gauge/formal/transcripts/canonical-domain.v1.0.txt",
+    "lines": 4096,
+    "bytes": 67922,
+    "sha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf",
+    "encoding": "index|richGaugeResult|repairCutMask|canonicalRepresentative|orbitCardinality"
+  },
+  "sourceLineage": {
+    "parentPath": "docs/research/normative-holonomy/formal/sounio/normative_holonomy_v0_9.sio",
+    "parentSha256": "d58a78c75abac413eef2b8419aa13e085a4fb49fa74ca79286ead683c78a614c",
+    "sourcePath": "docs/research/normative-gauge/formal/sounio/normative_gauge_v1_0.sio",
+    "sourceSha256": "6b641ead1595a8248d79ec7486df9c03229affcfa0a91c5e1c12c7d811b7d80c",
+    "sourceBytes": 32144,
+    "sourceGeneratorPath": "scripts/generate-normative-gauge-source.mjs",
+    "sourceGeneratorSha256": "b9f1c1da6f406e7ea5052bf533de988d6bcaa1ccb304fc16715e05ccc898237b",
+    "deterministicParentTransformVerified": true,
+    "canonicalSourceHasIO": false
+  },
+  "nativeTranscriptSource": {
+    "path": "docs/research/normative-gauge/formal/transcripts/normative_gauge_transcript_v1_0.sio",
+    "sha256": "5e3d59409a16bdcc146a9ceb969236d4b27b5e3e83652e31d3b740bb85ee9ba5",
+    "bytes": 33041,
+    "generatorPath": "scripts/generate-normative-gauge-native-transcript.mjs",
+    "generatorSha256": "81d2e7cdcd30b231772c898b2b7a557af18b843eca420092223a99f476555268",
+    "deterministicTransformVerified": true
+  },
+  "vectors": {
+    "path": "docs/research/normative-gauge/formal/vectors/normative-gauge-vectors.v1.0.json",
+    "sha256": "8dc342bcb9ea55b19e67e6f8f8cf1d93ca72e29a65e3f85965b2f7aafdec1cc2",
+    "cases": 12,
+    "passed": 12,
+    "results": [
+      {
+        "id": "invalid-bound-not-subset",
+        "actualRich": 0,
+        "actualRepairCut": -1,
+        "passed": true
+      },
+      {
+        "id": "empty-network",
+        "actualRich": 569353,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "single-edge-bound",
+        "actualRich": 569929,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "single-edge-needs-binding",
+        "actualRich": 569938,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "local-nonbijection",
+        "actualRich": 1059428,
+        "actualRepairCut": -1,
+        "passed": true
+      },
+      {
+        "id": "flat-identity-triangle",
+        "actualRich": 570569,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "flat-partially-bound-triangle",
+        "actualRich": 570002,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "odd-flip-holonomy",
+        "actualRich": 569307,
+        "actualRepairCut": 1,
+        "passed": true
+      },
+      {
+        "id": "three-flip-holonomy",
+        "actualRich": 569307,
+        "actualRepairCut": 1,
+        "passed": true
+      },
+      {
+        "id": "nonbijective-orbit-eight",
+        "actualRich": 1048585,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "mixed-coordinate-orbit-eight",
+        "actualRich": 1051876,
+        "actualRepairCut": -1,
+        "passed": true
+      },
+      {
+        "id": "even-flip-flat-triangle",
+        "actualRich": 570569,
+        "actualRepairCut": 0,
+        "passed": true
+      }
+    ]
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "singleByteMutationDetected": true
+  },
+  "independentOracle": {
+    "path": "scripts/normative-gauge-oracle.mjs",
+    "sha256": "3aba56bb9e301f5ba6cc6b49a12630c4252b2952a3a487919987eb040d1efec9",
+    "language": "JavaScript",
+    "strategy": "independent assignment enumeration plus explicit finite group action",
+    "reusesSounioImplementation": false,
+    "typescriptClinicalMathematics": false
+  },
+  "verified": true,
+  "errors": []
+}

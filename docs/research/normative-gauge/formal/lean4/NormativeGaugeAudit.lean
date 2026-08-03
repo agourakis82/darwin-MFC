@@ -1,0 +1,13 @@
+import NormativeGauge
+
+#print axioms Darwin.NormativeGauge.globalSectionIffHolonomyFixedPoint
+#print axioms Darwin.NormativeGauge.transformGlobalSection
+#print axioms Darwin.NormativeGauge.untransformGlobalSection
+#print axioms Darwin.NormativeGauge.globalSectionGaugeInvariant
+#print axioms Darwin.NormativeGauge.holonomyGaugeConjugacy
+#print axioms Darwin.NormativeGauge.holonomyFixedPointGaugeInvariant
+#print axioms Darwin.NormativeGauge.zeroErrorGaugeCovariant
+#print axioms Darwin.NormativeGauge.gaugeTransformedNoGlobalForcesAbstention
+#print axioms Darwin.NormativeGauge.seededGaugeTransformedNoGlobalForcesAbstention
+#print axioms Darwin.NormativeGauge.coordinateSensitiveAnalyzer_hasGaugeAnomaly
+#print axioms Darwin.NormativeGauge.coordinateSensitiveAnalyzer_notGaugeInvariant

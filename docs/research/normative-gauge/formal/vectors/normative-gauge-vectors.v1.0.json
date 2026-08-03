@@ -1,0 +1,189 @@
+{
+  "schema": "darwin.normative-gauge-vectors.v1.0",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "vectors": [
+    {
+      "id": "invalid-bound-not-subset",
+      "input": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 0,
+      "expectedRepairCut": -1,
+      "expectedDisposition": "REFUSE",
+      "expectedCanonicalRepresentative": null,
+      "expectedOrbitCardinality": null
+    },
+    {
+      "id": "empty-network",
+      "input": [
+        0,
+        0,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 569353,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "single-edge-bound",
+      "input": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 569929,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "single-edge-needs-binding",
+      "input": [
+        1,
+        0,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 569938,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "BIND_TRANSLATIONS",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "local-nonbijection",
+      "input": [
+        1,
+        1,
+        0,
+        2,
+        2
+      ],
+      "expectedRich": 1059428,
+      "expectedRepairCut": -1,
+      "expectedDisposition": "REVIEW_LOCAL_PROOF",
+      "expectedCanonicalRepresentative": 5,
+      "expectedOrbitCardinality": 8
+    },
+    {
+      "id": "flat-identity-triangle",
+      "input": [
+        7,
+        7,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 570569,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "flat-partially-bound-triangle",
+      "input": [
+        7,
+        1,
+        2,
+        2,
+        2
+      ],
+      "expectedRich": 570002,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "BIND_TRANSLATIONS",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "odd-flip-holonomy",
+      "input": [
+        7,
+        7,
+        1,
+        2,
+        2
+      ],
+      "expectedRich": 569307,
+      "expectedRepairCut": 1,
+      "expectedDisposition": "ABSTAIN_NONTRIVIAL_HOLONOMY",
+      "expectedCanonicalRepresentative": 21,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "three-flip-holonomy",
+      "input": [
+        7,
+        7,
+        1,
+        1,
+        1
+      ],
+      "expectedRich": 569307,
+      "expectedRepairCut": 1,
+      "expectedDisposition": "ABSTAIN_NONTRIVIAL_HOLONOMY",
+      "expectedCanonicalRepresentative": 21,
+      "expectedOrbitCardinality": 4
+    },
+    {
+      "id": "nonbijective-orbit-eight",
+      "input": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expectedRich": 1048585,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCanonicalRepresentative": 0,
+      "expectedOrbitCardinality": 8
+    },
+    {
+      "id": "mixed-coordinate-orbit-eight",
+      "input": [
+        3,
+        1,
+        0,
+        3,
+        2
+      ],
+      "expectedRich": 1051876,
+      "expectedRepairCut": -1,
+      "expectedDisposition": "REVIEW_LOCAL_PROOF",
+      "expectedCanonicalRepresentative": 1,
+      "expectedOrbitCardinality": 8
+    },
+    {
+      "id": "even-flip-flat-triangle",
+      "input": [
+        7,
+        7,
+        1,
+        1,
+        2
+      ],
+      "expectedRich": 570569,
+      "expectedRepairCut": 0,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCanonicalRepresentative": 22,
+      "expectedOrbitCardinality": 4
+    }
+  ]
+}

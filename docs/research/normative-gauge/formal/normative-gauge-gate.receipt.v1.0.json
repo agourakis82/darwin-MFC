@@ -1,0 +1,319 @@
+{
+  "schema": "darwin.normative-gauge-gate-receipt.v1.0",
+  "generatedAt": "2026-08-03T04:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": true,
+  "leanGaugeModelEstablished": true,
+  "finiteGaugeOrbitComplete": true,
+  "gaugeInvariantExecutableEstablishedForDeclaredDomain": true,
+  "mutationAdequacyEstablished": true,
+  "nativeWasmSelfCheckParityEstablished": true,
+  "nativeWasmCanonicalTranscriptParityEstablished": true,
+  "allInternalExportParityEstablished": false,
+  "executableSemanticsMechanized": false,
+  "emittedWasmSemanticsMechanized": false,
+  "parent": {
+    "path": "docs/research/normative-holonomy/formal/normative-holonomy-gate.receipt.v0.9.json",
+    "sha256": "d805016fc108ba4faa91063f927d33a67a6788c1df2d592e24d61fe505a657e6",
+    "bytes": 9970
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "evidence": {
+    "runtime": {
+      "path": "docs/research/normative-gauge/formal/evidence/runtime-verification.v1.0.json",
+      "sha256": "b0656845676440d7e9c677d13aee88c48864492d93a9326a27f42bdf625613e0",
+      "bytes": 9818
+    },
+    "lean": {
+      "path": "docs/research/normative-gauge/formal/evidence/lean-verification.v1.0.json",
+      "sha256": "096a4fd124d9caf9a5aef0324043b6ab0a69ea49f2eb90fd285fa22123b4e734",
+      "bytes": 2928
+    },
+    "sourceFreshBuild": {
+      "path": "docs/research/normative-gauge/formal/evidence/source-fresh-build.v1.0.json",
+      "sha256": "be8f41832d40d931e255ec8e3730321b602cdb51a23ed54ce2d4245f70ecb006",
+      "bytes": 5910
+    }
+  },
+  "model": {
+    "vertices": [
+      "A",
+      "B",
+      "C"
+    ],
+    "localGaugeGroup": "C2^3",
+    "gaugeElements": 8,
+    "edgeMaskDomain": [
+      0,
+      7
+    ],
+    "mapCodeDomain": [
+      0,
+      3
+    ],
+    "canonicalStates": 4096,
+    "canonicalValidStates": 1728,
+    "edgeTransformationChecks": 1536,
+    "groupCompositionChecks": 4096,
+    "gaugeChecks": 32768,
+    "hostileStates": 21600,
+    "mapOrbitClasses": 9,
+    "mutants": 6,
+    "mutantsKilled": 6,
+    "expectedSelfCheckCode": 110,
+    "transcriptSha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf"
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d"
+  },
+  "wasm": {
+    "path": "docs/research/normative-gauge/formal/wasm/normative_gauge.v1.0.wasm",
+    "sha256": "d345d2ccd491366817ac409f9ba1e14fd7d196964e0550bd55c5cddae913607d",
+    "bytes": 19663
+  },
+  "native": {
+    "path": "docs/research/normative-gauge/formal/native/normative_gauge.v1.0.linux-x86_64",
+    "sha256": "325876f4bd19d5eb5755a4bb150f271eba43e947614be5785bcebc443e9b267f",
+    "bytes": 69640
+  },
+  "nativeTranscript": {
+    "binary": {
+      "path": "docs/research/normative-gauge/formal/native/normative_gauge_transcript.v1.0.linux-x86_64",
+      "sha256": "023923a8642dab649fe915ee8ecb2f51c1829f1f4c0f89e4b5e5687a8f85a4b1",
+      "bytes": 77832
+    },
+    "records": 4096,
+    "stdoutBytes": 67922,
+    "stdoutSha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf"
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "axiomFreeCoreEstablished": true,
+    "onlyApprovedAxioms": true,
+    "executableSemanticsMechanized": false
+  },
+  "artifacts": [
+    {
+      "path": "package.json",
+      "sha256": "dd4cbf0055815fa9dafbb500322b85880551f50ce708d1a9062b7fac0a077f97",
+      "bytes": 4472
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+      "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+      "bytes": 8422
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/normative-holonomy-gate.receipt.v0.9.json",
+      "sha256": "d805016fc108ba4faa91063f927d33a67a6788c1df2d592e24d61fe505a657e6",
+      "bytes": 9970
+    },
+    {
+      "path": "docs/research/normative-gauge/README.md",
+      "sha256": "e5e834efffc2680ccf047e75da2678a4a5988b2d925afb4d452d7b045fdbbf3e",
+      "bytes": 2118
+    },
+    {
+      "path": "docs/research/normative-gauge/normative-gauge-theory-v1.0.md",
+      "sha256": "5dc5a02e18e6282653681e71355fe5a1686a24ce9cbf05ef6e229719057bd916",
+      "bytes": 3253
+    },
+    {
+      "path": "docs/research/normative-gauge/prior-art-frontier-v1.0.md",
+      "sha256": "0d19e6e3446d0d62502c398ad43eac7e342d70c99ce29301c5091ae61f715ee1",
+      "bytes": 2956
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/closure-v1.0.md",
+      "sha256": "392e30c0f326281b8b54380e3907ec997c7648345c505fb8b7551e2f2ab2ca57",
+      "bytes": 2525
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/runtime-verification.v1.0.json",
+      "sha256": "b0656845676440d7e9c677d13aee88c48864492d93a9326a27f42bdf625613e0",
+      "bytes": 9818
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/lean-verification.v1.0.json",
+      "sha256": "096a4fd124d9caf9a5aef0324043b6ab0a69ea49f2eb90fd285fa22123b4e734",
+      "bytes": 2928
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/source-fresh-build.v1.0.json",
+      "sha256": "be8f41832d40d931e255ec8e3730321b602cdb51a23ed54ce2d4245f70ecb006",
+      "bytes": 5910
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-wasm-a.log",
+      "sha256": "84c5c64c07d0003d84fb3bd9304b553f567e5c709a7125fda3bab58f6ede64b9",
+      "bytes": 526
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-wasm-b.log",
+      "sha256": "157c9b6188773b6afbddb638ee89bb69868e132168fc485be04bbf2718fa39dd",
+      "bytes": 526
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-native-a.log",
+      "sha256": "677e1c8424a5dcff26aeca20b1dec592b3cb0eb61143c3033a05a0bc956b355e",
+      "bytes": 928
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-native-b.log",
+      "sha256": "ab874f9a693a86a8b99d51fa4622c7fbb2fe55bf26e1a5a20b85228818a0c64c",
+      "bytes": 928
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-transcript-a.log",
+      "sha256": "ded773f3a8e3fd2fc3c02e7d5bfbbd2d6e550862d550249ae3662cb4eed4c290",
+      "bytes": 949
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/evidence/build-logs/ng-transcript-b.log",
+      "sha256": "0d0a343a3179eb577c5b6b26ade7a1f0487babedf5d1e5ab8192a33a3673c44a",
+      "bytes": 949
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/NormativeGauge.lean",
+      "sha256": "63b14214c35f051d06b731c5fd2fd4ac33c0d91cf4011b6bd90285ffdac3d8f9",
+      "bytes": 12089
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/NormativeGaugeAudit.lean",
+      "sha256": "3a5331bf8239a8dd9781204ee1ed74cf0b4043644a8a0192340b3a82dda30c4b",
+      "bytes": 788
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lakefile.lean",
+      "sha256": "6d5f88fce671455ccb26f0865592103fc944f8e0a1388f074d3581d00956363f",
+      "bytes": 151
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lake-manifest.json",
+      "sha256": "75535c67fd575837d6c061330f316abb963c8fe006d72ab077578924067c7dba",
+      "bytes": 146
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/sounio/normative_gauge_v1_0.sio",
+      "sha256": "6b641ead1595a8248d79ec7486df9c03229affcfa0a91c5e1c12c7d811b7d80c",
+      "bytes": 32144
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/vectors/normative-gauge-vectors.v1.0.json",
+      "sha256": "8dc342bcb9ea55b19e67e6f8f8cf1d93ca72e29a65e3f85965b2f7aafdec1cc2",
+      "bytes": 4063
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/transcripts/canonical-domain.v1.0.txt",
+      "sha256": "adf8bbea5099ed5b1e627df2e79bb9909fa4d56a03fe6d4e9cde8423bac1b5cf",
+      "bytes": 67922
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/transcripts/normative_gauge_transcript_v1_0.sio",
+      "sha256": "5e3d59409a16bdcc146a9ceb969236d4b27b5e3e83652e31d3b740bb85ee9ba5",
+      "bytes": 33041
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/native/normative_gauge.v1.0.linux-x86_64",
+      "sha256": "325876f4bd19d5eb5755a4bb150f271eba43e947614be5785bcebc443e9b267f",
+      "bytes": 69640
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/native/normative_gauge_transcript.v1.0.linux-x86_64",
+      "sha256": "023923a8642dab649fe915ee8ecb2f51c1829f1f4c0f89e4b5e5687a8f85a4b1",
+      "bytes": 77832
+    },
+    {
+      "path": "docs/research/normative-gauge/formal/wasm/normative_gauge.v1.0.wasm",
+      "sha256": "d345d2ccd491366817ac409f9ba1e14fd7d196964e0550bd55c5cddae913607d",
+      "bytes": 19663
+    },
+    {
+      "path": "scripts/generate-normative-gauge-source.mjs",
+      "sha256": "b9f1c1da6f406e7ea5052bf533de988d6bcaa1ccb304fc16715e05ccc898237b",
+      "bytes": 14583
+    },
+    {
+      "path": "scripts/generate-normative-gauge-native-transcript.mjs",
+      "sha256": "81d2e7cdcd30b231772c898b2b7a557af18b843eca420092223a99f476555268",
+      "bytes": 2278
+    },
+    {
+      "path": "scripts/generate-normative-gauge-vectors.mjs",
+      "sha256": "821fcd530ae93b4ef47ccf75b08eff4aba530e37a0fa6e2bb3925f9249a640fe",
+      "bytes": 1936
+    },
+    {
+      "path": "scripts/normative-gauge-oracle.mjs",
+      "sha256": "3aba56bb9e301f5ba6cc6b49a12630c4252b2952a3a487919987eb040d1efec9",
+      "bytes": 7845
+    },
+    {
+      "path": "scripts/verify-normative-gauge.mjs",
+      "sha256": "b23edf495e346f27cbd60d60d90e710c8e179cf761fbc3d8927de42fa313c203",
+      "bytes": 17353
+    },
+    {
+      "path": "scripts/verify-normative-gauge-lean.mjs",
+      "sha256": "4d7fc0e438c6bf2f9bf065a84d63f3a6247562c7194e8553d98f52378660d0e8",
+      "bytes": 6420
+    },
+    {
+      "path": "scripts/generate-normative-gauge-receipt.mjs",
+      "sha256": "fe46dca99f6c0519f446fade8436be868bfdb0efbabeda6884f20ed84f7c06d5",
+      "bytes": 16942
+    },
+    {
+      "path": "scripts/verify-normative-gauge-gate.mjs",
+      "sha256": "b80558d613315cff232c7a53398f7131796cd89f01c5efbc3a794f2ca8bb0a83",
+      "bytes": 6929
+    }
+  ],
+  "claims": {
+    "established": [
+      "global-section existence is invariant under the declared local bijective gauges",
+      "holonomy fixed-point existence and forced abstention are gauge invariant in the Lean model",
+      "a coordinate-sensitive analyzer has a constructive gauge anomaly",
+      "the executable Boolean gauge action satisfies the C2^3 composition law over all map triples",
+      "complete finite-orbit invariance over 4,096 states and 8 gauges per state",
+      "six coordinate-sensitive executable mutants are detected with counterexamples",
+      "source-fresh deterministic native and WASM builds",
+      "exact native/WASM five-field transcript parity over 4,096 canonical states"
+    ],
+    "notEstablished": [
+      "mechanized semantics of the Sounio executable or emitted WASM bytes",
+      "parity of every internal native and WASM helper export",
+      "semantic equivalence or authority of any real terminology mapping",
+      "correctness of any real-world normative translation",
+      "scientific novelty or priority",
+      "empirical, clinical, regulatory, legal, or production validity"
+    ]
+  },
+  "invalidation": [
+    "parent or compiler receipt identity changes",
+    "any listed artifact hash or byte size changes",
+    "Lean build, forbidden-token scan, or axiom audit changes",
+    "canonical, hostile, or complete gauge-orbit verification ceases to pass",
+    "one or more coordinate-sensitive mutants survive",
+    "native/WASM transcript identity changes",
+    "clinical refusal, authorization, signature, or novelty boundary changes"
+  ]
+}
