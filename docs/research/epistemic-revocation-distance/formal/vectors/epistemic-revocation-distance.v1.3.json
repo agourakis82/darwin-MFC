@@ -1,0 +1,4376 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-vectors.v1.3",
+  "generatedAt": "2026-08-03T14:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "theoremProfile": {
+    "evidenceBits": 3,
+    "activeMasks": 7,
+    "cases": 151,
+    "blockerFamiliesComplete": true
+  },
+  "cases": [
+    {
+      "id": "erd13-a1-f1",
+      "activeReceiptMask": 1,
+      "blockerMasks": [
+        1
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 9445961,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a2-f1",
+      "activeReceiptMask": 2,
+      "blockerMasks": [
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 18891337,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a3-f1",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        1
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 26223177,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a3-f2",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 27279945,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a3-f3",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        1,
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 28336713,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a3-f4",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 28345489,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3
+        ],
+        "minimumCutFamily": 8,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a3-f5",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        1,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 26223177,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a3-f6",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        2,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 27279945,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a3-f7",
+      "activeReceiptMask": 3,
+      "blockerMasks": [
+        1,
+        2,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 28336713,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a4-f1",
+      "activeReceiptMask": 4,
+      "blockerMasks": [
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        -1,
+        -1,
+        557059,
+        -1,
+        -1,
+        -1
+      ],
+      "expectedPacked": 37814857,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a5-f1",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        1
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        -1,
+        -1,
+        278537,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 43000393,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a5-f2",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        -1,
+        -1,
+        557059,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 46203465,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a5-f3",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        1,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        -1,
+        -1,
+        557059,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 47260233,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a5-f4",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        -1,
+        -1,
+        278537,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 47318161,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          5
+        ],
+        "minimumCutFamily": 32,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a5-f5",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        1,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        -1,
+        -1,
+        278537,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 43000393,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a5-f6",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        -1,
+        -1,
+        557059,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 46203465,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a5-f7",
+      "activeReceiptMask": 5,
+      "blockerMasks": [
+        1,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        -1,
+        -1,
+        557059,
+        557059,
+        -1,
+        -1
+      ],
+      "expectedPacked": 47260233,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a6-f1",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        557059,
+        -1,
+        278537,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 52445769,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a6-f2",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        278537,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 54592073,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a6-f3",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        2,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 56705609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a6-f4",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        278537,
+        -1,
+        278537,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 56886417,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          6
+        ],
+        "minimumCutFamily": 64,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a6-f5",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        2,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        557059,
+        -1,
+        278537,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 52445769,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a6-f6",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        278537,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 54592073,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a6-f7",
+      "activeReceiptMask": 6,
+      "blockerMasks": [
+        2,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1,
+        557059,
+        -1
+      ],
+      "expectedPacked": 56705609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f1",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f2",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f3",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f4",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        278537,
+        278537,
+        557059
+      ],
+      "expectedPacked": 61899921,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3
+        ],
+        "minimumCutFamily": 8,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f5",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f6",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f7",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f8",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f9",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f10",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f11",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f12",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f13",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f14",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f15",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f16",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 64095377,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          5
+        ],
+        "minimumCutFamily": 32,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f17",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f18",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f19",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f20",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 66225297,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          5
+        ],
+        "minimumCutFamily": 40,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f21",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f22",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f23",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f24",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f25",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f26",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f27",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f28",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f29",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f30",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f31",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f32",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65275025,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          6
+        ],
+        "minimumCutFamily": 64,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f33",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f34",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f35",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f36",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66356369,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          6
+        ],
+        "minimumCutFamily": 72,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f37",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f38",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f39",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f40",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f41",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f42",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f43",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f44",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f45",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f46",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f47",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f48",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66454673,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          5,
+          6
+        ],
+        "minimumCutFamily": 96,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f49",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f50",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f51",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f52",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66487441,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          5,
+          6
+        ],
+        "minimumCutFamily": 104,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f53",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f54",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f55",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f56",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f57",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f58",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f59",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f60",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f61",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f62",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f63",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f64",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059
+      ],
+      "expectedPacked": 66586329,
+      "expected": {
+        "distance": 3,
+        "minimumCuts": [
+          7
+        ],
+        "minimumCutFamily": 128,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f65",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f66",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f67",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f68",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        278537,
+        278537,
+        557059
+      ],
+      "expectedPacked": 61899921,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3
+        ],
+        "minimumCutFamily": 8,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f69",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f70",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f71",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f72",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f73",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f74",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f75",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f76",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f77",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f78",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f79",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f80",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 64095377,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          5
+        ],
+        "minimumCutFamily": 32,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f81",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f82",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f83",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f84",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 66225297,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          5
+        ],
+        "minimumCutFamily": 40,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f85",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f86",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f87",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f88",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f89",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f90",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f91",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f92",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f93",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f94",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f95",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f96",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65275025,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          6
+        ],
+        "minimumCutFamily": 64,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f97",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f98",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f99",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f100",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66356369,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          6
+        ],
+        "minimumCutFamily": 72,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f101",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f102",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        278537,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f103",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f104",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f105",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f106",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f107",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f108",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f109",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f110",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f111",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f112",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66454673,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          5,
+          6
+        ],
+        "minimumCutFamily": 96,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f113",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f114",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f115",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f116",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66487441,
+      "expected": {
+        "distance": 2,
+        "minimumCuts": [
+          3,
+          5,
+          6
+        ],
+        "minimumCutFamily": 104,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f117",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 59777609,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1
+        ],
+        "minimumCutFamily": 2,
+        "criticalReceiptMask": 1
+      }
+    },
+    {
+      "id": "erd13-a7-f118",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 60834377,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2
+        ],
+        "minimumCutFamily": 4,
+        "criticalReceiptMask": 2
+      }
+    },
+    {
+      "id": "erd13-a7-f119",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 61891145,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2
+        ],
+        "minimumCutFamily": 6,
+        "criticalReceiptMask": 3
+      }
+    },
+    {
+      "id": "erd13-a7-f120",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f121",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f122",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f123",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    },
+    {
+      "id": "erd13-a7-f124",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 62980681,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          4
+        ],
+        "minimumCutFamily": 16,
+        "criticalReceiptMask": 4
+      }
+    },
+    {
+      "id": "erd13-a7-f125",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 64037449,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          4
+        ],
+        "minimumCutFamily": 18,
+        "criticalReceiptMask": 5
+      }
+    },
+    {
+      "id": "erd13-a7-f126",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 65094217,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          2,
+          4
+        ],
+        "minimumCutFamily": 20,
+        "criticalReceiptMask": 6
+      }
+    },
+    {
+      "id": "erd13-a7-f127",
+      "activeReceiptMask": 7,
+      "blockerMasks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "postRevocationStates": [
+        278537,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059,
+        557059
+      ],
+      "expectedPacked": 66150985,
+      "expected": {
+        "distance": 1,
+        "minimumCuts": [
+          1,
+          2,
+          4
+        ],
+        "minimumCutFamily": 22,
+        "criticalReceiptMask": 7
+      }
+    }
+  ]
+}

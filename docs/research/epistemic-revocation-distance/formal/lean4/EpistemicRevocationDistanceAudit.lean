@@ -1,0 +1,10 @@
+import EpistemicRevocationDistance
+
+#print axioms Darwin.EpistemicRevocationDistance.countWhere_mono_of_pointwise
+#print axioms Darwin.EpistemicRevocationDistance.blockers_restore
+#print axioms Darwin.EpistemicRevocationDistance.restoration_cost_lower_bound
+#print axioms Darwin.EpistemicRevocationDistance.revocation_distance_le_blocker_cost
+#print axioms Darwin.EpistemicRevocationDistance.exists_exact_minimum_blocker
+#print axioms Darwin.EpistemicRevocationDistance.smaller_than_distance_cannot_restore_bad
+#print axioms Darwin.EpistemicRevocationDistance.exists_exact_minimum_restoration_cut
+#print axioms Darwin.EpistemicRevocationDistance.revocation_distance_is_exact

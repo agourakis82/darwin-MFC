@@ -1,0 +1,103 @@
+{
+  "schema": "darwin.sounio.compiler-reconstruction.v1.3",
+  "generatedAt": "2026-08-03T14:40:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "repository": {
+    "url": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "originMainAtBuild": "72a75264d6bc208eb9db04fc4e7eb7a33b525b7c",
+    "aheadOfOriginMain": 2,
+    "behindOriginMain": 0,
+    "checkoutMode": "DETACHED",
+    "clean": true,
+    "wrapperSha256": "1c6978a3015618043354933032e283a2f18265db36a5fa0b52dfb9d5d962b9ec",
+    "buildScriptSha256": "828523563fb1c8a0e38161da261a680958738c5a5cb650c094090b729fbb1b06"
+  },
+  "fixedPoint": {
+    "initialCheckedInSeedRequiredReconciliation": true,
+    "reconciliationPasses": 1,
+    "bitIdentical": true,
+    "bytes": 2548890,
+    "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "md5": "390bdecc4f8a89a816ea850f79481e3f",
+    "stageSha256": [
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da"
+    ]
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "bytes": 101651571,
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "warningDiagnostics": 4072,
+    "errorDiagnostics": 0,
+    "buildExitCode": 0,
+    "hashMatchedSourceFreshReceipt": true
+  },
+  "upstreamReceipts": {
+    "compilerSourceFreshSha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "parentV12Sha256": "d0a5018f2689b7ab3b178bbfaff3682f25642bcd9c3bc2bd6b2bacf4cef77f0c"
+  },
+  "builds": {
+    "sourceBytes": 12415,
+    "sourceSha256": "857a42159ae28cb8dfbae9cb9549fddc526b2eb5d5ffa3a0e0139f48442506d0",
+    "checkExitCode": 0,
+    "checkWarningDiagnostics": 0,
+    "checkErrorDiagnostics": 0,
+    "wasmBytes": 9357,
+    "wasmSha256": "1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49",
+    "wasmRepeatSha256": "1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49",
+    "wasmBuildExitCodes": [0, 0],
+    "wasmFocusedSelfChecks": [0, 0],
+    "wasmExhaustiveSelfChecks": [0, 0],
+    "wasmMainResults": [143, 143],
+    "nativeBytes": 36872,
+    "nativeSha256": "ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c",
+    "nativeRepeatSha256": "ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c",
+    "nativeBuildExitCodes": [0, 0],
+    "nativeExitCodes": [143, 143],
+    "warningDiagnostics": 0,
+    "errorDiagnostics": 0,
+    "deterministicWasm": true,
+    "deterministicNative": true
+  },
+  "completeDomain": {
+    "blockerFamilies": 151,
+    "abstractStates": 66356,
+    "oracleMismatches": 0,
+    "invalidKernelOutputs": 0,
+    "hostileAbiCases": 6,
+    "hostileAbiPassed": 6,
+    "transcriptSha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef"
+  },
+  "buildTranscript": {
+    "path": "docs/research/epistemic-revocation-distance/formal/transcripts/source-fresh-build.v1.3.txt",
+    "bytes": 3063,
+    "sha256": "a8a0b79308916bdf3cb08bc3dd84ecd8a303747614618f81a45ec107ecd1c530"
+  },
+  "commands": {
+    "compiler": "SOUNIO_MADAROS_SEED=<fixed-point-seed> SOUNIO_MADAROS_REQUIRE_PINNED_SEED=1 scripts/ci/build_modular_madaros.sh <external-artifact>",
+    "check": "MADAROS_RAW_BIN=<compiler> bin/madaros check <source>",
+    "wasm": "MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend wasm -o <output>",
+    "native": "MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend native -o <output>"
+  },
+  "environment": {
+    "virtualMachine": "souc-linux",
+    "os": "Alpine Linux",
+    "kernel": "6.18.7-0-virt",
+    "architecture": "x86_64",
+    "cpus": 8,
+    "memoryGiB": 8,
+    "hostRuntime": "Node.js v24.9.0"
+  },
+  "verified": true,
+  "errors": []
+}

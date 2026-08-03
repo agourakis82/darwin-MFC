@@ -1,0 +1,104 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-runtime-verification.v1.3",
+  "generatedAt": "2026-08-03T14:20:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "canonicalWasm": {
+    "path": "docs/research/epistemic-revocation-distance/formal/wasm/epistemic_revocation_distance.v1.3.wasm",
+    "bytes": 9357,
+    "sha256": "1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49",
+    "imports": [],
+    "exports": [
+      "erd13_analyze",
+      "erd13_contains",
+      "erd13_critical_receipts",
+      "erd13_cut_bit",
+      "erd13_cut_is_minimum",
+      "erd13_disposition",
+      "erd13_distance",
+      "erd13_exhaustive_self_check",
+      "erd13_identified",
+      "erd13_input_valid",
+      "erd13_minimum_cut_family",
+      "erd13_pack",
+      "erd13_popcount3",
+      "erd13_profile_count",
+      "erd13_profile_divisor",
+      "erd13_profile_failures",
+      "erd13_profile_state",
+      "erd13_result_active",
+      "erd13_self_check",
+      "erd13_solution_count",
+      "erd13_stabilizer_order",
+      "erd13_state_loses",
+      "erd13_state_matches_cut",
+      "erd13_subset",
+      "erd13_update_distance",
+      "erd13_valid_mask",
+      "erd13_verify_active_profiles",
+      "main",
+      "memory"
+    ],
+    "logicalApi": [
+      "erd13_analyze",
+      "erd13_self_check",
+      "main"
+    ],
+    "singularWitnessExportCount": 0,
+    "focusedSelfCheck": 0,
+    "exhaustiveSelfCheckExported": true,
+    "exhaustiveSelfCheck": 0,
+    "exhaustiveSelfCheckComposedInMain": true,
+    "mainResult": 143
+  },
+  "source": {
+    "path": "docs/research/epistemic-revocation-distance/formal/sounio/epistemic_revocation_distance_v1_3.sio",
+    "bytes": 12415,
+    "sha256": "857a42159ae28cb8dfbae9cb9549fddc526b2eb5d5ffa3a0e0139f48442506d0",
+    "hasIO": false
+  },
+  "blockerBenchmark": {
+    "checks": 151,
+    "mismatches": 0
+  },
+  "completeAbstractDomain": {
+    "states": 66356,
+    "oracleMismatches": 0,
+    "invalidKernelOutputs": 0,
+    "transcript": {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/abstract-domain.v1.3.txt",
+      "bytes": 1501880,
+      "sha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef"
+    }
+  },
+  "hostileAbi": {
+    "cases": 6,
+    "passed": 6
+  },
+  "lifecycleFirewall": {
+    "schema": "darwin.epistemic-revocation-evaluation-envelope.v1.3",
+    "currentEpoch": 13,
+    "acceptedEnvelopeKernelCalls": 1,
+    "invalidEnvelopeKernelCalls": 0,
+    "mutations": [
+      "staleEpoch",
+      "parentHash",
+      "sourceHash",
+      "states",
+      "stateDigest"
+    ],
+    "mutationsRefused": 5,
+    "fixtureOnly": true,
+    "signedAuthorityEstablished": false
+  },
+  "upstream": {
+    "parentReceipt": "docs/research/no-hidden-gauge-fixing/formal/no-hidden-gauge-fixing-gate.receipt.v1.2.json",
+    "parentReceiptSha256": "d0a5018f2689b7ab3b178bbfaff3682f25642bcd9c3bc2bd6b2bacf4cef77f0c"
+  },
+  "verified": true,
+  "errors": []
+}

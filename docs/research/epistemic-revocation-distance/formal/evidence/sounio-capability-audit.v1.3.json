@@ -1,0 +1,120 @@
+{
+  "schema": "darwin.sounio-capability-audit.v1.3",
+  "auditedAt": "2026-08-03T13:00:00.000Z",
+  "status": "BOUNDARY_AUDIT",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "repository": {
+    "url": "https://github.com/Sounio-lang/Sounio",
+    "branch": "main",
+    "commit": "8ef762a99d9b88678c4fb5f38617daf91d826f8c",
+    "checkoutClean": true
+  },
+  "declaredCapabilitiesInspected": [
+    "Knowledge[T]",
+    "GUM uncertainty propagation",
+    "algebraic effects",
+    "Observe and Unobserved<T>",
+    "linear and affine types",
+    "borrowing",
+    "refinement types",
+    "units of measure",
+    "non-associative algebra",
+    "e-graph authority",
+    "native and WebAssembly backends",
+    "Lean proof artifacts",
+    "D10 revocable authority",
+    "D11 authority attenuation"
+  ],
+  "focusedChecks": [
+    {
+      "id": "refinement-basic",
+      "fixture": "epistemic_refined.sio",
+      "result": "CHECK_OK"
+    },
+    {
+      "id": "units-basic",
+      "fixture": "units.sio",
+      "result": "CHECK_OK"
+    },
+    {
+      "id": "linear-unconsumed",
+      "fixture": "linear_not_consumed.sio",
+      "result": "REJECT_E040"
+    },
+    {
+      "id": "linear-double-use",
+      "fixture": "linear_double_use.sio",
+      "result": "REJECT"
+    },
+    {
+      "id": "linear-branch-asymmetry",
+      "fixture": "linear_branch_asymmetry.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "linear-branch-unconsumed",
+      "fixture": "linear_branch_unconsumed.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "linear-closure-capture",
+      "fixture": "linear_closure_capture.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "linear-early-return",
+      "fixture": "linear_early_return.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "linear-field-unconsumed",
+      "fixture": "linear_field_unconsumed.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "affine-double-use",
+      "fixture": "affine_double_use.sio",
+      "result": "CHECK_OK_UNEXPECTED"
+    },
+    {
+      "id": "observe-contraction",
+      "fixture": "observe_contraction.sio",
+      "result": "REJECT_E137_UNDECLARED_VARIABLES"
+    }
+  ],
+  "adoption": {
+    "usedInExecutableKernel": [
+      "explicit integer arithmetic",
+      "declared Div effect",
+      "pure zero-import WebAssembly",
+      "source-fresh self-hosted compiler"
+    ],
+    "usedAsExternalProofBoundary": [
+      "Lean exact restoration theorem"
+    ],
+    "deferredBecauseIrrelevant": [
+      "units of measure",
+      "GUM numeric uncertainty",
+      "non-associative algebra"
+    ],
+    "deferredBecauseNotClosedForAuthority": [
+      "linear stale-alias invalidation",
+      "affine exact-once authority",
+      "Observe lifecycle authority",
+      "D10 live revocation",
+      "D11 copied-continuation invalidation"
+    ]
+  },
+  "claims": {
+    "allSounioFeaturesUsed": false,
+    "allRelevantClosedFeaturesUsed": true,
+    "compilerEnforcedNoReplayEstablished": false,
+    "explicitEpochAndHashFirewallRequired": true
+  },
+  "verified": true,
+  "errors": []
+}

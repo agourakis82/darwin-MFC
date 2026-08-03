@@ -1,0 +1,21 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"type": "path",
+   "scope": "",
+   "name": "noHiddenGaugeFixing",
+   "manifestFile": "lake-manifest.json",
+   "inherited": false,
+   "dir": "../../../no-hidden-gauge-fixing/formal/lean4",
+   "configFile": "lakefile.lean"},
+  {"type": "path",
+   "scope": "",
+   "name": "normativeGauge",
+   "manifestFile": "lake-manifest.json",
+   "inherited": true,
+   "dir":
+   "../../../no-hidden-gauge-fixing/formal/lean4/../../../normative-gauge/formal/lean4",
+   "configFile": "lakefile.lean"}],
+ "name": "epistemicRevocationDistance",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

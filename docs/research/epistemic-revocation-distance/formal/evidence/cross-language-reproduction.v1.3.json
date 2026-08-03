@@ -1,0 +1,60 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-cross-language-reproduction.v1.3",
+  "generatedAt": "2026-08-03T14:30:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "implementation": {
+    "language": "Rust",
+    "compiler": "rustc 1.91.1 (ed61e7d7e 2025-11-07)\nbinary: rustc\ncommit-hash: ed61e7d7e242494fb7057f2657300d9e77bb4fcb\ncommit-date: 2025-11-07\nhost: aarch64-apple-darwin\nrelease: 1.91.1\nLLVM version: 21.1.2",
+    "noExternalCrates": true,
+    "unsafeForbidden": true,
+    "wasmNotLoaded": true,
+    "sourceNotIncluded": true
+  },
+  "artifacts": {
+    "source": {
+      "path": "docs/research/epistemic-revocation-distance/formal/rust/epistemic_revocation_distance_oracle_v1_3.rs",
+      "bytes": 3935,
+      "sha256": "9a4a660d71d74639d9669fc162b60a215c07057df443c6c1d9fbd088994c2337"
+    },
+    "binary": {
+      "path": "docs/research/epistemic-revocation-distance/formal/native/epistemic_revocation_distance_oracle.v1.3.macos-arm64",
+      "bytes": 353456,
+      "sha256": "fa7a77cb6953290f377945620d8ddd38ab34c8c9267ff6fff09809dd231f3f1a",
+      "freshBuildBytes": 353424,
+      "freshBuildExecuted": true,
+      "deterministic": false,
+      "deterministicBinaryEstablished": false
+    },
+    "transcript": {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/abstract-domain.v1.3.txt",
+      "bytes": 1501880,
+      "sha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef",
+      "records": 66356
+    }
+  },
+  "parity": {
+    "committedTranscriptExact": true,
+    "freshTranscriptExact": true,
+    "tamperedCommitmentRejected": true,
+    "deterministicBinaryRequiredForTranscriptParity": false
+  },
+  "independence": {
+    "implementationIndependentReproductionComplete": true,
+    "languageIndependentReproductionComplete": true,
+    "authorIndependentReproductionComplete": false,
+    "unrelatedThirdPartyReproductionComplete": false
+  },
+  "forbidden": {
+    "unsafe": 0,
+    "externalCrate": 0,
+    "wasmLoader": 0,
+    "sourceInclude": 0
+  },
+  "verified": true,
+  "errors": []
+}

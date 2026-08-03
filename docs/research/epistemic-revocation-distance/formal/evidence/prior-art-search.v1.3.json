@@ -1,0 +1,156 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-prior-art-search.v1.3",
+  "searchedAt": "2026-08-03T13:30:00.000Z",
+  "status": "CANDIDATE_CONJUNCTION",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "formalPriorArtSearchExecuted": true,
+  "searchComplete": false,
+  "legalOpinion": false,
+  "patentabilityOpinion": false,
+  "candidateConjunction": {
+    "name": "mode-resolved epistemic revocation spectrum with immutable subset recomputation and complete cut receipts",
+    "candidateOnly": true,
+    "locatedAsCompleteDisclosure": false,
+    "absenceOfDisclosureEstablished": false,
+    "claim": "For a model-relative singular result, recompute immutable evidence subsets and emit a mode-resolved model, symmetry, and joint revocation spectrum with complete cut receipts, while exporting neither the singular result nor a selected cut and binding execution to compiler and upstream receipts."
+  },
+  "claimAssessment": {
+    "stabilizerObstruction": "KNOWN",
+    "minimumGroupBases": "KNOWN",
+    "faultTolerantBases": "KNOWN",
+    "minimalDestructiveCutFamilies": "KNOWN",
+    "assuranceCaseEvidenceConfidence": "KNOWN",
+    "beliefRevisionCommutativityAndPathIndependence": "KNOWN",
+    "continuousDistanceToNonIdentifiability": "KNOWN",
+    "minimumSufficientEvidenceSupport": "KNOWN_TERMINOLOGICAL_COLLISION",
+    "dynamicEvidenceRemoval": "KNOWN",
+    "revocableProofCarryingAuthorization": "KNOWN",
+    "revocableLinearCapabilities": "KNOWN",
+    "outputRelativeRevocationDistance": "CANDIDATE",
+    "completeMinimumCutFamily": "KNOWN_COMPONENT",
+    "modeResolvedSpectrumWithoutSingularExport": "CANDIDATE_CONJUNCTION",
+    "sourceFreshNativeWasmLifecycle": "CANDIDATE_CONJUNCTION_CLOSE_ART"
+  },
+  "queries": [
+    "proof-carrying revocation distance evidence",
+    "epistemic revocation distance minimum evidence cut",
+    "minimum observations restore symmetry group action",
+    "fault tolerant permutation group base deletion",
+    "dynamic evidence removal minimum cut",
+    "revocable proof-carrying authorization linear certificate",
+    "complete family minimum evidence cuts identified model",
+    "output-relative distance to non-identifiability",
+    "certified theory compiling minimum evidence cut",
+    "distance to singular stratum identifiability",
+    "experiment conditional distance non-identifiability",
+    "minimum sufficient evidence support claim",
+    "assurance case minimal cut set evidence claim",
+    "belief revision path independence commutativity",
+    "minimal cutsets finite degradation model",
+    "automatic generation minimal cut sets model checking"
+  ],
+  "closestWork": [
+    {
+      "id": "dym-2024-equivariant-frames",
+      "url": "https://proceedings.mlr.press/v235/dym24a.html",
+      "anticipates": "stabilizer obstruction and alternatives to forced canonicalization"
+    },
+    {
+      "id": "blaha-1992-minimum-bases",
+      "url": "https://doi.org/10.1016/0196-6774(92)90020-D",
+      "anticipates": "minimum bases for permutation groups"
+    },
+    {
+      "id": "bentert-2025-fault-tolerant-matroid-bases",
+      "url": "https://arxiv.org/abs/2506.22010",
+      "anticipates": "bases robust to element deletion"
+    },
+    {
+      "id": "rauzy-yang-2019-finite-degradation-cutsets",
+      "url": "https://doi.org/10.3390/info10120368",
+      "anticipates": "complete minimal cutsets and structural fragility in finite degradation models"
+    },
+    {
+      "id": "kromodimoeljo-lindsay-2015-automatic-cutsets",
+      "url": "https://arxiv.org/abs/1506.03555",
+      "anticipates": "automated generation of multiple minimal failure behaviors"
+    },
+    {
+      "id": "bloomfield-rushby-2022-assurance-confidence",
+      "url": "https://arxiv.org/abs/2205.04522",
+      "anticipates": "logical, probabilistic, defeater, and residual-doubt views of evidence-backed assurance claims"
+    },
+    {
+      "id": "baltag-renne-smets-evidence-truth",
+      "url": "https://doi.org/10.1007/s11229-013-0359-5",
+      "anticipates": "dynamic evidence addition and removal"
+    },
+    {
+      "id": "ulusarslan-2026-linear-dynamics-identifiability",
+      "url": "https://arxiv.org/abs/2605.12010",
+      "anticipates": "geometric and algebraic distance to non-identifiability in linear systems"
+    },
+    {
+      "id": "plummer-2026-singular-observable-regimes",
+      "url": "https://arxiv.org/abs/2602.24165",
+      "anticipates": "distance to a singular stratum as a limit on detectability"
+    },
+    {
+      "id": "garg-2009-authorization-logic",
+      "url": "https://people.mpi-sws.org/~dg/papers/thesis.pdf",
+      "anticipates": "time, state, consumption, revocation, and proof-carrying authorization"
+    },
+    {
+      "id": "garg-pfenning-2011-revocable-use-once",
+      "url": "https://people.mpi-sws.org/~dg/papers/stm11-lpcfs.pdf",
+      "anticipates": "revocable and use-once proof-carrying certificates"
+    },
+    {
+      "id": "capstone-2023",
+      "url": "https://www.usenix.org/conference/usenixsecurity23/presentation/yu-jason",
+      "anticipates": "linear capabilities and revocation trees"
+    },
+    {
+      "id": "necula-1996-proof-carrying-code",
+      "url": "https://www.usenix.org/legacy/publications/library/proceedings/osdi96/full_papers/necula/necula.pdf",
+      "anticipates": "machine-checkable evidence attached to executable code"
+    }
+  ],
+  "terminologicalCollisions": [
+    {
+      "title": "Certified Theory Compiling for Verifiable and Efficient Language-Model Learning",
+      "locatedAt": "https://www.researchgate.net/publication/405388275_Certified_Theory_Compiling_for_Verifiable_and_Efficient_Language-Model_Learning",
+      "phrase": "minimum evidence cut",
+      "meaning": "minimum sufficient evidence support for output claims",
+      "completeConjunctionAnticipated": false,
+      "primarySourceVerified": false
+    }
+  ],
+  "coverage": {
+    "directQueriesExecuted": 16,
+    "primarySourcesInspected": 13,
+    "databasesPartiallyCovered": [
+      "Crossref",
+      "arXiv",
+      "PubMed index",
+      "Google Patents search surface"
+    ],
+    "blockedOrIncomplete": [
+      "IEEE Xplore full text",
+      "ACM Digital Library full text",
+      "WIPO Patentscope",
+      "Espacenet",
+      "INPI",
+      "MathSciNet",
+      "zbMATH",
+      "primary source for the certified-theory-compiling manuscript",
+      "independent human review"
+    ]
+  },
+  "verified": true,
+  "errors": []
+}

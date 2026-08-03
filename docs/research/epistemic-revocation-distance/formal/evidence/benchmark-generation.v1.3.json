@@ -1,0 +1,57 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-benchmark-generation.v1.3",
+  "generatedAt": "2026-08-03T14:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "blockerBenchmark": {
+    "cases": 151,
+    "lowerBoundChecks": 205,
+    "lowerBoundViolations": 0,
+    "exactCutChecks": 247,
+    "exactCutViolations": 0,
+    "completeFamilyChecks": 151,
+    "completeFamilyViolations": 0
+  },
+  "completeAbstractDomain": {
+    "states": 66356,
+    "dispositionCensus": {
+      "INVALID": 0,
+      "FRAGILE": 16581,
+      "ROBUST_WITHIN_ENUMERATION": 8,
+      "BASE_NOT_IDENTIFIED": 49767
+    },
+    "distanceCensus": {
+      "0": 49767,
+      "1": 16317,
+      "2": 261,
+      "3": 3,
+      "4": 8
+    },
+    "completeFamilyProfiles": 14148
+  },
+  "mutationAdequacy": {
+    "lexicalFirstMutantKills": 78,
+    "criticalIntersectionMutantKills": 78,
+    "jointReuseMutantKills": 3726,
+    "baseGuardMutantKills": 49767,
+    "allDeclaredMutantsKilled": true
+  },
+  "artifacts": {
+    "vectors": {
+      "path": "docs/research/epistemic-revocation-distance/formal/vectors/epistemic-revocation-distance.v1.3.json",
+      "bytes": 77393,
+      "sha256": "dfc9016e5bd4c6f35922440bddf7275eb9cfb42dc3bf81ce662ab5d89127586a"
+    },
+    "transcript": {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/abstract-domain.v1.3.txt",
+      "bytes": 1501880,
+      "sha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef"
+    }
+  },
+  "verified": true,
+  "errors": []
+}

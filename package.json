@@ -34,6 +34,12 @@
     "verify:normative-holonomy:runtime": "node scripts/verify-normative-holonomy.mjs",
     "verify:normative-holonomy:lean": "node scripts/verify-normative-holonomy-lean.mjs",
     "generate:normative-holonomy-receipt": "node scripts/generate-normative-holonomy-receipt.mjs --write-receipt",
+    "verify:epistemic-revocation-distance": "node scripts/verify-epistemic-revocation-distance-gate-v13.mjs",
+    "verify:epistemic-revocation-distance:runtime": "node scripts/verify-epistemic-revocation-distance-runtime-v13.mjs",
+    "verify:epistemic-revocation-distance:lean": "node scripts/verify-epistemic-revocation-distance-lean-v13.mjs",
+    "verify:epistemic-revocation-distance:reproduction": "node scripts/verify-epistemic-revocation-distance-reproduction-v13.mjs",
+    "generate:epistemic-revocation-distance": "node scripts/generate-epistemic-revocation-distance-v13.mjs --write-artifacts",
+    "generate:epistemic-revocation-distance-receipt": "node scripts/generate-epistemic-revocation-distance-receipt-v13.mjs --write-receipt",
     "generate-icons": "node scripts/generate-pwa-icons.mjs"
   },
   "dependencies": {

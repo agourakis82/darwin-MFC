@@ -1,0 +1,102 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-lean-verification.v1.3",
+  "generatedAt": "2026-08-03T14:10:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "toolchain": {
+    "declaration": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, arm64-apple-darwin24.6.0, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)"
+  },
+  "build": {
+    "command": "lake build",
+    "exitCode": 0,
+    "verified": true
+  },
+  "audit": {
+    "command": "lake env lean EpistemicRevocationDistanceAudit.lean",
+    "exitCode": 0,
+    "observedAxioms": {
+      "Darwin.EpistemicRevocationDistance.countWhere_mono_of_pointwise": [
+        "propext",
+        "Quot.sound"
+      ],
+      "Darwin.EpistemicRevocationDistance.blockers_restore": [],
+      "Darwin.EpistemicRevocationDistance.restoration_cost_lower_bound": [
+        "propext",
+        "Quot.sound"
+      ],
+      "Darwin.EpistemicRevocationDistance.revocation_distance_le_blocker_cost": [
+        "propext",
+        "Quot.sound"
+      ],
+      "Darwin.EpistemicRevocationDistance.exists_exact_minimum_blocker": [
+        "propext"
+      ],
+      "Darwin.EpistemicRevocationDistance.smaller_than_distance_cannot_restore_bad": [
+        "propext",
+        "Quot.sound"
+      ],
+      "Darwin.EpistemicRevocationDistance.exists_exact_minimum_restoration_cut": [
+        "propext"
+      ],
+      "Darwin.EpistemicRevocationDistance.revocation_distance_is_exact": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    "allowedAxioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "onlyApprovedAxioms": true,
+    "forbidden": {
+      "sorry": 0,
+      "nativeDecide": 0,
+      "projectAxiomDeclarations": 0,
+      "unsafeDeclarations": 0,
+      "noncomputableDeclarations": 0
+    }
+  },
+  "theorem": {
+    "finiteRestorationLowerBoundEstablished": true,
+    "exactPerSymmetryBlockerCutEstablished": true,
+    "globalMinimumRestorationCutExists": true,
+    "globalRevocationDistanceExact": true,
+    "duplicateFreeSetSemanticsRequired": false,
+    "completeSounioOperationalSemanticsMechanized": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/EpistemicRevocationDistance.lean",
+      "sha256": "1d8d4b77429cd2892fcfb3ab72526e75fee5e710a44d7d5125a8ca986014cad1",
+      "bytes": 8066
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/EpistemicRevocationDistanceAudit.lean",
+      "sha256": "854fadbf30e81a858a873b42669c515232ca511831aee88be15c7b0f42aded2c",
+      "bytes": 675
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lakefile.lean",
+      "sha256": "9b2591470ed266f531c766c74cc92dcfd415f9f711c746059738a6f8bee71fe7",
+      "bytes": 284
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lake-manifest.json",
+      "sha256": "9393c2fcbe5262eca78df77cf42c54784902d02d24cbea60740d8176ef75cf97",
+      "bytes": 643
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    }
+  ],
+  "verified": true,
+  "errors": []
+}

@@ -1,0 +1,336 @@
+//@ run-pass
+// Darwin Epistemic Revocation Distance v1.3.
+//
+// ABI:
+//   [active receipt mask, packed state after cut 0, ..., packed state after cut 7]
+//
+// Every nonnegative state is produced by the v1.2 Sounio gauge-fixing kernel.
+// Cuts outside the active mask must carry the sentinel -1. The result contains
+// exact distances and the complete minimum-cut family. It never contains a
+// singular assignment or a selected cut.
+//
+// Abstract research only: clinical use and production authorization refused.
+
+fn erd13_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn erd13_subset(subset: i64, superset: i64) -> i64 {
+    if (subset & superset) == subset { return 1 }
+    return 0
+}
+
+fn erd13_contains(mask: i64, bit: i64) -> i64 {
+    if (mask & bit) == bit { return 1 }
+    return 0
+}
+
+fn erd13_popcount3(mask: i64) -> i64 {
+    var count: i64 = 0
+    if erd13_contains(mask, 1) == 1 { count = count + 1 }
+    if erd13_contains(mask, 2) == 1 { count = count + 1 }
+    if erd13_contains(mask, 4) == 1 { count = count + 1 }
+    return count
+}
+
+fn erd13_cut_bit(cut: i64) -> i64 {
+    if cut == 0 { return 1 }
+    if cut == 1 { return 2 }
+    if cut == 2 { return 4 }
+    if cut == 3 { return 8 }
+    if cut == 4 { return 16 }
+    if cut == 5 { return 32 }
+    if cut == 6 { return 64 }
+    if cut == 7 { return 128 }
+    return 0
+}
+
+fn erd13_disposition(packed: i64) -> i64 with Div {
+    return packed % 8
+}
+
+fn erd13_solution_count(packed: i64) -> i64 with Div {
+    return (packed / 16384) % 16
+}
+
+fn erd13_stabilizer_order(packed: i64) -> i64 with Div {
+    return (packed / 262144) % 16
+}
+
+fn erd13_state_matches_cut(active: i64, cut: i64, state: i64) -> i64 {
+    if erd13_subset(cut, active) == 1 {
+        if state > 0 { return 1 }
+        return 0
+    }
+    if state == -1 { return 1 }
+    return 0
+}
+
+fn erd13_input_valid(
+    active: i64,
+    state0: i64, state1: i64, state2: i64, state3: i64,
+    state4: i64, state5: i64, state6: i64, state7: i64
+) -> i64 {
+    if erd13_valid_mask(active) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 0, state0) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 1, state1) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 2, state2) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 3, state3) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 4, state4) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 5, state5) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 6, state6) == 0 { return 0 }
+    if erd13_state_matches_cut(active, 7, state7) == 0 { return 0 }
+    return 1
+}
+
+fn erd13_identified(state: i64) -> i64 with Div {
+    if state <= 0 { return 0 }
+    if erd13_disposition(state) != 1 { return 0 }
+    if erd13_solution_count(state) != 1 { return 0 }
+    if erd13_stabilizer_order(state) != 1 { return 0 }
+    return 1
+}
+
+// mode 0: complete identification contract
+// mode 1: exactly-one-section contract
+// mode 2: trivial-residual-stabilizer contract
+fn erd13_state_loses(state: i64, mode: i64) -> i64 with Div {
+    if state <= 0 { return 1 }
+    let model_loss = if erd13_solution_count(state) == 1 { 0 } else { 1 }
+    let symmetry_loss = if erd13_stabilizer_order(state) == 1 { 0 } else { 1 }
+    if mode == 1 { return model_loss }
+    if mode == 2 { return symmetry_loss }
+    if erd13_disposition(state) != 1 { return 1 }
+    if model_loss == 1 || symmetry_loss == 1 { return 1 }
+    return 0
+}
+
+fn erd13_update_distance(
+    current: i64, active: i64, cut: i64, state: i64, mode: i64
+) -> i64 with Div {
+    if erd13_subset(cut, active) == 0 { return current }
+    if erd13_state_loses(state, mode) == 0 { return current }
+    let size = erd13_popcount3(cut)
+    if size < current { return size }
+    return current
+}
+
+fn erd13_distance(
+    active: i64,
+    state0: i64, state1: i64, state2: i64, state3: i64,
+    state4: i64, state5: i64, state6: i64, state7: i64,
+    mode: i64
+) -> i64 with Div {
+    var distance: i64 = 4
+    distance = erd13_update_distance(distance, active, 0, state0, mode)
+    distance = erd13_update_distance(distance, active, 1, state1, mode)
+    distance = erd13_update_distance(distance, active, 2, state2, mode)
+    distance = erd13_update_distance(distance, active, 3, state3, mode)
+    distance = erd13_update_distance(distance, active, 4, state4, mode)
+    distance = erd13_update_distance(distance, active, 5, state5, mode)
+    distance = erd13_update_distance(distance, active, 6, state6, mode)
+    distance = erd13_update_distance(distance, active, 7, state7, mode)
+    return distance
+}
+
+fn erd13_cut_is_minimum(
+    active: i64, cut: i64, state: i64, distance: i64
+) -> i64 with Div {
+    if erd13_subset(cut, active) == 0 { return 0 }
+    if erd13_popcount3(cut) != distance { return 0 }
+    if erd13_state_loses(state, 0) == 0 { return 0 }
+    return 1
+}
+
+fn erd13_minimum_cut_family(
+    active: i64,
+    state0: i64, state1: i64, state2: i64, state3: i64,
+    state4: i64, state5: i64, state6: i64, state7: i64,
+    distance: i64
+) -> i64 with Div {
+    if distance >= 4 { return 0 }
+    var family: i64 = 0
+    if erd13_cut_is_minimum(active, 0, state0, distance) == 1 {
+        family = family + erd13_cut_bit(0)
+    }
+    if erd13_cut_is_minimum(active, 1, state1, distance) == 1 {
+        family = family + erd13_cut_bit(1)
+    }
+    if erd13_cut_is_minimum(active, 2, state2, distance) == 1 {
+        family = family + erd13_cut_bit(2)
+    }
+    if erd13_cut_is_minimum(active, 3, state3, distance) == 1 {
+        family = family + erd13_cut_bit(3)
+    }
+    if erd13_cut_is_minimum(active, 4, state4, distance) == 1 {
+        family = family + erd13_cut_bit(4)
+    }
+    if erd13_cut_is_minimum(active, 5, state5, distance) == 1 {
+        family = family + erd13_cut_bit(5)
+    }
+    if erd13_cut_is_minimum(active, 6, state6, distance) == 1 {
+        family = family + erd13_cut_bit(6)
+    }
+    if erd13_cut_is_minimum(active, 7, state7, distance) == 1 {
+        family = family + erd13_cut_bit(7)
+    }
+    return family
+}
+
+fn erd13_critical_receipts(family: i64) -> i64 {
+    var critical: i64 = 0
+    if erd13_contains(family, 2) == 1 { critical = critical | 1 }
+    if erd13_contains(family, 4) == 1 { critical = critical | 2 }
+    if erd13_contains(family, 8) == 1 { critical = critical | 3 }
+    if erd13_contains(family, 16) == 1 { critical = critical | 4 }
+    if erd13_contains(family, 32) == 1 { critical = critical | 5 }
+    if erd13_contains(family, 64) == 1 { critical = critical | 6 }
+    if erd13_contains(family, 128) == 1 { critical = critical | 7 }
+    return critical
+}
+
+fn erd13_pack(
+    disposition: i64, joint_distance: i64, model_distance: i64,
+    symmetry_distance: i64, family: i64, critical: i64, active: i64
+) -> i64 {
+    return disposition + joint_distance * 8 + model_distance * 64 +
+        symmetry_distance * 512 + family * 4096 +
+        critical * 1048576 + active * 8388608
+}
+
+fn erd13_result_active(packed: i64) -> i64 with Div {
+    return (packed / 8388608) % 8
+}
+
+fn erd13_analyze(
+    active: i64,
+    state0: i64, state1: i64, state2: i64, state3: i64,
+    state4: i64, state5: i64, state6: i64, state7: i64
+) -> i64 with Div {
+    if erd13_input_valid(active, state0, state1, state2, state3,
+        state4, state5, state6, state7) == 0 { return 0 }
+    if erd13_identified(state0) == 0 {
+        return erd13_pack(3, 0, 0, 0, 1, 0, active)
+    }
+    let joint_distance = erd13_distance(active, state0, state1, state2,
+        state3, state4, state5, state6, state7, 0)
+    let model_distance = erd13_distance(active, state0, state1, state2,
+        state3, state4, state5, state6, state7, 1)
+    let symmetry_distance = erd13_distance(active, state0, state1, state2,
+        state3, state4, state5, state6, state7, 2)
+    let family = erd13_minimum_cut_family(active, state0, state1, state2,
+        state3, state4, state5, state6, state7, joint_distance)
+    let critical = erd13_critical_receipts(family)
+    let disposition = if joint_distance >= 4 { 2 } else { 1 }
+    return erd13_pack(disposition, joint_distance, model_distance,
+        symmetry_distance, family, critical, active)
+}
+
+fn erd13_self_check() -> i64 with Div {
+    var failures: i64 = 0
+    // One active receipt: revoking it restores ambiguity and symmetry.
+    if erd13_analyze(1, 278537, 560139, -1, -1, -1, -1, -1, -1) != 9445961 {
+        failures = failures + 1
+    }
+    // Two redundant receipts: both must be revoked.
+    if erd13_analyze(3, 278537, 278537, 278537, 560139,
+        -1, -1, -1, -1) != 28345489 {
+        failures = failures + 1
+    }
+    // Three redundant receipts: the exact minimum cut is mask 7.
+    if erd13_analyze(7, 278537, 278537, 278537, 278537,
+        278537, 278537, 278537, 560139) != 66586329 {
+        failures = failures + 1
+    }
+    // A base state that is not identified remains explicitly non-authorizing.
+    if erd13_analyze(0, 560139, -1, -1, -1, -1, -1, -1, -1) != 4099 {
+        failures = failures + 1
+    }
+    // A missing valid-cut state is an integrity refusal.
+    if erd13_analyze(1, 278537, -1, -1, -1, -1, -1, -1, -1) != 0 {
+        failures = failures + 1
+    }
+    return failures
+}
+
+fn erd13_profile_count(active: i64) -> i64 {
+    let bits = erd13_popcount3(active)
+    if bits == 0 { return 4 }
+    if bits == 1 { return 16 }
+    if bits == 2 { return 256 }
+    return 65536
+}
+
+fn erd13_profile_divisor(active: i64, cut: i64) -> i64 {
+    var divisor: i64 = 1
+    if cut > 0 && erd13_subset(0, active) == 1 { divisor = divisor * 4 }
+    if cut > 1 && erd13_subset(1, active) == 1 { divisor = divisor * 4 }
+    if cut > 2 && erd13_subset(2, active) == 1 { divisor = divisor * 4 }
+    if cut > 3 && erd13_subset(3, active) == 1 { divisor = divisor * 4 }
+    if cut > 4 && erd13_subset(4, active) == 1 { divisor = divisor * 4 }
+    if cut > 5 && erd13_subset(5, active) == 1 { divisor = divisor * 4 }
+    if cut > 6 && erd13_subset(6, active) == 1 { divisor = divisor * 4 }
+    return divisor
+}
+
+fn erd13_profile_state(active: i64, cut: i64, profile: i64) -> i64 with Div {
+    if erd13_subset(cut, active) == 0 { return -1 }
+    let divisor = erd13_profile_divisor(active, cut)
+    let state_class = (profile / divisor) % 4
+    if state_class == 0 { return 278537 }
+    if state_class == 1 { return 294913 }
+    if state_class == 2 { return 540673 }
+    return 557059
+}
+
+fn erd13_profile_failures(active: i64, profile: i64) -> i64 with Div {
+    let result = erd13_analyze(active,
+        erd13_profile_state(active, 0, profile),
+        erd13_profile_state(active, 1, profile),
+        erd13_profile_state(active, 2, profile),
+        erd13_profile_state(active, 3, profile),
+        erd13_profile_state(active, 4, profile),
+        erd13_profile_state(active, 5, profile),
+        erd13_profile_state(active, 6, profile),
+        erd13_profile_state(active, 7, profile))
+    if result <= 0 { return 1 }
+    if erd13_result_active(result) != active { return 1 }
+    let disposition = erd13_disposition(result)
+    if profile % 4 == 0 {
+        if disposition == 1 || disposition == 2 { return 0 }
+        return 1
+    }
+    if disposition == 3 { return 0 }
+    return 1
+}
+
+fn erd13_verify_active_profiles(active: i64) -> i64 with Div {
+    var failures: i64 = 0
+    let profiles = erd13_profile_count(active)
+    var profile: i64 = 0
+    while profile < profiles {
+        failures = failures + erd13_profile_failures(active, profile)
+        profile = profile + 1
+    }
+    return failures
+}
+
+fn erd13_exhaustive_self_check() -> i64 with Div {
+    let states_checked = erd13_profile_count(0) + erd13_profile_count(1) +
+        erd13_profile_count(2) + erd13_profile_count(3) +
+        erd13_profile_count(4) + erd13_profile_count(5) +
+        erd13_profile_count(6) + erd13_profile_count(7)
+    if states_checked != 66356 { return 1 }
+    return erd13_verify_active_profiles(0) + erd13_verify_active_profiles(1) +
+        erd13_verify_active_profiles(2) + erd13_verify_active_profiles(3) +
+        erd13_verify_active_profiles(4) + erd13_verify_active_profiles(5) +
+        erd13_verify_active_profiles(6) + erd13_verify_active_profiles(7)
+}
+
+fn main() -> i64 with Div {
+    let focused_failures = erd13_self_check()
+    let exhaustive_failures = erd13_exhaustive_self_check()
+    if focused_failures == 0 && exhaustive_failures == 0 { return 143 }
+    return 643 + focused_failures + exhaustive_failures
+}

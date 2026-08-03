@@ -1,0 +1,107 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-source-fresh-build.v1.3",
+  "generatedAt": "2026-08-03T14:50:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "bytes": 8422,
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "compilerReconciled": true
+  },
+  "parentReceipt": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/no-hidden-gauge-fixing-gate.receipt.v1.2.json",
+    "bytes": 20851,
+    "sha256": "d0a5018f2689b7ab3b178bbfaff3682f25642bcd9c3bc2bd6b2bacf4cef77f0c",
+    "verified": true
+  },
+  "reconstruction": {
+    "path": "docs/research/epistemic-revocation-distance/formal/evidence/compiler-reconstruction.v1.3.json",
+    "bytes": 4120,
+    "sha256": "6a0ffc6a8357e30cab009355d17d3b07ad1f2158b551442ff6b07da510e5c4f0"
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "expectedSha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "reconstructedSha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "reconstructedHashMatchedReceipt": true,
+    "artifactPersistedInRepository": false
+  },
+  "fixedPoint": {
+    "initialCheckedInSeedRequiredReconciliation": true,
+    "reconciliationPasses": 1,
+    "bitIdentical": true,
+    "bytes": 2548890,
+    "sha256": "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+    "md5": "390bdecc4f8a89a816ea850f79481e3f",
+    "stageSha256": [
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da",
+      "f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da"
+    ]
+  },
+  "artifacts": {
+    "source": {
+      "path": "docs/research/epistemic-revocation-distance/formal/sounio/epistemic_revocation_distance_v1_3.sio",
+      "bytes": 12415,
+      "sha256": "857a42159ae28cb8dfbae9cb9549fddc526b2eb5d5ffa3a0e0139f48442506d0"
+    },
+    "wasm": {
+      "path": "docs/research/epistemic-revocation-distance/formal/wasm/epistemic_revocation_distance.v1.3.wasm",
+      "bytes": 9357,
+      "sha256": "1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49"
+    },
+    "native": {
+      "path": "docs/research/epistemic-revocation-distance/formal/native/epistemic_revocation_distance.v1.3.linux-x86_64",
+      "bytes": 36872,
+      "sha256": "ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c"
+    },
+    "buildTranscript": {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/source-fresh-build.v1.3.txt",
+      "bytes": 3063,
+      "sha256": "a8a0b79308916bdf3cb08bc3dd84ecd8a303747614618f81a45ec107ecd1c530"
+    },
+    "deterministicWasm": true,
+    "deterministicNative": true
+  },
+  "parity": {
+    "nativeMainResults": [
+      143,
+      143
+    ],
+    "wasmMainResults": [
+      143,
+      143
+    ],
+    "wasmFocusedSelfChecks": [
+      0,
+      0
+    ],
+    "wasmExhaustiveSelfChecks": [
+      0,
+      0
+    ],
+    "nativeWasmMainParity": true,
+    "completeNativeWasmExportParityEstablished": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "environment": {
+    "virtualMachine": "souc-linux",
+    "os": "Alpine Linux",
+    "kernel": "6.18.7-0-virt",
+    "architecture": "x86_64",
+    "cpus": 8,
+    "memoryGiB": 8,
+    "hostRuntime": "Node.js v24.9.0"
+  },
+  "verified": true,
+  "errors": []
+}

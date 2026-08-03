@@ -1,0 +1,322 @@
+{
+  "schema": "darwin.epistemic-revocation-distance-gate-receipt.v1.3",
+  "generatedAt": "2026-08-03T15:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "verified": true,
+  "candidateConjunctionOnly": true,
+  "compilerReconciled": true,
+  "compilerReconstructedFromFixedPoint": true,
+  "generalFiniteRestorationTheoremEstablished": true,
+  "completeThreeReceiptExecutionEstablished": true,
+  "implementationIndependentReproductionComplete": true,
+  "authorIndependentReproductionComplete": false,
+  "unrelatedThirdPartyReproductionComplete": false,
+  "formalPriorArtSearchExecuted": true,
+  "priorArtSearchComplete": false,
+  "legalOpinionEstablished": false,
+  "manuscriptSubmissionReady": false,
+  "internalPreprintDraftPackageReady": true,
+  "parent": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/no-hidden-gauge-fixing-gate.receipt.v1.2.json",
+    "bytes": 20851,
+    "sha256": "d0a5018f2689b7ab3b178bbfaff3682f25642bcd9c3bc2bd6b2bacf4cef77f0c"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "bytes": 8422,
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "evidence": {
+    "capabilityAudit": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/sounio-capability-audit.v1.3.json",
+      "bytes": 3210,
+      "sha256": "82ce7f5a0626f0f22907b40f7b03b64ff0661fad6a6dc41c3a31cb7ddcca6832"
+    },
+    "priorArt": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/prior-art-search.v1.3.json",
+      "bytes": 6503,
+      "sha256": "8f1511bcb2e71c7b23bc4865f70037ae3806d8ef819ce7db625851632b884f4c"
+    },
+    "benchmark": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/benchmark-generation.v1.3.json",
+      "bytes": 1651,
+      "sha256": "37583236020c7165c388384c02d8b582addb8e3ab15d24cf2e83c5c51aba08b7"
+    },
+    "lean": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/lean-verification.v1.3.json",
+      "bytes": 3411,
+      "sha256": "9240351c6724e76bae3db9be9630fbc6f00b7c1871a4ad3cdc1375073a6f012b"
+    },
+    "runtime": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/runtime-verification.v1.3.json",
+      "bytes": 3089,
+      "sha256": "068b867682f805b8242afc3a83da11116a678d110b477354dd3a78db8647424b"
+    },
+    "reproduction": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/cross-language-reproduction.v1.3.json",
+      "bytes": 2211,
+      "sha256": "dff850e4c080ce1a24db6114331b4c9a5987a68b4bfb0ef0ebfb459e5d7f2d6b"
+    },
+    "sourceFresh": {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/source-fresh-build.v1.3.json",
+      "bytes": 3848,
+      "sha256": "ad50758c0421d5a5d6cfc9dc4f798f57d080c0c919f8d66c8ab3a6a51b64842c"
+    }
+  },
+  "spectrum": {
+    "coordinates": [
+      "jointDistance",
+      "modelDistance",
+      "symmetryDistance",
+      "minimumCutFamily",
+      "criticalReceiptMask"
+    ],
+    "blockerCases": 151,
+    "abstractStates": 66356,
+    "oracleMismatches": 0,
+    "transcriptSha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef",
+    "singularWitnessExports": 0
+  },
+  "theorem": {
+    "finiteRestorationLowerBoundEstablished": true,
+    "exactPerSymmetryBlockerCutEstablished": true,
+    "globalMinimumRestorationCutExists": true,
+    "globalRevocationDistanceExact": true,
+    "duplicateFreeSetSemanticsRequired": false,
+    "completeSounioOperationalSemanticsMechanized": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "reproduction": {
+    "language": "Rust",
+    "transcriptExact": true,
+    "authorIndependent": false,
+    "binaryBitReproducibilityEstablished": false
+  },
+  "priorArt": {
+    "candidateName": "mode-resolved epistemic revocation spectrum with immutable subset recomputation and complete cut receipts",
+    "completeDisclosureLocated": false,
+    "absenceOfDisclosureEstablished": false,
+    "searchComplete": false
+  },
+  "sourceFresh": {
+    "compilerHashMatchedReceipt": true,
+    "deterministicNative": true,
+    "deterministicWasm": true,
+    "nativeWasmMainParity": true,
+    "completeNativeWasmExportParityEstablished": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/epistemic-revocation-distance/README.md",
+      "bytes": 3920,
+      "sha256": "4c937b0c47b686b35f25c091bd307db644a2e9709ab63ef0d6abd2a92cc9ccdf"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/epistemic-revocation-distance-theory-v1.3.md",
+      "bytes": 4693,
+      "sha256": "a3f0212125f24677050022afb6bdc0c22c8009deaf9b0aacffbd4723bd13cf66"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/falsification-preregistration-v1.3.md",
+      "bytes": 2064,
+      "sha256": "0f9e4967bcbda10f89cf582362cbd34af2a78ddcb717c193be9e5d4f907402c2"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/manuscript-outline-v1.3.md",
+      "bytes": 4772,
+      "sha256": "849b313709a4f254d8ee87135f999b75a36f45566483d716a494cf1054f45759"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/prior-art-frontier-v1.3.md",
+      "bytes": 8135,
+      "sha256": "c8ca96b3bffe4e94708a438d6930cc51d1ae42e4fcc00b9561fd9bbc28b370bf"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/sounio-capability-audit-v1.3.md",
+      "bytes": 3933,
+      "sha256": "f98ee7c160c16b64482a15eb69cf5d3db041fd4e68b3a1b083a538c9f7cc1ac2"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/EpistemicRevocationDistance.lean",
+      "bytes": 8066,
+      "sha256": "1d8d4b77429cd2892fcfb3ab72526e75fee5e710a44d7d5125a8ca986014cad1"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/EpistemicRevocationDistanceAudit.lean",
+      "bytes": 675,
+      "sha256": "854fadbf30e81a858a873b42669c515232ca511831aee88be15c7b0f42aded2c"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lakefile.lean",
+      "bytes": 284,
+      "sha256": "9b2591470ed266f531c766c74cc92dcfd415f9f711c746059738a6f8bee71fe7"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lake-manifest.json",
+      "bytes": 643,
+      "sha256": "9393c2fcbe5262eca78df77cf42c54784902d02d24cbea60740d8176ef75cf97"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/lean4/lean-toolchain",
+      "bytes": 29,
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/sounio/epistemic_revocation_distance_v1_3.sio",
+      "bytes": 12415,
+      "sha256": "857a42159ae28cb8dfbae9cb9549fddc526b2eb5d5ffa3a0e0139f48442506d0"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/wasm/epistemic_revocation_distance.v1.3.wasm",
+      "bytes": 9357,
+      "sha256": "1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/native/epistemic_revocation_distance.v1.3.linux-x86_64",
+      "bytes": 36872,
+      "sha256": "ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/native/epistemic_revocation_distance_oracle.v1.3.macos-arm64",
+      "bytes": 353456,
+      "sha256": "fa7a77cb6953290f377945620d8ddd38ab34c8c9267ff6fff09809dd231f3f1a"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/rust/epistemic_revocation_distance_oracle_v1_3.rs",
+      "bytes": 3935,
+      "sha256": "9a4a660d71d74639d9669fc162b60a215c07057df443c6c1d9fbd088994c2337"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/vectors/epistemic-revocation-distance.v1.3.json",
+      "bytes": 77393,
+      "sha256": "dfc9016e5bd4c6f35922440bddf7275eb9cfb42dc3bf81ce662ab5d89127586a"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/abstract-domain.v1.3.txt",
+      "bytes": 1501880,
+      "sha256": "2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/transcripts/source-fresh-build.v1.3.txt",
+      "bytes": 3063,
+      "sha256": "a8a0b79308916bdf3cb08bc3dd84ecd8a303747614618f81a45ec107ecd1c530"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/compiler-reconstruction.v1.3.json",
+      "bytes": 4120,
+      "sha256": "6a0ffc6a8357e30cab009355d17d3b07ad1f2158b551442ff6b07da510e5c4f0"
+    },
+    {
+      "path": "scripts/epistemic-revocation-distance-v13-oracle.mjs",
+      "bytes": 5998,
+      "sha256": "e4d84aa63fcef8bf1bfba8d2c602c3fce0dded8b0148ba2aace8e9729910a060"
+    },
+    {
+      "path": "scripts/generate-epistemic-revocation-distance-v13.mjs",
+      "bytes": 8576,
+      "sha256": "6d6b8ceb5e8ff52b6faeaa7e6c959df659320fadacfa4213ecdf9d6cf3be450d"
+    },
+    {
+      "path": "scripts/verify-epistemic-revocation-distance-lean-v13.mjs",
+      "bytes": 5853,
+      "sha256": "b41fcb77c59b6757fabfce904ba680fa8d7a5af763ee22d3142fe6c9c8930802"
+    },
+    {
+      "path": "scripts/verify-epistemic-revocation-distance-runtime-v13.mjs",
+      "bytes": 12675,
+      "sha256": "cf45622d4fcc4cc9096f94fcacb51fe708cd4f704f21e7f103e81ef7cd315fb9"
+    },
+    {
+      "path": "scripts/verify-epistemic-revocation-distance-reproduction-v13.mjs",
+      "bytes": 5794,
+      "sha256": "3c8a46655425aad0bc475e6e45ad807df0032de6541eaa387fb91010e87cfece"
+    },
+    {
+      "path": "scripts/generate-epistemic-revocation-distance-source-fresh-v13.mjs",
+      "bytes": 7634,
+      "sha256": "a81692a2932d125730721063a8319395310437e6b969c7b1bf8b38e8e40b844a"
+    },
+    {
+      "path": "scripts/generate-epistemic-revocation-distance-receipt-v13.mjs",
+      "bytes": 13403,
+      "sha256": "5a8a3eb517ce337807d9819a6937971f4723162b8891374299bab645c9eb703a"
+    },
+    {
+      "path": "scripts/verify-epistemic-revocation-distance-gate-v13.mjs",
+      "bytes": 8225,
+      "sha256": "6f77980dfe3786bd91f59034a35f08ef6604db7a566dd7103d198adf13a2056e"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/sounio-capability-audit.v1.3.json",
+      "bytes": 3210,
+      "sha256": "82ce7f5a0626f0f22907b40f7b03b64ff0661fad6a6dc41c3a31cb7ddcca6832"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/prior-art-search.v1.3.json",
+      "bytes": 6503,
+      "sha256": "8f1511bcb2e71c7b23bc4865f70037ae3806d8ef819ce7db625851632b884f4c"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/benchmark-generation.v1.3.json",
+      "bytes": 1651,
+      "sha256": "37583236020c7165c388384c02d8b582addb8e3ab15d24cf2e83c5c51aba08b7"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/lean-verification.v1.3.json",
+      "bytes": 3411,
+      "sha256": "9240351c6724e76bae3db9be9630fbc6f00b7c1871a4ad3cdc1375073a6f012b"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/runtime-verification.v1.3.json",
+      "bytes": 3089,
+      "sha256": "068b867682f805b8242afc3a83da11116a678d110b477354dd3a78db8647424b"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/cross-language-reproduction.v1.3.json",
+      "bytes": 2211,
+      "sha256": "dff850e4c080ce1a24db6114331b4c9a5987a68b4bfb0ef0ebfb459e5d7f2d6b"
+    },
+    {
+      "path": "docs/research/epistemic-revocation-distance/formal/evidence/source-fresh-build.v1.3.json",
+      "bytes": 3848,
+      "sha256": "ad50758c0421d5a5d6cfc9dc4f798f57d080c0c919f8d66c8ab3a6a51b64842c"
+    }
+  ],
+  "claims": {
+    "established": [
+      "an exact finite restoration lower bound and minimum-cut existence theorem in Lean",
+      "a three-coordinate epistemic revocation spectrum with the complete minimum-cut family",
+      "complete Sounio WASM and independent JavaScript parity over 66,356 abstract ABI states",
+      "complete enumeration of 151 nonempty blocker families over one to three receipts",
+      "mutation adequacy against lexical-first, cut-intersection, joint-reuse, and base-guard shortcuts",
+      "implementation-independent no-crate Rust reproduction of the complete transcript",
+      "source-fresh fixed-point compiler reconstruction and deterministic native/WASM builds",
+      "epoch and hash mutations refused before the Sounio kernel is called"
+    ],
+    "notEstablished": [
+      "scientific novelty, priority, patentability, freedom to operate, or absence of prior art",
+      "scaling of the executable subset search beyond three receipt identities",
+      "compiler-enforced stale-alias invalidation through every Sounio control-flow path",
+      "mechanized Sounio operational semantics or emitted WASM byte semantics",
+      "complete native/WASM export parity beyond the exhaustive self-check result",
+      "author-independent or unrelated third-party reproduction",
+      "empirical, clinical, regulatory, legal, or production validity"
+    ]
+  },
+  "invalidation": [
+    "parent, compiler, source, artifact, evidence, or transcript identity changes",
+    "a stale epoch or mismatched state digest reaches the Sounio kernel",
+    "a minimum cut is omitted or a non-minimum cut is emitted",
+    "Lean build, forbidden-token scan, or axiom audit changes",
+    "Sounio, JavaScript, or Rust transcript parity changes",
+    "a singular result or selected cut appears in the canonical WASM export surface",
+    "a blocked prior-art database is represented as a negative finding",
+    "clinical refusal, production, signature, or novelty boundaries change"
+  ],
+  "errors": []
+}

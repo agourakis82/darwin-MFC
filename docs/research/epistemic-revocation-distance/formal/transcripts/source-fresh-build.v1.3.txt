@@ -1,0 +1,106 @@
+Darwin Epistemic Revocation Distance v1.3
+Source-fresh normalized build transcript
+Recorded: 2026-08-03
+
+BOUNDARY
+status=ABSTRACT_RESEARCH_ONLY
+clinicalDisposition=REFUSE
+clinicalUseAllowed=false
+productionAuthorized=false
+noveltyEstablished=false
+signed=false
+
+REPOSITORY
+url=https://github.com/Sounio-lang/sounio.git
+commit=32bf57e880d5a0bc64d39edff98491a6c7c6101d
+tree=3560e7e17d931d12244c3232869faf010019c962
+checkoutMode=DETACHED
+clean=true
+aheadOfOriginMain=2
+behindOriginMain=0
+
+FIXED_POINT
+note=the checked-in bootstrap required one reconciliation pass
+stage1.sha256=f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da
+stage2.sha256=f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da
+stage3.sha256=f330d61264b35665d90ce9cc55f8fdde6c3e2229cdd3a9902d22afa9fc9a21da
+stage.bytes=2548890
+stage.md5=390bdecc4f8a89a816ea850f79481e3f
+bitIdentical=true
+
+COMPILER
+command=SOUNIO_MADAROS_SEED=<fixed-point-seed> SOUNIO_MADAROS_REQUIRE_PINNED_SEED=1 scripts/ci/build_modular_madaros.sh <external-artifact>
+identity=Madaros v0.80.0
+exitCode=0
+warningDiagnostics=4072
+errorDiagnostics=0
+bytes=101651571
+sha256=b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d
+
+KERNEL_SOURCE
+path=docs/research/epistemic-revocation-distance/formal/sounio/epistemic_revocation_distance_v1_3.sio
+bytes=12415
+sha256=857a42159ae28cb8dfbae9cb9549fddc526b2eb5d5ffa3a0e0139f48442506d0
+check.command=MADAROS_RAW_BIN=<compiler> bin/madaros check <source>
+check.exitCode=0
+check.warningDiagnostics=0
+check.errorDiagnostics=0
+
+WASM_BUILD_A
+command=MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend wasm -o <wasm-a>
+exitCode=0
+warningDiagnostics=0
+errorDiagnostics=0
+bytes=9357
+sha256=1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49
+focusedSelfCheck=0
+exhaustiveSelfCheck=0
+main=143
+
+WASM_BUILD_B
+command=MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend wasm -o <wasm-b>
+exitCode=0
+warningDiagnostics=0
+errorDiagnostics=0
+bytes=9357
+sha256=1ab1945dfe96602f2759c7e7ad6a5c3fbca9143af4d03c0437dbf83170463b49
+focusedSelfCheck=0
+exhaustiveSelfCheck=0
+main=143
+bitIdentical=true
+
+NATIVE_BUILD_A
+command=MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend native -o <native-a>
+buildExitCode=0
+warningDiagnostics=0
+errorDiagnostics=0
+bytes=36872
+sha256=ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c
+executionExitCode=143
+
+NATIVE_BUILD_B
+command=MADAROS_RAW_BIN=<compiler> bin/madaros build <source> --backend native -o <native-b>
+buildExitCode=0
+warningDiagnostics=0
+errorDiagnostics=0
+bytes=36872
+sha256=ab03bf077df1276a6a5cd75306540ce5fdef2dcffb240747b99ac328dd66934c
+executionExitCode=143
+bitIdentical=true
+
+COMPLETE_DOMAIN
+blockerFamilies=151
+abstractStates=66356
+oracleMismatches=0
+invalidKernelOutputs=0
+hostileAbiCases=6
+hostileAbiPassed=6
+transcript.sha256=2e12c3d035bf70f2930de3abc0286033b8bc416b1f4236028f257628e4daafef
+
+VERDICT
+compilerHashMatchedReceipt=true
+fixedPointBitIdentical=true
+deterministicWasm=true
+deterministicNative=true
+nativeWasmMainParity=true
+verified=true
