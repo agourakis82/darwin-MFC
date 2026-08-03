@@ -1,0 +1,112 @@
+{
+  "schema": "darwin.value-carrying-observation-verification.v1.2",
+  "evaluatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "SYNTHETIC_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "fixtureSignatureValid": true,
+  "baselineAbi": [
+    7,
+    1,
+    0,
+    2,
+    2,
+    2
+  ],
+  "artifacts": {
+    "source": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/synthetic-observation-source.v1.2.json",
+      "bytes": 399,
+      "sha256": "f225926ca330c5757de025b84aa87bd203af9b06f32db7c6bbe849105d996384"
+    },
+    "receipt": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/value-carrying-observation.receipt.v1.2.json",
+      "bytes": 2849,
+      "sha256": "9fc288d48936f5410046e36e4a2176127fcfb3d3a6636953346ffe4eba74c88b"
+    },
+    "registry": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/revocation-registry.v1.2.json",
+      "bytes": 901,
+      "sha256": "b2e4fac9b9a4b39147ce15cb4c41730b34cb163c3ddb279db5efb452aafc40db"
+    }
+  },
+  "negativeCases": [
+    {
+      "id": "unsigned-value-tamper",
+      "refused": true,
+      "reasons": [
+        "receipt:payload-digest-mismatch",
+        "receipt:signature-invalid",
+        "observation-mask-mismatch",
+        "abi-observation-mismatch"
+      ]
+    },
+    {
+      "id": "unsigned-provenance-tamper",
+      "refused": true,
+      "reasons": [
+        "receipt:payload-digest-mismatch",
+        "receipt:signature-invalid"
+      ]
+    },
+    {
+      "id": "signature-tamper",
+      "refused": true,
+      "reasons": [
+        "receipt:signature-invalid"
+      ]
+    },
+    {
+      "id": "signed-low-reliability",
+      "refused": true,
+      "reasons": [
+        "reliability-policy-failed"
+      ]
+    },
+    {
+      "id": "signed-expired-observation",
+      "refused": true,
+      "reasons": [
+        "observation-expired"
+      ]
+    },
+    {
+      "id": "signed-scope-mismatch",
+      "refused": true,
+      "reasons": [
+        "scope-mismatch"
+      ]
+    },
+    {
+      "id": "subject-context-mismatch",
+      "refused": true,
+      "reasons": [
+        "subject-mismatch"
+      ]
+    },
+    {
+      "id": "signed-revocation",
+      "refused": true,
+      "reasons": [
+        "observation-revoked"
+      ]
+    },
+    {
+      "id": "source-content-tamper",
+      "refused": true,
+      "reasons": [
+        "source-digest-mismatch",
+        "source-length-mismatch"
+      ]
+    }
+  ],
+  "negativeCasesPassed": 9,
+  "canonicalJsonRejectsFloatingPoint": true,
+  "testOnlyTrustRoots": true,
+  "externalClinicalObservationEstablished": false,
+  "verified": true,
+  "errors": []
+}

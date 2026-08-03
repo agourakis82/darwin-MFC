@@ -1,0 +1,22 @@
+{
+  "payload": {
+    "schema": "darwin.observation-revocation-registry.v1.2",
+    "epoch": 1,
+    "fixtureOnly": true,
+    "issuedAt": "2026-08-03T12:00:00.000Z",
+    "registryId": "urn:darwin:nhgf:v1.2:revocation-registry:test",
+    "revokedObservationIds": [],
+    "validThrough": "2030-01-01T00:00:00.000Z"
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "fixtureOnly": true,
+    "keyId": "darwin-test-revocation-ed25519-v1",
+    "productionTrustEligible": false,
+    "publicKeyDerBase64": "MCowBQYDK2VwAyEALsGinIUz1LXhEkarFChF+Qe3FahzZMcLlvihuBw46F8=",
+    "publicKeySha256": "e4b4a7522bb75c35f3f11863d09f3751bc9827c3fc0f7b907e9ae3ed38f7eaa9",
+    "role": "revocation_authority",
+    "signedPayloadSha256": "9d58c846f2a42a6b2b8e46724f710b5982ba64d983ff58d1b0c0261df48c02cf",
+    "valueBase64": "sxQC1F9IMNLoJP3wn/Bko86kYJkHtimCFSy0fRiAwRBIWfwysaZaG9WIDsd41aZUYfBK6FKNSC4wSmSTXZpOBQ=="
+  }
+}

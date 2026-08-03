@@ -1,0 +1,111 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-lean-verification.v1.2",
+  "generatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "toolchain": {
+    "declaration": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, arm64-apple-darwin24.6.0, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)"
+  },
+  "build": {
+    "command": "lake env lean -o <lake-build>/NoHiddenGaugeFixingV12.olean NoHiddenGaugeFixingV12.lean",
+    "exitCode": 0,
+    "verified": true
+  },
+  "audit": {
+    "command": "lake env lean NoHiddenGaugeFixingV12Audit.lean",
+    "exitCode": 0,
+    "observedAxioms": {
+      "Darwin.NoHiddenGaugeFixingV12.observedValueRestrictsAssignments": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.diagonalFlipCannotPreserveObservedValue": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.identitySectionDeterminedByAnchorA": [
+        "Quot.sound"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.identityAnchorAHasUniqueSection": [
+        "Quot.sound"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.noAnchorRetainsTwoIdentitySections": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.authorizationImpliesTrusted": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.revokedReceiptCannotAuthorize": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.expiredReceiptCannotAuthorize": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.invalidSignatureCannotAuthorize": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.encodedIdentityAnchorAIsShapeValid": [
+        "propext"
+      ],
+      "Darwin.NoHiddenGaugeFixingV12.identityAnchorARefinesPackedKernelResult": [],
+      "Darwin.NoHiddenGaugeFixingV12.identityAnchorAUniqueIsModelRelative": [
+        "Quot.sound"
+      ]
+    },
+    "allowedAxioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "onlyApprovedAxioms": true,
+    "forbidden": {
+      "sorry": 0,
+      "nativeDecide": 0,
+      "projectAxiomDeclarations": 0,
+      "unsafeDeclarations": 0
+    }
+  },
+  "refinement": {
+    "observedValueRestrictsSections": true,
+    "observationDestroysMovingGauge": true,
+    "identityAnchorYieldsUniqueModelSection": true,
+    "receiptRevocationRefusesEvaluation": true,
+    "receiptExpiryRefusesEvaluation": true,
+    "invalidSignatureRefusesEvaluation": true,
+    "identityFixturePackedResult": 278537,
+    "abstractRefinementEstablished": true,
+    "completeSounioOperationalSemanticsMechanized": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixingV12.lean",
+      "sha256": "5142e49ab83a9540d17defeebb6a704d59ea8394da818715e50791df0ad2f96a",
+      "bytes": 6998
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixingV12Audit.lean",
+      "sha256": "35bfc805f8d68fbcd9381dce8caf7b9a283763df47544dc025253a4f231d9647",
+      "bytes": 968
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lakefile.lean",
+      "sha256": "87a4366e0006ce10dba12f23d168d90f4e6fb63fe06cb912b10840e2aeb925fc",
+      "bytes": 240
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lake-manifest.json",
+      "sha256": "5612ce416d0ced24baa58f84f9bf15d6fd168c2139854eb4b598e89aa093f0f9",
+      "bytes": 362
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    }
+  ],
+  "verified": true,
+  "errors": []
+}

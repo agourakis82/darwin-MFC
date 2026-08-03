@@ -1,0 +1,207 @@
+//@ run-pass
+// Darwin general Boolean constraint graph benchmark v1.2.
+//
+// ABI: [vertex count, edge mask, parity mask, anchor mask, anchor value mask].
+// Supports 1..6 vertices and the 15 canonical undirected edges. The analyzer
+// returns invariant counts and a disposition. It never returns an assignment.
+// Abstract research only; no clinical semantics.
+
+fn cgb12_pow2(exponent: i64) -> i64 with Div {
+    if exponent <= 0 { return 1 }
+    return 2 * cgb12_pow2(exponent - 1)
+}
+
+fn cgb12_bit(mask: i64, index: i64) -> i64 with Div {
+    return (mask / cgb12_pow2(index)) % 2
+}
+
+fn cgb12_subset(subset: i64, superset: i64) -> i64 {
+    if (subset & superset) == subset { return 1 }
+    return 0
+}
+
+fn cgb12_vertex_mask(vertex_count: i64) -> i64 with Div {
+    return cgb12_pow2(vertex_count) - 1
+}
+
+fn cgb12_allowed_edge_mask(vertex_count: i64) -> i64 {
+    if vertex_count == 1 { return 0 }
+    if vertex_count == 2 { return 1 }
+    if vertex_count == 3 { return 35 }
+    if vertex_count == 4 { return 615 }
+    if vertex_count == 5 { return 5871 }
+    if vertex_count == 6 { return 32767 }
+    return -1
+}
+
+fn cgb12_edge_left(edge_index: i64) -> i64 {
+    if edge_index <= 4 { return 0 }
+    if edge_index <= 8 { return 1 }
+    if edge_index <= 11 { return 2 }
+    if edge_index <= 13 { return 3 }
+    return 4
+}
+
+fn cgb12_edge_right(edge_index: i64) -> i64 {
+    if edge_index == 0 { return 1 }
+    if edge_index == 1 { return 2 }
+    if edge_index == 2 { return 3 }
+    if edge_index == 3 { return 4 }
+    if edge_index == 4 { return 5 }
+    if edge_index == 5 { return 2 }
+    if edge_index == 6 { return 3 }
+    if edge_index == 7 { return 4 }
+    if edge_index == 8 { return 5 }
+    if edge_index == 9 { return 3 }
+    if edge_index == 10 { return 4 }
+    if edge_index == 11 { return 5 }
+    if edge_index == 12 { return 4 }
+    if edge_index == 13 { return 5 }
+    return 5
+}
+
+fn cgb12_abi_valid(
+    vertex_count: i64, edge_mask: i64, parity_mask: i64,
+    anchor_mask: i64, anchor_value_mask: i64
+) -> i64 with Div {
+    if vertex_count < 1 || vertex_count > 6 { return 0 }
+    let allowed_edges = cgb12_allowed_edge_mask(vertex_count)
+    let vertices = cgb12_vertex_mask(vertex_count)
+    if edge_mask < 0 || cgb12_subset(edge_mask, allowed_edges) == 0 { return 0 }
+    if parity_mask < 0 || cgb12_subset(parity_mask, edge_mask) == 0 { return 0 }
+    if anchor_mask < 0 || cgb12_subset(anchor_mask, vertices) == 0 { return 0 }
+    if anchor_value_mask < 0 ||
+       cgb12_subset(anchor_value_mask, anchor_mask) == 0 { return 0 }
+    return 1
+}
+
+fn cgb12_assignment_matches_observation(
+    assignment: i64, anchor_mask: i64, anchor_value_mask: i64
+) -> i64 {
+    if (assignment & anchor_mask) == anchor_value_mask { return 1 }
+    return 0
+}
+
+fn cgb12_assignment_satisfies_edges(
+    edge_mask: i64, parity_mask: i64, assignment: i64, edge_index: i64
+) -> i64 with Div {
+    if edge_index >= 15 { return 1 }
+    if cgb12_bit(edge_mask, edge_index) == 1 {
+        let left = cgb12_edge_left(edge_index)
+        let right = cgb12_edge_right(edge_index)
+        let observed = cgb12_bit(assignment, left) +
+            cgb12_bit(assignment, right)
+        let parity = observed % 2
+        if parity != cgb12_bit(parity_mask, edge_index) { return 0 }
+    }
+    return cgb12_assignment_satisfies_edges(
+        edge_mask, parity_mask, assignment, edge_index + 1)
+}
+
+fn cgb12_assignment_satisfies(
+    edge_mask: i64, parity_mask: i64,
+    anchor_mask: i64, anchor_value_mask: i64,
+    assignment: i64
+) -> i64 with Div {
+    if cgb12_assignment_matches_observation(
+        assignment, anchor_mask, anchor_value_mask) == 0 { return 0 }
+    return cgb12_assignment_satisfies_edges(
+        edge_mask, parity_mask, assignment, 0)
+}
+
+fn cgb12_count_solutions_from(
+    edge_mask: i64, parity_mask: i64,
+    anchor_mask: i64, anchor_value_mask: i64,
+    assignment: i64, limit: i64
+) -> i64 with Div {
+    if assignment >= limit { return 0 }
+    return cgb12_assignment_satisfies(edge_mask, parity_mask,
+        anchor_mask, anchor_value_mask, assignment) +
+        cgb12_count_solutions_from(edge_mask, parity_mask,
+            anchor_mask, anchor_value_mask, assignment + 1, limit)
+}
+
+fn cgb12_solution_count(
+    vertex_count: i64, edge_mask: i64, parity_mask: i64,
+    anchor_mask: i64, anchor_value_mask: i64
+) -> i64 with Div {
+    return cgb12_count_solutions_from(edge_mask, parity_mask,
+        anchor_mask, anchor_value_mask, 0, cgb12_pow2(vertex_count))
+}
+
+fn cgb12_gauge_respects_observation(gauge: i64, anchor_mask: i64) -> i64 {
+    if (gauge & anchor_mask) == 0 { return 1 }
+    return 0
+}
+
+fn cgb12_gauge_stabilizes_edges(
+    edge_mask: i64, gauge: i64, edge_index: i64
+) -> i64 with Div {
+    if edge_index >= 15 { return 1 }
+    if cgb12_bit(edge_mask, edge_index) == 1 {
+        let left = cgb12_edge_left(edge_index)
+        let right = cgb12_edge_right(edge_index)
+        if cgb12_bit(gauge, left) != cgb12_bit(gauge, right) { return 0 }
+    }
+    return cgb12_gauge_stabilizes_edges(edge_mask, gauge, edge_index + 1)
+}
+
+fn cgb12_gauge_stabilizes(
+    edge_mask: i64, anchor_mask: i64, gauge: i64
+) -> i64 with Div {
+    if cgb12_gauge_respects_observation(gauge, anchor_mask) == 0 { return 0 }
+    return cgb12_gauge_stabilizes_edges(edge_mask, gauge, 0)
+}
+
+fn cgb12_count_stabilizers_from(
+    edge_mask: i64, anchor_mask: i64, gauge: i64, limit: i64
+) -> i64 with Div {
+    if gauge >= limit { return 0 }
+    return cgb12_gauge_stabilizes(edge_mask, anchor_mask, gauge) +
+        cgb12_count_stabilizers_from(
+            edge_mask, anchor_mask, gauge + 1, limit)
+}
+
+fn cgb12_stabilizer_order(
+    vertex_count: i64, edge_mask: i64, anchor_mask: i64
+) -> i64 with Div {
+    return cgb12_count_stabilizers_from(
+        edge_mask, anchor_mask, 0, cgb12_pow2(vertex_count))
+}
+
+fn cgb12_pack(
+    disposition: i64, solution_count: i64, stabilizer_order: i64
+) -> i64 {
+    return disposition + solution_count * 8 + stabilizer_order * 1024
+}
+
+fn cgb12_analyze(
+    vertex_count: i64, edge_mask: i64, parity_mask: i64,
+    anchor_mask: i64, anchor_value_mask: i64
+) -> i64 with Div {
+    if cgb12_abi_valid(vertex_count, edge_mask, parity_mask,
+        anchor_mask, anchor_value_mask) == 0 { return 0 }
+    let solutions = cgb12_solution_count(vertex_count, edge_mask, parity_mask,
+        anchor_mask, anchor_value_mask)
+    let stabilizers = cgb12_stabilizer_order(
+        vertex_count, edge_mask, anchor_mask)
+    if solutions == 0 { return cgb12_pack(5, 0, stabilizers) }
+    if stabilizers > 1 { return cgb12_pack(3, solutions, stabilizers) }
+    if solutions == 1 { return cgb12_pack(1, solutions, stabilizers) }
+    return cgb12_pack(2, solutions, stabilizers)
+}
+
+fn cgb12_self_check() -> i64 with Div {
+    var failures: i64 = 0
+    if cgb12_analyze(3, 33, 0, 0, 0) != 2067 { failures = failures + 1 }
+    if cgb12_analyze(3, 33, 0, 1, 0) != 1033 { failures = failures + 1 }
+    if cgb12_analyze(3, 35, 1, 0, 0) != 2053 { failures = failures + 1 }
+    if cgb12_analyze(4, 513, 0, 0, 0) != 4131 { failures = failures + 1 }
+    if cgb12_analyze(3, 1, 2, 0, 0) != 0 { failures = failures + 1 }
+    return failures
+}
+
+fn main() -> i64 with Div {
+    if cgb12_self_check() == 0 { return 131 }
+    return 631 + cgb12_self_check()
+}

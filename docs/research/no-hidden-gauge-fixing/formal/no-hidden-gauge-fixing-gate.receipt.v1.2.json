@@ -1,0 +1,552 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-gate-receipt.v1.2",
+  "generatedAt": "2026-08-03T12:30:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "verified": true,
+  "compilerReconciled": true,
+  "fiveTaskEngineeringClosureEstablished": true,
+  "manuscriptSubmissionReady": false,
+  "preprintArtifactPackageReadyForIndependentReplication": true,
+  "externalObservationValueReceiptImplemented": true,
+  "externalClinicalObservationEstablished": false,
+  "testFixtureObservationSignatureValid": true,
+  "productionObservationTrustEstablished": false,
+  "abstractLeanRefinementEstablished": true,
+  "completeSounioOperationalSemanticsMechanized": false,
+  "emittedWasmSemanticsMechanized": false,
+  "completeAbiDomainEstablished": true,
+  "generalGraphBenchmarkEstablished": true,
+  "implementationIndependentReproductionComplete": true,
+  "authorIndependentReproductionComplete": false,
+  "externalHumanReproductionComplete": false,
+  "formalPriorArtSearchExecuted": true,
+  "priorArtSearchComplete": false,
+  "legalOpinionEstablished": false,
+  "candidateConjunctionOnly": true,
+  "parent": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/no-hidden-gauge-fixing-gate.receipt.v1.1.json",
+    "sha256": "9ece72be67c72c12c7ce273c8d27161ebb92b261f7ed9d56d686b9a582f471eb",
+    "bytes": 11609
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "evidence": {
+    "observation": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/observation-receipt-verification.v1.2.json",
+      "sha256": "e7860eb7d4166f4e8b3c8a51ad79cea79d4deda2829fc898fa2b9a696cb38956",
+      "bytes": 2742
+    },
+    "runtime": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/runtime-verification.v1.2.json",
+      "sha256": "6b11c6c8880e153168f43932739dfa909c3b0b3a762c71ddacb7a1f57958e574",
+      "bytes": 3604
+    },
+    "lean": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/lean-verification.v1.2.json",
+      "sha256": "bc85bcab33df34a4ce0acd4f48b0b0c09811a1a303be79a1a4c86741183f6068",
+      "bytes": 3812
+    },
+    "graph": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/constraint-graph-benchmark.v1.2.json",
+      "sha256": "3b99b5b5f206e27e7b44905f4f2f97503dc1f0e6b7f637c7a10e09efdcb6ebd0",
+      "bytes": 3054
+    },
+    "reproduction": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/cross-language-reproduction.v1.2.json",
+      "sha256": "80768672e751f797eccb695124bd1418712fc4ac7610daf18e22fa391ecf19f6",
+      "bytes": 3673
+    },
+    "sourceFreshBuild": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/source-fresh-build.v1.2.json",
+      "sha256": "ddbf6912cc80e9c86257ba4ad1d17e3ecec4664d4ef411ae5159e4802244a452",
+      "bytes": 5317
+    },
+    "priorArt": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/prior-art-search.v1.2.json",
+      "sha256": "e46fa8a50731d78714b9b95e025b16fce778463d3078f72f62abd68c10ff4386",
+      "bytes": 10194
+    }
+  },
+  "observation": {
+    "schema": "darwin.value-carrying-observation-receipt.v1.2",
+    "fixtureOnly": true,
+    "acceptedAbi": [
+      7,
+      1,
+      0,
+      2,
+      2,
+      2
+    ],
+    "negativeCasesPassed": 9,
+    "invalidReceiptKernelCalls": 0,
+    "validReceiptKernelCalls": 1,
+    "trustRootsProductionEligible": false
+  },
+  "models": {
+    "triangle": {
+      "rawAbiStates": 32768,
+      "validAbiStates": 13824,
+      "invalidAbiStates": 18944,
+      "oracleMismatches": 0,
+      "residualGaugeChecks": 32768,
+      "residualGaugeMismatches": 0,
+      "anchorRestrictionChecks": 13824,
+      "anchorRestrictionMismatches": 0,
+      "dispositionCensus": {
+        "REFUSE_INVALID_ABI": 0,
+        "UNIQUE_WITHIN_DECLARED_MODEL": 2392,
+        "REVIEW_NONUNIQUE": 0,
+        "ABSTAIN_STABILIZER_OBSTRUCTION": 2132,
+        "REVIEW_LOCAL_PROOF": 7992,
+        "ABSTAIN_NO_GLOBAL_SECTION": 1308,
+        "REFUSE_INTERNAL_INCONSISTENCY": 0,
+        "RESERVED": 0
+      },
+      "transcriptSha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d"
+    },
+    "graph": {
+      "cases": 1536,
+      "familyCensus": {
+        "path": 256,
+        "cycle": 256,
+        "star": 256,
+        "complete": 256,
+        "disconnected": 256,
+        "random": 256
+      },
+      "gaugeChecks": 51394,
+      "gaugeMismatches": 0,
+      "affineTorsorChecks": 624,
+      "affineTorsorMismatches": 0,
+      "hiddenSelectorAnomalies": 3788,
+      "dispositionCensus": {
+        "REFUSE_INVALID_ABI": 0,
+        "UNIQUE_WITHIN_DECLARED_MODEL": 422,
+        "REVIEW_NONUNIQUE": 0,
+        "ABSTAIN_STABILIZER_OBSTRUCTION": 202,
+        "RESERVED": 0,
+        "ABSTAIN_NO_GLOBAL_SECTION": 912,
+        "REFUSE_INTERNAL_INCONSISTENCY": 0
+      },
+      "transcriptSha256": "951cddef1573205ca660a9ba0741adf19cac9806c5d76ffeb1e859115493a1ba"
+    }
+  },
+  "reproduction": {
+    "language": "Rust",
+    "noExternalCrates": true,
+    "triangleStates": 32768,
+    "exactTriangleParity": true,
+    "blindedGraphCases": 384,
+    "blindedCommitmentMatched": true,
+    "tamperedCommitmentRejected": true,
+    "thirdPartyAttestationSigned": false
+  },
+  "priorArt": {
+    "claimAssessments": [
+      {
+        "id": "C1",
+        "assessment": "KNOWN",
+        "references": [
+          "R1",
+          "R2"
+        ]
+      },
+      {
+        "id": "C2",
+        "assessment": "KNOWN",
+        "references": [
+          "R3"
+        ]
+      },
+      {
+        "id": "C3",
+        "assessment": "KNOWN",
+        "references": [
+          "R4",
+          "R5",
+          "R6"
+        ]
+      },
+      {
+        "id": "C4",
+        "assessment": "KNOWN_COMPONENTS",
+        "references": [
+          "R8",
+          "R9",
+          "R10",
+          "R12",
+          "R14"
+        ]
+      },
+      {
+        "id": "C5",
+        "assessment": "KNOWN",
+        "references": [
+          "R7",
+          "R11",
+          "R12",
+          "R13"
+        ]
+      },
+      {
+        "id": "C6",
+        "assessment": "KNOWN_COMPONENTS",
+        "references": [
+          "R8",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15"
+        ]
+      },
+      {
+        "id": "C7",
+        "assessment": "CANDIDATE_CONJUNCTION",
+        "references": [
+          "R1",
+          "R2",
+          "R3",
+          "R8",
+          "R9",
+          "R10"
+        ]
+      },
+      {
+        "id": "C8",
+        "assessment": "CANDIDATE_CONJUNCTION_CLOSE_ART",
+        "references": [
+          "R7",
+          "R8",
+          "R9",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15"
+        ]
+      }
+    ],
+    "candidateName": "revocable residual-stabilizer authorization",
+    "completeDisclosureLocated": false,
+    "directQueriesExecuted": 4,
+    "blockedOrIncompleteDatabases": 5,
+    "noveltyEstablished": false
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d"
+  },
+  "sourceFresh": {
+    "deterministicNativeAndWasmBuildsEstablished": true,
+    "triangleNativeWasmSelfCheckParityEstablished": true,
+    "graphNativeWasmSelfCheckParityEstablished": true,
+    "nativeWasmCompleteTranscriptParityEstablished": false,
+    "allInternalExportParityEstablished": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/README.md",
+      "sha256": "84f54d18e2f762901f320ee73ae6de1e9f3c082562ce825028b6b6b1d1a413ef",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/README-v1.2.md",
+      "sha256": "c181eb13d647f372bce160bfd9fe14bd6806f5b7bb27a4231903d16098440cc8",
+      "bytes": 2726
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/no-hidden-gauge-fixing-theory-v1.1.md",
+      "sha256": "dcb65b49ae198f2fc3fec11ea322e79392558f4b2bac0603800a1be59b7b72c0",
+      "bytes": 3784
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/prior-art-frontier-v1.1.md",
+      "sha256": "ebce24c7f622ed36c7b5e7e14910f368d66add2f72b16b22866d7115e03f0b28",
+      "bytes": 2572
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/prior-art-search-protocol-v1.2.md",
+      "sha256": "29f3e4b93986f411504cf971ac176d676ccb20febe4f94a02349b61aa9b509b5",
+      "bytes": 5813
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/prior-art-claim-matrix-v1.2.md",
+      "sha256": "8ed8ebf6e5c20278e51a7d3b266e9e23e1882735eaff4b9b3dd6a0e2d417df08",
+      "bytes": 8150
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/closure-v1.2.md",
+      "sha256": "0d6a458f5adce9f574136caae1a3a3dff7b71edb2a7c852bcacc8fba2575662b",
+      "bytes": 5530
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixingV12.lean",
+      "sha256": "5142e49ab83a9540d17defeebb6a704d59ea8394da818715e50791df0ad2f96a",
+      "bytes": 6998
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixingV12Audit.lean",
+      "sha256": "35bfc805f8d68fbcd9381dce8caf7b9a283763df47544dc025253a4f231d9647",
+      "bytes": 968
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lakefile.lean",
+      "sha256": "87a4366e0006ce10dba12f23d168d90f4e6fb63fe06cb912b10840e2aeb925fc",
+      "bytes": 240
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lake-manifest.json",
+      "sha256": "5612ce416d0ced24baa58f84f9bf15d6fd168c2139854eb4b598e89aa093f0f9",
+      "bytes": 362
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_v1_2.sio",
+      "sha256": "b337a6a9276bd1a5fb8fb765ca180c5680d866e075ab5467ccba27d288988c52",
+      "bytes": 11155
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/constraint_graph_benchmark_v1_2.sio",
+      "sha256": "f8b12bf4b444f5007524a0dc7114c4aefa395f0005656193618feb8a16737301",
+      "bytes": 7268
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm-v1.2/no_hidden_gauge_fixing.v1.2.wasm",
+      "sha256": "10100dcc3e62234e3d93c97239b96868be5552954af3aa34864a1bcba38e39f8",
+      "bytes": 6907
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm-v1.2/constraint_graph_benchmark.v1.2.wasm",
+      "sha256": "13450a7788a44264ea7d685a69fb6647e74c417479e1d340bcf5460f44bf1ec5",
+      "bytes": 4410
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native-v1.2/no_hidden_gauge_fixing.v1.2.linux-x86_64",
+      "sha256": "f356b860ccebfdd5a8e5fec9a7215b810cc78500bca6b07d6e9ef0ff3dfd4737",
+      "bytes": 28680
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native-v1.2/constraint_graph_benchmark.v1.2.linux-x86_64",
+      "sha256": "7fb739743cb5bbff9af4af0a6a09e512c370120bed3e0547fb150c900408e3c6",
+      "bytes": 20488
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native-v1.2/no_hidden_gauge_fixing_oracle.v1.2.macos-arm64",
+      "sha256": "2a0ebe2dba071f5da59c02cd277e96e74ca505a9a19698fff19abd8e9c395cb4",
+      "bytes": 371456
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/rust/no_hidden_gauge_fixing_oracle_v1_2.rs",
+      "sha256": "7d1d8be079136e837a1ffcdad8079052c45d64bff186d752a45a5d00cc6354da",
+      "bytes": 10327
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/synthetic-observation-source.v1.2.json",
+      "sha256": "f225926ca330c5757de025b84aa87bd203af9b06f32db7c6bbe849105d996384",
+      "bytes": 399
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/revocation-registry.v1.2.json",
+      "sha256": "b2e4fac9b9a4b39147ce15cb4c41730b34cb163c3ddb279db5efb452aafc40db",
+      "bytes": 901
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/observations/value-carrying-observation.receipt.v1.2.json",
+      "sha256": "9fc288d48936f5410046e36e4a2176127fcfb3d3a6636953346ffe4eba74c88b",
+      "bytes": 2849
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/README.md",
+      "sha256": "cc414a44fe54b565f96fc0bb07c0b88adac4648ecc8f3c136d41fa19dd399f8e",
+      "bytes": 919
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/blind-inputs.v1.2.txt",
+      "sha256": "7737496dd8e9a8cd59291f08fe625f670f4439b783fb1ba1a600a7706d357a25",
+      "bytes": 9967
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/blind-reproduction-manifest.v1.2.json",
+      "sha256": "52ef141b8aee81007ffb1ce380e60d750b9ead7d33967c7a0cb74559be06046b",
+      "bytes": 1912
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/third-party-attestation.template.json",
+      "sha256": "4684330e81af4e5762facc07ab8694082ce8652a3c821a255525dc2e1d12224d",
+      "bytes": 491
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/canonical-domain.v1.2.txt",
+      "sha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d",
+      "bytes": 597450
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/constraint-graph-benchmark.v1.2.txt",
+      "sha256": "951cddef1573205ca660a9ba0741adf19cac9806c5d76ffeb1e859115493a1ba",
+      "bytes": 64614
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/cross-language-graph.v1.2.txt",
+      "sha256": "d9a7f0cfdf653164fc1d4125e2229db9345ea86a4d4f8a304ecc1414e3d33e06",
+      "bytes": 7680
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/vectors/constraint-graph-benchmark.v1.2.json",
+      "sha256": "c892f7d674a6ea54593734437ed62a0671c835c013d83d885924a71bfb873a6a",
+      "bytes": 475034
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/observation-receipt-verification.v1.2.json",
+      "sha256": "e7860eb7d4166f4e8b3c8a51ad79cea79d4deda2829fc898fa2b9a696cb38956",
+      "bytes": 2742
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/runtime-verification.v1.2.json",
+      "sha256": "6b11c6c8880e153168f43932739dfa909c3b0b3a762c71ddacb7a1f57958e574",
+      "bytes": 3604
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/lean-verification.v1.2.json",
+      "sha256": "bc85bcab33df34a4ce0acd4f48b0b0c09811a1a303be79a1a4c86741183f6068",
+      "bytes": 3812
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/constraint-graph-benchmark.v1.2.json",
+      "sha256": "3b99b5b5f206e27e7b44905f4f2f97503dc1f0e6b7f637c7a10e09efdcb6ebd0",
+      "bytes": 3054
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/cross-language-reproduction.v1.2.json",
+      "sha256": "80768672e751f797eccb695124bd1418712fc4ac7610daf18e22fa391ecf19f6",
+      "bytes": 3673
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/source-fresh-build.v1.2.json",
+      "sha256": "ddbf6912cc80e9c86257ba4ad1d17e3ecec4664d4ef411ae5159e4802244a452",
+      "bytes": 5317
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/prior-art-search.v1.2.json",
+      "sha256": "e46fa8a50731d78714b9b95e025b16fce778463d3078f72f62abd68c10ff4386",
+      "bytes": 10194
+    },
+    {
+      "path": "scripts/no-hidden-gauge-fixing-v12-oracle.mjs",
+      "sha256": "be6cbcc8b2ebff5375804ff1e18409acb57578ad085640f2e34bff1d448f463b",
+      "bytes": 6640
+    },
+    {
+      "path": "scripts/observation-receipt-v12.mjs",
+      "sha256": "5ab84659696827d76186ed3fd7c6d9cd629065e05ce168f7c50d03adc1ca28b0",
+      "bytes": 13661
+    },
+    {
+      "path": "scripts/verify-observation-receipt-v12.mjs",
+      "sha256": "44b202513d7020f27ea7e7f9dc9cfb133d6b44595f4aa0eced97d9305732ae6a",
+      "bytes": 5946
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing-v12.mjs",
+      "sha256": "7aec7c82cc1a47842b9a8647b771098c1fb29f8c3357bc518af0557e2daefe06",
+      "bytes": 12896
+    },
+    {
+      "path": "scripts/constraint-graph-oracle-v12.mjs",
+      "sha256": "056f0e6fb387fd10fd828b62ebc6681e065ccc4f1c6e125c100cfefe19393caa",
+      "bytes": 4608
+    },
+    {
+      "path": "scripts/generate-constraint-graph-benchmark-v12.mjs",
+      "sha256": "99b4209bd6e92698d477809868fe54b80091fa6dd98053b0b6515a43e0abb2b4",
+      "bytes": 6037
+    },
+    {
+      "path": "scripts/verify-constraint-graph-benchmark-v12.mjs",
+      "sha256": "73a8b62996b1c8ebf9cf67a663552104c3d81689041ea2307f0d265d031c061c",
+      "bytes": 9162
+    },
+    {
+      "path": "scripts/generate-blind-reproduction-package-v12.mjs",
+      "sha256": "fcbe0268b42c32b49e5e0811f0da879b5e589e620181c6c7a018ea547005b4d0",
+      "bytes": 4240
+    },
+    {
+      "path": "scripts/verify-cross-language-reproduction-v12.mjs",
+      "sha256": "622a56c4d2d380c2e5615dd69d04bad47ba789a3d7d4ae8f114d80f2fdab5187",
+      "bytes": 8062
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing-lean-v12.mjs",
+      "sha256": "bf9aac0baa679f08cec3777228069b9681fe41b50e649c80b2bf9691f2511a20",
+      "bytes": 6330
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-source-fresh-evidence-v12.mjs",
+      "sha256": "5a3bfdd0080340650d7afe49e4606ddc4c0247cfaa6f4b8f455607e16915821d",
+      "bytes": 8064
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-receipt-v12.mjs",
+      "sha256": "89a943ce3fb5bd79dc48b8a7aa49533b0724577f45709d0c22e3292a2ab03c10",
+      "bytes": 16847
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing-gate-v12.mjs",
+      "sha256": "d9393a7a1ac548bfddfc4e2477cc4de92bcc84b55613e49e31d7cb1ecb4f8a40",
+      "bytes": 9072
+    }
+  ],
+  "claims": {
+    "established": [
+      "a signed synthetic value receipt is accepted only within its declared scope, time, reliability, provenance, and revocation policy",
+      "invalid or revoked synthetic observation receipts are refused before the Sounio kernel is called",
+      "the declared Lean model refines the identity-triangle observation fixture and preserves model-relative uniqueness",
+      "complete 32,768-state ABI agreement between the Sounio WASM kernel and an independent JavaScript oracle",
+      "zero-mismatch gauge and affine-torsor checks over a 1,536-case, six-family graph benchmark",
+      "a hidden minimum-assignment selector is killed on every obstructed graph case",
+      "independent Rust reproduction of the complete triangle transcript and blinded graph commitment",
+      "source-fresh deterministic native and WASM builds with self-check parity",
+      "a dated claim-by-claim prior-art search with access failures preserved as coverage gaps"
+    ],
+    "notEstablished": [
+      "a general revocation-restoration theorem beyond the declared finite fixture",
+      "content-addressed authorization from any external clinical observation",
+      "mechanized Sounio operational semantics or emitted WASM byte semantics",
+      "complete internal native/WASM export or transcript parity for v1.2",
+      "author-independent or unrelated third-party reproduction",
+      "complete prior-art coverage, patentability, freedom to operate, priority, or scientific novelty",
+      "real-world normative, empirical, clinical, regulatory, legal, or production validity"
+    ]
+  },
+  "invalidation": [
+    "parent or compiler receipt identity changes",
+    "any listed artifact hash or byte size changes",
+    "observation signature, provenance, reliability, scope, validity, or revocation verification changes",
+    "an invalid observation reaches the Sounio kernel",
+    "Lean build, forbidden-token scan, or axiom audit changes",
+    "triangle or graph oracle, gauge, torsor, hostile-ABI, or mutation checks cease to pass",
+    "a singular-witness function appears in either canonical WASM export surface",
+    "Rust transcript or blinded commitment parity changes",
+    "a blocked prior-art database is represented as a negative finding",
+    "clinical refusal, production authorization, signature, or novelty boundary changes"
+  ],
+  "errors": []
+}

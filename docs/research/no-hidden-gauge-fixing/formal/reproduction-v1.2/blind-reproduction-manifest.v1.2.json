@@ -1,0 +1,50 @@
+{
+  "schema": "darwin.blind-cross-language-reproduction-manifest.v1.2",
+  "generatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "packageState": "READY_FOR_EXTERNAL_REPRODUCTION",
+  "implementationIndependentReproductionComplete": false,
+  "externalHumanReproductionComplete": false,
+  "selection": {
+    "algorithm": "SHA-256 rank within each family",
+    "seed": "darwin-nhgf-blind-reproduction-v1.2",
+    "cases": 384,
+    "familyCounts": {
+      "path": 64,
+      "cycle": 64,
+      "star": 64,
+      "complete": 64,
+      "disconnected": 64,
+      "random": 64
+    }
+  },
+  "inputs": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/blind-inputs.v1.2.txt",
+    "bytes": 9967,
+    "sha256": "7737496dd8e9a8cd59291f08fe625f670f4439b783fb1ba1a600a7706d357a25"
+  },
+  "expectedCommitment": {
+    "disclosedInInputPackage": false,
+    "encoding": "vector-id|packed|solutionCount|stabilizerOrder",
+    "lines": 384,
+    "bytes": 7680,
+    "sha256": "d9a7f0cfdf653164fc1d4125e2229db9345ea86a4d4f8a304ecc1414e3d33e06"
+  },
+  "sourceLineage": {
+    "benchmark": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/vectors/constraint-graph-benchmark.v1.2.json",
+      "sha256": "c892f7d674a6ea54593734437ed62a0671c835c013d83d885924a71bfb873a6a"
+    },
+    "rustOracle": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/rust/no_hidden_gauge_fixing_oracle_v1_2.rs",
+      "sha256": "7d1d8be079136e837a1ffcdad8079052c45d64bff186d752a45a5d00cc6354da",
+      "externalCrates": 0
+    }
+  },
+  "command": "<compiled-rust-oracle> graph-transcript <blind-inputs.v1.2.txt>",
+  "attestationRequiredForExternalCompletion": "signed third-party attestation bound to input, output, source, compiler and environment hashes"
+}

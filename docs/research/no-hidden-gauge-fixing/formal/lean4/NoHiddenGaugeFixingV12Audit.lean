@@ -1,0 +1,14 @@
+import NoHiddenGaugeFixingV12
+
+#print axioms Darwin.NoHiddenGaugeFixingV12.observedValueRestrictsAssignments
+#print axioms Darwin.NoHiddenGaugeFixingV12.diagonalFlipCannotPreserveObservedValue
+#print axioms Darwin.NoHiddenGaugeFixingV12.identitySectionDeterminedByAnchorA
+#print axioms Darwin.NoHiddenGaugeFixingV12.identityAnchorAHasUniqueSection
+#print axioms Darwin.NoHiddenGaugeFixingV12.noAnchorRetainsTwoIdentitySections
+#print axioms Darwin.NoHiddenGaugeFixingV12.authorizationImpliesTrusted
+#print axioms Darwin.NoHiddenGaugeFixingV12.revokedReceiptCannotAuthorize
+#print axioms Darwin.NoHiddenGaugeFixingV12.expiredReceiptCannotAuthorize
+#print axioms Darwin.NoHiddenGaugeFixingV12.invalidSignatureCannotAuthorize
+#print axioms Darwin.NoHiddenGaugeFixingV12.encodedIdentityAnchorAIsShapeValid
+#print axioms Darwin.NoHiddenGaugeFixingV12.identityAnchorARefinesPackedKernelResult
+#print axioms Darwin.NoHiddenGaugeFixingV12.identityAnchorAUniqueIsModelRelative

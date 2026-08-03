@@ -1,0 +1,90 @@
+{
+  "schema": "darwin.cross-language-reproduction-verification.v1.2",
+  "generatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compiler": {
+    "identity": "rustc 1.91.1 (ed61e7d7e 2025-11-07)",
+    "command": "rustc --edition=2021 -C opt-level=2 -C debuginfo=0 -C strip=symbols -C metadata=darwin-nhgf-v12 <source> -o <fixed-output>",
+    "builds": 2,
+    "binaryBitwiseDeterministic": true,
+    "executionTranscriptDeterministic": true,
+    "binaryDeterminismNote": "Mach-O LC_UUID may differ while exact execution transcripts remain identical.",
+    "binarySha256": "a88204b79716f6531e9ae38c2a9f9c0eb548435233906ca68eeb72602950bb4c"
+  },
+  "triangle": {
+    "states": 32768,
+    "transcriptSha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d",
+    "sounioWasmTranscriptSha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d",
+    "exactParity": true
+  },
+  "blindGraphPackage": {
+    "cases": 384,
+    "familyCounts": {
+      "path": 64,
+      "cycle": 64,
+      "star": 64,
+      "complete": 64,
+      "disconnected": 64,
+      "random": 64
+    },
+    "inputSha256": "7737496dd8e9a8cd59291f08fe625f670f4439b783fb1ba1a600a7706d357a25",
+    "expectedCommitmentSha256": "d9a7f0cfdf653164fc1d4125e2229db9345ea86a4d4f8a304ecc1414e3d33e06",
+    "rustOutputSha256": "d9a7f0cfdf653164fc1d4125e2229db9345ea86a4d4f8a304ecc1414e3d33e06",
+    "commitmentMatched": true,
+    "tamperedCommitmentRejected": true,
+    "readyForExternalReproduction": true
+  },
+  "independence": {
+    "differentLanguage": true,
+    "noExternalCrates": true,
+    "reusesSounioImplementation": false,
+    "implementationIndependentReproductionComplete": true,
+    "authorIndependentReproductionComplete": false,
+    "externalHumanReproductionComplete": false,
+    "reason": "No unrelated third party has returned a signed attestation."
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/rust/no_hidden_gauge_fixing_oracle_v1_2.rs",
+      "bytes": 10327,
+      "sha256": "7d1d8be079136e837a1ffcdad8079052c45d64bff186d752a45a5d00cc6354da"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native-v1.2/no_hidden_gauge_fixing_oracle.v1.2.macos-arm64",
+      "bytes": 371456,
+      "sha256": "2a0ebe2dba071f5da59c02cd277e96e74ca505a9a19698fff19abd8e9c395cb4"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/canonical-domain.v1.2.txt",
+      "bytes": 597450,
+      "sha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/cross-language-graph.v1.2.txt",
+      "bytes": 7680,
+      "sha256": "d9a7f0cfdf653164fc1d4125e2229db9345ea86a4d4f8a304ecc1414e3d33e06"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/blind-inputs.v1.2.txt",
+      "bytes": 9967,
+      "sha256": "7737496dd8e9a8cd59291f08fe625f670f4439b783fb1ba1a600a7706d357a25"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/blind-reproduction-manifest.v1.2.json",
+      "bytes": 1912,
+      "sha256": "52ef141b8aee81007ffb1ce380e60d750b9ead7d33967c7a0cb74559be06046b"
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/reproduction-v1.2/third-party-attestation.template.json",
+      "bytes": 491,
+      "sha256": "4684330e81af4e5762facc07ab8694082ce8652a3c821a255525dc2e1d12224d"
+    }
+  ],
+  "verified": true,
+  "errors": []
+}

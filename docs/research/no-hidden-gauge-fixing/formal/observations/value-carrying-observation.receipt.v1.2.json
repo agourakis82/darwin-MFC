@@ -1,0 +1,79 @@
+{
+  "payload": {
+    "schema": "darwin.value-carrying-observation-receipt.v1.2",
+    "fixtureOnly": true,
+    "observationId": "urn:darwin:nhgf:v1.2:observation:identity-a-false",
+    "status": "SYNTHETIC_RESEARCH_ONLY",
+    "clinicalDisposition": "REFUSE",
+    "clinicalUseAllowed": false,
+    "productionAuthorized": false,
+    "observation": {
+      "anchorMask": 1,
+      "anchorValueMask": 0,
+      "values": [
+        {
+          "value": false,
+          "vertex": "A"
+        }
+      ]
+    },
+    "provenance": {
+      "exactLocator": "observations/0",
+      "method": "deterministic-synthetic-fixture",
+      "sourceBytes": 399,
+      "sourceSha256": "f225926ca330c5757de025b84aa87bd203af9b06f32db7c6bbe849105d996384",
+      "sourceUri": "urn:darwin:nhgf:v1.2:source:identity-triangle-a-false"
+    },
+    "reliability": {
+      "assessment": "fixture-integrity-only-not-empirical-reliability",
+      "basisPoints": 10000,
+      "calibrationReceipt": null
+    },
+    "validity": {
+      "expiresAt": "2030-01-01T00:00:00.000Z",
+      "observedAt": "2026-08-03T11:55:00.000Z",
+      "validFrom": "2026-08-03T11:55:00.000Z"
+    },
+    "scope": {
+      "contextHash": "320a941eddca6e22402c5bb84e1b679932200f1bc684e8fbb6e6b588367546d6",
+      "purpose": "research:no-hidden-gauge-fixing:v1.2",
+      "scopeHash": "2dc12a3124b8c01a8829fc874135a1e93da0722bd8faf7df6686b43b1460a0af",
+      "subjectHash": "462f3755c7cc59d4073f369d737b0e837516b8e99f1b0af000112191aded1680"
+    },
+    "revocation": {
+      "epoch": 1,
+      "registryId": "urn:darwin:nhgf:v1.2:revocation-registry:test",
+      "registrySha256": "b2e4fac9b9a4b39147ce15cb4c41730b34cb163c3ddb279db5efb452aafc40db"
+    },
+    "executableBinding": {
+      "abi": [
+        7,
+        1,
+        0,
+        2,
+        2,
+        2
+      ],
+      "abiSchema": "darwin.no-hidden-gauge-fixing-abi.v1.2",
+      "declaredModel": "boolean-identity-triangle",
+      "kernelSourceSha256": "b337a6a9276bd1a5fb8fb765ca180c5680d866e075ab5467ccba27d288988c52"
+    },
+    "signerCredential": {
+      "credentialId": "urn:darwin:credential:synthetic-observer:test-only",
+      "credentialType": "synthetic_observer",
+      "expiresAt": "2030-01-01T00:00:00.000Z",
+      "issuedAt": "2026-08-03T00:00:00.000Z"
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "fixtureOnly": true,
+    "keyId": "darwin-test-observer-ed25519-v1",
+    "productionTrustEligible": false,
+    "publicKeyDerBase64": "MCowBQYDK2VwAyEA5Qxv51h3SZ8N+hameY6Z96sYjtHMw4YU5pHX7biXVSE=",
+    "publicKeySha256": "f9359d15fa5b599a9e74f9a11134ef1d35afcb5d6729118e2d435e4cb866e1c5",
+    "role": "synthetic_observer",
+    "signedPayloadSha256": "bce4a9f138c9bf04c834dc291d0e34ea1266428b97410538a3f4c87326fb8842",
+    "valueBase64": "2XCER3YyLkQRrFkkUQ+6PIZaI3pPQ7OFwuAOpxqMaXE+mB95iO9uO2x7jUWuUL9PdlF47uYZgv3iyxAH4LtaCg=="
+  }
+}

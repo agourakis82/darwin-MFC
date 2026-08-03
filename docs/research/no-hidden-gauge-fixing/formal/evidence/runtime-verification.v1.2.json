@@ -1,0 +1,109 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-runtime-verification.v1.2",
+  "generatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "canonicalWasm": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/wasm-v1.2/no_hidden_gauge_fixing.v1.2.wasm",
+    "bytes": 6907,
+    "sha256": "10100dcc3e62234e3d93c97239b96868be5552954af3aa34864a1bcba38e39f8",
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "nhgf12_abi_valid",
+      "nhgf12_analyze",
+      "nhgf12_apply_map",
+      "nhgf12_assignment_matches_observation",
+      "nhgf12_assignment_satisfies",
+      "nhgf12_candidate_breaks_symmetry",
+      "nhgf12_contains",
+      "nhgf12_gauge_bit",
+      "nhgf12_gauge_respects_observation",
+      "nhgf12_gauge_stabilizes",
+      "nhgf12_local_issue_mask",
+      "nhgf12_map_bijective",
+      "nhgf12_minimal_additional_anchor",
+      "nhgf12_pack",
+      "nhgf12_popcount8",
+      "nhgf12_self_check",
+      "nhgf12_solution_count",
+      "nhgf12_stabilizer_mask",
+      "nhgf12_subset",
+      "nhgf12_transform_map",
+      "nhgf12_transform_map_ab",
+      "nhgf12_transform_map_bc",
+      "nhgf12_transform_map_ca",
+      "nhgf12_valid_map",
+      "nhgf12_valid_mask",
+      "nhgf12_xor"
+    ],
+    "singularWitnessExportCount": 0,
+    "mainResult": 121
+  },
+  "source": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_v1_2.sio",
+    "bytes": 11155,
+    "sha256": "b337a6a9276bd1a5fb8fb765ca180c5680d866e075ab5467ccba27d288988c52",
+    "hasIO": false
+  },
+  "completeAbiDomain": {
+    "rawStates": 32768,
+    "validStates": 13824,
+    "invalidStates": 18944,
+    "invalidKernelOutputs": 0,
+    "oracleMismatches": 0,
+    "dispositionCensus": {
+      "REFUSE_INVALID_ABI": 0,
+      "UNIQUE_WITHIN_DECLARED_MODEL": 2392,
+      "REVIEW_NONUNIQUE": 0,
+      "ABSTAIN_STABILIZER_OBSTRUCTION": 2132,
+      "REVIEW_LOCAL_PROOF": 7992,
+      "ABSTAIN_NO_GLOBAL_SECTION": 1308,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0,
+      "RESERVED": 0
+    }
+  },
+  "observationSemantics": {
+    "anchorRestrictionChecks": 13824,
+    "anchorRestrictionMismatches": 0,
+    "uniqueBoundaryChecks": 4784,
+    "uniqueBoundaryMismatches": 0,
+    "uniquenessMeaning": "unique only within the declared finite model"
+  },
+  "residualGaugeAction": {
+    "group": "subgroups of C2^3 preserving observed values",
+    "residualGaugeChecks": 32768,
+    "residualGaugeMismatches": 0,
+    "subgroupChecks": 55032,
+    "subgroupMismatches": 0
+  },
+  "receiptFirewall": {
+    "acceptedFixtureKernelCalls": 1,
+    "tamperedReceiptKernelCalls": 0,
+    "acceptedFixtureDisposition": "UNIQUE_WITHIN_DECLARED_MODEL",
+    "tamperedReceiptDisposition": "REFUSE",
+    "fixtureOnly": true,
+    "externalClinicalObservationEstablished": false
+  },
+  "transcript": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/canonical-domain.v1.2.txt",
+    "encoding": "index|abiValid|packed|stabilizerMask|minimumAdditionalAnchorMask|solutionCount",
+    "lines": 32768,
+    "bytes": 597450,
+    "sha256": "529c52c9e475e92d907a6298d381d3c72ce4571f648c65a0084e0fcf4dde4f6d"
+  },
+  "independentOracle": {
+    "path": "scripts/no-hidden-gauge-fixing-v12-oracle.mjs",
+    "sha256": "be6cbcc8b2ebff5375804ff1e18409acb57578ad085640f2e34bff1d448f463b",
+    "language": "JavaScript",
+    "reusesSounioImplementation": false,
+    "clinicalMathematicsFallback": false
+  },
+  "verified": true,
+  "errors": []
+}

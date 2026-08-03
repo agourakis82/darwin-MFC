@@ -1,0 +1,101 @@
+{
+  "schema": "darwin.constraint-graph-benchmark-verification.v1.2",
+  "generatedAt": "2026-08-03T12:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "benchmark": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/vectors/constraint-graph-benchmark.v1.2.json",
+    "bytes": 475034,
+    "sha256": "c892f7d674a6ea54593734437ed62a0671c835c013d83d885924a71bfb873a6a",
+    "cases": 1536,
+    "familyCensus": {
+      "path": 256,
+      "cycle": 256,
+      "star": 256,
+      "complete": 256,
+      "disconnected": 256,
+      "random": 256
+    },
+    "dispositionCensus": {
+      "REFUSE_INVALID_ABI": 0,
+      "UNIQUE_WITHIN_DECLARED_MODEL": 422,
+      "REVIEW_NONUNIQUE": 0,
+      "ABSTAIN_STABILIZER_OBSTRUCTION": 202,
+      "RESERVED": 0,
+      "ABSTAIN_NO_GLOBAL_SECTION": 912,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    },
+    "inconsistentCases": 912,
+    "uniqueCases": 422,
+    "stabilizerCases": 202
+  },
+  "canonicalWasm": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/wasm-v1.2/constraint_graph_benchmark.v1.2.wasm",
+    "bytes": 4410,
+    "sha256": "13450a7788a44264ea7d685a69fb6647e74c417479e1d340bcf5460f44bf1ec5",
+    "imports": [],
+    "exports": [
+      "cgb12_abi_valid",
+      "cgb12_allowed_edge_mask",
+      "cgb12_analyze",
+      "cgb12_assignment_matches_observation",
+      "cgb12_assignment_satisfies",
+      "cgb12_assignment_satisfies_edges",
+      "cgb12_bit",
+      "cgb12_count_solutions_from",
+      "cgb12_count_stabilizers_from",
+      "cgb12_edge_left",
+      "cgb12_edge_right",
+      "cgb12_gauge_respects_observation",
+      "cgb12_gauge_stabilizes",
+      "cgb12_gauge_stabilizes_edges",
+      "cgb12_pack",
+      "cgb12_pow2",
+      "cgb12_self_check",
+      "cgb12_solution_count",
+      "cgb12_stabilizer_order",
+      "cgb12_subset",
+      "cgb12_vertex_mask",
+      "main",
+      "memory"
+    ],
+    "singularWitnessExportCount": 0,
+    "mainResult": 131
+  },
+  "source": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/constraint_graph_benchmark_v1_2.sio",
+    "bytes": 7268,
+    "sha256": "f8b12bf4b444f5007524a0dc7114c4aefa395f0005656193618feb8a16737301",
+    "hasIO": false
+  },
+  "parity": {
+    "vectorMismatches": 0,
+    "gaugeChecks": 51394,
+    "gaugeMismatches": 0,
+    "affineTorsorChecks": 624,
+    "affineTorsorMismatches": 0
+  },
+  "mutationAdequacy": {
+    "mutant": "minimum numeric satisfying assignment",
+    "hiddenSelectorAnomalies": 3788,
+    "casesKilled": 202,
+    "killed": true
+  },
+  "hostileAbi": {
+    "cases": 6,
+    "refused": 6
+  },
+  "transcript": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/constraint-graph-benchmark.v1.2.txt",
+    "encoding": "id|family|input|packed|solutionCount|stabilizerOrder",
+    "lines": 1536,
+    "bytes": 64614,
+    "sha256": "951cddef1573205ca660a9ba0741adf19cac9806c5d76ffeb1e859115493a1ba"
+  },
+  "verified": true,
+  "errors": []
+}

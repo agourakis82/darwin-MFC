@@ -1,0 +1,266 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-prior-art-search.v1.2",
+  "generatedAt": "2026-08-03T12:15:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "legalOpinion": false,
+  "formalPriorArtSearchExecuted": true,
+  "searchComplete": false,
+  "literalPhrases": [
+    "proof-carrying prescribing",
+    "clinical constraint compiler",
+    "dose safety envelope",
+    "stabilizer-complete abstention",
+    "revocation restores symmetry"
+  ],
+  "databases": [
+    {
+      "id": "pubmed",
+      "interface": "NCBI E-utilities esearch/esummary",
+      "accessStatus": "QUERY_EXECUTED",
+      "queries": [
+        {
+          "id": "pubmed-exact-v12",
+          "query": "(\"proof-carrying prescribing\"[Title/Abstract] OR \"clinical constraint compiler\"[Title/Abstract] OR \"dose safety envelope\"[Title/Abstract] OR \"stabilizer-complete abstention\"[Title/Abstract] OR \"revocation restores symmetry\"[Title/Abstract])",
+          "count": 0
+        },
+        {
+          "id": "pubmed-formal-clinical",
+          "query": "(\"formal verification\"[Title/Abstract] AND (medication[Title/Abstract] OR prescribing[Title/Abstract] OR \"clinical guideline\"[Title/Abstract]))",
+          "count": 1,
+          "identifiers": ["PMID:24636931"]
+        },
+        {
+          "id": "pubmed-provenance-cds",
+          "query": "((provenance[Title/Abstract] OR \"non-repudiable\"[Title/Abstract] OR cryptographic[Title/Abstract]) AND \"clinical decision support\"[Title/Abstract])",
+          "count": 30
+        },
+        {
+          "id": "pubmed-abstention-clinical",
+          "query": "((abstention[Title/Abstract] OR \"set-valued\"[Title/Abstract]) AND (clinical[Title/Abstract] OR treatment[Title/Abstract]))",
+          "count": 677
+        }
+      ]
+    },
+    {
+      "id": "crossref",
+      "interface": "Crossref REST API query.title",
+      "accessStatus": "QUERY_EXECUTED_WITH_FUZZY_RANKING_LIMITATION",
+      "queries": [
+        {"phrase": "proof-carrying prescribing", "apiTotalResults": 141113, "inspectedTopResults": 100, "exactTitleMatches": 0},
+        {"phrase": "clinical constraint compiler", "apiTotalResults": 1609294, "inspectedTopResults": 100, "exactTitleMatches": 0},
+        {"phrase": "dose safety envelope", "apiTotalResults": 909439, "inspectedTopResults": 100, "exactTitleMatches": 0},
+        {"phrase": "stabilizer-complete abstention", "apiTotalResults": 178500, "inspectedTopResults": 100, "exactTitleMatches": 0},
+        {"phrase": "revocation restores symmetry", "apiTotalResults": 101986, "inspectedTopResults": 100, "exactTitleMatches": 0}
+      ],
+      "limitation": "Crossref total-results are fuzzy retrieval counts and are not exact-phrase counts."
+    },
+    {
+      "id": "arxiv",
+      "interface": "arXiv Atom API",
+      "accessStatus": "QUERY_EXECUTED",
+      "queries": [
+        {
+          "id": "arxiv-exact-v12",
+          "query": "all:\"proof-carrying prescribing\" OR all:\"clinical constraint compiler\" OR all:\"dose safety envelope\" OR all:\"stabilizer-complete abstention\" OR all:\"revocation restores symmetry\"",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "ieee-xplore",
+      "interface": "IEEE Xplore web search",
+      "accessStatus": "DIRECT_QUERY_BLOCKED_HTTP_418",
+      "domainScopedSearchExecuted": true,
+      "literalPhraseHitLocated": false
+    },
+    {
+      "id": "acm-digital-library",
+      "interface": "ACM Digital Library web search",
+      "accessStatus": "DIRECT_QUERY_BLOCKED_HTTP_403_CLOUDFLARE",
+      "domainScopedSearchExecuted": true,
+      "literalPhraseHitLocated": false
+    },
+    {
+      "id": "google-patents",
+      "interface": "Google Patents XHR query and document review",
+      "accessStatus": "QUERY_EXECUTED",
+      "exactPhraseCounts": [
+        {"phrase": "proof-carrying prescribing", "count": 0},
+        {"phrase": "clinical constraint compiler", "count": 0},
+        {"phrase": "dose safety envelope", "count": 0},
+        {"phrase": "stabilizer-complete abstention", "count": 0},
+        {"phrase": "revocation restores symmetry", "count": 0}
+      ],
+      "screenedPatentPublications": [
+        "US12542216B2",
+        "US20260024668A1",
+        "US20260024661A1",
+        "US12562280B2",
+        "WO2025193234A1",
+        "CA3054716A1"
+      ]
+    },
+    {
+      "id": "wipo-patentscope",
+      "interface": "Patentscope web search",
+      "accessStatus": "DIRECT_QUERY_BLOCKED_HTTP_403",
+      "mirrorReviewOnly": true
+    },
+    {
+      "id": "espacenet",
+      "interface": "Espacenet web search",
+      "accessStatus": "DIRECT_QUERY_BLOCKED_HTTP_403",
+      "mirrorReviewOnly": true
+    },
+    {
+      "id": "inpi-brazil",
+      "interface": "INPI public service",
+      "accessStatus": "LANDING_REACHABLE_FULL_TEXT_QUERY_INCOMPLETE",
+      "anonymousAutomatedSearchAvailable": false
+    }
+  ],
+  "retainedReferences": [
+    {
+      "id": "R1",
+      "title": "Equivariant Frames and the Impossibility of Continuous Canonicalization",
+      "year": 2024,
+      "url": "https://proceedings.mlr.press/v235/dym24a.html",
+      "claimCoverage": ["C1"]
+    },
+    {
+      "id": "R2",
+      "title": "Equivariance with Learned Canonicalization Functions",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2211.06489",
+      "claimCoverage": ["C1"]
+    },
+    {
+      "id": "R3",
+      "title": "Base sizes of primitive groups of diagonal type",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2303.14290",
+      "claimCoverage": ["C2"]
+    },
+    {
+      "id": "R4",
+      "title": "Selections and approximations of convex-valued equivariant mappings",
+      "year": 2012,
+      "url": "https://www.tmna.ncu.pl/static/files/v40n2-08.pdf",
+      "claimCoverage": ["C3"]
+    },
+    {
+      "id": "R5",
+      "title": "Set-valued dynamic treatment regimes for competing outcomes",
+      "year": 2014,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3954452/",
+      "claimCoverage": ["C3"]
+    },
+    {
+      "id": "R6",
+      "title": "When silence is safer: a review and decision-theoretic framework for LLM abstention in healthcare",
+      "year": 2026,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42298124/",
+      "claimCoverage": ["C3"]
+    },
+    {
+      "id": "R7",
+      "title": "A framework for automated conflict detection and resolution in medical guidelines",
+      "year": 2019,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6993806/",
+      "claimCoverage": ["C5"]
+    },
+    {
+      "id": "R8",
+      "title": "Non-repudiable provenance for clinical decision support systems",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2006.11233",
+      "claimCoverage": ["C4", "C6"]
+    },
+    {
+      "id": "R9",
+      "title": "FHIR R4 Provenance",
+      "year": 2019,
+      "url": "https://hl7.org/fhir/R4/provenance-definitions.html",
+      "claimCoverage": ["C4"]
+    },
+    {
+      "id": "R10",
+      "title": "Bitstring Status List v1.0",
+      "year": 2025,
+      "url": "https://www.w3.org/TR/vc-bitstring-status-list/",
+      "claimCoverage": ["C4"]
+    },
+    {
+      "id": "R11",
+      "title": "Semantically enabling clinical decision support recommendations",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10353186/",
+      "claimCoverage": ["C5", "C6"]
+    },
+    {
+      "id": "R12",
+      "title": "Personalized AI agent as a case manager",
+      "publication": "US12542216B2",
+      "priorityDate": "2024-07-18",
+      "displayedStatus": "Active",
+      "url": "https://patents.google.com/patent/US12542216B2/en",
+      "claimCoverage": ["C4", "C5", "C6", "C8"]
+    },
+    {
+      "id": "R13",
+      "title": "Multilingual Healthcare System with Personalized Medical Assistant, Decision Support, and Closed-Loop Device Control",
+      "publication": "US20260024661A1",
+      "priorityDate": "2024-07-18",
+      "displayedStatus": "Granted",
+      "url": "https://patents.google.com/patent/US20260024661A1/en",
+      "claimCoverage": ["C4", "C5", "C6", "C8"]
+    },
+    {
+      "id": "R14",
+      "title": "Prescription management system",
+      "publication": "WO2025193234A1",
+      "priorityDate": "2024-03-15",
+      "displayedStatus": "Pending",
+      "url": "https://patents.google.com/patent/WO2025193234A1/en",
+      "claimCoverage": ["C4", "C6", "C8"]
+    },
+    {
+      "id": "R15",
+      "title": "Proof-Carrying Code",
+      "year": 1997,
+      "url": "https://people.eecs.berkeley.edu/~necula/Papers/thesis.pdf",
+      "claimCoverage": ["C6"]
+    }
+  ],
+  "claimAssessment": [
+    {"id": "C1", "assessment": "KNOWN", "references": ["R1", "R2"]},
+    {"id": "C2", "assessment": "KNOWN", "references": ["R3"]},
+    {"id": "C3", "assessment": "KNOWN", "references": ["R4", "R5", "R6"]},
+    {"id": "C4", "assessment": "KNOWN_COMPONENTS", "references": ["R8", "R9", "R10", "R12", "R14"]},
+    {"id": "C5", "assessment": "KNOWN", "references": ["R7", "R11", "R12", "R13"]},
+    {"id": "C6", "assessment": "KNOWN_COMPONENTS", "references": ["R8", "R11", "R12", "R13", "R14", "R15"]},
+    {"id": "C7", "assessment": "CANDIDATE_CONJUNCTION", "references": ["R1", "R2", "R3", "R8", "R9", "R10"]},
+    {"id": "C8", "assessment": "CANDIDATE_CONJUNCTION_CLOSE_ART", "references": ["R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15"]}
+  ],
+  "candidateConjunction": {
+    "name": "revocable residual-stabilizer authorization",
+    "locatedAsCompleteDisclosure": false,
+    "statement": "A singular model-relative result exists only while verified observation receipts make the admissible-section set a singleton; revocation invalidates dependent uniqueness proofs and forces abstention when the restored stabilizer again obstructs singular equivariant choice.",
+    "candidateOnly": true
+  },
+  "coverage": {
+    "requiredDatabases": 9,
+    "directQueriesExecuted": 4,
+    "directQueriesBlockedOrIncomplete": 5,
+    "independentInformationSpecialistReview": false,
+    "backwardForwardCitationChasingComplete": false,
+    "claimByClaimPatentProfessionalReview": false
+  },
+  "verified": true,
+  "errors": []
+}

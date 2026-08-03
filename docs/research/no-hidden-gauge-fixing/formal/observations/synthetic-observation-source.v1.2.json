@@ -1,0 +1,14 @@
+{
+  "schema": "darwin.synthetic-observation-source.v1.2",
+  "fixtureOnly": true,
+  "sourceId": "urn:darwin:nhgf:v1.2:source:identity-triangle-a-false",
+  "title": "Synthetic Boolean triangle observation",
+  "observations": [
+    {
+      "locator": "observations/0",
+      "value": false,
+      "vertex": "A"
+    }
+  ],
+  "warning": "This source has no patient, clinical, or production semantics."
+}
