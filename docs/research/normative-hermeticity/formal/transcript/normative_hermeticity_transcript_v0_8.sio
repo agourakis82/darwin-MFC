@@ -1,0 +1,500 @@
+//@ run-pass
+// Darwin Normative Hermeticity: bounded reference-closure certificate v0.8.
+//
+// Three admissible resolver regimes, three binary semantic dependencies, and
+// two uninterpreted normative labels. Declared and content-bound reference
+// masks are 0..7; every bound reference must also be declared.
+//
+// Packed certificate:
+//   disposition = packed % 8
+//   certificate mask = (packed / 8) % 8
+//   certificate cardinality = (packed / 64) % 4
+// Dispositions: 0 REFUSE, 1 HERMETIC,
+// 2 BIND_REFERENCES, 3 ABSTAIN_OPEN_SEMANTICS,
+// 4 REFUSE_INTERNAL_INCONSISTENCY.
+//
+// The executable never returns a normative label or resolves a reference.
+
+fn nh_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn nh_valid_label(value: i64) -> i64 {
+    if value == 1 || value == 2 { return 1 }
+    return 0
+}
+
+fn nh_contains_q0(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 || mask == 5 || mask == 7 { return 1 }
+    return 0
+}
+
+fn nh_contains_q1(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn nh_contains_q2(mask: i64) -> i64 {
+    if mask == 4 || mask == 5 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn nh_subset(candidate: i64, allowed: i64) -> i64 {
+    if (candidate & allowed) == candidate { return 1 }
+    return 0
+}
+
+fn nh_popcount(mask: i64) -> i64 with Mut {
+    var count: i64 = 0
+    if nh_contains_q0(mask) == 1 { count = count + 1 }
+    if nh_contains_q1(mask) == 1 { count = count + 1 }
+    if nh_contains_q2(mask) == 1 { count = count + 1 }
+    return count
+}
+
+fn nh_difference_mask(left: i64, right: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if nh_contains_q0(left) != nh_contains_q0(right) { result = result + 1 }
+    if nh_contains_q1(left) != nh_contains_q1(right) { result = result + 2 }
+    if nh_contains_q2(left) != nh_contains_q2(right) { result = result + 4 }
+    return result
+}
+
+fn nh_unbound_mask(declared: i64, bound: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if nh_contains_q0(declared) == 1 && nh_contains_q0(bound) == 0 {
+        result = result + 1
+    }
+    if nh_contains_q1(declared) == 1 && nh_contains_q1(bound) == 0 {
+        result = result + 2
+    }
+    if nh_contains_q2(declared) == 1 && nh_contains_q2(bound) == 0 {
+        result = result + 4
+    }
+    return result
+}
+
+fn nh_remove_mask(original: i64, cut: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if nh_contains_q0(original) == 1 && nh_contains_q0(cut) == 0 {
+        result = result + 1
+    }
+    if nh_contains_q1(original) == 1 && nh_contains_q1(cut) == 0 {
+        result = result + 2
+    }
+    if nh_contains_q2(original) == 1 && nh_contains_q2(cut) == 0 {
+        result = result + 4
+    }
+    return result
+}
+
+fn nh_valid_inputs(
+    declared_references: i64, bound_references: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 {
+    if nh_valid_mask(declared_references) == 0 { return 0 }
+    if nh_valid_mask(bound_references) == 0 { return 0 }
+    if nh_valid_mask(resolutions0) == 0 { return 0 }
+    if nh_valid_mask(resolutions1) == 0 { return 0 }
+    if nh_valid_mask(resolutions2) == 0 { return 0 }
+    if nh_valid_label(label0) == 0 { return 0 }
+    if nh_valid_label(label1) == 0 { return 0 }
+    if nh_valid_label(label2) == 0 { return 0 }
+    if nh_subset(bound_references, declared_references) == 0 { return 0 }
+    return 1
+}
+
+fn nh_pair_separated(
+    available: i64,
+    left_resolutions: i64, right_resolutions: i64,
+    left_label: i64, right_label: i64
+) -> i64 with Mut {
+    if left_label == right_label { return 1 }
+    let difference = nh_difference_mask(left_resolutions, right_resolutions)
+    if (difference & available) != 0 { return 1 }
+    return 0
+}
+
+fn nh_identifies3(
+    available: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_pair_separated(
+        available, resolutions0, resolutions1, label0, label1
+    ) == 0 { return 0 }
+    if nh_pair_separated(
+        available, resolutions0, resolutions2, label0, label2
+    ) == 0 { return 0 }
+    if nh_pair_separated(
+        available, resolutions1, resolutions2, label1, label2
+    ) == 0 { return 0 }
+    return 1
+}
+
+fn nh_basis_sufficient(
+    allowed: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_subset(candidate, allowed) == 0 { return 0 }
+    return nh_identifies3(
+        candidate, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2
+    )
+}
+
+fn nh_binding_sufficient(
+    bound: i64, unbound: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_subset(candidate, unbound) == 0 { return 0 }
+    return nh_identifies3(
+        bound | candidate, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2
+    )
+}
+
+fn nh_cut_sufficient(
+    declared: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_subset(candidate, declared) == 0 { return 0 }
+    let remaining = nh_remove_mask(declared, candidate)
+    if nh_identifies3(
+        remaining, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2
+    ) == 0 { return 1 }
+    return 0
+}
+
+fn nh_minimal_basis(
+    allowed: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_basis_sufficient(allowed, 0, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 0 }
+    if nh_basis_sufficient(allowed, 1, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 1 }
+    if nh_basis_sufficient(allowed, 2, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 2 }
+    if nh_basis_sufficient(allowed, 4, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 4 }
+    if nh_basis_sufficient(allowed, 3, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 3 }
+    if nh_basis_sufficient(allowed, 5, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 5 }
+    if nh_basis_sufficient(allowed, 6, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 6 }
+    if nh_basis_sufficient(allowed, 7, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 7 }
+    return -1
+}
+
+fn nh_minimal_binding(
+    bound: i64, unbound: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_binding_sufficient(bound, unbound, 0, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 0 }
+    if nh_binding_sufficient(bound, unbound, 1, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 1 }
+    if nh_binding_sufficient(bound, unbound, 2, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 2 }
+    if nh_binding_sufficient(bound, unbound, 4, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 4 }
+    if nh_binding_sufficient(bound, unbound, 3, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 3 }
+    if nh_binding_sufficient(bound, unbound, 5, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 5 }
+    if nh_binding_sufficient(bound, unbound, 6, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 6 }
+    if nh_binding_sufficient(bound, unbound, 7, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 7 }
+    return -1
+}
+
+fn nh_minimal_semantic_cut(
+    declared: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_cut_sufficient(declared, 0, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 0 }
+    if nh_cut_sufficient(declared, 1, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 1 }
+    if nh_cut_sufficient(declared, 2, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 2 }
+    if nh_cut_sufficient(declared, 4, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 4 }
+    if nh_cut_sufficient(declared, 3, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 3 }
+    if nh_cut_sufficient(declared, 5, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 5 }
+    if nh_cut_sufficient(declared, 6, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 6 }
+    if nh_cut_sufficient(declared, 7, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 1 { return 7 }
+    return -1
+}
+
+fn nh_basis_score(
+    allowed: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_basis_sufficient(allowed, candidate, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 127 }
+    return nh_popcount(candidate) * 8 + candidate
+}
+
+fn nh_binding_score(
+    bound: i64, unbound: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_binding_sufficient(bound, unbound, candidate,
+        resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 127 }
+    return nh_popcount(candidate) * 8 + candidate
+}
+
+fn nh_cut_score(
+    declared: i64, candidate: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_cut_sufficient(declared, candidate, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 127 }
+    return nh_popcount(candidate) * 8 + candidate
+}
+
+fn nh_min8(
+    score0: i64, score1: i64, score2: i64, score3: i64,
+    score4: i64, score5: i64, score6: i64, score7: i64
+) -> i64 with Mut, Div {
+    var best = score0
+    if score1 < best { best = score1 }
+    if score2 < best { best = score2 }
+    if score3 < best { best = score3 }
+    if score4 < best { best = score4 }
+    if score5 < best { best = score5 }
+    if score6 < best { best = score6 }
+    if score7 < best { best = score7 }
+    if best >= 127 { return -1 }
+    return best % 8
+}
+
+fn nh_reference_minimal_basis(
+    allowed: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut, Div {
+    return nh_min8(
+        nh_basis_score(allowed, 0, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 1, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 2, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 3, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 4, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 5, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 6, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_basis_score(allowed, 7, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2)
+    )
+}
+
+fn nh_reference_minimal_binding(
+    bound: i64, unbound: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut, Div {
+    return nh_min8(
+        nh_binding_score(bound, unbound, 0, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 1, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 2, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 3, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 4, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 5, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 6, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_binding_score(bound, unbound, 7, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2)
+    )
+}
+
+fn nh_reference_minimal_semantic_cut(
+    declared: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut, Div {
+    return nh_min8(
+        nh_cut_score(declared, 0, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 1, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 2, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 3, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 4, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 5, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 6, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_cut_score(declared, 7, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2)
+    )
+}
+
+fn nh_pack_certificate(disposition: i64, certificate: i64) -> i64 with Mut {
+    return disposition + certificate * 8 + nh_popcount(certificate) * 64
+}
+
+fn nh_certificate(
+    declared: i64, bound: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut {
+    if nh_valid_inputs(declared, bound, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 0 }
+    if nh_identifies3(declared, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 3 }
+    let basis = nh_minimal_basis(bound, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2)
+    if basis >= 0 { return nh_pack_certificate(1, basis) }
+    let unbound = nh_unbound_mask(declared, bound)
+    let binding = nh_minimal_binding(bound, unbound,
+        resolutions0, resolutions1, resolutions2,
+        label0, label1, label2)
+    if binding < 0 { return 4 }
+    return nh_pack_certificate(2, binding)
+}
+
+fn nh_reference_certificate(
+    declared: i64, bound: i64,
+    resolutions0: i64, resolutions1: i64, resolutions2: i64,
+    label0: i64, label1: i64, label2: i64
+) -> i64 with Mut, Div {
+    if nh_valid_inputs(declared, bound, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 0 }
+    if nh_identifies3(declared, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2) == 0 { return 3 }
+    let basis = nh_reference_minimal_basis(bound,
+        resolutions0, resolutions1, resolutions2,
+        label0, label1, label2)
+    if basis >= 0 { return nh_pack_certificate(1, basis) }
+    let unbound = nh_unbound_mask(declared, bound)
+    let binding = nh_reference_minimal_binding(bound, unbound,
+        resolutions0, resolutions1, resolutions2,
+        label0, label1, label2)
+    if binding < 0 { return 4 }
+    return nh_pack_certificate(2, binding)
+}
+
+fn nh_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+// Complete canonical domain: 8^5 masks/tables * 2^3 label assignments
+// = 262,144 states, including bound-not-declared pairs that must refuse.
+fn nh_check_encoded_index(index: i64) -> i64 with Mut, Div {
+    let label2 = (index % 2) + 1
+    let label1 = ((index / 2) % 2) + 1
+    let label0 = ((index / 4) % 2) + 1
+    let resolutions2 = (index / 8) % 8
+    let resolutions1 = (index / 64) % 8
+    let resolutions0 = (index / 512) % 8
+    let bound = (index / 4096) % 8
+    let declared = (index / 32768) % 8
+    var failures = nh_verify_case(
+        nh_certificate(declared, bound, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_reference_certificate(declared, bound, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2)
+    )
+    failures = failures + nh_verify_case(
+        nh_minimal_semantic_cut(declared, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2),
+        nh_reference_minimal_semantic_cut(
+            declared, resolutions0, resolutions1, resolutions2,
+            label0, label1, label2)
+    )
+    return failures
+}
+
+fn nh_exhaustive_walk(start: i64, finish: i64) -> i64 with Mut, Div {
+    if start >= finish { return 0 }
+    if finish - start == 1 { return nh_check_encoded_index(start) }
+    let midpoint = (start + finish) / 2
+    return
+        nh_exhaustive_walk(start, midpoint) +
+        nh_exhaustive_walk(midpoint, finish)
+}
+
+fn nh_exhaustive_self_check() -> i64 with Mut, Div {
+    return nh_exhaustive_walk(0, 262144)
+}
+
+
+fn nh_emit_transcript_record(index: i64) with IO, Mut, Div {
+    let label2 = (index % 2) + 1
+    let label1 = ((index / 2) % 2) + 1
+    let label0 = ((index / 4) % 2) + 1
+    let resolutions2 = (index / 8) % 8
+    let resolutions1 = (index / 64) % 8
+    let resolutions0 = (index / 512) % 8
+    let bound = (index / 4096) % 8
+    let declared = (index / 32768) % 8
+    let certificate = nh_certificate(
+        declared, bound, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2
+    )
+    let cut = nh_minimal_semantic_cut(
+        declared, resolutions0, resolutions1, resolutions2,
+        label0, label1, label2
+    )
+    print_int(index)
+    print("|")
+    print_int(certificate)
+    print("|")
+    print_int(cut)
+    print("\n")
+}
+
+fn nh_emit_transcript_walk(start: i64, finish: i64) with IO, Mut, Div {
+    if start < finish {
+        if finish - start == 1 {
+            nh_emit_transcript_record(start)
+        } else {
+            let midpoint = (start + finish) / 2
+            nh_emit_transcript_walk(start, midpoint)
+            nh_emit_transcript_walk(midpoint, finish)
+        }
+    }
+}
+
+fn main() -> i64 with IO, Mut, Div {
+    nh_emit_transcript_walk(0, 262144)
+    return 0
+}

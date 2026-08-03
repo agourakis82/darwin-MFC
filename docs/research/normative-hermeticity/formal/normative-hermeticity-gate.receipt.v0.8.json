@@ -1,0 +1,124 @@
+{
+  "schema": "darwin.normative-hermeticity-receipt.v0.8",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "closedOn": "2026-08-02",
+  "compilerReconciled": true,
+  "nativeWasmParityEstablished": true,
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parent": {
+    "schema": "darwin.revocable-normative-influence-receipt.v0.7",
+    "path": "docs/research/revocable-normative-influence/formal/revocable-influence-gate.receipt.v0.7.json",
+    "sha256": "541f720f791ab5cf55686f192c1a19387dd719f1f7da242e952023381906ca24"
+  },
+  "compilerReceipt": {
+    "schema": "darwin.sounio.compiler-source-receipt.v1",
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "executionEvidence": {
+    "schema": "darwin.normative-hermeticity.execution-evidence.v0.8",
+    "path": "docs/research/normative-hermeticity/formal/evidence/normative-hermeticity-execution-evidence.v0.8.json",
+    "bytes": 8739,
+    "sha256": "252b5952b5744c7d58e3b2e5ab0e0f225d4abd7049a47c10bd32f5578a97e23b"
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "sourceFresh": true
+  },
+  "sounio": {
+    "sourcePath": "docs/research/normative-hermeticity/formal/sounio/normative_hermeticity_v0_8.sio",
+    "sourceSha256": "9a90f8debdf833425ae0f8c313cd9721ec0feb966ca5252610f8396bd2453d35",
+    "internalCanonicalStatesChecked": 262144,
+    "selfCheckCode": 103,
+    "normativeLabelReturned": false,
+    "referenceResolutionPerformed": false,
+    "authorityGranted": false
+  },
+  "wasm": {
+    "path": "docs/research/normative-hermeticity/formal/wasm/normative_hermeticity.v0.8.wasm",
+    "bytes": 11125,
+    "sha256": "1e24e9d33f6d4f6d5800489fee54936568a88f64395fc65baa393de761d6de2e",
+    "repeatSha256": "1e24e9d33f6d4f6d5800489fee54936568a88f64395fc65baa393de761d6de2e",
+    "imports": []
+  },
+  "native": {
+    "path": "docs/research/normative-hermeticity/formal/native/normative_hermeticity.v0.8.linux-x86_64",
+    "bytes": 45064,
+    "sha256": "71a3ceeee99124ac84e12bb3124d03a77420c40b0e19a3a39374a88f60c6ca23",
+    "repeatSha256": "71a3ceeee99124ac84e12bb3124d03a77420c40b0e19a3a39374a88f60c6ca23",
+    "executionExitCode": 103,
+    "repeatExecutionExitCode": 103
+  },
+  "nativeTranscript": {
+    "sourceSha256": "4e731ad20078c7da89508410edcb71e0990ba48d95f7badc20af4ae2aa3f0aa8",
+    "executableSha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+    "stdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd",
+    "stdoutBytes": 2887066,
+    "records": 262144,
+    "exactParity": true
+  },
+  "formal": {
+    "leanToolchain": "leanprover/lean4:v4.30.0-rc2",
+    "noUnboundInfluenceProved": true,
+    "zeroErrorForcedAbstentionProved": true,
+    "seededZeroErrorForcedAbstentionProved": true,
+    "sameReceiptDifferentLabelCountermodelConstructed": true,
+    "projectDeclaredAxioms": [],
+    "centralTheoremStandardAxioms": [],
+    "extensionalCompatibilityStandardAxioms": ["propext", "Quot.sound"]
+  },
+  "exhaustive": {
+    "hostileStatesChecked": 6400000,
+    "canonicalStatesChecked": 262144,
+    "validStatesChecked": 110592,
+    "invalidStatesRefused": 6289408,
+    "distinctCutStatesChecked": 32768,
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "cutMismatches": 0,
+    "cutMinimalityFailures": 0,
+    "transcriptMismatches": 0,
+    "dispositions": {
+      "REFUSE": 6289408,
+      "HERMETIC": 49584,
+      "BIND_REFERENCES": 22224,
+      "ABSTAIN_OPEN_SEMANTICS": 38784,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    }
+  },
+  "novelty": {
+    "candidate": "receipt-level normative hermeticity with a same-receipt countermodel, zero-error abstention, and minimal reference-closure certificates",
+    "priorArtSearchComplete": false,
+    "patentOpinionObtained": false,
+    "claimAllowed": false
+  },
+  "artifacts": [
+    {"path": "docs/research/normative-hermeticity/README.md", "bytes": 2418, "sha256": "7bc3057ae3d5709fca14cdc4a1bbbf371e948ae3ff656474aa699ea12fcf47b8"},
+    {"path": "docs/research/normative-hermeticity/prior-art-frontier-v0.8.md", "bytes": 6391, "sha256": "0c386f1ab4e7d5e76a6152deaccf829a4d4662385f93e93bd466a148749c4714"},
+    {"path": "docs/research/normative-hermeticity/normative-hermeticity-theory-v0.8.md", "bytes": 5818, "sha256": "00f1c60977f5fcea19143275d9cd439b4157f29ec0e908e9d36f9cb892e0fe6e"},
+    {"path": "docs/research/normative-hermeticity/formal/closure-v0.8.md", "bytes": 1548, "sha256": "574ca484e9a4ab9eb1f048d86818275bf55c6eaee9d368a7acb9158078861a0c"},
+    {"path": "docs/research/normative-hermeticity/formal/evidence/normative-hermeticity-execution-evidence.v0.8.json", "bytes": 8739, "sha256": "252b5952b5744c7d58e3b2e5ab0e0f225d4abd7049a47c10bd32f5578a97e23b"},
+    {"path": "docs/research/normative-hermeticity/formal/lean4/NormativeHermeticity.lean", "bytes": 14682, "sha256": "b1b80407c63e4f174ea585e4d9f82094efd79906fa7f5ab5e06d9673960e1277"},
+    {"path": "docs/research/normative-hermeticity/formal/lean4/NormativeHermeticityAudit.lean", "bytes": 487, "sha256": "0cce998d4b876029b23ab3cbad0df21d3a774ca35a1c805a8e120a6f463b9108"},
+    {"path": "docs/research/normative-hermeticity/formal/lean4/lake-manifest.json", "bytes": 152, "sha256": "ddbaca7df2de74c8b98d0569da87eecc8fc8f0841b3d206be1937b3078fc5640"},
+    {"path": "docs/research/normative-hermeticity/formal/lean4/lakefile.lean", "bytes": 147, "sha256": "42022fe8b44940af9540edadb7c5d0b5b4526c96504d135020aab7ee0d8fce52"},
+    {"path": "docs/research/normative-hermeticity/formal/lean4/lean-toolchain", "bytes": 29, "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61"},
+    {"path": "docs/research/normative-hermeticity/formal/native/normative_hermeticity.v0.8.linux-x86_64", "bytes": 45064, "sha256": "71a3ceeee99124ac84e12bb3124d03a77420c40b0e19a3a39374a88f60c6ca23"},
+    {"path": "docs/research/normative-hermeticity/formal/native/normative_hermeticity_transcript.v0.8.linux-x86_64", "bytes": 53256, "sha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184"},
+    {"path": "docs/research/normative-hermeticity/formal/sounio/normative_hermeticity_v0_8.sio", "bytes": 18974, "sha256": "9a90f8debdf833425ae0f8c313cd9721ec0feb966ca5252610f8396bd2453d35"},
+    {"path": "docs/research/normative-hermeticity/formal/transcript/normative_hermeticity_transcript_v0_8.sio", "bytes": 19160, "sha256": "4e731ad20078c7da89508410edcb71e0990ba48d95f7badc20af4ae2aa3f0aa8"},
+    {"path": "docs/research/normative-hermeticity/formal/vectors/normative-hermeticity-v0.8.json", "bytes": 1731, "sha256": "54286f03b299b49a4ddb7f91c1d974a4c3880698fd7aab4fbe7e5f8271c455bf"},
+    {"path": "docs/research/normative-hermeticity/formal/wasm/normative_hermeticity.v0.8.wasm", "bytes": 11125, "sha256": "1e24e9d33f6d4f6d5800489fee54936568a88f64395fc65baa393de761d6de2e"},
+    {"path": "scripts/verify-normative-hermeticity-v0.8.mjs", "bytes": 33599, "sha256": "fa0726590e8b84c6d8614c8e99d222bd6eec5da74b752f83f7d717f49dc06310"},
+    {"path": "scripts/generate-normative-hermeticity-native-transcript-v0.8.mjs", "bytes": 2380, "sha256": "e13667c5ceb83dc940ffa4eee222b69c86e8e5857dfcf7e65c27a066809dd1ae"}
+  ]
+}

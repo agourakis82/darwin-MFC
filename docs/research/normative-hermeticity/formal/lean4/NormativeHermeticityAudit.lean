@@ -1,0 +1,13 @@
+import NormativeHermeticity
+
+open Darwin.NormativeHermeticity
+
+#print axioms closedEngineNoUnboundInfluence
+#print axioms zeroErrorOpenSemanticsForcesAbstention
+#print axioms seededZeroErrorOpenSemanticsForcesAbstention
+#print axioms demoReceiptCloses
+#print axioms sameReceiptCanRequireDifferentLabels
+#print axioms declaredResolutionsExposeDifference
+#print axioms demoZeroErrorEngineMustAbstain
+#print axioms boundUnionUnboundEqualsDeclared
+#print axioms fullUnboundBindingIdentifies

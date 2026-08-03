@@ -1,0 +1,207 @@
+{
+  "schema": "darwin.normative-hermeticity.execution-evidence.v0.8",
+  "status": "VERIFIED_ABSTRACT_RESEARCH_ONLY",
+  "closedOn": "2026-08-02",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parent": {
+    "path": "docs/research/revocable-normative-influence/formal/revocable-influence-gate.receipt.v0.7.json",
+    "sha256": "541f720f791ab5cf55686f192c1a19387dd719f1f7da242e952023381906ca24"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "checkoutClean": true,
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "sourceFresh": true
+  },
+  "source": {
+    "path": "docs/research/normative-hermeticity/formal/sounio/normative_hermeticity_v0_8.sio",
+    "remotePath": "/tmp/darwin-nh-v08/normative_hermeticity_v0_8.sio",
+    "bytes": 18974,
+    "sha256": "9a90f8debdf833425ae0f8c313cd9721ec0feb966ca5252610f8396bd2453d35",
+    "remoteCopySha256": "9a90f8debdf833425ae0f8c313cd9721ec0feb966ca5252610f8396bd2453d35"
+  },
+  "build": {
+    "remotePlatform": "Linux x86_64",
+    "commands": [
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend wasm -o <wasm-a>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend wasm -o <wasm-b>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend native -o <native-a>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <source> --backend native -o <native-b>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <transcript-source> --backend native -o <transcript-a>",
+      "MADAROS_RAW_BIN=<source-fresh-compiler> bin/madaros build <transcript-source> --backend native -o <transcript-b>"
+    ],
+    "wasmCompileExitCodes": [0, 0],
+    "nativeCompileExitCodes": [0, 0],
+    "transcriptCompileExitCodes": [0, 0]
+  },
+  "wasm": {
+    "path": "docs/research/normative-hermeticity/formal/wasm/normative_hermeticity.v0.8.wasm",
+    "bytes": 11125,
+    "sha256": "1e24e9d33f6d4f6d5800489fee54936568a88f64395fc65baa393de761d6de2e",
+    "repeatSha256": "1e24e9d33f6d4f6d5800489fee54936568a88f64395fc65baa393de761d6de2e",
+    "builds": 2,
+    "mainResult": 103,
+    "internalSelfCheckResult": 0,
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "nh_basis_score",
+      "nh_basis_sufficient",
+      "nh_binding_score",
+      "nh_binding_sufficient",
+      "nh_certificate",
+      "nh_check_encoded_index",
+      "nh_contains_q0",
+      "nh_contains_q1",
+      "nh_contains_q2",
+      "nh_cut_score",
+      "nh_cut_sufficient",
+      "nh_difference_mask",
+      "nh_exhaustive_self_check",
+      "nh_exhaustive_walk",
+      "nh_identifies3",
+      "nh_min8",
+      "nh_minimal_basis",
+      "nh_minimal_binding",
+      "nh_minimal_semantic_cut",
+      "nh_pack_certificate",
+      "nh_pair_separated",
+      "nh_popcount",
+      "nh_reference_certificate",
+      "nh_reference_minimal_basis",
+      "nh_reference_minimal_binding",
+      "nh_reference_minimal_semantic_cut",
+      "nh_remove_mask",
+      "nh_subset",
+      "nh_unbound_mask",
+      "nh_valid_inputs",
+      "nh_valid_label",
+      "nh_valid_mask",
+      "nh_verify_case"
+    ]
+  },
+  "native": {
+    "path": "docs/research/normative-hermeticity/formal/native/normative_hermeticity.v0.8.linux-x86_64",
+    "bytes": 45064,
+    "sha256": "71a3ceeee99124ac84e12bb3124d03a77420c40b0e19a3a39374a88f60c6ca23",
+    "repeatSha256": "71a3ceeee99124ac84e12bb3124d03a77420c40b0e19a3a39374a88f60c6ca23",
+    "builds": 2,
+    "executionExitCode": 103,
+    "repeatExecutionExitCode": 103
+  },
+  "nativeTranscript": {
+    "source": {
+      "path": "docs/research/normative-hermeticity/formal/transcript/normative_hermeticity_transcript_v0_8.sio",
+      "bytes": 19160,
+      "sha256": "4e731ad20078c7da89508410edcb71e0990ba48d95f7badc20af4ae2aa3f0aa8",
+      "generatorPath": "scripts/generate-normative-hermeticity-native-transcript-v0.8.mjs",
+      "generatorSha256": "e13667c5ceb83dc940ffa4eee222b69c86e8e5857dfcf7e65c27a066809dd1ae"
+    },
+    "executable": {
+      "path": "docs/research/normative-hermeticity/formal/native/normative_hermeticity_transcript.v0.8.linux-x86_64",
+      "bytes": 53256,
+      "sha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+      "repeatSha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+      "builds": 2
+    },
+    "execution": {
+      "exitCode": 0,
+      "repeatExitCode": 0,
+      "records": 262144,
+      "stdoutBytes": 2887066,
+      "stdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd",
+      "repeatStdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd"
+    },
+    "exactNativeWasmParity": true
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "4.30.0-rc2",
+    "compilerCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "buildPassed": true,
+    "auditPassed": true,
+    "sorryCount": 0,
+    "admitCount": 0,
+    "projectDeclaredAxioms": [],
+    "source": {
+      "path": "docs/research/normative-hermeticity/formal/lean4/NormativeHermeticity.lean",
+      "bytes": 14682,
+      "sha256": "b1b80407c63e4f174ea585e4d9f82094efd79906fa7f5ab5e06d9673960e1277"
+    },
+    "audit": {
+      "path": "docs/research/normative-hermeticity/formal/lean4/NormativeHermeticityAudit.lean",
+      "bytes": 487,
+      "sha256": "0cce998d4b876029b23ab3cbad0df21d3a774ca35a1c805a8e120a6f463b9108"
+    },
+    "theorems": {
+      "noUnboundInfluence": {"standardAxioms": []},
+      "forcedAbstention": {"standardAxioms": []},
+      "seededForcedAbstention": {"standardAxioms": []},
+      "sameReceiptCountermodel": {"standardAxioms": ["propext", "Quot.sound"]},
+      "declaredResolutionDifference": {"standardAxioms": ["propext"]},
+      "boundUnionUnbound": {"standardAxioms": ["propext", "Quot.sound"]},
+      "fullUnboundBinding": {"standardAxioms": ["propext", "Quot.sound"]}
+    }
+  },
+  "hostVerifier": {
+    "path": "scripts/verify-normative-hermeticity-v0.8.mjs",
+    "bytes": 33599,
+    "sha256": "fa0726590e8b84c6d8614c8e99d222bd6eec5da74b752f83f7d717f49dc06310",
+    "runtimeOnlyExitCode": 0
+  },
+  "exhaustive": {
+    "hostileStatesChecked": 6400000,
+    "canonicalStatesChecked": 262144,
+    "validStatesChecked": 110592,
+    "invalidStatesRefused": 6289408,
+    "distinctCutStatesChecked": 32768,
+    "dispositions": {
+      "REFUSE": 6289408,
+      "HERMETIC": 49584,
+      "BIND_REFERENCES": 22224,
+      "ABSTAIN_OPEN_SEMANTICS": 38784,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    },
+    "certificateCardinality": {"zero": 66432, "one": 39264, "two": 4896, "three": 0},
+    "cutCardinality": {"none": 8192, "zero": 14736, "one": 8496, "two": 1296, "three": 48},
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "cutMismatches": 0,
+    "cutMinimalityFailures": 0
+  },
+  "observedVectors": [
+    {"id": "bound-reference-not-declared-refuses", "packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1},
+    {"id": "declared-semantic-universe-remains-open", "packed": 3, "disposition": "ABSTAIN_OPEN_SEMANTICS", "mask": 0, "cost": 0, "cut": 0},
+    {"id": "constant-label-is-hermetic-with-empty-basis", "packed": 1, "disposition": "HERMETIC", "mask": 0, "cost": 0, "cut": -1},
+    {"id": "bound-q0-is-minimal-hermetic-basis", "packed": 73, "disposition": "HERMETIC", "mask": 1, "cost": 1, "cut": 1},
+    {"id": "unbound-q0-must-be-bound", "packed": 74, "disposition": "BIND_REFERENCES", "mask": 1, "cost": 1, "cut": 1},
+    {"id": "unbound-q1-is-minimal-binding", "packed": 82, "disposition": "BIND_REFERENCES", "mask": 2, "cost": 1, "cut": 1},
+    {"id": "two-reference-binding-required", "packed": 154, "disposition": "BIND_REFERENCES", "mask": 3, "cost": 2, "cut": 1},
+    {"id": "invalid-normative-label-refuses", "packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+  ],
+  "wasmTranscript": {
+    "records": 262144,
+    "bytes": 2887066,
+    "sha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd"
+  },
+  "claimBoundary": {
+    "normativeLabelReturned": false,
+    "referenceResolutionPerformed": false,
+    "authorityGranted": false,
+    "clinicalMeaning": false,
+    "noveltyOpinionClaimed": false
+  }
+}

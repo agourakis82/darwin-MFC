@@ -1,0 +1,47 @@
+{
+  "schema": "darwin.normative-hermeticity.vectors.v0.8",
+  "clinicalMeaning": false,
+  "normativeLabelReturned": false,
+  "cases": [
+    {
+      "id": "bound-reference-not-declared-refuses",
+      "input": [1, 2, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+    },
+    {
+      "id": "declared-semantic-universe-remains-open",
+      "input": [0, 0, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 3, "disposition": "ABSTAIN_OPEN_SEMANTICS", "mask": 0, "cost": 0, "cut": 0}
+    },
+    {
+      "id": "constant-label-is-hermetic-with-empty-basis",
+      "input": [0, 0, 0, 7, 3, 1, 1, 1],
+      "expected": {"packed": 1, "disposition": "HERMETIC", "mask": 0, "cost": 0, "cut": -1}
+    },
+    {
+      "id": "bound-q0-is-minimal-hermetic-basis",
+      "input": [3, 1, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 73, "disposition": "HERMETIC", "mask": 1, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "unbound-q0-must-be-bound",
+      "input": [1, 0, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 74, "disposition": "BIND_REFERENCES", "mask": 1, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "unbound-q1-is-minimal-binding",
+      "input": [3, 1, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 82, "disposition": "BIND_REFERENCES", "mask": 2, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "two-reference-binding-required",
+      "input": [3, 0, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 154, "disposition": "BIND_REFERENCES", "mask": 3, "cost": 2, "cut": 1}
+    },
+    {
+      "id": "invalid-normative-label-refuses",
+      "input": [3, 1, 0, 1, 2, 0, 2, 2],
+      "expected": {"packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+    }
+  ]
+}
