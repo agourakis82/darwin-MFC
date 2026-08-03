@@ -1,0 +1,14 @@
+import RevocableInfluence
+
+open Darwin.RevocableInfluence
+
+#print axioms sanitizePriorView
+#print axioms postRevocationRunUsesCurrentView
+#print axioms sanitizedRetainedHistoryEqualsPostRevocationRun
+#print axioms sanitizedEngineNoResidualInfluence
+#print axioms postRevocationZeroErrorForcesAbstention
+#print axioms seededPostRevocationZeroErrorForcesAbstention
+#print axioms revokedMemoriesSanitizeEqual
+#print axioms unsanitizedResidualInfluenceExists
+#print axioms currentUnionRevokedEqualsPrior
+#print axioms fullRevokedRestoreIdentifies

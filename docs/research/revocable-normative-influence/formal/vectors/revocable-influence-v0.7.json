@@ -1,0 +1,47 @@
+{
+  "schema": "darwin.revocable-normative-influence.vectors.v0.7",
+  "clinicalMeaning": false,
+  "recommendationReturned": false,
+  "cases": [
+    {
+      "id": "non-monotone-authority-refuses",
+      "input": [1, 2, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+    },
+    {
+      "id": "prior-never-identified",
+      "input": [0, 0, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 3, "disposition": "REFUSE_PRIOR_UNIDENTIFIED", "mask": 0, "cost": 0, "cut": 0}
+    },
+    {
+      "id": "constant-recommendation-survives-empty",
+      "input": [0, 0, 0, 7, 3, 1, 1, 1],
+      "expected": {"packed": 1, "disposition": "SURVIVES_REDERIVED", "mask": 0, "cost": 0, "cut": -1}
+    },
+    {
+      "id": "survives-on-current-q0",
+      "input": [3, 1, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 73, "disposition": "SURVIVES_REDERIVED", "mask": 1, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "single-revoked-query-forces-abstention",
+      "input": [1, 0, 0, 1, 0, 1, 2, 1],
+      "expected": {"packed": 74, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 1, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "revoked-q1-is-minimal-restore",
+      "input": [3, 1, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 82, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 2, "cost": 1, "cut": 1}
+    },
+    {
+      "id": "two-query-restore-required",
+      "input": [3, 0, 0, 1, 2, 1, 2, 2],
+      "expected": {"packed": 154, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 3, "cost": 2, "cut": 1}
+    },
+    {
+      "id": "invalid-recommendation-refuses",
+      "input": [3, 1, 0, 1, 2, 0, 2, 2],
+      "expected": {"packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+    }
+  ]
+}

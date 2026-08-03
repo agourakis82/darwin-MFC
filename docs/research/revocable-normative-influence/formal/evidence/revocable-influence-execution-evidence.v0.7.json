@@ -1,0 +1,195 @@
+{
+  "schema": "darwin.revocable-normative-influence.execution-evidence.v0.7",
+  "status": "VERIFIED_ABSTRACT_RESEARCH_ONLY",
+  "closedOn": "2026-08-02",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parent": {
+    "path": "docs/research/auctoritas-protocol-calculus/formal/auctoritas-protocol-gate.receipt.v0.6.json",
+    "sha256": "7013ce54f1f88f5aab58855bf9b29ec477c46ba969e782eb904e6967afbdc670"
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "checkoutClean": true,
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "sourceFresh": true
+  },
+  "source": {
+    "path": "docs/research/revocable-normative-influence/formal/sounio/revocable_influence_v0_7.sio",
+    "bytes": 20291,
+    "sha256": "ee8798fbbe3fc7756184aa63b03cb736dd097a25a758fa8d5c04713f61c0b453",
+    "remoteCopySha256": "ee8798fbbe3fc7756184aa63b03cb736dd097a25a758fa8d5c04713f61c0b453"
+  },
+  "wasm": {
+    "path": "docs/research/revocable-normative-influence/formal/wasm/revocable_influence.v0.7.wasm",
+    "bytes": 11138,
+    "sha256": "d3d206c9e27f554306074456cb80a8eb6082d9695bb0c3cdc43a2abe2ceb41e0",
+    "repeatSha256": "d3d206c9e27f554306074456cb80a8eb6082d9695bb0c3cdc43a2abe2ceb41e0",
+    "builds": 2,
+    "mainResult": 97,
+    "internalSelfCheckResult": 0,
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "ri_basis_score",
+      "ri_basis_sufficient",
+      "ri_certificate",
+      "ri_check_encoded_index",
+      "ri_contains_q0",
+      "ri_contains_q1",
+      "ri_contains_q2",
+      "ri_cut_score",
+      "ri_cut_sufficient",
+      "ri_difference_mask",
+      "ri_exhaustive_self_check",
+      "ri_exhaustive_walk",
+      "ri_identifies3",
+      "ri_min8",
+      "ri_minimal_basis",
+      "ri_minimal_restore",
+      "ri_minimal_revocation_cut",
+      "ri_pack_certificate",
+      "ri_pair_separated",
+      "ri_popcount",
+      "ri_reference_certificate",
+      "ri_reference_minimal_basis",
+      "ri_reference_minimal_restore",
+      "ri_reference_minimal_revocation_cut",
+      "ri_remove_mask",
+      "ri_restore_score",
+      "ri_restore_sufficient",
+      "ri_revoked_mask",
+      "ri_subset",
+      "ri_valid_inputs",
+      "ri_valid_mask",
+      "ri_valid_recommendation",
+      "ri_verify_case"
+    ]
+  },
+  "native": {
+    "path": "docs/research/revocable-normative-influence/formal/native/revocable_influence.v0.7.linux-x86_64",
+    "bytes": 45064,
+    "sha256": "496a626314be6004655adc955e8d23899f92a4fa8a01fd713c5c338e2ed244f6",
+    "repeatSha256": "496a626314be6004655adc955e8d23899f92a4fa8a01fd713c5c338e2ed244f6",
+    "builds": 2,
+    "executionExitCode": 97,
+    "repeatExecutionExitCode": 97
+  },
+  "nativeTranscript": {
+    "source": {
+      "path": "docs/research/revocable-normative-influence/formal/transcript/revocable_influence_transcript_v0_7.sio",
+      "bytes": 20516,
+      "sha256": "4ccf2b8dd04e564629b0da0c5616acf4d1d126f87f79c080eec3b3101ea2daa7",
+      "generatorPath": "scripts/generate-revocable-influence-native-transcript-v0.7.mjs",
+      "generatorSha256": "e2adf7ce929d25cf223554725c1121165e2767b5757025738767204ce38a1031"
+    },
+    "executable": {
+      "path": "docs/research/revocable-normative-influence/formal/native/revocable_influence_transcript.v0.7.linux-x86_64",
+      "bytes": 53256,
+      "sha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+      "repeatSha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+      "builds": 2
+    },
+    "execution": {
+      "exitCode": 0,
+      "repeatExitCode": 0,
+      "records": 262144,
+      "stdoutBytes": 2887066,
+      "stdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd",
+      "repeatStdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd"
+    },
+    "exactNativeWasmParity": true
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "version": "4.30.0-rc2",
+    "compilerCommit": "3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc",
+    "buildPassed": true,
+    "auditPassed": true,
+    "sorryCount": 0,
+    "admitCount": 0,
+    "projectDeclaredAxioms": [],
+    "source": {
+      "path": "docs/research/revocable-normative-influence/formal/lean4/RevocableInfluence.lean",
+      "bytes": 15958,
+      "sha256": "d34e52e667bac8ea63e49c2115c6eaac6d35333b701d31afb920d5d7d62c15d4"
+    },
+    "audit": {
+      "path": "docs/research/revocable-normative-influence/formal/lean4/RevocableInfluenceAudit.lean",
+      "bytes": 543,
+      "sha256": "5e8972ce2b4bd44b0d44b4ebbbd366c8b911d764ea54154d559803efaf538b9d"
+    },
+    "theorems": {
+      "sanitizePriorView": {"standardAxioms": ["propext", "Quot.sound"]},
+      "postRevocationRunUsesCurrentView": {"standardAxioms": []},
+      "sanitizedRetainedHistoryCompatibility": {"standardAxioms": ["propext", "Quot.sound"]},
+      "noResidualInfluence": {"standardAxioms": []},
+      "forcedAbstention": {"standardAxioms": []},
+      "seededForcedAbstention": {"standardAxioms": []},
+      "revokedMemoriesSanitizeEqual": {"standardAxioms": ["propext", "Quot.sound"]},
+      "unsanitizedCounterexample": {"standardAxioms": ["propext"]},
+      "currentUnionRevoked": {"standardAxioms": ["propext", "Quot.sound"]},
+      "fullRevokedRestore": {"standardAxioms": ["propext", "Quot.sound"]}
+    }
+  },
+  "hostVerifier": {
+    "path": "scripts/verify-revocable-influence-v0.7.mjs",
+    "bytes": 33600,
+    "sha256": "1a9360d5ea1ad982280c126fbd9adf83f295fa0c9c1b5b28df7843f69132e672",
+    "runtimeOnlyExitCode": 0
+  },
+  "exhaustive": {
+    "hostileStatesChecked": 6400000,
+    "canonicalStatesChecked": 262144,
+    "validStatesChecked": 110592,
+    "invalidStatesRefused": 6289408,
+    "distinctCutStatesChecked": 32768,
+    "dispositions": {
+      "REFUSE": 6289408,
+      "SURVIVES_REDERIVED": 49584,
+      "ABSTAIN_RESIDUAL_INFLUENCE": 22224,
+      "REFUSE_PRIOR_UNIDENTIFIED": 38784,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    },
+    "certificateCardinality": {"zero": 66432, "one": 39264, "two": 4896, "three": 0},
+    "cutCardinality": {"none": 8192, "zero": 14736, "one": 8496, "two": 1296, "three": 48},
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "cutMismatches": 0,
+    "cutMinimalityFailures": 0
+  },
+  "observedVectors": [
+    {"id": "non-monotone-authority-refuses", "packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1},
+    {"id": "prior-never-identified", "packed": 3, "disposition": "REFUSE_PRIOR_UNIDENTIFIED", "mask": 0, "cost": 0, "cut": 0},
+    {"id": "constant-recommendation-survives-empty", "packed": 1, "disposition": "SURVIVES_REDERIVED", "mask": 0, "cost": 0, "cut": -1},
+    {"id": "survives-on-current-q0", "packed": 73, "disposition": "SURVIVES_REDERIVED", "mask": 1, "cost": 1, "cut": 1},
+    {"id": "single-revoked-query-forces-abstention", "packed": 74, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 1, "cost": 1, "cut": 1},
+    {"id": "revoked-q1-is-minimal-restore", "packed": 82, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 2, "cost": 1, "cut": 1},
+    {"id": "two-query-restore-required", "packed": 154, "disposition": "ABSTAIN_RESIDUAL_INFLUENCE", "mask": 3, "cost": 2, "cut": 1},
+    {"id": "invalid-recommendation-refuses", "packed": 0, "disposition": "REFUSE", "mask": 0, "cost": 0, "cut": 1}
+  ],
+  "wasmTranscript": {
+    "records": 262144,
+    "bytes": 2887066,
+    "sha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd"
+  },
+  "claimBoundary": {
+    "recommendationReturned": false,
+    "authorityGranted": false,
+    "clinicalMeaning": false,
+    "statisticalUnlearningClaimed": false,
+    "noveltyOpinionClaimed": false
+  }
+}

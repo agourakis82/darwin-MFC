@@ -1,0 +1,905 @@
+import {createHash} from 'node:crypto';
+import {readFileSync, statSync} from 'node:fs';
+import {dirname, resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {buildTranscriptSource} from './generate-revocable-influence-native-transcript-v0.7.mjs';
+
+const verifierPath = fileURLToPath(import.meta.url);
+const repoRoot = resolve(dirname(verifierPath), '..');
+const packageDir = resolve(
+  repoRoot,
+  'docs/research/revocable-normative-influence',
+);
+const formalDir = resolve(packageDir, 'formal');
+const sourcePath = resolve(formalDir, 'sounio/revocable_influence_v0_7.sio');
+const wasmPath = resolve(formalDir, 'wasm/revocable_influence.v0.7.wasm');
+const nativePath = resolve(
+  formalDir,
+  'native/revocable_influence.v0.7.linux-x86_64',
+);
+const transcriptSourcePath = resolve(
+  formalDir,
+  'transcript/revocable_influence_transcript_v0_7.sio',
+);
+const transcriptNativePath = resolve(
+  formalDir,
+  'native/revocable_influence_transcript.v0.7.linux-x86_64',
+);
+const transcriptGeneratorPath = resolve(
+  repoRoot,
+  'scripts/generate-revocable-influence-native-transcript-v0.7.mjs',
+);
+const vectorsPath = resolve(
+  formalDir,
+  'vectors/revocable-influence-v0.7.json',
+);
+const evidencePath = resolve(
+  formalDir,
+  'evidence/revocable-influence-execution-evidence.v0.7.json',
+);
+const receiptPath = resolve(
+  formalDir,
+  'revocable-influence-gate.receipt.v0.7.json',
+);
+const closurePath = resolve(formalDir, 'closure-v0.7.md');
+const parentReceiptPath = resolve(
+  repoRoot,
+  'docs/research/auctoritas-protocol-calculus/formal/auctoritas-protocol-gate.receipt.v0.6.json',
+);
+const compilerReceiptPath = resolve(
+  repoRoot,
+  'docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json',
+);
+const runtimeOnly = process.argv.includes('--runtime-only');
+
+const vectors = JSON.parse(readFileSync(vectorsPath, 'utf8'));
+const evidence = runtimeOnly
+  ? null
+  : JSON.parse(readFileSync(evidencePath, 'utf8'));
+const receipt = runtimeOnly
+  ? null
+  : JSON.parse(readFileSync(receiptPath, 'utf8'));
+const parentReceipt = JSON.parse(readFileSync(parentReceiptPath, 'utf8'));
+const compilerReceipt = JSON.parse(readFileSync(compilerReceiptPath, 'utf8'));
+const wasmBytes = readFileSync(wasmPath);
+const canonicalSource = readFileSync(sourcePath, 'utf8');
+const transcriptSource = readFileSync(transcriptSourcePath, 'utf8');
+const errors = [];
+const check = (condition, message) => {
+  if (!condition) errors.push(message);
+};
+const sha256 = (value) => createHash('sha256').update(value).digest('hex');
+const sha256File = (path) => sha256(readFileSync(path));
+const artifactRecordValid = (artifact) => {
+  const path = resolve(repoRoot, artifact.path);
+  return (
+    sha256File(path) === artifact.sha256 &&
+    statSync(path).size === artifact.bytes
+  );
+};
+const refusalBoundaryValid = (value) =>
+  value.clinicalDisposition === 'REFUSE' &&
+  value.clinicalUseAllowed === false &&
+  value.productionAuthorized === false &&
+  value.noveltyEstablished === false &&
+  value.signed === false;
+
+check(
+  transcriptSource === buildTranscriptSource(canonicalSource),
+  'native transcript: generated source drift',
+);
+
+check(
+  wasmBytes.length >= 8 &&
+    wasmBytes.subarray(0, 4).equals(Buffer.from([0, 97, 115, 109])),
+  'WASM: invalid magic number',
+);
+check(WebAssembly.validate(wasmBytes), 'WASM: runtime validation failed');
+
+let module;
+let instance;
+try {
+  module = await WebAssembly.compile(wasmBytes);
+  instance = await WebAssembly.instantiate(module, {});
+} catch (error) {
+  errors.push(`WASM: compile or instantiate failed: ${error.message}`);
+}
+
+const expectedExports = [
+  'main',
+  'memory',
+  'ri_basis_score',
+  'ri_basis_sufficient',
+  'ri_certificate',
+  'ri_check_encoded_index',
+  'ri_contains_q0',
+  'ri_contains_q1',
+  'ri_contains_q2',
+  'ri_cut_score',
+  'ri_cut_sufficient',
+  'ri_difference_mask',
+  'ri_exhaustive_self_check',
+  'ri_exhaustive_walk',
+  'ri_identifies3',
+  'ri_min8',
+  'ri_minimal_basis',
+  'ri_minimal_restore',
+  'ri_minimal_revocation_cut',
+  'ri_pack_certificate',
+  'ri_pair_separated',
+  'ri_popcount',
+  'ri_reference_certificate',
+  'ri_reference_minimal_basis',
+  'ri_reference_minimal_restore',
+  'ri_reference_minimal_revocation_cut',
+  'ri_remove_mask',
+  'ri_restore_score',
+  'ri_restore_sufficient',
+  'ri_revoked_mask',
+  'ri_subset',
+  'ri_valid_inputs',
+  'ri_valid_mask',
+  'ri_valid_recommendation',
+  'ri_verify_case',
+];
+const imports = module ? WebAssembly.Module.imports(module) : [];
+const exports = module
+  ? WebAssembly.Module.exports(module).map((entry) => entry.name).sort()
+  : [];
+check(imports.length === 0, 'WASM: revocation witness must have zero imports');
+check(
+  JSON.stringify(exports) === JSON.stringify(expectedExports),
+  'WASM: export surface drift',
+);
+check(
+  !exports.some((name) =>
+    name.includes('select_recommendation') || name.includes('recommendation_for')),
+  'WASM: executable must not export a recommendation selector',
+);
+
+const validMask = (value) => Number.isInteger(value) && value >= 0 && value <= 7;
+const validRecommendation = (value) => value === 1 || value === 2;
+const subset = (candidate, allowed) => (candidate & allowed) === candidate;
+const popcount = (mask) =>
+  (mask & 1 ? 1 : 0) + (mask & 2 ? 1 : 0) + (mask & 4 ? 1 : 0);
+const validInput = ([prior, current, answers0, answers1, answers2, r0, r1, r2]) =>
+  validMask(prior) &&
+  validMask(current) &&
+  validMask(answers0) &&
+  validMask(answers1) &&
+  validMask(answers2) &&
+  validRecommendation(r0) &&
+  validRecommendation(r1) &&
+  validRecommendation(r2) &&
+  subset(current, prior);
+const identifies = (mask, answers, recommendations) => {
+  for (let left = 0; left < 3; left += 1) {
+    for (let right = left + 1; right < 3; right += 1) {
+      if (
+        recommendations[left] !== recommendations[right] &&
+        (((answers[left] ^ answers[right]) & mask) === 0)
+      ) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+const rankedMasks = [0, 1, 2, 4, 3, 5, 6, 7];
+const minimalBasis = (allowed, answers, recommendations) =>
+  rankedMasks.find(
+    (candidate) =>
+      subset(candidate, allowed) && identifies(candidate, answers, recommendations),
+  ) ?? -1;
+const minimalRestore = (current, revoked, answers, recommendations) =>
+  rankedMasks.find(
+    (candidate) =>
+      subset(candidate, revoked) &&
+      identifies(current | candidate, answers, recommendations),
+  ) ?? -1;
+const removeMask = (original, cut) => original & (7 ^ cut);
+const minimalCut = (prior, answers, recommendations) =>
+  rankedMasks.find(
+    (candidate) =>
+      subset(candidate, prior) &&
+      !identifies(removeMask(prior, candidate), answers, recommendations),
+  ) ?? -1;
+const packCertificate = (disposition, mask) =>
+  disposition + mask * 8 + popcount(mask) * 64;
+const oracleCertificate = (input) => {
+  if (!validInput(input)) return 0;
+  const [prior, current, ...rest] = input;
+  const answers = rest.slice(0, 3);
+  const recommendations = rest.slice(3, 6);
+  if (!identifies(prior, answers, recommendations)) return 3;
+  const basis = minimalBasis(current, answers, recommendations);
+  if (basis >= 0) return packCertificate(1, basis);
+  const revoked = prior & (7 ^ current);
+  const restore = minimalRestore(current, revoked, answers, recommendations);
+  return restore < 0 ? 4 : packCertificate(2, restore);
+};
+const decodeCertificate = (packed) => ({
+  dispositionCode: packed % 8,
+  mask: Math.floor(packed / 8) % 8,
+  cost: Math.floor(packed / 64) % 4,
+});
+const inputFromCanonicalIndex = (index) => [
+  Math.floor(index / 32768) % 8,
+  Math.floor(index / 4096) % 8,
+  Math.floor(index / 512) % 8,
+  Math.floor(index / 64) % 8,
+  Math.floor(index / 8) % 8,
+  (Math.floor(index / 4) % 2) + 1,
+  (Math.floor(index / 2) % 2) + 1,
+  (index % 2) + 1,
+];
+const certificateIsMinimal = (input, packed) => {
+  if (!validInput(input)) return packed === 0;
+  const decoded = decodeCertificate(packed);
+  const [prior, current, ...rest] = input;
+  const answers = rest.slice(0, 3);
+  const recommendations = rest.slice(3, 6);
+  if (!identifies(prior, answers, recommendations)) {
+    return (
+      decoded.dispositionCode === 3 && decoded.mask === 0 && decoded.cost === 0
+    );
+  }
+  const basis = minimalBasis(current, answers, recommendations);
+  if (basis >= 0) {
+    return (
+      decoded.dispositionCode === 1 &&
+      decoded.mask === basis &&
+      decoded.cost === popcount(basis) &&
+      subset(decoded.mask, current) &&
+      identifies(decoded.mask, answers, recommendations)
+    );
+  }
+  const revoked = prior & (7 ^ current);
+  const restore = minimalRestore(current, revoked, answers, recommendations);
+  return (
+    restore >= 0 &&
+    decoded.dispositionCode === 2 &&
+    decoded.mask === restore &&
+    decoded.cost === popcount(restore) &&
+    subset(decoded.mask, revoked) &&
+    identifies(current | decoded.mask, answers, recommendations)
+  );
+};
+const cutIsMinimal = (prior, answers, recommendations, cut) => {
+  const expected = minimalCut(prior, answers, recommendations);
+  return (
+    cut === expected &&
+    (cut < 0 ||
+      (subset(cut, prior) &&
+        !identifies(removeMask(prior, cut), answers, recommendations)))
+  );
+};
+
+const maskValues = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8];
+const recommendationValues = [0, 1, 2, 3];
+const dispositionNames = {
+  0: 'REFUSE',
+  1: 'SURVIVES_REDERIVED',
+  2: 'ABSTAIN_RESIDUAL_INFLUENCE',
+  3: 'REFUSE_PRIOR_UNIDENTIFIED',
+  4: 'REFUSE_INTERNAL_INCONSISTENCY',
+};
+const coverage = {
+  hostileStatesChecked: 0,
+  canonicalStatesChecked: 262144,
+  validStatesChecked: 0,
+  invalidStatesRefused: 0,
+  distinctCutStatesChecked: 32768,
+  dispositions: {
+    REFUSE: 0,
+    SURVIVES_REDERIVED: 0,
+    ABSTAIN_RESIDUAL_INFLUENCE: 0,
+    REFUSE_PRIOR_UNIDENTIFIED: 0,
+    REFUSE_INTERNAL_INCONSISTENCY: 0,
+  },
+  certificateCardinality: {zero: 0, one: 0, two: 0, three: 0},
+  cutCardinality: {none: 0, zero: 0, one: 0, two: 0, three: 0},
+};
+let parityMismatches = 0;
+let referenceMismatches = 0;
+let validityMismatches = 0;
+let minimalityFailures = 0;
+let cutMismatches = 0;
+let cutMinimalityFailures = 0;
+let wasmTranscript = {records: 0, bytes: 0, sha256: null};
+
+if (instance) {
+  const api = instance.exports;
+  for (const prior of maskValues) {
+    for (const current of maskValues) {
+      for (const answers0 of maskValues) {
+        for (const answers1 of maskValues) {
+          for (const answers2 of maskValues) {
+            for (const r0 of recommendationValues) {
+              for (const r1 of recommendationValues) {
+                for (const r2 of recommendationValues) {
+                  const input = [
+                    prior,
+                    current,
+                    answers0,
+                    answers1,
+                    answers2,
+                    r0,
+                    r1,
+                    r2,
+                  ];
+                  const args = input.map(BigInt);
+                  const expected = oracleCertificate(input);
+                  const expectedValidity = validInput(input) ? 1 : 0;
+                  const actualValidity = Number(api.ri_valid_inputs(...args));
+                  const actual = Number(api.ri_certificate(...args));
+                  const reference = Number(api.ri_reference_certificate(...args));
+                  const decoded = decodeCertificate(actual);
+
+                  coverage.hostileStatesChecked += 1;
+                  if (expectedValidity === 1) {
+                    coverage.validStatesChecked += 1;
+                    const name = dispositionNames[decoded.dispositionCode];
+                    if (name) coverage.dispositions[name] += 1;
+                    const cardinalityName = ['zero', 'one', 'two', 'three'][decoded.cost];
+                    if (cardinalityName) {
+                      coverage.certificateCardinality[cardinalityName] += 1;
+                    }
+                    if (!certificateIsMinimal(input, actual)) minimalityFailures += 1;
+                  } else if (actual === 0) {
+                    coverage.invalidStatesRefused += 1;
+                    coverage.dispositions.REFUSE += 1;
+                  }
+
+                  if (actualValidity !== expectedValidity) validityMismatches += 1;
+                  if (actual !== expected) parityMismatches += 1;
+                  if (reference !== expected) referenceMismatches += 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  for (let prior = 0; prior <= 7; prior += 1) {
+    for (let answers0 = 0; answers0 <= 7; answers0 += 1) {
+      for (let answers1 = 0; answers1 <= 7; answers1 += 1) {
+        for (let answers2 = 0; answers2 <= 7; answers2 += 1) {
+          for (let r0 = 1; r0 <= 2; r0 += 1) {
+            for (let r1 = 1; r1 <= 2; r1 += 1) {
+              for (let r2 = 1; r2 <= 2; r2 += 1) {
+                const answers = [answers0, answers1, answers2];
+                const recommendations = [r0, r1, r2];
+                const expected = minimalCut(prior, answers, recommendations);
+                const actual = Number(
+                  api.ri_minimal_revocation_cut(
+                    BigInt(prior),
+                    BigInt(answers0),
+                    BigInt(answers1),
+                    BigInt(answers2),
+                    BigInt(r0),
+                    BigInt(r1),
+                    BigInt(r2),
+                  ),
+                );
+                const reference = Number(
+                  api.ri_reference_minimal_revocation_cut(
+                    BigInt(prior),
+                    BigInt(answers0),
+                    BigInt(answers1),
+                    BigInt(answers2),
+                    BigInt(r0),
+                    BigInt(r1),
+                    BigInt(r2),
+                  ),
+                );
+                const cardinalityName =
+                  actual < 0
+                    ? 'none'
+                    : ['zero', 'one', 'two', 'three'][popcount(actual)];
+                coverage.cutCardinality[cardinalityName] += 1;
+                if (actual !== expected || reference !== expected) cutMismatches += 1;
+                if (!cutIsMinimal(prior, answers, recommendations, actual)) {
+                  cutMinimalityFailures += 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  const transcriptHash = createHash('sha256');
+  let transcriptBytes = 0;
+  for (let index = 0; index < 262144; index += 1) {
+    const input = inputFromCanonicalIndex(index);
+    const packed = Number(api.ri_certificate(...input.map(BigInt)));
+    const cut = Number(
+      api.ri_minimal_revocation_cut(
+        ...[input[0], ...input.slice(2, 5), ...input.slice(5, 8)].map(BigInt),
+      ),
+    );
+    const line = `${index}|${packed}|${cut}\n`;
+    transcriptHash.update(line);
+    transcriptBytes += Buffer.byteLength(line);
+  }
+  wasmTranscript = {
+    records: 262144,
+    bytes: transcriptBytes,
+    sha256: transcriptHash.digest('hex'),
+  };
+
+  check(api.main() === 97n, 'WASM: self-check did not return 97');
+  check(
+    api.ri_exhaustive_self_check() === 0n,
+    'WASM: 262,144-state internal exhaustive check failed',
+  );
+}
+
+check(validityMismatches === 0, 'WASM: input-validity oracle mismatch');
+check(parityMismatches === 0, 'WASM: host certificate oracle mismatch');
+check(referenceMismatches === 0, 'WASM: internal reference oracle mismatch');
+check(minimalityFailures === 0, 'WASM: certificate minimality failure');
+check(cutMismatches === 0, 'WASM: revocation-cut oracle mismatch');
+check(cutMinimalityFailures === 0, 'WASM: revocation-cut minimality failure');
+check(
+  coverage.hostileStatesChecked === 6400000 &&
+    coverage.validStatesChecked === 110592 &&
+    coverage.invalidStatesRefused === 6289408,
+  'WASM: hostile-domain coverage drift',
+);
+check(
+  JSON.stringify(coverage.dispositions) ===
+    JSON.stringify({
+      REFUSE: 6289408,
+      SURVIVES_REDERIVED: 49584,
+      ABSTAIN_RESIDUAL_INFLUENCE: 22224,
+      REFUSE_PRIOR_UNIDENTIFIED: 38784,
+      REFUSE_INTERNAL_INCONSISTENCY: 0,
+    }),
+  'WASM: disposition census drift',
+);
+check(
+  JSON.stringify(coverage.certificateCardinality) ===
+    JSON.stringify({zero: 66432, one: 39264, two: 4896, three: 0}),
+  'WASM: certificate-cardinality census drift',
+);
+check(
+  JSON.stringify(coverage.cutCardinality) ===
+    JSON.stringify({none: 8192, zero: 14736, one: 8496, two: 1296, three: 48}),
+  'WASM: revocation-cut census drift',
+);
+
+const observedVectors = [];
+if (instance) {
+  for (const vector of vectors.cases ?? []) {
+    const packed = Number(
+      instance.exports.ri_certificate(...vector.input.map(BigInt)),
+    );
+    const cut = Number(
+      instance.exports.ri_minimal_revocation_cut(
+        ...[
+          vector.input[0],
+          ...vector.input.slice(2, 5),
+          ...vector.input.slice(5, 8),
+        ].map(BigInt),
+      ),
+    );
+    const decoded = decodeCertificate(packed);
+    check(packed === vector.expected.packed, `${vector.id}: packed result mismatch`);
+    check(
+      dispositionNames[decoded.dispositionCode] === vector.expected.disposition,
+      `${vector.id}: disposition mismatch`,
+    );
+    check(decoded.mask === vector.expected.mask, `${vector.id}: mask mismatch`);
+    check(decoded.cost === vector.expected.cost, `${vector.id}: cost mismatch`);
+    check(cut === vector.expected.cut, `${vector.id}: cut mismatch`);
+    observedVectors.push({
+      id: vector.id,
+      packed,
+      disposition: dispositionNames[decoded.dispositionCode],
+      mask: decoded.mask,
+      cost: decoded.cost,
+      cut,
+    });
+  }
+}
+
+check(
+  vectors.schema === 'darwin.revocable-normative-influence.vectors.v0.7',
+  'vectors: unexpected schema',
+);
+check(vectors.clinicalMeaning === false, 'vectors: clinical meaning introduced');
+check(vectors.recommendationReturned === false, 'vectors: recommendation output introduced');
+check(vectors.cases?.length === 8, 'vectors: canonical case count drift');
+
+check(
+  compilerReceipt.schema === 'darwin.sounio.compiler-source-receipt.v1' &&
+    compilerReceipt.compilerReconciled === true &&
+    compilerReceipt.status === 'SOURCE_FRESH_RECONCILED',
+  'compiler receipt: source-fresh reconciliation missing',
+);
+check(
+  compilerReceipt.repository?.commit ===
+      '32bf57e880d5a0bc64d39edff98491a6c7c6101d' &&
+    compilerReceipt.repository?.tree ===
+      '3560e7e17d931d12244c3232869faf010019c962',
+  'compiler receipt: repository identity drift',
+);
+check(
+  compilerReceipt.compiler?.sha256 ===
+    'b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d',
+  'compiler receipt: compiler artifact drift',
+);
+check(
+  parentReceipt.schema === 'darwin.auctoritas.protocol-calculus-receipt.v0.6' &&
+    parentReceipt.compilerReconciled === true &&
+    parentReceipt.nativeWasmParityEstablished === true &&
+    refusalBoundaryValid(parentReceipt),
+  'parent receipt: v0.6 gate or refusal boundary invalid',
+);
+
+if (runtimeOnly) {
+  const result = {
+    schema:
+      'darwin.revocable-normative-influence.runtime-only-verification.v0.7',
+    compilerCommit: compilerReceipt.repository?.commit,
+    compilerTree: compilerReceipt.repository?.tree,
+    compilerSha256: compilerReceipt.compiler?.sha256,
+    wasmSha256: sha256(wasmBytes),
+    wasmBytes: wasmBytes.length,
+    imports,
+    exports,
+    mainResult: instance ? String(instance.exports.main()) : null,
+    coverage,
+    parityMismatches,
+    referenceMismatches,
+    validityMismatches,
+    minimalityFailures,
+    cutMismatches,
+    cutMinimalityFailures,
+    wasmTranscript,
+    compilerReconciled: true,
+    clinicalDisposition: 'REFUSE',
+    productionAuthorized: false,
+    noveltyEstablished: false,
+    verified: errors.length === 0,
+    errors,
+  };
+  process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+  process.exit(errors.length === 0 ? 0 : 1);
+}
+
+check(
+  evidence.schema ===
+    'darwin.revocable-normative-influence.execution-evidence.v0.7',
+  'evidence: unexpected schema',
+);
+check(refusalBoundaryValid(evidence), 'evidence: clinical refusal boundary drift');
+check(
+  evidence.parent?.sha256 === sha256File(parentReceiptPath),
+  'evidence: parent receipt hash mismatch',
+);
+check(
+  evidence.compilerReceipt?.sha256 === sha256File(compilerReceiptPath),
+  'evidence: compiler receipt hash mismatch',
+);
+check(
+  evidence.compiler?.sha256 === compilerReceipt.compiler?.sha256,
+  'evidence: compiler identity mismatch',
+);
+check(evidence.source?.sha256 === sha256File(sourcePath), 'evidence: source hash mismatch');
+check(evidence.source?.bytes === statSync(sourcePath).size, 'evidence: source size mismatch');
+check(
+  evidence.source?.remoteCopySha256 === evidence.source?.sha256,
+  'evidence: local/remote source drift',
+);
+check(evidence.wasm?.sha256 === sha256File(wasmPath), 'evidence: WASM hash mismatch');
+check(evidence.wasm?.bytes === statSync(wasmPath).size, 'evidence: WASM size mismatch');
+check(evidence.wasm?.repeatSha256 === evidence.wasm?.sha256, 'evidence: WASM nondeterminism');
+check(evidence.wasm?.mainResult === 97, 'evidence: WASM self-check mismatch');
+check(evidence.wasm?.imports?.length === 0, 'evidence: WASM imports hidden');
+check(
+  JSON.stringify(evidence.wasm?.exports) === JSON.stringify(expectedExports),
+  'evidence: WASM export surface mismatch',
+);
+check(
+  evidence.native?.sha256 === evidence.native?.repeatSha256 &&
+    evidence.native?.sha256 === sha256File(nativePath) &&
+    evidence.native?.bytes === statSync(nativePath).size &&
+    evidence.native?.executionExitCode === 97 &&
+    evidence.native?.repeatExecutionExitCode === 97,
+  'evidence: native identity, determinism, or execution mismatch',
+);
+check(
+  evidence.nativeTranscript?.source?.sha256 === sha256File(transcriptSourcePath) &&
+    evidence.nativeTranscript?.source?.bytes === statSync(transcriptSourcePath).size &&
+    evidence.nativeTranscript?.source?.generatorSha256 ===
+      sha256File(transcriptGeneratorPath),
+  'evidence: native transcript source or generator mismatch',
+);
+check(
+  evidence.nativeTranscript?.executable?.sha256 ===
+      evidence.nativeTranscript?.executable?.repeatSha256 &&
+    evidence.nativeTranscript?.executable?.sha256 ===
+      sha256File(transcriptNativePath) &&
+    evidence.nativeTranscript?.executable?.bytes ===
+      statSync(transcriptNativePath).size &&
+    evidence.nativeTranscript?.execution?.exitCode === 0 &&
+    evidence.nativeTranscript?.execution?.repeatExitCode === 0 &&
+    evidence.nativeTranscript?.execution?.stdoutSha256 ===
+      evidence.nativeTranscript?.execution?.repeatStdoutSha256 &&
+    evidence.nativeTranscript?.execution?.stdoutSha256 ===
+      wasmTranscript.sha256 &&
+    evidence.nativeTranscript?.execution?.stdoutBytes === wasmTranscript.bytes &&
+    evidence.nativeTranscript?.execution?.records === wasmTranscript.records &&
+    evidence.nativeTranscript?.exactNativeWasmParity === true,
+  'evidence: exact native/WASM transcript parity missing',
+);
+check(
+  evidence.lean?.buildPassed === true &&
+    evidence.lean?.projectDeclaredAxioms?.length === 0 &&
+    evidence.lean?.theorems?.noResidualInfluence?.standardAxioms?.length === 0 &&
+    evidence.lean?.theorems?.forcedAbstention?.standardAxioms?.length === 0 &&
+    evidence.lean?.theorems?.seededForcedAbstention?.standardAxioms?.length === 0,
+  'evidence: central Lean theorem boundary mismatch',
+);
+check(
+  evidence.lean?.source?.sha256 ===
+      sha256File(resolve(repoRoot, evidence.lean?.source?.path ?? '')) &&
+    evidence.lean?.audit?.sha256 ===
+      sha256File(resolve(repoRoot, evidence.lean?.audit?.path ?? '')),
+  'evidence: Lean source or audit hash mismatch',
+);
+check(
+  evidence.hostVerifier?.sha256 === sha256File(verifierPath),
+  'evidence: host verifier hash mismatch',
+);
+check(
+  evidence.exhaustive?.hostileStatesChecked === coverage.hostileStatesChecked &&
+    evidence.exhaustive?.canonicalStatesChecked === coverage.canonicalStatesChecked &&
+    evidence.exhaustive?.validStatesChecked === coverage.validStatesChecked &&
+    evidence.exhaustive?.invalidStatesRefused === coverage.invalidStatesRefused &&
+    evidence.exhaustive?.distinctCutStatesChecked ===
+      coverage.distinctCutStatesChecked &&
+    JSON.stringify(evidence.exhaustive?.dispositions) ===
+      JSON.stringify(coverage.dispositions) &&
+    JSON.stringify(evidence.exhaustive?.certificateCardinality) ===
+      JSON.stringify(coverage.certificateCardinality) &&
+    JSON.stringify(evidence.exhaustive?.cutCardinality) ===
+      JSON.stringify(coverage.cutCardinality),
+  'evidence: exhaustive coverage mismatch',
+);
+check(
+  JSON.stringify(evidence.observedVectors) === JSON.stringify(observedVectors),
+  'evidence: canonical vector observations drift',
+);
+
+check(
+  receipt.schema === 'darwin.revocable-normative-influence-receipt.v0.7',
+  'receipt: unexpected schema',
+);
+check(refusalBoundaryValid(receipt), 'receipt: clinical refusal boundary drift');
+check(receipt.status === 'ABSTRACT_RESEARCH_ONLY', 'receipt: status drift');
+check(receipt.compilerReconciled === true, 'receipt: compiler reconciliation missing');
+check(
+  receipt.nativeWasmParityEstablished === true,
+  'receipt: native/WASM parity missing',
+);
+check(
+  receipt.nativeTranscript?.stdoutSha256 === wasmTranscript.sha256 &&
+    receipt.nativeTranscript?.stdoutBytes === wasmTranscript.bytes &&
+    receipt.nativeTranscript?.records === wasmTranscript.records &&
+    receipt.nativeTranscript?.exactParity === true,
+  'receipt: exact native/WASM transcript parity mismatch',
+);
+check(receipt.parent?.sha256 === sha256File(parentReceiptPath), 'receipt: parent hash mismatch');
+check(
+  receipt.compilerReceipt?.sha256 === sha256File(compilerReceiptPath),
+  'receipt: compiler receipt hash mismatch',
+);
+check(
+  receipt.executionEvidence?.sha256 === sha256File(evidencePath),
+  'receipt: execution evidence hash mismatch',
+);
+check(
+  receipt.compiler?.repositoryCommit === compilerReceipt.repository?.commit &&
+    receipt.compiler?.repositoryTree === compilerReceipt.repository?.tree &&
+    receipt.compiler?.sha256 === compilerReceipt.compiler?.sha256,
+  'receipt: compiler identity mismatch',
+);
+check(
+  receipt.sounio?.sourceSha256 === sha256File(sourcePath) &&
+    receipt.sounio?.internalCanonicalStatesChecked === 262144 &&
+    receipt.sounio?.selfCheckCode === 97 &&
+    receipt.sounio?.recommendationReturned === false,
+  'receipt: Sounio identity, coverage, or boundary mismatch',
+);
+check(
+  receipt.wasm?.sha256 === evidence.wasm?.sha256 &&
+    receipt.wasm?.repeatSha256 === evidence.wasm?.repeatSha256 &&
+    receipt.native?.sha256 === evidence.native?.sha256 &&
+    receipt.native?.repeatSha256 === evidence.native?.repeatSha256 &&
+    receipt.native?.path === evidence.native?.path,
+  'receipt: executable identity mismatch',
+);
+check(
+  receipt.formal?.noResidualInfluenceProved === true &&
+    receipt.formal?.zeroErrorForcedAbstentionProved === true &&
+    receipt.formal?.seededZeroErrorForcedAbstentionProved === true &&
+    receipt.formal?.centralTheoremStandardAxioms?.length === 0,
+  'receipt: formal theorem claim mismatch',
+);
+check(
+  receipt.exhaustive?.hostileStatesChecked === coverage.hostileStatesChecked &&
+    receipt.exhaustive?.parityMismatches === 0 &&
+    receipt.exhaustive?.minimalityFailures === 0 &&
+    receipt.exhaustive?.cutMinimalityFailures === 0,
+  'receipt: exhaustive certificate claim mismatch',
+);
+
+const expectedArtifactPaths = new Set([
+  'docs/research/revocable-normative-influence/README.md',
+  'docs/research/revocable-normative-influence/prior-art-frontier-v0.7.md',
+  'docs/research/revocable-normative-influence/revocable-influence-theory-v0.7.md',
+  'docs/research/revocable-normative-influence/formal/closure-v0.7.md',
+  'docs/research/revocable-normative-influence/formal/evidence/revocable-influence-execution-evidence.v0.7.json',
+  'docs/research/revocable-normative-influence/formal/lean4/RevocableInfluence.lean',
+  'docs/research/revocable-normative-influence/formal/lean4/RevocableInfluenceAudit.lean',
+  'docs/research/revocable-normative-influence/formal/lean4/lake-manifest.json',
+  'docs/research/revocable-normative-influence/formal/lean4/lakefile.lean',
+  'docs/research/revocable-normative-influence/formal/lean4/lean-toolchain',
+  'docs/research/revocable-normative-influence/formal/native/revocable_influence.v0.7.linux-x86_64',
+  'docs/research/revocable-normative-influence/formal/native/revocable_influence_transcript.v0.7.linux-x86_64',
+  'docs/research/revocable-normative-influence/formal/sounio/revocable_influence_v0_7.sio',
+  'docs/research/revocable-normative-influence/formal/transcript/revocable_influence_transcript_v0_7.sio',
+  'docs/research/revocable-normative-influence/formal/vectors/revocable-influence-v0.7.json',
+  'docs/research/revocable-normative-influence/formal/wasm/revocable_influence.v0.7.wasm',
+  'scripts/verify-revocable-influence-v0.7.mjs',
+  'scripts/generate-revocable-influence-native-transcript-v0.7.mjs',
+]);
+const receivedArtifactPaths = new Set();
+for (const artifact of receipt.artifacts ?? []) {
+  check(expectedArtifactPaths.has(artifact.path), `${artifact.path}: unexpected artifact`);
+  check(!receivedArtifactPaths.has(artifact.path), `${artifact.path}: duplicate artifact`);
+  receivedArtifactPaths.add(artifact.path);
+  check(artifactRecordValid(artifact), `${artifact.path}: hash or byte-size mismatch`);
+}
+check(
+  JSON.stringify([...receivedArtifactPaths].sort()) ===
+    JSON.stringify([...expectedArtifactPaths].sort()),
+  'receipt: artifact set mismatch',
+);
+
+const closure = readFileSync(closurePath, 'utf8');
+check(
+  closure.includes('clinicalDisposition=REFUSE') &&
+    closure.includes('productionAuthorized=false') &&
+    closure.includes('noveltyEstablished=false'),
+  'closure note: mandatory refusal boundaries missing',
+);
+
+const firstArtifact = receipt.artifacts?.[0];
+const tamperedArtifactDetected = firstArtifact
+  ? !artifactRecordValid({...firstArtifact, sha256: '0'.repeat(64)})
+  : false;
+const promotedReceiptRejected = !refusalBoundaryValid({
+  ...receipt,
+  clinicalDisposition: 'WITHIN_REVIEWED_ENVELOPE',
+  productionAuthorized: true,
+});
+const parentMismatchRejected =
+  ({...receipt.parent, sha256: '0'.repeat(64)}).sha256 !==
+  sha256File(parentReceiptPath);
+const compilerMismatchRejected =
+  ({...receipt.compilerReceipt, sha256: '0'.repeat(64)}).sha256 !==
+  sha256File(compilerReceiptPath);
+const invalidMaskRejected =
+  instance?.exports.ri_certificate(8n, 0n, 0n, 0n, 0n, 1n, 2n, 1n) === 0n;
+const nonMonotoneRejected =
+  instance?.exports.ri_certificate(1n, 2n, 0n, 1n, 0n, 1n, 2n, 1n) === 0n;
+const forgedNonMinimalBasisRejected = !certificateIsMinimal(
+  [3, 3, 0, 1, 0, 1, 2, 1],
+  packCertificate(1, 3),
+);
+const forgedRestoreUsesActiveRejected = !certificateIsMinimal(
+  [3, 1, 0, 1, 2, 1, 2, 2],
+  packCertificate(2, 3),
+);
+const forgedNonMinimalRestoreRejected = !certificateIsMinimal(
+  [3, 0, 0, 1, 0, 1, 2, 1],
+  packCertificate(2, 3),
+);
+const forgedNonDestroyingCutRejected = !cutIsMinimal(
+  3,
+  [0, 1, 0],
+  [1, 2, 1],
+  2,
+);
+const forgedNonMinimalCutRejected = !cutIsMinimal(
+  3,
+  [0, 1, 0],
+  [1, 2, 1],
+  3,
+);
+const impossibleInconsistencyPromotionRejected = !certificateIsMinimal(
+  [3, 0, 0, 1, 0, 1, 2, 1],
+  4,
+);
+check(tamperedArtifactDetected, 'negative gate: artifact tampering was accepted');
+check(promotedReceiptRejected, 'negative gate: clinical promotion was accepted');
+check(parentMismatchRejected, 'negative gate: parent mutation was accepted');
+check(compilerMismatchRejected, 'negative gate: compiler mutation was accepted');
+check(invalidMaskRejected, 'negative gate: invalid mask was accepted');
+check(nonMonotoneRejected, 'negative gate: non-monotone authority was accepted');
+check(
+  forgedNonMinimalBasisRejected,
+  'negative gate: nonminimal survival basis was accepted',
+);
+check(
+  forgedRestoreUsesActiveRejected,
+  'negative gate: residual restore used active authority',
+);
+check(
+  forgedNonMinimalRestoreRejected,
+  'negative gate: nonminimal residual restore was accepted',
+);
+check(
+  forgedNonDestroyingCutRejected,
+  'negative gate: non-destroying revocation cut was accepted',
+);
+check(
+  forgedNonMinimalCutRejected,
+  'negative gate: nonminimal revocation cut was accepted',
+);
+check(
+  impossibleInconsistencyPromotionRejected,
+  'negative gate: impossible internal disposition was promoted',
+);
+
+const result = {
+  schema: 'darwin.revocable-normative-influence.runtime-verification.v0.7',
+  compilerCommit: compilerReceipt.repository?.commit,
+  compilerTree: compilerReceipt.repository?.tree,
+  compilerSha256: compilerReceipt.compiler?.sha256,
+  leanToolchain: evidence.lean?.toolchain,
+  wasmSha256: sha256(wasmBytes),
+  wasmBytes: wasmBytes.length,
+  imports,
+  exports,
+  mainResult: instance ? String(instance.exports.main()) : null,
+  coverage,
+  parityMismatches,
+  referenceMismatches,
+  validityMismatches,
+  minimalityFailures,
+  cutMismatches,
+  cutMinimalityFailures,
+  wasmTranscript,
+  negativeGates: {
+    tamperedArtifactDetected,
+    promotedReceiptRejected,
+    parentMismatchRejected,
+    compilerMismatchRejected,
+    invalidMaskRejected,
+    nonMonotoneRejected,
+    forgedNonMinimalBasisRejected,
+    forgedRestoreUsesActiveRejected,
+    forgedNonMinimalRestoreRejected,
+    forgedNonDestroyingCutRejected,
+    forgedNonMinimalCutRejected,
+    impossibleInconsistencyPromotionRejected,
+  },
+  compilerReconciled: true,
+  clinicalDisposition: 'REFUSE',
+  productionAuthorized: false,
+  noveltyEstablished: false,
+  verified: errors.length === 0,
+  errors,
+};
+
+process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+if (errors.length > 0) process.exitCode = 1;

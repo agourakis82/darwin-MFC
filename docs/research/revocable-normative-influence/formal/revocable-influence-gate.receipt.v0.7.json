@@ -1,0 +1,122 @@
+{
+  "schema": "darwin.revocable-normative-influence-receipt.v0.7",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "closedOn": "2026-08-02",
+  "compilerReconciled": true,
+  "nativeWasmParityEstablished": true,
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "parent": {
+    "schema": "darwin.auctoritas.protocol-calculus-receipt.v0.6",
+    "path": "docs/research/auctoritas-protocol-calculus/formal/auctoritas-protocol-gate.receipt.v0.6.json",
+    "sha256": "7013ce54f1f88f5aab58855bf9b29ec477c46ba969e782eb904e6967afbdc670"
+  },
+  "compilerReceipt": {
+    "schema": "darwin.sounio.compiler-source-receipt.v1",
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6"
+  },
+  "executionEvidence": {
+    "schema": "darwin.revocable-normative-influence.execution-evidence.v0.7",
+    "path": "docs/research/revocable-normative-influence/formal/evidence/revocable-influence-execution-evidence.v0.7.json",
+    "bytes": 8152,
+    "sha256": "ba6e457dab602f7b7fb8d4185f7ee4d953d01bfc0de0552f642796466cfe6a1c"
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "repositoryCommit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "repositoryTree": "3560e7e17d931d12244c3232869faf010019c962",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "sourceFresh": true
+  },
+  "sounio": {
+    "sourcePath": "docs/research/revocable-normative-influence/formal/sounio/revocable_influence_v0_7.sio",
+    "sourceSha256": "ee8798fbbe3fc7756184aa63b03cb736dd097a25a758fa8d5c04713f61c0b453",
+    "internalCanonicalStatesChecked": 262144,
+    "selfCheckCode": 97,
+    "recommendationReturned": false,
+    "authorityGranted": false
+  },
+  "wasm": {
+    "path": "docs/research/revocable-normative-influence/formal/wasm/revocable_influence.v0.7.wasm",
+    "bytes": 11138,
+    "sha256": "d3d206c9e27f554306074456cb80a8eb6082d9695bb0c3cdc43a2abe2ceb41e0",
+    "repeatSha256": "d3d206c9e27f554306074456cb80a8eb6082d9695bb0c3cdc43a2abe2ceb41e0",
+    "imports": []
+  },
+  "native": {
+    "path": "docs/research/revocable-normative-influence/formal/native/revocable_influence.v0.7.linux-x86_64",
+    "bytes": 45064,
+    "sha256": "496a626314be6004655adc955e8d23899f92a4fa8a01fd713c5c338e2ed244f6",
+    "repeatSha256": "496a626314be6004655adc955e8d23899f92a4fa8a01fd713c5c338e2ed244f6",
+    "executionExitCode": 97,
+    "repeatExecutionExitCode": 97
+  },
+  "nativeTranscript": {
+    "sourceSha256": "4ccf2b8dd04e564629b0da0c5616acf4d1d126f87f79c080eec3b3101ea2daa7",
+    "executableSha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184",
+    "stdoutSha256": "6466348cb7e94b0fbb7e69ec78e0139d30f3ad8f3d6b82f3a7d9bd6df4a19bdd",
+    "stdoutBytes": 2887066,
+    "records": 262144,
+    "exactParity": true
+  },
+  "formal": {
+    "leanToolchain": "leanprover/lean4:v4.30.0-rc2",
+    "noResidualInfluenceProved": true,
+    "zeroErrorForcedAbstentionProved": true,
+    "seededZeroErrorForcedAbstentionProved": true,
+    "projectDeclaredAxioms": [],
+    "centralTheoremStandardAxioms": [],
+    "extensionalCompatibilityStandardAxioms": ["propext", "Quot.sound"]
+  },
+  "exhaustive": {
+    "hostileStatesChecked": 6400000,
+    "canonicalStatesChecked": 262144,
+    "validStatesChecked": 110592,
+    "invalidStatesRefused": 6289408,
+    "distinctCutStatesChecked": 32768,
+    "parityMismatches": 0,
+    "referenceMismatches": 0,
+    "validityMismatches": 0,
+    "minimalityFailures": 0,
+    "cutMismatches": 0,
+    "cutMinimalityFailures": 0,
+    "transcriptMismatches": 0,
+    "dispositions": {
+      "REFUSE": 6289408,
+      "SURVIVES_REDERIVED": 49584,
+      "ABSTAIN_RESIDUAL_INFLUENCE": 22224,
+      "REFUSE_PRIOR_UNIDENTIFIED": 38784,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    }
+  },
+  "novelty": {
+    "candidate": "retained evidence versus current authority plus no residual normative influence, zero-error abstention, and executable minimal certificates",
+    "priorArtSearchComplete": false,
+    "patentOpinionObtained": false,
+    "claimAllowed": false
+  },
+  "artifacts": [
+    {"path": "docs/research/revocable-normative-influence/README.md", "bytes": 2402, "sha256": "a331dd86dab1eb9f389ceecbb8aa1b79cf21be53b819a2681e2f2f9d5102f016"},
+    {"path": "docs/research/revocable-normative-influence/prior-art-frontier-v0.7.md", "bytes": 5965, "sha256": "f04181703b6ada386b7093b6c51f93371c140f2024b7c298d1d40e433e60bc66"},
+    {"path": "docs/research/revocable-normative-influence/revocable-influence-theory-v0.7.md", "bytes": 5672, "sha256": "9ac1c538e16c04c07bcd1435d7d7f29114bc3cbdfb388aff0c24574d8470830e"},
+    {"path": "docs/research/revocable-normative-influence/formal/closure-v0.7.md", "bytes": 2530, "sha256": "67bbdf846374cbcbc96d06f9b224cad8d9604c38170c1322fd32182e0c3c9a9a"},
+    {"path": "docs/research/revocable-normative-influence/formal/evidence/revocable-influence-execution-evidence.v0.7.json", "bytes": 8152, "sha256": "ba6e457dab602f7b7fb8d4185f7ee4d953d01bfc0de0552f642796466cfe6a1c"},
+    {"path": "docs/research/revocable-normative-influence/formal/lean4/RevocableInfluence.lean", "bytes": 15958, "sha256": "d34e52e667bac8ea63e49c2115c6eaac6d35333b701d31afb920d5d7d62c15d4"},
+    {"path": "docs/research/revocable-normative-influence/formal/lean4/RevocableInfluenceAudit.lean", "bytes": 543, "sha256": "5e8972ce2b4bd44b0d44b4ebbbd366c8b911d764ea54154d559803efaf538b9d"},
+    {"path": "docs/research/revocable-normative-influence/formal/lean4/lake-manifest.json", "bytes": 159, "sha256": "ba09723c8f48ddaddb7fc2450ac341beb555530ab3ae73024810f0af632a6813"},
+    {"path": "docs/research/revocable-normative-influence/formal/lean4/lakefile.lean", "bytes": 150, "sha256": "01b606fff187f2671f6ea3dda261aad268ca2822c9e8dca643396eb85825cfe3"},
+    {"path": "docs/research/revocable-normative-influence/formal/lean4/lean-toolchain", "bytes": 29, "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61"},
+    {"path": "docs/research/revocable-normative-influence/formal/native/revocable_influence.v0.7.linux-x86_64", "bytes": 45064, "sha256": "496a626314be6004655adc955e8d23899f92a4fa8a01fd713c5c338e2ed244f6"},
+    {"path": "docs/research/revocable-normative-influence/formal/native/revocable_influence_transcript.v0.7.linux-x86_64", "bytes": 53256, "sha256": "402819cb3afb467eaec0c4dc9916c70e0e7a4e84dd136436a2caafec49027184"},
+    {"path": "docs/research/revocable-normative-influence/formal/sounio/revocable_influence_v0_7.sio", "bytes": 20291, "sha256": "ee8798fbbe3fc7756184aa63b03cb736dd097a25a758fa8d5c04713f61c0b453"},
+    {"path": "docs/research/revocable-normative-influence/formal/transcript/revocable_influence_transcript_v0_7.sio", "bytes": 20516, "sha256": "4ccf2b8dd04e564629b0da0c5616acf4d1d126f87f79c080eec3b3101ea2daa7"},
+    {"path": "docs/research/revocable-normative-influence/formal/vectors/revocable-influence-v0.7.json", "bytes": 1764, "sha256": "b185143f712445b911b33b78fd8b9a776881cdd6c4d58d5a80e74584542790e7"},
+    {"path": "docs/research/revocable-normative-influence/formal/wasm/revocable_influence.v0.7.wasm", "bytes": 11138, "sha256": "d3d206c9e27f554306074456cb80a8eb6082d9695bb0c3cdc43a2abe2ceb41e0"},
+    {"path": "scripts/verify-revocable-influence-v0.7.mjs", "bytes": 33600, "sha256": "1a9360d5ea1ad982280c126fbd9adf83f295fa0c9c1b5b28df7843f69132e672"},
+    {"path": "scripts/generate-revocable-influence-native-transcript-v0.7.mjs", "bytes": 2412, "sha256": "e2adf7ce929d25cf223554725c1121165e2767b5757025738767204ce38a1031"}
+  ]
+}

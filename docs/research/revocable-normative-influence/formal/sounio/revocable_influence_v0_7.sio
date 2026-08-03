@@ -1,0 +1,491 @@
+//@ run-pass
+// Darwin Revocable Normative Influence: bounded certificate v0.7.
+//
+// Three admissible worlds, three binary queries, and two uninterpreted
+// recommendation symbols. Prior and current query-authority masks are 0..7;
+// current authority must be a subset of prior authority.
+//
+// Packed certificate:
+//   disposition = packed % 8
+//   certificate mask = (packed / 8) % 8
+//   certificate cardinality = (packed / 64) % 4
+// Dispositions: 0 REFUSE, 1 SURVIVES_REDERIVED,
+// 2 ABSTAIN_RESIDUAL_INFLUENCE, 3 REFUSE_PRIOR_UNIDENTIFIED,
+// 4 REFUSE_INTERNAL_INCONSISTENCY.
+//
+// The executable never returns a recommendation or grants authority.
+
+fn ri_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn ri_valid_recommendation(value: i64) -> i64 {
+    if value == 1 || value == 2 { return 1 }
+    return 0
+}
+
+fn ri_contains_q0(mask: i64) -> i64 {
+    if mask == 1 || mask == 3 || mask == 5 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ri_contains_q1(mask: i64) -> i64 {
+    if mask == 2 || mask == 3 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ri_contains_q2(mask: i64) -> i64 {
+    if mask == 4 || mask == 5 || mask == 6 || mask == 7 { return 1 }
+    return 0
+}
+
+fn ri_subset(candidate: i64, allowed: i64) -> i64 {
+    if (candidate & allowed) == candidate { return 1 }
+    return 0
+}
+
+fn ri_popcount(mask: i64) -> i64 with Mut {
+    var count: i64 = 0
+    if ri_contains_q0(mask) == 1 { count = count + 1 }
+    if ri_contains_q1(mask) == 1 { count = count + 1 }
+    if ri_contains_q2(mask) == 1 { count = count + 1 }
+    return count
+}
+
+fn ri_difference_mask(left: i64, right: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if ri_contains_q0(left) != ri_contains_q0(right) { result = result + 1 }
+    if ri_contains_q1(left) != ri_contains_q1(right) { result = result + 2 }
+    if ri_contains_q2(left) != ri_contains_q2(right) { result = result + 4 }
+    return result
+}
+
+fn ri_revoked_mask(prior: i64, current: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if ri_contains_q0(prior) == 1 && ri_contains_q0(current) == 0 {
+        result = result + 1
+    }
+    if ri_contains_q1(prior) == 1 && ri_contains_q1(current) == 0 {
+        result = result + 2
+    }
+    if ri_contains_q2(prior) == 1 && ri_contains_q2(current) == 0 {
+        result = result + 4
+    }
+    return result
+}
+
+fn ri_remove_mask(original: i64, cut: i64) -> i64 with Mut {
+    var result: i64 = 0
+    if ri_contains_q0(original) == 1 && ri_contains_q0(cut) == 0 {
+        result = result + 1
+    }
+    if ri_contains_q1(original) == 1 && ri_contains_q1(cut) == 0 {
+        result = result + 2
+    }
+    if ri_contains_q2(original) == 1 && ri_contains_q2(cut) == 0 {
+        result = result + 4
+    }
+    return result
+}
+
+fn ri_valid_inputs(
+    prior_authority: i64, current_authority: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 {
+    if ri_valid_mask(prior_authority) == 0 { return 0 }
+    if ri_valid_mask(current_authority) == 0 { return 0 }
+    if ri_valid_mask(answers0) == 0 { return 0 }
+    if ri_valid_mask(answers1) == 0 { return 0 }
+    if ri_valid_mask(answers2) == 0 { return 0 }
+    if ri_valid_recommendation(recommendation0) == 0 { return 0 }
+    if ri_valid_recommendation(recommendation1) == 0 { return 0 }
+    if ri_valid_recommendation(recommendation2) == 0 { return 0 }
+    if ri_subset(current_authority, prior_authority) == 0 { return 0 }
+    return 1
+}
+
+fn ri_pair_separated(
+    available: i64,
+    left_answers: i64, right_answers: i64,
+    left_recommendation: i64, right_recommendation: i64
+) -> i64 with Mut {
+    if left_recommendation == right_recommendation { return 1 }
+    let difference = ri_difference_mask(left_answers, right_answers)
+    if (difference & available) != 0 { return 1 }
+    return 0
+}
+
+fn ri_identifies3(
+    available: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_pair_separated(
+        available, answers0, answers1, recommendation0, recommendation1
+    ) == 0 { return 0 }
+    if ri_pair_separated(
+        available, answers0, answers2, recommendation0, recommendation2
+    ) == 0 { return 0 }
+    if ri_pair_separated(
+        available, answers1, answers2, recommendation1, recommendation2
+    ) == 0 { return 0 }
+    return 1
+}
+
+fn ri_basis_sufficient(
+    allowed: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_subset(candidate, allowed) == 0 { return 0 }
+    return ri_identifies3(
+        candidate, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+}
+
+fn ri_restore_sufficient(
+    current: i64, revoked: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_subset(candidate, revoked) == 0 { return 0 }
+    return ri_identifies3(
+        current | candidate, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    )
+}
+
+fn ri_cut_sufficient(
+    prior: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_subset(candidate, prior) == 0 { return 0 }
+    let remaining = ri_remove_mask(prior, candidate)
+    if ri_identifies3(
+        remaining, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2
+    ) == 0 { return 1 }
+    return 0
+}
+
+fn ri_minimal_basis(
+    allowed: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_basis_sufficient(allowed, 0, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 0 }
+    if ri_basis_sufficient(allowed, 1, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 1 }
+    if ri_basis_sufficient(allowed, 2, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 2 }
+    if ri_basis_sufficient(allowed, 4, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 4 }
+    if ri_basis_sufficient(allowed, 3, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 3 }
+    if ri_basis_sufficient(allowed, 5, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 5 }
+    if ri_basis_sufficient(allowed, 6, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 6 }
+    if ri_basis_sufficient(allowed, 7, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 7 }
+    return -1
+}
+
+fn ri_minimal_restore(
+    current: i64, revoked: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_restore_sufficient(current, revoked, 0, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 0 }
+    if ri_restore_sufficient(current, revoked, 1, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 1 }
+    if ri_restore_sufficient(current, revoked, 2, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 2 }
+    if ri_restore_sufficient(current, revoked, 4, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 4 }
+    if ri_restore_sufficient(current, revoked, 3, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 3 }
+    if ri_restore_sufficient(current, revoked, 5, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 5 }
+    if ri_restore_sufficient(current, revoked, 6, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 6 }
+    if ri_restore_sufficient(current, revoked, 7, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 7 }
+    return -1
+}
+
+fn ri_minimal_revocation_cut(
+    prior: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_cut_sufficient(prior, 0, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 0 }
+    if ri_cut_sufficient(prior, 1, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 1 }
+    if ri_cut_sufficient(prior, 2, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 2 }
+    if ri_cut_sufficient(prior, 4, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 4 }
+    if ri_cut_sufficient(prior, 3, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 3 }
+    if ri_cut_sufficient(prior, 5, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 5 }
+    if ri_cut_sufficient(prior, 6, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 6 }
+    if ri_cut_sufficient(prior, 7, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 1 { return 7 }
+    return -1
+}
+
+fn ri_basis_score(
+    allowed: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_basis_sufficient(allowed, candidate, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 127 }
+    return ri_popcount(candidate) * 8 + candidate
+}
+
+fn ri_restore_score(
+    current: i64, revoked: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_restore_sufficient(current, revoked, candidate,
+        answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 127 }
+    return ri_popcount(candidate) * 8 + candidate
+}
+
+fn ri_cut_score(
+    prior: i64, candidate: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_cut_sufficient(prior, candidate, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 127 }
+    return ri_popcount(candidate) * 8 + candidate
+}
+
+fn ri_min8(
+    score0: i64, score1: i64, score2: i64, score3: i64,
+    score4: i64, score5: i64, score6: i64, score7: i64
+) -> i64 with Mut, Div {
+    var best = score0
+    if score1 < best { best = score1 }
+    if score2 < best { best = score2 }
+    if score3 < best { best = score3 }
+    if score4 < best { best = score4 }
+    if score5 < best { best = score5 }
+    if score6 < best { best = score6 }
+    if score7 < best { best = score7 }
+    if best >= 127 { return -1 }
+    return best % 8
+}
+
+fn ri_reference_minimal_basis(
+    allowed: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    return ri_min8(
+        ri_basis_score(allowed, 0, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 1, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 2, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 3, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 4, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 5, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 6, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_basis_score(allowed, 7, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2)
+    )
+}
+
+fn ri_reference_minimal_restore(
+    current: i64, revoked: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    return ri_min8(
+        ri_restore_score(current, revoked, 0, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 1, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 2, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 3, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 4, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 5, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 6, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_restore_score(current, revoked, 7, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2)
+    )
+}
+
+fn ri_reference_minimal_revocation_cut(
+    prior: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    return ri_min8(
+        ri_cut_score(prior, 0, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 1, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 2, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 3, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 4, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 5, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 6, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_cut_score(prior, 7, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2)
+    )
+}
+
+fn ri_pack_certificate(disposition: i64, certificate: i64) -> i64 with Mut {
+    return disposition + certificate * 8 + ri_popcount(certificate) * 64
+}
+
+fn ri_certificate(
+    prior: i64, current: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut {
+    if ri_valid_inputs(prior, current, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 0 }
+    if ri_identifies3(prior, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 3 }
+    let basis = ri_minimal_basis(current, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2)
+    if basis >= 0 { return ri_pack_certificate(1, basis) }
+    let revoked = ri_revoked_mask(prior, current)
+    let restore = ri_minimal_restore(current, revoked,
+        answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2)
+    if restore < 0 { return 4 }
+    return ri_pack_certificate(2, restore)
+}
+
+fn ri_reference_certificate(
+    prior: i64, current: i64,
+    answers0: i64, answers1: i64, answers2: i64,
+    recommendation0: i64, recommendation1: i64, recommendation2: i64
+) -> i64 with Mut, Div {
+    if ri_valid_inputs(prior, current, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 0 }
+    if ri_identifies3(prior, answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2) == 0 { return 3 }
+    let basis = ri_reference_minimal_basis(current,
+        answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2)
+    if basis >= 0 { return ri_pack_certificate(1, basis) }
+    let revoked = ri_revoked_mask(prior, current)
+    let restore = ri_reference_minimal_restore(current, revoked,
+        answers0, answers1, answers2,
+        recommendation0, recommendation1, recommendation2)
+    if restore < 0 { return 4 }
+    return ri_pack_certificate(2, restore)
+}
+
+fn ri_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+// Complete canonical domain: 8^5 masks/tables * 2^3 recommendation assignments
+// = 262,144 states, including non-monotone authority pairs that must refuse.
+fn ri_check_encoded_index(index: i64) -> i64 with Mut, Div {
+    let recommendation2 = (index % 2) + 1
+    let recommendation1 = ((index / 2) % 2) + 1
+    let recommendation0 = ((index / 4) % 2) + 1
+    let answers2 = (index / 8) % 8
+    let answers1 = (index / 64) % 8
+    let answers0 = (index / 512) % 8
+    let current = (index / 4096) % 8
+    let prior = (index / 32768) % 8
+    var failures = ri_verify_case(
+        ri_certificate(prior, current, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_reference_certificate(prior, current, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2)
+    )
+    failures = failures + ri_verify_case(
+        ri_minimal_revocation_cut(prior, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2),
+        ri_reference_minimal_revocation_cut(
+            prior, answers0, answers1, answers2,
+            recommendation0, recommendation1, recommendation2)
+    )
+    return failures
+}
+
+fn ri_exhaustive_walk(start: i64, finish: i64) -> i64 with Mut, Div {
+    if start >= finish { return 0 }
+    if finish - start == 1 { return ri_check_encoded_index(start) }
+    let midpoint = (start + finish) / 2
+    return
+        ri_exhaustive_walk(start, midpoint) +
+        ri_exhaustive_walk(midpoint, finish)
+}
+
+fn ri_exhaustive_self_check() -> i64 with Mut, Div {
+    return ri_exhaustive_walk(0, 262144)
+}
+
+fn main() -> i64 with Mut, Div {
+    var failures = ri_exhaustive_self_check()
+    failures = failures + ri_verify_case(
+        ri_certificate(1, 2, 0, 1, 0, 1, 2, 1), 0
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(0, 0, 0, 1, 0, 1, 2, 1), 3
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(0, 0, 0, 7, 3, 1, 1, 1), 1
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(3, 1, 0, 1, 0, 1, 2, 1), 73
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(1, 0, 0, 1, 0, 1, 2, 1), 74
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(3, 1, 0, 1, 2, 1, 2, 2), 82
+    )
+    failures = failures + ri_verify_case(
+        ri_certificate(3, 0, 0, 1, 2, 1, 2, 2), 154
+    )
+    failures = failures + ri_verify_case(
+        ri_minimal_revocation_cut(3, 0, 1, 2, 1, 2, 2), 1
+    )
+    failures = failures + ri_verify_case(
+        ri_minimal_revocation_cut(7, 0, 1, 2, 1, 1, 1), -1
+    )
+
+    if failures == 0 { return 97 }
+    return 1
+}
