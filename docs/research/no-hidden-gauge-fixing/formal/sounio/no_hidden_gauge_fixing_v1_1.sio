@@ -1,0 +1,272 @@
+//@ run-pass
+// Darwin No Hidden Gauge Fixing v1.1.
+//
+// ABI: [declared edge mask, external anchor vertex mask, AB, BC, CA].
+// Boolean map bits encode output(0) and output(1). Gauge bits are A=1,
+// B=2, C=4. The canonical analyzer emits invariant obstruction data only.
+// It never emits a witness assignment and performs no IO.
+//
+// Abstract research only: clinical use and production authorization refused.
+
+fn nhgf_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn nhgf_valid_map(map_code: i64) -> i64 {
+    if map_code >= 0 && map_code <= 3 { return 1 }
+    return 0
+}
+
+fn nhgf_contains(mask: i64, bit: i64) -> i64 {
+    if (mask & bit) == bit { return 1 }
+    return 0
+}
+
+fn nhgf_subset(subset: i64, superset: i64) -> i64 {
+    if (subset & superset) == subset { return 1 }
+    return 0
+}
+
+fn nhgf_apply_map(map_code: i64, input: i64) -> i64 with Div {
+    if input == 0 { return map_code % 2 }
+    return (map_code / 2) % 2
+}
+
+fn nhgf_map_bijective(map_code: i64) -> i64 {
+    if map_code == 1 || map_code == 2 { return 1 }
+    return 0
+}
+
+fn nhgf_abi_valid(
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    if nhgf_valid_mask(declared) == 0 || nhgf_valid_mask(anchors) == 0 {
+        return 0
+    }
+    if nhgf_valid_map(map_ab) == 0 || nhgf_valid_map(map_bc) == 0 {
+        return 0
+    }
+    if nhgf_valid_map(map_ca) == 0 { return 0 }
+    return 1
+}
+
+fn nhgf_local_issue_mask(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    var issue: i64 = 0
+    if nhgf_contains(declared, 1) == 1 && nhgf_map_bijective(map_ab) == 0 {
+        issue = issue + 1
+    }
+    if nhgf_contains(declared, 2) == 1 && nhgf_map_bijective(map_bc) == 0 {
+        issue = issue + 2
+    }
+    if nhgf_contains(declared, 4) == 1 && nhgf_map_bijective(map_ca) == 0 {
+        issue = issue + 4
+    }
+    return issue
+}
+
+fn nhgf_xor(left: i64, right: i64) -> i64 {
+    if left == right { return 0 }
+    return 1
+}
+
+fn nhgf_gauge_bit(gauge: i64, vertex: i64) -> i64 {
+    if nhgf_contains(gauge, vertex) == 1 { return 1 }
+    return 0
+}
+
+fn nhgf_transform_map(
+    map_code: i64, source_flip: i64, target_flip: i64
+) -> i64 with Div {
+    let output_zero = nhgf_xor(target_flip,
+        nhgf_apply_map(map_code, nhgf_xor(0, source_flip)))
+    let output_one = nhgf_xor(target_flip,
+        nhgf_apply_map(map_code, nhgf_xor(1, source_flip)))
+    return output_zero + output_one * 2
+}
+
+fn nhgf_transform_map_ab(map_code: i64, gauge: i64) -> i64 with Div {
+    return nhgf_transform_map(map_code,
+        nhgf_gauge_bit(gauge, 1), nhgf_gauge_bit(gauge, 2))
+}
+
+fn nhgf_transform_map_bc(map_code: i64, gauge: i64) -> i64 with Div {
+    return nhgf_transform_map(map_code,
+        nhgf_gauge_bit(gauge, 2), nhgf_gauge_bit(gauge, 4))
+}
+
+fn nhgf_transform_map_ca(map_code: i64, gauge: i64) -> i64 with Div {
+    return nhgf_transform_map(map_code,
+        nhgf_gauge_bit(gauge, 4), nhgf_gauge_bit(gauge, 1))
+}
+
+fn nhgf_assignment_satisfies(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64,
+    assignment: i64
+) -> i64 with Div {
+    let value_a = assignment % 2
+    let value_b = (assignment / 2) % 2
+    let value_c = (assignment / 4) % 2
+    if nhgf_contains(declared, 1) == 1 &&
+       value_b != nhgf_apply_map(map_ab, value_a) { return 0 }
+    if nhgf_contains(declared, 2) == 1 &&
+       value_c != nhgf_apply_map(map_bc, value_b) { return 0 }
+    if nhgf_contains(declared, 4) == 1 &&
+       value_a != nhgf_apply_map(map_ca, value_c) { return 0 }
+    return 1
+}
+
+fn nhgf_solution_mask(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    return
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0) +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 1) * 2 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 2) * 4 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 3) * 8 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 4) * 16 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 5) * 32 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 6) * 64 +
+        nhgf_assignment_satisfies(declared, map_ab, map_bc, map_ca, 7) * 128
+}
+
+fn nhgf_popcount8(mask: i64) -> i64 {
+    var count: i64 = 0
+    if nhgf_contains(mask, 1) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 2) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 4) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 8) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 16) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 32) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 64) == 1 { count = count + 1 }
+    if nhgf_contains(mask, 128) == 1 { count = count + 1 }
+    return count
+}
+
+fn nhgf_gauge_respects_anchors(gauge: i64, anchors: i64) -> i64 {
+    if (gauge & anchors) == 0 { return 1 }
+    return 0
+}
+
+fn nhgf_gauge_stabilizes(
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64,
+    gauge: i64
+) -> i64 with Div {
+    if nhgf_gauge_respects_anchors(gauge, anchors) == 0 { return 0 }
+    if nhgf_contains(declared, 1) == 1 &&
+       nhgf_transform_map_ab(map_ab, gauge) != map_ab { return 0 }
+    if nhgf_contains(declared, 2) == 1 &&
+       nhgf_transform_map_bc(map_bc, gauge) != map_bc { return 0 }
+    if nhgf_contains(declared, 4) == 1 &&
+       nhgf_transform_map_ca(map_ca, gauge) != map_ca { return 0 }
+    return 1
+}
+
+fn nhgf_stabilizer_mask(
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    return
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 0) +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 1) * 2 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 2) * 4 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 3) * 8 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 4) * 16 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 5) * 32 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 6) * 64 +
+        nhgf_gauge_stabilizes(declared, anchors, map_ab, map_bc, map_ca, 7) * 128
+}
+
+fn nhgf_candidate_breaks_symmetry(
+    candidate: i64, available: i64,
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhgf_subset(candidate, available) == 0 { return 0 }
+    if nhgf_stabilizer_mask(declared, anchors | candidate,
+        map_ab, map_bc, map_ca) == 1 { return 1 }
+    return 0
+}
+
+fn nhgf_minimal_additional_anchor(
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    let available = 7 - anchors
+    if nhgf_candidate_breaks_symmetry(0, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhgf_candidate_breaks_symmetry(1, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhgf_candidate_breaks_symmetry(2, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhgf_candidate_breaks_symmetry(4, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhgf_candidate_breaks_symmetry(3, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhgf_candidate_breaks_symmetry(5, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhgf_candidate_breaks_symmetry(6, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhgf_candidate_breaks_symmetry(7, available, declared, anchors,
+        map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+fn nhgf_pack(
+    disposition: i64, stabilizer: i64, additional_anchor: i64,
+    solution_count: i64, stabilizer_order: i64, local_issue: i64
+) -> i64 {
+    return disposition + stabilizer * 8 + additional_anchor * 2048 +
+        solution_count * 16384 + stabilizer_order * 262144 +
+        local_issue * 4194304
+}
+
+fn nhgf_analyze(
+    declared: i64, anchors: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhgf_abi_valid(declared, anchors, map_ab, map_bc, map_ca) == 0 {
+        return 0
+    }
+    let issue = nhgf_local_issue_mask(declared, map_ab, map_bc, map_ca)
+    if issue != 0 { return nhgf_pack(4, 0, 0, 0, 0, issue) }
+    let solutions = nhgf_solution_mask(declared, map_ab, map_bc, map_ca)
+    let solution_count = nhgf_popcount8(solutions)
+    let stabilizer = nhgf_stabilizer_mask(
+        declared, anchors, map_ab, map_bc, map_ca)
+    let stabilizer_order = nhgf_popcount8(stabilizer)
+    let additional_anchor = nhgf_minimal_additional_anchor(
+        declared, anchors, map_ab, map_bc, map_ca)
+    if additional_anchor < 0 {
+        return nhgf_pack(6, stabilizer, 0, solution_count,
+            stabilizer_order, 0)
+    }
+    if solution_count == 0 {
+        return nhgf_pack(5, stabilizer, additional_anchor, 0,
+            stabilizer_order, 0)
+    }
+    if stabilizer_order > 1 {
+        return nhgf_pack(3, stabilizer, additional_anchor, solution_count,
+            stabilizer_order, 0)
+    }
+    return nhgf_pack(1, stabilizer, additional_anchor, solution_count,
+        stabilizer_order, 0)
+}
+
+fn nhgf_self_check() -> i64 with Div {
+    var failures: i64 = 0
+    if nhgf_analyze(7, 0, 2, 2, 2) != 560139 { failures = failures + 1 }
+    if nhgf_analyze(7, 1, 2, 2, 2) != 294921 { failures = failures + 1 }
+    if nhgf_analyze(1, 0, 0, 2, 2) != 4194308 { failures = failures + 1 }
+    if nhgf_analyze(-1, 0, 2, 2, 2) != 0 { failures = failures + 1 }
+    return failures
+}
+
+fn main() -> i64 with Div {
+    if nhgf_self_check() == 0 { return 111 }
+    return 611 + nhgf_self_check()
+}

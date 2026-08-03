@@ -1,0 +1,274 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-gate-receipt.v1.1",
+  "generatedAt": "2026-08-03T10:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "verified": true,
+  "compilerReconciled": true,
+  "leanStabilizerTheoremEstablished": true,
+  "pointwiseTriangleCountermodelEstablished": true,
+  "completeFiniteDomainEstablished": true,
+  "canonicalGaugeInvarianceEstablished": true,
+  "minimumAnchorCertificateEstablished": true,
+  "mutationAdequacyEstablished": true,
+  "canonicalSingularWitnessExportCount": 0,
+  "nativeWasmSelfCheckParityEstablished": true,
+  "nativeWasmCanonicalTranscriptParityEstablished": true,
+  "allInternalExportParityEstablished": false,
+  "executableSemanticsMechanized": false,
+  "emittedWasmSemanticsMechanized": false,
+  "externalObservationValueReceiptImplemented": false,
+  "parent": {
+    "path": "docs/research/normative-gauge/formal/normative-gauge-gate.receipt.v1.0.json",
+    "sha256": "1ceacb5b739840a99d8b833028af9cf32949406f9ca68e19f3c98b84e7b989f7",
+    "bytes": 12468
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "evidence": {
+    "runtime": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/runtime-verification.v1.1.json",
+      "sha256": "6b77f5cf5f26f7f9e670c97b3291479a964126d0d4cea064c43cd90e448aa148",
+      "bytes": 9276
+    },
+    "lean": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/lean-verification.v1.1.json",
+      "sha256": "d8a8038df1ff5e934d329de89dec8e36e66aaa38130b6280026955c7d7bf991a",
+      "bytes": 3177
+    },
+    "sourceFreshBuild": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/source-fresh-build.v1.1.json",
+      "sha256": "043298602c509d073eb0d1fdc400369e540ef19079b0889a1febf211bb375db8",
+      "bytes": 6538
+    }
+  },
+  "model": {
+    "inputDomain": "[0..7] x [0..7] x [0..3]^3",
+    "gaugeGroup": "C2^3",
+    "canonicalStates": 4096,
+    "gaugeChecks": 32768,
+    "edgeTransformationChecks": 1536,
+    "groupCompositionChecks": 4096,
+    "stabilizerSubgroupChecks": 23912,
+    "minimumAnchorChecks": 9688,
+    "fixedPointChecks": 12520,
+    "hostileStates": 21600,
+    "mutants": 4,
+    "mutantsKilled": 4,
+    "expectedCanonicalSelfCheckCode": 111,
+    "expectedAdversarialSelfCheckCode": 112,
+    "transcriptSha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82",
+    "dispositionCensus": {
+      "REFUSE": 0,
+      "NO_STABILIZER_OBSTRUCTION": 716,
+      "RESERVED": 0,
+      "ABSTAIN_STABILIZER_OBSTRUCTION": 980,
+      "REVIEW_LOCAL_PROOF": 2368,
+      "ABSTAIN_NO_GLOBAL_SECTION": 32,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    }
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d"
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/README.md",
+      "sha256": "84f54d18e2f762901f320ee73ae6de1e9f3c082562ce825028b6b6b1d1a413ef",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/no-hidden-gauge-fixing-theory-v1.1.md",
+      "sha256": "dcb65b49ae198f2fc3fec11ea322e79392558f4b2bac0603800a1be59b7b72c0",
+      "bytes": 3784
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/prior-art-frontier-v1.1.md",
+      "sha256": "ebce24c7f622ed36c7b5e7e14910f368d66add2f72b16b22866d7115e03f0b28",
+      "bytes": 2572
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/closure-v1.1.md",
+      "sha256": "5645130235e72d5ce495e03c69dda001e3440037163459422873e8ff8230cc3d",
+      "bytes": 3778
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixing.lean",
+      "sha256": "0285b41b3691e2e76d2ec1a32924da932366db83e8b2abaed35dec745e197444",
+      "bytes": 5654
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/NoHiddenGaugeFixingAudit.lean",
+      "sha256": "8895939f69e317844d0a027edcfcdbea3f1aaa6bd8b4edc160c29bc038292d21",
+      "bytes": 762
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lakefile.lean",
+      "sha256": "87a4366e0006ce10dba12f23d168d90f4e6fb63fe06cb912b10840e2aeb925fc",
+      "bytes": 240
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lake-manifest.json",
+      "sha256": "5612ce416d0ced24baa58f84f9bf15d6fd168c2139854eb4b598e89aa093f0f9",
+      "bytes": 362
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_v1_1.sio",
+      "sha256": "9d2142be75682b696a4bc8e99c4044ddcf65cb1863c72a6c5ffbe98910522abf",
+      "bytes": 9825
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_mutants_v1_1.sio",
+      "sha256": "16910b681594bc90292bdf62c99900d64d15696b97ceca043149e8caf44c3dcb",
+      "bytes": 14039
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing.v1.1.wasm",
+      "sha256": "4a2e9a8ad919d1f5967981fd86eea2731a8bca36af0c269c91a48fc53e70b1a2",
+      "bytes": 6550
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing_mutants.v1.1.wasm",
+      "sha256": "f1d3693bc52019ef50a2d4e88c860619e96ce80288bdd6672922ffe32cb7a641",
+      "bytes": 9469
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing.v1.1.linux-x86_64",
+      "sha256": "479fa059d6f7cc0f61d76291779d72117f303c597a59942136e95e31dd136927",
+      "bytes": 28680
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing_mutants.v1.1.linux-x86_64",
+      "sha256": "f2153cfe1d557d1e4d2ae99325204f9b070ac271e8b556c4fc2bb4eb665e0e13",
+      "bytes": 36872
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing_transcript.v1.1.linux-x86_64",
+      "sha256": "6f80f782f87b442082bc16f614f513b08dc58edad6f0975d480d247033d94538",
+      "bytes": 36872
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/no_hidden_gauge_fixing_transcript_v1_1.sio",
+      "sha256": "166e9a05d5dd52951da6fc4455b01b44adfcda2ffee22de2c0cac595b1a3f31b",
+      "bytes": 11092
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/canonical-domain.v1.1.txt",
+      "sha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82",
+      "bytes": 86106
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/vectors/no-hidden-gauge-fixing-vectors.v1.1.json",
+      "sha256": "10a3cf5022899ea822e82590198f790141b2ac5e265f2464f9366d2b4c71e297",
+      "bytes": 6320
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/runtime-verification.v1.1.json",
+      "sha256": "6b77f5cf5f26f7f9e670c97b3291479a964126d0d4cea064c43cd90e448aa148",
+      "bytes": 9276
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/lean-verification.v1.1.json",
+      "sha256": "d8a8038df1ff5e934d329de89dec8e36e66aaa38130b6280026955c7d7bf991a",
+      "bytes": 3177
+    },
+    {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/evidence/source-fresh-build.v1.1.json",
+      "sha256": "043298602c509d073eb0d1fdc400369e540ef19079b0889a1febf211bb375db8",
+      "bytes": 6538
+    },
+    {
+      "path": "scripts/no-hidden-gauge-fixing-oracle.mjs",
+      "sha256": "5de1539cfca6318337275e9fff53cb44911e4a26ae0e61bbfcd768084fff9d0d",
+      "bytes": 6616
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-vectors.mjs",
+      "sha256": "fbced0c7e8efdd595140321dd1c507ca3684ba5c164cce4e6c58544deaa5e8d6",
+      "bytes": 2459
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-mutant-source.mjs",
+      "sha256": "de8ecae87d707763566eea9182622ea5edea9c9fa1e743da5871772570074bd8",
+      "bytes": 5486
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-native-transcript.mjs",
+      "sha256": "4fc0795acf3e09b145bb2a943e3b771e3dd422ead7790a04e456d5a82dbce98c",
+      "bytes": 2509
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-source-fresh-evidence.mjs",
+      "sha256": "7ba6011100f4248745bf788071d6b5bcf2aa5572226bf8ff87ec110e8f5a4246",
+      "bytes": 8504
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing.mjs",
+      "sha256": "9b60bfabdeff30dffac43ffdb433cf7e72b60ed4b95a6f04d4d5d18482542483",
+      "bytes": 22363
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing-lean.mjs",
+      "sha256": "927fa5dfb137ef55bda8ad6cc8ed2357e71d1c608bd7a1b25796d55a0fd1af09",
+      "bytes": 6470
+    },
+    {
+      "path": "scripts/generate-no-hidden-gauge-fixing-receipt.mjs",
+      "sha256": "99bf23b76c5888d33abb91902a5420bf177622f623cb06b8437bb6689647bebd",
+      "bytes": 10042
+    },
+    {
+      "path": "scripts/verify-no-hidden-gauge-fixing-gate.mjs",
+      "sha256": "529732b1a0e724ad833ace459b24e9d6db06f98c622c08ae45a9cdcd4dba3a97",
+      "bytes": 5658
+    }
+  ],
+  "claims": {
+    "established": [
+      "an equivariant selector output is fixed by every input stabilizer element in the Lean model",
+      "a stabilizer that moves every admissible output obstructs deterministic equivariant admissible selection",
+      "the Boolean identity triangle has two sections exchanged by a pointwise input stabilizer",
+      "the canonical Sounio artifact emits obstruction data and no singular witness export",
+      "complete finite-domain agreement with an independent exhaustive oracle",
+      "exact residual stabilizer subgroup and minimum additional anchor mask over the declared domain",
+      "four isolated hidden-choice mutants are killed with executable counterexamples",
+      "source-fresh deterministic native and WASM builds",
+      "exact native/WASM six-field transcript parity over 4,096 states"
+    ],
+    "notEstablished": [
+      "content-addressed value, provenance, reliability, or authorization for an external observation",
+      "a unique or justified normative output after removal of the finite stabilizer obstruction",
+      "mechanized Sounio executable semantics or emitted WASM byte semantics",
+      "parity of every internal native and WASM helper export",
+      "scientific novelty, priority, or absence of prior art",
+      "real-world normative, empirical, clinical, regulatory, legal, or production validity"
+    ]
+  },
+  "invalidation": [
+    "parent or compiler receipt identity changes",
+    "any listed artifact hash or byte size changes",
+    "Lean build, forbidden-token scan, or axiom audit changes",
+    "canonical, hostile, gauge, subgroup, or minimum-anchor verification ceases to pass",
+    "one or more hidden-choice mutants survive",
+    "a singular-witness function appears in the canonical export surface",
+    "native/WASM transcript identity changes",
+    "clinical refusal, authorization, signature, or novelty boundary changes"
+  ],
+  "errors": []
+}

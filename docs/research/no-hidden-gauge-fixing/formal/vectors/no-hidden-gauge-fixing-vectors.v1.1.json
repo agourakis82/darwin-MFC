@@ -1,0 +1,293 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-vectors.v1.1",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "abi": [
+    "declaredEdgeMask",
+    "anchorVertexMask",
+    "mapAB",
+    "mapBC",
+    "mapCA"
+  ],
+  "vectors": [
+    {
+      "id": "identity-triangle-unanchored",
+      "input": [
+        7,
+        0,
+        2,
+        2,
+        2
+      ],
+      "expectedPacked": 560139,
+      "expectedDisposition": "ABSTAIN_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 129,
+      "expectedMinimumAdditionalAnchorMask": 1,
+      "expectedSolutionCount": 2,
+      "expectedStabilizerOrder": 2,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 129,
+      "expectedStabilizerElements": [
+        0,
+        7
+      ],
+      "mutantAnomalyMasks": [
+        120,
+        120,
+        116,
+        85
+      ]
+    },
+    {
+      "id": "identity-triangle-anchor-a",
+      "input": [
+        7,
+        1,
+        2,
+        2,
+        2
+      ],
+      "expectedPacked": 294921,
+      "expectedDisposition": "NO_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 1,
+      "expectedMinimumAdditionalAnchorMask": 0,
+      "expectedSolutionCount": 2,
+      "expectedStabilizerOrder": 1,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 129,
+      "expectedStabilizerElements": [
+        0
+      ],
+      "mutantAnomalyMasks": [
+        40,
+        40,
+        32,
+        0
+      ]
+    },
+    {
+      "id": "identity-triangle-all-anchors",
+      "input": [
+        7,
+        7,
+        2,
+        2,
+        2
+      ],
+      "expectedPacked": 294921,
+      "expectedDisposition": "NO_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 1,
+      "expectedMinimumAdditionalAnchorMask": 0,
+      "expectedSolutionCount": 2,
+      "expectedStabilizerOrder": 1,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 129,
+      "expectedStabilizerElements": [
+        0
+      ],
+      "mutantAnomalyMasks": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "no-edges-unanchored",
+      "input": [
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      "expectedPacked": 2244603,
+      "expectedDisposition": "ABSTAIN_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 255,
+      "expectedMinimumAdditionalAnchorMask": 7,
+      "expectedSolutionCount": 8,
+      "expectedStabilizerOrder": 8,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 255,
+      "expectedStabilizerElements": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mutantAnomalyMasks": [
+        127,
+        127,
+        127,
+        123
+      ]
+    },
+    {
+      "id": "no-edges-anchors-ab",
+      "input": [
+        0,
+        3,
+        0,
+        3,
+        0
+      ],
+      "expectedPacked": 663691,
+      "expectedDisposition": "ABSTAIN_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 17,
+      "expectedMinimumAdditionalAnchorMask": 4,
+      "expectedSolutionCount": 8,
+      "expectedStabilizerOrder": 2,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 255,
+      "expectedStabilizerElements": [
+        0,
+        4
+      ],
+      "mutantAnomalyMasks": [
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "nontrivial-holonomy",
+      "input": [
+        7,
+        0,
+        2,
+        2,
+        1
+      ],
+      "expectedPacked": 527373,
+      "expectedDisposition": "ABSTAIN_NO_GLOBAL_SECTION",
+      "expectedStabilizerMask": 129,
+      "expectedMinimumAdditionalAnchorMask": 1,
+      "expectedSolutionCount": 0,
+      "expectedStabilizerOrder": 2,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 0,
+      "expectedStabilizerElements": [
+        0,
+        7
+      ],
+      "mutantAnomalyMasks": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "declared-nonbijective-map",
+      "input": [
+        1,
+        0,
+        0,
+        2,
+        2
+      ],
+      "expectedPacked": 4194308,
+      "expectedDisposition": "REVIEW_LOCAL_PROOF",
+      "expectedStabilizerMask": 0,
+      "expectedMinimumAdditionalAnchorMask": 0,
+      "expectedSolutionCount": 0,
+      "expectedStabilizerOrder": 0,
+      "expectedLocalIssueMask": 1,
+      "expectedSolutionMask": null,
+      "expectedStabilizerElements": [],
+      "mutantAnomalyMasks": [
+        125,
+        125,
+        123,
+        117
+      ]
+    },
+    {
+      "id": "single-edge-identity",
+      "input": [
+        1,
+        0,
+        2,
+        0,
+        3
+      ],
+      "expectedPacked": 1125579,
+      "expectedDisposition": "ABSTAIN_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 153,
+      "expectedMinimumAdditionalAnchorMask": 5,
+      "expectedSolutionCount": 4,
+      "expectedStabilizerOrder": 4,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 153,
+      "expectedStabilizerElements": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "mutantAnomalyMasks": [
+        126,
+        126,
+        125,
+        61
+      ]
+    },
+    {
+      "id": "single-edge-with-source-anchor",
+      "input": [
+        1,
+        1,
+        2,
+        0,
+        3
+      ],
+      "expectedPacked": 598155,
+      "expectedDisposition": "ABSTAIN_STABILIZER_OBSTRUCTION",
+      "expectedStabilizerMask": 17,
+      "expectedMinimumAdditionalAnchorMask": 4,
+      "expectedSolutionCount": 4,
+      "expectedStabilizerOrder": 2,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": 153,
+      "expectedStabilizerElements": [
+        0,
+        4
+      ],
+      "mutantAnomalyMasks": [
+        42,
+        42,
+        40,
+        40
+      ]
+    },
+    {
+      "id": "invalid-declared-mask",
+      "input": [
+        -1,
+        0,
+        2,
+        2,
+        2
+      ],
+      "expectedPacked": 0,
+      "expectedDisposition": "REFUSE",
+      "expectedStabilizerMask": 0,
+      "expectedMinimumAdditionalAnchorMask": 0,
+      "expectedSolutionCount": 0,
+      "expectedStabilizerOrder": 0,
+      "expectedLocalIssueMask": 0,
+      "expectedSolutionMask": null,
+      "expectedStabilizerElements": [],
+      "mutantAnomalyMasks": []
+    }
+  ]
+}

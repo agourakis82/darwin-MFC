@@ -1,0 +1,12 @@
+import NoHiddenGaugeFixing
+
+#print axioms Darwin.NoHiddenGaugeFixing.stabilizerForcesSelectedFixed
+#print axioms Darwin.NoHiddenGaugeFixing.stabilizerObstructsAdmissibleSelection
+#print axioms Darwin.NoHiddenGaugeFixing.noBooleanGaugeFixing
+#print axioms Darwin.NoHiddenGaugeFixing.boolFlipAllStabilizesIdentityPointwise
+#print axioms Darwin.NoHiddenGaugeFixing.boolFlipAllMovesEveryAssignment
+#print axioms Darwin.NoHiddenGaugeFixing.noTriangleStabilizerCovariantSelector
+#print axioms Darwin.NoHiddenGaugeFixing.noTriangleStabilizerCovariantAdmissibleSelector
+#print axioms Darwin.NoHiddenGaugeFixing.identityHasFalseSection
+#print axioms Darwin.NoHiddenGaugeFixing.identityHasTrueSection
+#print axioms Darwin.NoHiddenGaugeFixing.anchorAtAExcludesDiagonalFlip

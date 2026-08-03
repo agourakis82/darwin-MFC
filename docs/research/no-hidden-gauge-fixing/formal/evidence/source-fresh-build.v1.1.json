@@ -1,0 +1,167 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-source-fresh-build.v1.1",
+  "generatedAt": "2026-08-03T10:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "bytes": 8422,
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "compilerReconciled": true
+  },
+  "parentReceipt": {
+    "path": "docs/research/normative-gauge/formal/normative-gauge-gate.receipt.v1.0.json",
+    "bytes": 12468,
+    "sha256": "1ceacb5b739840a99d8b833028af9cf32949406f9ca68e19f3c98b84e7b989f7",
+    "verified": true
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "branch": "codex/madaros-wasm-deontic-v3-20260802",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "checkout": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "checkoutClean": true,
+    "identity": "Madaros v0.80.0",
+    "path": "/tmp/darwin-sourcefresh-v04/madaros-v9-clean",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "wrapperPath": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e/bin/madaros",
+    "wrapperSha256": "1c6978a3015618043354933032e283a2f18265db36a5fa0b52dfb9d5d962b9ec",
+    "compilerReconciled": true
+  },
+  "environment": {
+    "builder": "Lima souc-linux",
+    "os": "Linux",
+    "architecture": "x86_64",
+    "sourceMountMode": "copied-to-tmp",
+    "networkRequiredDuringCompile": false
+  },
+  "sources": {
+    "canonical": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_v1_1.sio",
+      "remotePath": "/tmp/no_hidden_gauge_fixing_v1_1.sio",
+      "bytes": 9825,
+      "sha256": "9d2142be75682b696a4bc8e99c4044ddcf65cb1863c72a6c5ffbe98910522abf"
+    },
+    "adversarial": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_mutants_v1_1.sio",
+      "remotePath": "/tmp/no_hidden_gauge_fixing_mutants_v1_1.sio",
+      "bytes": 14039,
+      "sha256": "16910b681594bc90292bdf62c99900d64d15696b97ceca043149e8caf44c3dcb"
+    },
+    "transcript": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/no_hidden_gauge_fixing_transcript_v1_1.sio",
+      "remotePath": "/tmp/no_hidden_gauge_fixing_transcript_v1_1.sio",
+      "bytes": 11092,
+      "sha256": "166e9a05d5dd52951da6fc4455b01b44adfcda2ffee22de2c0cac595b1a3f31b"
+    },
+    "remoteHashesMatched": true,
+    "canonicalHasIO": false,
+    "canonicalContainsSingularSelector": false
+  },
+  "artifacts": {
+    "canonicalWasm": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing.v1.1.wasm",
+      "bytes": 6550,
+      "sha256": "4a2e9a8ad919d1f5967981fd86eea2731a8bca36af0c269c91a48fc53e70b1a2",
+      "repeatSha256": "4a2e9a8ad919d1f5967981fd86eea2731a8bca36af0c269c91a48fc53e70b1a2",
+      "buildExitCodes": [
+        0,
+        0
+      ],
+      "deterministic": true,
+      "executionResult": 111
+    },
+    "canonicalNative": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing.v1.1.linux-x86_64",
+      "bytes": 28680,
+      "sha256": "479fa059d6f7cc0f61d76291779d72117f303c597a59942136e95e31dd136927",
+      "repeatSha256": "479fa059d6f7cc0f61d76291779d72117f303c597a59942136e95e31dd136927",
+      "buildExitCodes": [
+        0,
+        0
+      ],
+      "executionExitCodes": [
+        111,
+        111
+      ],
+      "deterministic": true
+    },
+    "adversarialWasm": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing_mutants.v1.1.wasm",
+      "bytes": 9469,
+      "sha256": "f1d3693bc52019ef50a2d4e88c860619e96ce80288bdd6672922ffe32cb7a641",
+      "repeatSha256": "f1d3693bc52019ef50a2d4e88c860619e96ce80288bdd6672922ffe32cb7a641",
+      "buildExitCodes": [
+        0,
+        0
+      ],
+      "deterministic": true,
+      "executionResult": 112
+    },
+    "adversarialNative": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing_mutants.v1.1.linux-x86_64",
+      "bytes": 36872,
+      "sha256": "f2153cfe1d557d1e4d2ae99325204f9b070ac271e8b556c4fc2bb4eb665e0e13",
+      "repeatSha256": "f2153cfe1d557d1e4d2ae99325204f9b070ac271e8b556c4fc2bb4eb665e0e13",
+      "buildExitCodes": [
+        0,
+        0
+      ],
+      "executionExitCodes": [
+        112,
+        112
+      ],
+      "deterministic": true
+    },
+    "nativeTranscript": {
+      "source": {
+        "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/no_hidden_gauge_fixing_transcript_v1_1.sio",
+        "remotePath": "/tmp/no_hidden_gauge_fixing_transcript_v1_1.sio",
+        "bytes": 11092,
+        "sha256": "166e9a05d5dd52951da6fc4455b01b44adfcda2ffee22de2c0cac595b1a3f31b"
+      },
+      "binary": {
+        "path": "docs/research/no-hidden-gauge-fixing/formal/native/no_hidden_gauge_fixing_transcript.v1.1.linux-x86_64",
+        "bytes": 36872,
+        "sha256": "6f80f782f87b442082bc16f614f513b08dc58edad6f0975d480d247033d94538",
+        "repeatSha256": "6f80f782f87b442082bc16f614f513b08dc58edad6f0975d480d247033d94538",
+        "buildExitCodes": [
+          0,
+          0
+        ],
+        "deterministic": true
+      },
+      "execution": {
+        "exitCodes": [
+          0,
+          0
+        ],
+        "records": 4096,
+        "stdoutBytes": 86106,
+        "stdoutSha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82",
+        "repeatStdoutSha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82",
+        "wasmTranscriptSha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82"
+      }
+    }
+  },
+  "commands": {
+    "wasm": "env MADAROS_RAW_BIN=<compiler> <wrapper> build <source> --backend wasm -o <output>",
+    "native": "env MADAROS_RAW_BIN=<compiler> <wrapper> build <source> --backend native -o <output>",
+    "executeNative": "<native-binary>",
+    "executeTranscript": "<native-transcript-binary> > <transcript>"
+  },
+  "parity": {
+    "canonicalNativeWasmSelfCheckParityEstablished": true,
+    "adversarialNativeWasmSelfCheckParityEstablished": true,
+    "nativeWasmCanonicalTranscriptParityEstablished": true,
+    "allInternalExportParityEstablished": false,
+    "emittedWasmSemanticsMechanized": false
+  },
+  "verified": true,
+  "errors": []
+}

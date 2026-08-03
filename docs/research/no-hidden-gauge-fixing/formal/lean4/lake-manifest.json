@@ -1,0 +1,13 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"type": "path",
+   "scope": "",
+   "name": "normativeGauge",
+   "manifestFile": "lake-manifest.json",
+   "inherited": false,
+   "dir": "../../../normative-gauge/formal/lean4",
+   "configFile": "lakefile.lean"}],
+ "name": "noHiddenGaugeFixing",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

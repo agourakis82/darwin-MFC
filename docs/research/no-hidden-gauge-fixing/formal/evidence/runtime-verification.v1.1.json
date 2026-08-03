@@ -1,0 +1,334 @@
+{
+  "schema": "darwin.no-hidden-gauge-fixing-runtime-verification.v1.1",
+  "generatedAt": "2026-08-03T10:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "canonicalWasm": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing.v1.1.wasm",
+    "bytes": 6550,
+    "sha256": "4a2e9a8ad919d1f5967981fd86eea2731a8bca36af0c269c91a48fc53e70b1a2",
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "nhgf_abi_valid",
+      "nhgf_analyze",
+      "nhgf_apply_map",
+      "nhgf_assignment_satisfies",
+      "nhgf_candidate_breaks_symmetry",
+      "nhgf_contains",
+      "nhgf_gauge_bit",
+      "nhgf_gauge_respects_anchors",
+      "nhgf_gauge_stabilizes",
+      "nhgf_local_issue_mask",
+      "nhgf_map_bijective",
+      "nhgf_minimal_additional_anchor",
+      "nhgf_pack",
+      "nhgf_popcount8",
+      "nhgf_self_check",
+      "nhgf_solution_mask",
+      "nhgf_stabilizer_mask",
+      "nhgf_subset",
+      "nhgf_transform_map",
+      "nhgf_transform_map_ab",
+      "nhgf_transform_map_bc",
+      "nhgf_transform_map_ca",
+      "nhgf_valid_map",
+      "nhgf_valid_mask",
+      "nhgf_xor"
+    ],
+    "expectedExportCount": 27,
+    "singularWitnessExportCount": 0,
+    "mainResult": 111
+  },
+  "adversarialWasm": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/wasm/no_hidden_gauge_fixing_mutants.v1.1.wasm",
+    "bytes": 9469,
+    "sha256": "f1d3693bc52019ef50a2d4e88c860619e96ce80288bdd6672922ffe32cb7a641",
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "nhgf_abi_valid",
+      "nhgf_analyze",
+      "nhgf_apply_map",
+      "nhgf_assignment_satisfies",
+      "nhgf_candidate_breaks_symmetry",
+      "nhgf_contains",
+      "nhgf_gauge_bit",
+      "nhgf_gauge_respects_anchors",
+      "nhgf_gauge_stabilizes",
+      "nhgf_local_issue_mask",
+      "nhgf_map_bijective",
+      "nhgf_minimal_additional_anchor",
+      "nhgf_pack",
+      "nhgf_popcount8",
+      "nhgf_self_check",
+      "nhgf_solution_mask",
+      "nhgf_stabilizer_mask",
+      "nhgf_subset",
+      "nhgf_transform_map",
+      "nhgf_transform_map_ab",
+      "nhgf_transform_map_bc",
+      "nhgf_transform_map_ca",
+      "nhgf_valid_map",
+      "nhgf_valid_mask",
+      "nhgf_xor",
+      "nhgfm_anomaly_mask",
+      "nhgfm_assignment_mask_bit",
+      "nhgfm_diff_at_gauge",
+      "nhgfm_first_solution_from",
+      "nhgfm_selector",
+      "nhgfm_toggle_assignment_bit",
+      "nhgfm_transform_assignment"
+    ],
+    "expectedExportCount": 34,
+    "mainResult": 112
+  },
+  "boundedDomain": {
+    "canonicalStates": 4096,
+    "canonicalMismatches": 0,
+    "hostileStates": 21600,
+    "hostileInvalidStates": 17504,
+    "hostileMismatches": 0,
+    "dispositionCensus": {
+      "REFUSE": 0,
+      "NO_STABILIZER_OBSTRUCTION": 716,
+      "RESERVED": 0,
+      "ABSTAIN_STABILIZER_OBSTRUCTION": 980,
+      "REVIEW_LOCAL_PROOF": 2368,
+      "ABSTAIN_NO_GLOBAL_SECTION": 32,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    },
+    "stabilizerOrderCensus": {
+      "1": 2056,
+      "2": 1496,
+      "4": 480,
+      "8": 64
+    },
+    "minimumAnchorCensus": {
+      "0": 2056,
+      "1": 600,
+      "2": 480,
+      "3": 192,
+      "4": 416,
+      "5": 160,
+      "6": 128,
+      "7": 64
+    }
+  },
+  "gaugeAction": {
+    "group": "C2^3",
+    "transformationChecks": 1536,
+    "transformationMismatches": 0,
+    "groupCompositionChecks": 4096,
+    "groupCompositionMismatches": 0,
+    "gaugeChecks": 32768,
+    "nontrivialGaugeChecks": 28672,
+    "gaugeMismatches": 0,
+    "subgroupChecks": 23912,
+    "subgroupMismatches": 0
+  },
+  "stabilizerObstruction": {
+    "minimumAnchorChecks": 9688,
+    "minimumAnchorMismatches": 0,
+    "fixedPointChecks": 12520,
+    "fixedPointsFound": 0
+  },
+  "mutationAdequacy": {
+    "canonicalArtifactContainsMutants": false,
+    "mutants": 4,
+    "killed": 4,
+    "results": [
+      {
+        "kind": 0,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 2384,
+        "gaugeViolations": 5860,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 127
+        }
+      },
+      {
+        "kind": 1,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 2384,
+        "gaugeViolations": 5860,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 127
+        }
+      },
+      {
+        "kind": 2,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 2886,
+        "gaugeViolations": 6544,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 127
+        }
+      },
+      {
+        "kind": 3,
+        "statesChecked": 4096,
+        "statesWithAnomaly": 2692,
+        "gaugeViolations": 6044,
+        "oracleMismatches": 0,
+        "killed": true,
+        "minimalCounterexample": {
+          "index": 0,
+          "input": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gauge": 1,
+          "anomalyMask": 127
+        }
+      }
+    ]
+  },
+  "transcript": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/canonical-domain.v1.1.txt",
+    "lines": 4096,
+    "bytes": 86106,
+    "sha256": "182e55cd9ef202b2e5ab6153fbcd7d95a1699b4e9fd2111f824135619acf0a82",
+    "encoding": "index|packed|stabilizerMask|minimumAdditionalAnchorMask|solutionCount|stabilizerOrder"
+  },
+  "sourceLineage": {
+    "canonical": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_v1_1.sio",
+      "bytes": 9825,
+      "sha256": "9d2142be75682b696a4bc8e99c4044ddcf65cb1863c72a6c5ffbe98910522abf",
+      "hasIO": false
+    },
+    "adversarial": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/sounio/no_hidden_gauge_fixing_mutants_v1_1.sio",
+      "bytes": 14039,
+      "sha256": "16910b681594bc90292bdf62c99900d64d15696b97ceca043149e8caf44c3dcb",
+      "generatorPath": "scripts/generate-no-hidden-gauge-fixing-mutant-source.mjs",
+      "generatorSha256": "de8ecae87d707763566eea9182622ea5edea9c9fa1e743da5871772570074bd8",
+      "deterministicTransformVerified": true
+    },
+    "transcript": {
+      "path": "docs/research/no-hidden-gauge-fixing/formal/transcripts/no_hidden_gauge_fixing_transcript_v1_1.sio",
+      "bytes": 11092,
+      "sha256": "166e9a05d5dd52951da6fc4455b01b44adfcda2ffee22de2c0cac595b1a3f31b",
+      "generatorPath": "scripts/generate-no-hidden-gauge-fixing-native-transcript.mjs",
+      "generatorSha256": "4fc0795acf3e09b145bb2a943e3b771e3dd422ead7790a04e456d5a82dbce98c",
+      "deterministicTransformVerified": true
+    }
+  },
+  "vectors": {
+    "path": "docs/research/no-hidden-gauge-fixing/formal/vectors/no-hidden-gauge-fixing-vectors.v1.1.json",
+    "sha256": "10a3cf5022899ea822e82590198f790141b2ac5e265f2464f9366d2b4c71e297",
+    "generatorPath": "scripts/generate-no-hidden-gauge-fixing-vectors.mjs",
+    "generatorSha256": "fbced0c7e8efdd595140321dd1c507ca3684ba5c164cce4e6c58544deaa5e8d6",
+    "cases": 10,
+    "passed": 10,
+    "results": [
+      {
+        "id": "identity-triangle-unanchored",
+        "actualPacked": 560139,
+        "passed": true
+      },
+      {
+        "id": "identity-triangle-anchor-a",
+        "actualPacked": 294921,
+        "passed": true
+      },
+      {
+        "id": "identity-triangle-all-anchors",
+        "actualPacked": 294921,
+        "passed": true
+      },
+      {
+        "id": "no-edges-unanchored",
+        "actualPacked": 2244603,
+        "passed": true
+      },
+      {
+        "id": "no-edges-anchors-ab",
+        "actualPacked": 663691,
+        "passed": true
+      },
+      {
+        "id": "nontrivial-holonomy",
+        "actualPacked": 527373,
+        "passed": true
+      },
+      {
+        "id": "declared-nonbijective-map",
+        "actualPacked": 4194308,
+        "passed": true
+      },
+      {
+        "id": "single-edge-identity",
+        "actualPacked": 1125579,
+        "passed": true
+      },
+      {
+        "id": "single-edge-with-source-anchor",
+        "actualPacked": 598155,
+        "passed": true
+      },
+      {
+        "id": "invalid-declared-mask",
+        "actualPacked": 0,
+        "passed": true
+      }
+    ]
+  },
+  "independentOracle": {
+    "path": "scripts/no-hidden-gauge-fixing-oracle.mjs",
+    "sha256": "5de1539cfca6318337275e9fff53cb44911e4a26ae0e61bbfcd768084fff9d0d",
+    "language": "JavaScript",
+    "strategy": "independent exhaustive assignment and subgroup enumeration",
+    "reusesSounioImplementation": false,
+    "clinicalMathematicsFallback": false
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "singleByteMutationDetected": true
+  },
+  "verified": true,
+  "errors": []
+}
