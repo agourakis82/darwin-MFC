@@ -1,0 +1,176 @@
+{
+  "schema": "darwin.normative-holonomy-runtime-verification.v0.9",
+  "generatedAt": "2026-08-03T03:15:51.935Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "wasm": {
+    "path": "docs/research/normative-holonomy/formal/wasm/normative_holonomy.v0.9.wasm",
+    "bytes": 12283,
+    "sha256": "5db711ecfcbf49d7d60cf2f4343cec88e95258cd1f624ad575219a1d54204f2f",
+    "runtimeValidated": true,
+    "imports": [],
+    "exports": [
+      "main",
+      "memory",
+      "nhy_abi_valid",
+      "nhy_analyze",
+      "nhy_apply_map",
+      "nhy_assignment_satisfies",
+      "nhy_basis_sufficient",
+      "nhy_contains",
+      "nhy_exhaustive_self_check",
+      "nhy_exhaustive_walk",
+      "nhy_has_global_section",
+      "nhy_local_issue_mask",
+      "nhy_map_bijective",
+      "nhy_minimal_basis",
+      "nhy_minimal_binding",
+      "nhy_pack",
+      "nhy_popcount",
+      "nhy_rank",
+      "nhy_reference_analyze",
+      "nhy_reference_best_basis",
+      "nhy_reference_best_binding",
+      "nhy_reference_consider_basis",
+      "nhy_reference_consider_binding",
+      "nhy_reference_consider_cut",
+      "nhy_reference_has_global_section",
+      "nhy_reference_repair_cut",
+      "nhy_repair_cut",
+      "nhy_score",
+      "nhy_subset",
+      "nhy_valid_map",
+      "nhy_valid_mask",
+      "nhy_verify_case"
+    ],
+    "mainResult": 109
+  },
+  "boundedDomain": {
+    "canonicalStates": 4096,
+    "canonicalValidStates": 1728,
+    "canonicalMismatches": 0,
+    "sounioReferenceMismatches": 0,
+    "hostileStates": 21600,
+    "hostileInvalidStates": 19872,
+    "hostileMismatches": 0,
+    "census": {
+      "REFUSE": 2368,
+      "GLOBALLY_FLAT": 224,
+      "BIND_TRANSLATIONS": 256,
+      "ABSTAIN_NONTRIVIAL_HOLONOMY": 32,
+      "REVIEW_LOCAL_PROOF": 1216,
+      "REFUSE_INTERNAL_INCONSISTENCY": 0
+    }
+  },
+  "transcript": {
+    "path": "docs/research/normative-holonomy/formal/transcripts/canonical-domain.v0.9.txt",
+    "lines": 4096,
+    "bytes": 41854,
+    "sha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87",
+    "encoding": "index|packedDispositionAndCertificate|repairCutMask"
+  },
+  "nativeTranscriptSource": {
+    "path": "docs/research/normative-holonomy/formal/transcripts/normative_holonomy_transcript_v0_9.sio",
+    "sha256": "92eb5112d0c4909cd55090cb68b86e48cb236f26812ad494181c2d9690674777",
+    "bytes": 19655,
+    "generatorPath": "scripts/generate-normative-holonomy-native-transcript.mjs",
+    "generatorSha256": "f0d2a8e6cfff510a49048dc14b4fa59dd200d7bee67b97c392ebd9af60b95f28",
+    "deterministicTransformVerified": true
+  },
+  "vectors": {
+    "path": "docs/research/normative-holonomy/formal/vectors/normative-holonomy-vectors.v0.9.json",
+    "sha256": "5d6ca8a63aa968b8255e3955a631c3a2be718a4b6689e473c948682354c93a4c",
+    "cases": 12,
+    "passed": 12,
+    "results": [
+      {
+        "id": "invalid-bound-outside-declared",
+        "actualPacked": 0,
+        "actualRepairCut": -1,
+        "passed": true
+      },
+      {
+        "id": "declared-nonbijective-edge",
+        "actualPacked": 76,
+        "actualRepairCut": -1,
+        "passed": true
+      },
+      {
+        "id": "empty-network",
+        "actualPacked": 1,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "single-bound-identity",
+        "actualPacked": 73,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "single-unbound-identity",
+        "actualPacked": 74,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "flat-triangle-two-edge-basis-bound",
+        "actualPacked": 153,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "flat-triangle-needs-one-binding",
+        "actualPacked": 82,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "flat-triangle-needs-two-edge-basis",
+        "actualPacked": 154,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "one-flip-nontrivial-holonomy",
+        "actualPacked": 251,
+        "actualRepairCut": 1,
+        "passed": true
+      },
+      {
+        "id": "three-flip-nontrivial-holonomy",
+        "actualPacked": 251,
+        "actualRepairCut": 1,
+        "passed": true
+      },
+      {
+        "id": "two-edge-forest-complete-basis",
+        "actualPacked": 153,
+        "actualRepairCut": 0,
+        "passed": true
+      },
+      {
+        "id": "two-local-proof-failures",
+        "actualPacked": 172,
+        "actualRepairCut": -1,
+        "passed": true
+      }
+    ]
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "singleByteMutationDetected": true
+  },
+  "independentOracle": {
+    "language": "JavaScript",
+    "strategy": "enumerate all Boolean assignments and cardinality-ranked edge subsets",
+    "reusesSounioImplementation": false,
+    "typescriptClinicalMathematics": false
+  },
+  "verified": true,
+  "errors": []
+}

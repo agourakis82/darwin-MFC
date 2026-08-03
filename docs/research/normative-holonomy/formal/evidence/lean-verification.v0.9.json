@@ -1,0 +1,78 @@
+{
+  "schema": "darwin.normative-holonomy-lean-verification.v0.9",
+  "generatedAt": "2026-08-03T03:05:03.631Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "toolchain": {
+    "declaration": "leanprover/lean4:v4.30.0-rc2",
+    "version": "Lean (version 4.30.0-rc2, arm64-apple-darwin24.6.0, commit 3dc1a088b6d2d8eafe25a7cd7ec7b58d731bd7cc, Release)"
+  },
+  "build": {
+    "command": "lake build",
+    "exitCode": 0,
+    "verified": true
+  },
+  "audit": {
+    "command": "lake env lean NormativeHolonomyAudit.lean",
+    "exitCode": 0,
+    "observedAxioms": {
+      "Darwin.NormativeHolonomy.globalSectionIffHolonomyFixedPoint": [],
+      "Darwin.NormativeHolonomy.oddFlipTransport_locallyCertified": [
+        "propext"
+      ],
+      "Darwin.NormativeHolonomy.oddFlipTransport_has_no_global_section": [
+        "propext"
+      ],
+      "Darwin.NormativeHolonomy.locallyCertifiedDoesNotImplyGlobalSection": [
+        "propext"
+      ],
+      "Darwin.NormativeHolonomy.noGlobalSectionForcesAbstention": [],
+      "Darwin.NormativeHolonomy.seededNoGlobalSectionForcesAbstention": [],
+      "Darwin.NormativeHolonomy.pathIndependentHasGlobalSection": [
+        "Classical.choice"
+      ],
+      "Darwin.NormativeHolonomy.HolonomyObstructionCertificate.noGlobalSection": []
+    },
+    "centralTheoremsAxiomFree": true,
+    "forbidden": {
+      "sorry": 0,
+      "nativeDecide": 0,
+      "projectAxiomDeclarations": 0,
+      "unsafeDeclarations": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/NormativeHolonomy.lean",
+      "sha256": "ec2271fb38f4302dad6df5af4155cfa13841cb45c65e12a92a3d73b2da899152",
+      "bytes": 7726
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/NormativeHolonomyAudit.lean",
+      "sha256": "4a442a4e1681d1f2d6f7d518af10ee1d2c837e542a900be5982aa94ada4f5b33",
+      "bytes": 637
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lakefile.lean",
+      "sha256": "cf106de8d2409e9d632c5b2bce9a9c8b7eb9cfa33b4f80cea3cf8e51b57fe09d",
+      "bytes": 163
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lake-manifest.json",
+      "sha256": "5b81a0873b16a6a0f2b31a766b03ec79d82e0cb208e2c4ccc472cb8f6d18decd",
+      "bytes": 149
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    }
+  ],
+  "binarySemanticsMechanized": false,
+  "verified": true,
+  "errors": []
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "darwin.normative-holonomy-source-fresh-build.v0.9",
+  "generatedAt": "2026-08-03T03:00:00.000Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "executionEnvironment": {
+    "host": "sounio-workspace",
+    "platform": "Linux 7.0.2-5-pve x86_64 GNU/Linux",
+    "sounioWorktree": "/tmp/sounio-wasm-deontic-v4-clean-32bf57e",
+    "isolatedWorktree": true,
+    "repositoryClean": true,
+    "sharedWorkspaceModifiedByBuild": false
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "compiler": {
+    "identity": "Madaros v0.80.0",
+    "path": "/tmp/darwin-sourcefresh-v04/madaros-v9-clean",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d",
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "compilerReconciled": true
+  },
+  "source": {
+    "path": "docs/research/normative-holonomy/formal/sounio/normative_holonomy_v0_9.sio",
+    "remotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy_v0_9.sio",
+    "sha256": "d58a78c75abac413eef2b8419aa13e085a4fb49fa74ca79286ead683c78a614c",
+    "remoteSha256": "d58a78c75abac413eef2b8419aa13e085a4fb49fa74ca79286ead683c78a614c",
+    "bytes": 19591,
+    "functions": 31,
+    "ioEffects": false
+  },
+  "commandTemplate": "MADAROS_RAW_BIN={compiler} {worktree}/bin/madaros build {source} --backend {backend} -o {output}",
+  "wasm": {
+    "compileExitCode": 0,
+    "path": "docs/research/normative-holonomy/formal/wasm/normative_holonomy.v0.9.wasm",
+    "remotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy.v0.9.wasm",
+    "repeatRemotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy.v0.9.repeat.wasm",
+    "sha256": "5db711ecfcbf49d7d60cf2f4343cec88e95258cd1f624ad575219a1d54204f2f",
+    "repeatSha256": "5db711ecfcbf49d7d60cf2f4343cec88e95258cd1f624ad575219a1d54204f2f",
+    "bytes": 12283,
+    "deterministic": true,
+    "runtimeValidated": true,
+    "selfCheckResult": 109
+  },
+  "native": {
+    "compileExitCode": 0,
+    "remotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy.v0.9.native",
+    "repeatRemotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy.v0.9.repeat.native",
+    "sha256": "fd5bd7092cb73e12b8268849198f1f7f57ac0851c22c902a462170679c913ba0",
+    "repeatSha256": "fd5bd7092cb73e12b8268849198f1f7f57ac0851c22c902a462170679c913ba0",
+    "bytes": 45064,
+    "deterministic": true,
+    "executionExitCode": 109,
+    "repeatExecutionExitCode": 109,
+    "symbolsAvailable": false,
+    "committedPath": "docs/research/normative-holonomy/formal/native/normative_holonomy.v0.9.linux-x86_64"
+  },
+  "nativeTranscript": {
+    "source": {
+      "path": "docs/research/normative-holonomy/formal/transcripts/normative_holonomy_transcript_v0_9.sio",
+      "remotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy_transcript_v0_9.sio",
+      "sha256": "92eb5112d0c4909cd55090cb68b86e48cb236f26812ad494181c2d9690674777",
+      "remoteSha256": "92eb5112d0c4909cd55090cb68b86e48cb236f26812ad494181c2d9690674777",
+      "bytes": 19655,
+      "generatorPath": "scripts/generate-normative-holonomy-native-transcript.mjs"
+    },
+    "binary": {
+      "compileExitCode": 0,
+      "path": "docs/research/normative-holonomy/formal/native/normative_holonomy_transcript.v0.9.linux-x86_64",
+      "remotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy_transcript.v0.9.native",
+      "repeatRemotePath": "/tmp/darwin-normative-holonomy-v09/normative_holonomy_transcript.v0.9.repeat.native",
+      "sha256": "6999636c378865256d5b5d0f034ca846ea33f7473c7f254d0132ee8f7ff33486",
+      "repeatSha256": "6999636c378865256d5b5d0f034ca846ea33f7473c7f254d0132ee8f7ff33486",
+      "bytes": 53256,
+      "deterministic": true
+    },
+    "execution": {
+      "exitCode": 0,
+      "repeatExitCode": 0,
+      "records": 4096,
+      "stdoutBytes": 41854,
+      "stdoutSha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87",
+      "repeatStdoutSha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87",
+      "wasmTranscriptSha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87"
+    }
+  },
+  "parity": {
+    "nativeWasmSelfCheckParityEstablished": true,
+    "boundedWasmOracleParityEstablished": true,
+    "nativeWasmCanonicalResultParityEstablished": true,
+    "allInternalExportParityEstablished": false,
+    "method": "A generated native transcript program and the WASM verifier emitted identical packed disposition and repair-cut results for all 4,096 canonical states.",
+    "residualBoundary": "Internal helper exports were not compared individually; parity covers the two externally meaningful result functions over the complete canonical domain."
+  }
+}

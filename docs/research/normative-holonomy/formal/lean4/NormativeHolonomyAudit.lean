@@ -1,0 +1,10 @@
+import NormativeHolonomy
+
+#print axioms Darwin.NormativeHolonomy.globalSectionIffHolonomyFixedPoint
+#print axioms Darwin.NormativeHolonomy.oddFlipTransport_locallyCertified
+#print axioms Darwin.NormativeHolonomy.oddFlipTransport_has_no_global_section
+#print axioms Darwin.NormativeHolonomy.locallyCertifiedDoesNotImplyGlobalSection
+#print axioms Darwin.NormativeHolonomy.noGlobalSectionForcesAbstention
+#print axioms Darwin.NormativeHolonomy.seededNoGlobalSectionForcesAbstention
+#print axioms Darwin.NormativeHolonomy.pathIndependentHasGlobalSection
+#print axioms Darwin.NormativeHolonomy.HolonomyObstructionCertificate.noGlobalSection

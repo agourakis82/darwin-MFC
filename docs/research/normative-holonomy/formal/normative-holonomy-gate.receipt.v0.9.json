@@ -1,0 +1,258 @@
+{
+  "schema": "darwin.normative-holonomy-gate-receipt.v0.9",
+  "generatedAt": "2026-08-03T03:16:43.472Z",
+  "status": "ABSTRACT_RESEARCH_ONLY",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "compilerReconciled": true,
+  "leanModelEstablished": true,
+  "boundedDomainsComplete": true,
+  "nativeWasmSelfCheckParityEstablished": true,
+  "nativeWasmCanonicalResultParityEstablished": true,
+  "allInternalExportParityEstablished": false,
+  "emittedWasmSemanticsMechanized": false,
+  "parent": {
+    "path": "docs/research/normative-hermeticity/formal/normative-hermeticity-gate.receipt.v0.8.json",
+    "sha256": "203e63405121417a36ff93de416c30ba667b490cef9e38c2c359f568193bf866",
+    "bytes": 7592
+  },
+  "compilerReceipt": {
+    "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+    "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+    "bytes": 8422
+  },
+  "evidence": {
+    "runtime": {
+      "path": "docs/research/normative-holonomy/formal/evidence/runtime-verification.v0.9.json",
+      "sha256": "a14ee5ce26074209ea22e918c502aa5b63475b034e83ad5ef292558190f62768",
+      "bytes": 5052
+    },
+    "lean": {
+      "path": "docs/research/normative-holonomy/formal/evidence/lean-verification.v0.9.json",
+      "sha256": "d6fa0ad70255453143c6d15aeec64b6e4cce058faffb6c3166a83e2c522cbe4c",
+      "bytes": 2687
+    },
+    "sourceFreshBuild": {
+      "path": "docs/research/normative-holonomy/formal/evidence/source-fresh-build.v0.9.json",
+      "sha256": "16a053ccccb7f9d68235c09bbb22a7e71f48440076e06fe928f17d1916461577",
+      "bytes": 5127
+    }
+  },
+  "model": {
+    "vertices": [
+      "A",
+      "B",
+      "C"
+    ],
+    "edgeMaskDomain": [
+      0,
+      7
+    ],
+    "mapCodeDomain": [
+      0,
+      3
+    ],
+    "canonicalStates": 4096,
+    "canonicalValidStates": 1728,
+    "hostileStates": 21600,
+    "expectedSelfCheckCode": 109,
+    "transcriptSha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87"
+  },
+  "compiler": {
+    "repository": "https://github.com/Sounio-lang/sounio.git",
+    "commit": "32bf57e880d5a0bc64d39edff98491a6c7c6101d",
+    "tree": "3560e7e17d931d12244c3232869faf010019c962",
+    "identity": "Madaros v0.80.0",
+    "sha256": "b5208b7a82bf5a369d1188858a3ab57ceba3bdd83cceb28f30cc90f05b94322d"
+  },
+  "wasm": {
+    "path": "docs/research/normative-holonomy/formal/wasm/normative_holonomy.v0.9.wasm",
+    "sha256": "5db711ecfcbf49d7d60cf2f4343cec88e95258cd1f624ad575219a1d54204f2f",
+    "bytes": 12283
+  },
+  "native": {
+    "path": "docs/research/normative-holonomy/formal/native/normative_holonomy.v0.9.linux-x86_64",
+    "sha256": "fd5bd7092cb73e12b8268849198f1f7f57ac0851c22c902a462170679c913ba0",
+    "bytes": 45064
+  },
+  "nativeTranscript": {
+    "binary": {
+      "path": "docs/research/normative-holonomy/formal/native/normative_holonomy_transcript.v0.9.linux-x86_64",
+      "sha256": "6999636c378865256d5b5d0f034ca846ea33f7473c7f254d0132ee8f7ff33486",
+      "bytes": 53256
+    },
+    "records": 4096,
+    "stdoutBytes": 41854,
+    "stdoutSha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87"
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.30.0-rc2",
+    "centralTheoremsAxiomFree": true,
+    "binarySemanticsMechanized": false
+  },
+  "artifacts": [
+    {
+      "path": "package.json",
+      "sha256": "dd4cbf0055815fa9dafbb500322b85880551f50ce708d1a9062b7fac0a077f97",
+      "bytes": 4472
+    },
+    {
+      "path": "docs/research/deontic-transportability/formal/compiler-source-fresh.receipt.v0.4.json",
+      "sha256": "5dd254202286f62133edb2b8314b15079f07ee80a25cc50e61dc659079874ea6",
+      "bytes": 8422
+    },
+    {
+      "path": "docs/research/normative-hermeticity/formal/normative-hermeticity-gate.receipt.v0.8.json",
+      "sha256": "203e63405121417a36ff93de416c30ba667b490cef9e38c2c359f568193bf866",
+      "bytes": 7592
+    },
+    {
+      "path": "docs/research/normative-holonomy/README.md",
+      "sha256": "21639f0a956b5a9e5b8eec0475792d76691cb6f77ebe6a8c9a6dd5c75c752276",
+      "bytes": 2080
+    },
+    {
+      "path": "docs/research/normative-holonomy/normative-holonomy-theory-v0.9.md",
+      "sha256": "411b17dd2b141576033a4e2000bc8f719294222020235055daadb3322a340270",
+      "bytes": 2655
+    },
+    {
+      "path": "docs/research/normative-holonomy/prior-art-frontier-v0.9.md",
+      "sha256": "64998dd3626aa5b21c3121ca6e34b81e082860a1ba9e7269aa47d86c07d74755",
+      "bytes": 3472
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/closure-v0.9.md",
+      "sha256": "f2364c9db3d30497f34fe0c2b92bfb78ef15684ba748ddf98087a4063d82cc7a",
+      "bytes": 2107
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/evidence/runtime-verification.v0.9.json",
+      "sha256": "a14ee5ce26074209ea22e918c502aa5b63475b034e83ad5ef292558190f62768",
+      "bytes": 5052
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/evidence/lean-verification.v0.9.json",
+      "sha256": "d6fa0ad70255453143c6d15aeec64b6e4cce058faffb6c3166a83e2c522cbe4c",
+      "bytes": 2687
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/evidence/source-fresh-build.v0.9.json",
+      "sha256": "16a053ccccb7f9d68235c09bbb22a7e71f48440076e06fe928f17d1916461577",
+      "bytes": 5127
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/NormativeHolonomy.lean",
+      "sha256": "ec2271fb38f4302dad6df5af4155cfa13841cb45c65e12a92a3d73b2da899152",
+      "bytes": 7726
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/NormativeHolonomyAudit.lean",
+      "sha256": "4a442a4e1681d1f2d6f7d518af10ee1d2c837e542a900be5982aa94ada4f5b33",
+      "bytes": 637
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lakefile.lean",
+      "sha256": "cf106de8d2409e9d632c5b2bce9a9c8b7eb9cfa33b4f80cea3cf8e51b57fe09d",
+      "bytes": 163
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lake-manifest.json",
+      "sha256": "5b81a0873b16a6a0f2b31a766b03ec79d82e0cb208e2c4ccc472cb8f6d18decd",
+      "bytes": 149
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/lean4/lean-toolchain",
+      "sha256": "ce4c4e3d87434b9663f46de25ce34b48a0cf0d392e0a320a0787b4674a2d7b61",
+      "bytes": 29
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/sounio/normative_holonomy_v0_9.sio",
+      "sha256": "d58a78c75abac413eef2b8419aa13e085a4fb49fa74ca79286ead683c78a614c",
+      "bytes": 19591
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/vectors/normative-holonomy-vectors.v0.9.json",
+      "sha256": "5d6ca8a63aa968b8255e3955a631c3a2be718a4b6689e473c948682354c93a4c",
+      "bytes": 3090
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/transcripts/canonical-domain.v0.9.txt",
+      "sha256": "a35da0bc331d5e9a72df86749cd68a1099574745654b3c45bcb5599d5a131c87",
+      "bytes": 41854
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/transcripts/normative_holonomy_transcript_v0_9.sio",
+      "sha256": "92eb5112d0c4909cd55090cb68b86e48cb236f26812ad494181c2d9690674777",
+      "bytes": 19655
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/native/normative_holonomy.v0.9.linux-x86_64",
+      "sha256": "fd5bd7092cb73e12b8268849198f1f7f57ac0851c22c902a462170679c913ba0",
+      "bytes": 45064
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/native/normative_holonomy_transcript.v0.9.linux-x86_64",
+      "sha256": "6999636c378865256d5b5d0f034ca846ea33f7473c7f254d0132ee8f7ff33486",
+      "bytes": 53256
+    },
+    {
+      "path": "docs/research/normative-holonomy/formal/wasm/normative_holonomy.v0.9.wasm",
+      "sha256": "5db711ecfcbf49d7d60cf2f4343cec88e95258cd1f624ad575219a1d54204f2f",
+      "bytes": 12283
+    },
+    {
+      "path": "scripts/generate-normative-holonomy-native-transcript.mjs",
+      "sha256": "f0d2a8e6cfff510a49048dc14b4fa59dd200d7bee67b97c392ebd9af60b95f28",
+      "bytes": 2098
+    },
+    {
+      "path": "scripts/verify-normative-holonomy.mjs",
+      "sha256": "35bf0bffb031f21edb7f01fc25076be087db71a587f4fd304ae82844426e4ad2",
+      "bytes": 13431
+    },
+    {
+      "path": "scripts/verify-normative-holonomy-lean.mjs",
+      "sha256": "72450d4a54e069e722bdbd1d1ab5ddcde13e2ab0930dbe5cee96cb50752be600",
+      "bytes": 5723
+    },
+    {
+      "path": "scripts/generate-normative-holonomy-receipt.mjs",
+      "sha256": "007718058dbc813a1fb17df4ee2caacbfb6405ef4c1b4b09a54ada6cb20788a9",
+      "bytes": 13708
+    },
+    {
+      "path": "scripts/verify-normative-holonomy-gate.mjs",
+      "sha256": "f8a81350393bfe385621fac0b117c151031501dc940477d92d011edc27876054",
+      "bytes": 4848
+    }
+  ],
+  "claims": {
+    "established": [
+      "global-section iff holonomy-fixed-point theorem in the declared triangle model",
+      "locally bijective Boolean countermodel with no global section",
+      "zero-error and seeded zero-error forced abstention",
+      "source-fresh deterministic native and WASM builds",
+      "complete independent-oracle coverage of the declared canonical and hostile domains",
+      "exact native/WASM analyze and repair-cut transcript parity over 4,096 canonical states"
+    ],
+    "notEstablished": [
+      "mechanized semantics of emitted WASM bytes",
+      "parity of every internal helper export",
+      "correctness of any real-world normative translation",
+      "scientific novelty or priority",
+      "empirical, clinical, regulatory, or production validity"
+    ]
+  },
+  "invalidation": [
+    "parent or compiler receipt identity changes",
+    "any listed artifact hash or byte size changes",
+    "Lean build or axiom audit changes",
+    "canonical or hostile domain verification ceases to pass",
+    "native/WASM transcript identity changes",
+    "clinical refusal or novelty boundary changes"
+  ]
+}

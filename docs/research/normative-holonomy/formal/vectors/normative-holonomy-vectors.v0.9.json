@@ -1,0 +1,112 @@
+{
+  "schema": "darwin.normative-holonomy-vectors.v0.9",
+  "clinicalDisposition": "REFUSE",
+  "clinicalUseAllowed": false,
+  "productionAuthorized": false,
+  "noveltyEstablished": false,
+  "signed": false,
+  "mapEncoding": {
+    "0": [0, 0],
+    "1": [1, 0],
+    "2": [0, 1],
+    "3": [1, 1]
+  },
+  "vectors": [
+    {
+      "id": "invalid-bound-outside-declared",
+      "input": [1, 2, 2, 2, 2],
+      "expectedPacked": 0,
+      "expectedDisposition": "REFUSE",
+      "expectedCertificateMask": 0,
+      "expectedRepairCut": -1
+    },
+    {
+      "id": "declared-nonbijective-edge",
+      "input": [1, 1, 0, 2, 2],
+      "expectedPacked": 76,
+      "expectedDisposition": "REVIEW_LOCAL_PROOF",
+      "expectedCertificateMask": 1,
+      "expectedRepairCut": -1
+    },
+    {
+      "id": "empty-network",
+      "input": [0, 0, 2, 2, 2],
+      "expectedPacked": 1,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCertificateMask": 0,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "single-bound-identity",
+      "input": [1, 1, 2, 2, 2],
+      "expectedPacked": 73,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCertificateMask": 1,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "single-unbound-identity",
+      "input": [1, 0, 2, 2, 2],
+      "expectedPacked": 74,
+      "expectedDisposition": "BIND_TRANSLATIONS",
+      "expectedCertificateMask": 1,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "flat-triangle-two-edge-basis-bound",
+      "input": [7, 3, 2, 2, 2],
+      "expectedPacked": 153,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCertificateMask": 3,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "flat-triangle-needs-one-binding",
+      "input": [7, 1, 2, 2, 2],
+      "expectedPacked": 82,
+      "expectedDisposition": "BIND_TRANSLATIONS",
+      "expectedCertificateMask": 2,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "flat-triangle-needs-two-edge-basis",
+      "input": [7, 0, 2, 2, 2],
+      "expectedPacked": 154,
+      "expectedDisposition": "BIND_TRANSLATIONS",
+      "expectedCertificateMask": 3,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "one-flip-nontrivial-holonomy",
+      "input": [7, 7, 1, 2, 2],
+      "expectedPacked": 251,
+      "expectedDisposition": "ABSTAIN_NONTRIVIAL_HOLONOMY",
+      "expectedCertificateMask": 7,
+      "expectedRepairCut": 1
+    },
+    {
+      "id": "three-flip-nontrivial-holonomy",
+      "input": [7, 7, 1, 1, 1],
+      "expectedPacked": 251,
+      "expectedDisposition": "ABSTAIN_NONTRIVIAL_HOLONOMY",
+      "expectedCertificateMask": 7,
+      "expectedRepairCut": 1
+    },
+    {
+      "id": "two-edge-forest-complete-basis",
+      "input": [3, 3, 2, 2, 2],
+      "expectedPacked": 153,
+      "expectedDisposition": "GLOBALLY_FLAT",
+      "expectedCertificateMask": 3,
+      "expectedRepairCut": 0
+    },
+    {
+      "id": "two-local-proof-failures",
+      "input": [5, 5, 0, 2, 3],
+      "expectedPacked": 172,
+      "expectedDisposition": "REVIEW_LOCAL_PROOF",
+      "expectedCertificateMask": 5,
+      "expectedRepairCut": -1
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+//@ run-pass
+// Darwin Normative Holonomy v0.9.
+//
+// Inputs: declared edge mask, content-bound edge mask, and three Boolean map
+// codes. Map bits encode output(false) and output(true), so 1 is flip and 2
+// is identity. The kernel emits only a disposition and certificate mask. It
+// never emits a witness label. No function performs IO.
+//
+// Abstract research only: clinical use and production authorization refused.
+
+fn nhy_valid_mask(mask: i64) -> i64 {
+    if mask >= 0 && mask <= 7 { return 1 }
+    return 0
+}
+
+fn nhy_valid_map(map_code: i64) -> i64 {
+    if map_code >= 0 && map_code <= 3 { return 1 }
+    return 0
+}
+
+fn nhy_subset(subset: i64, superset: i64) -> i64 {
+    if (subset & superset) == subset { return 1 }
+    return 0
+}
+
+fn nhy_contains(mask: i64, edge: i64) -> i64 {
+    if (mask & edge) == edge { return 1 }
+    return 0
+}
+
+fn nhy_popcount(mask: i64) -> i64 {
+    var count: i64 = 0
+    if nhy_contains(mask, 1) == 1 { count = count + 1 }
+    if nhy_contains(mask, 2) == 1 { count = count + 1 }
+    if nhy_contains(mask, 4) == 1 { count = count + 1 }
+    return count
+}
+
+fn nhy_rank(mask: i64) -> i64 {
+    if mask == 0 { return 0 }
+    if mask == 1 { return 1 }
+    if mask == 2 { return 2 }
+    if mask == 4 { return 3 }
+    if mask == 3 { return 4 }
+    if mask == 5 { return 5 }
+    if mask == 6 { return 6 }
+    if mask == 7 { return 7 }
+    return 99
+}
+
+fn nhy_score(mask: i64) -> i64 {
+    return nhy_popcount(mask) * 8 + nhy_rank(mask)
+}
+
+fn nhy_apply_map(map_code: i64, input: i64) -> i64 with Div {
+    if input == 0 { return map_code % 2 }
+    return (map_code / 2) % 2
+}
+
+fn nhy_map_bijective(map_code: i64) -> i64 {
+    if map_code == 1 || map_code == 2 { return 1 }
+    return 0
+}
+
+fn nhy_abi_valid(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    if nhy_valid_mask(declared) == 0 || nhy_valid_mask(bound) == 0 { return 0 }
+    if nhy_subset(bound, declared) == 0 { return 0 }
+    if nhy_valid_map(map_ab) == 0 || nhy_valid_map(map_bc) == 0 { return 0 }
+    if nhy_valid_map(map_ca) == 0 { return 0 }
+    return 1
+}
+
+fn nhy_local_issue_mask(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 {
+    var issue: i64 = 0
+    if nhy_contains(declared, 1) == 1 && nhy_map_bijective(map_ab) == 0 {
+        issue = issue + 1
+    }
+    if nhy_contains(declared, 2) == 1 && nhy_map_bijective(map_bc) == 0 {
+        issue = issue + 2
+    }
+    if nhy_contains(declared, 4) == 1 && nhy_map_bijective(map_ca) == 0 {
+        issue = issue + 4
+    }
+    return issue
+}
+
+fn nhy_assignment_satisfies(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64,
+    assignment: i64
+) -> i64 with Div {
+    let value_a = assignment % 2
+    let value_b = (assignment / 2) % 2
+    let value_c = (assignment / 4) % 2
+    if nhy_contains(declared, 1) == 1 && value_b != nhy_apply_map(map_ab, value_a) {
+        return 0
+    }
+    if nhy_contains(declared, 2) == 1 && value_c != nhy_apply_map(map_bc, value_b) {
+        return 0
+    }
+    if nhy_contains(declared, 4) == 1 && value_a != nhy_apply_map(map_ca, value_c) {
+        return 0
+    }
+    return 1
+}
+
+fn nhy_has_global_section(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 1) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 2) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 3) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 4) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 5) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 6) == 1 { return 1 }
+    if nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 7) == 1 { return 1 }
+    return 0
+}
+
+// A candidate basis is sufficient exactly when every assignment satisfying it
+// also satisfies the full declared network. Candidate is required to be a
+// subset of declared by the caller.
+fn nhy_basis_sufficient(
+    declared: i64, candidate: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, declared) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 0) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 0) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 1) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 1) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 2) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 2) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 3) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 3) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 4) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 4) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 5) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 5) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 6) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 6) == 0 { return 0 }
+    if nhy_assignment_satisfies(candidate, map_ab, map_bc, map_ca, 7) == 1 &&
+       nhy_assignment_satisfies(declared, map_ab, map_bc, map_ca, 7) == 0 { return 0 }
+    return 1
+}
+
+// Direct implementation: stable early-return order by cardinality, then ABI
+// rank. The independent reference below scores all candidates.
+fn nhy_minimal_basis(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(0, bound) == 1 && nhy_basis_sufficient(declared, 0, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, bound) == 1 && nhy_basis_sufficient(declared, 1, map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, bound) == 1 && nhy_basis_sufficient(declared, 2, map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, bound) == 1 && nhy_basis_sufficient(declared, 4, map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, bound) == 1 && nhy_basis_sufficient(declared, 3, map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, bound) == 1 && nhy_basis_sufficient(declared, 5, map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, bound) == 1 && nhy_basis_sufficient(declared, 6, map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, bound) == 1 && nhy_basis_sufficient(declared, 7, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+fn nhy_minimal_binding(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    let unbound = declared - (declared & bound)
+    if nhy_subset(0, unbound) == 1 && nhy_basis_sufficient(declared, bound, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, unbound) == 1 && nhy_basis_sufficient(declared, bound | 1, map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, unbound) == 1 && nhy_basis_sufficient(declared, bound | 2, map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, unbound) == 1 && nhy_basis_sufficient(declared, bound | 4, map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, unbound) == 1 && nhy_basis_sufficient(declared, bound | 3, map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, unbound) == 1 && nhy_basis_sufficient(declared, bound | 5, map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, unbound) == 1 && nhy_basis_sufficient(declared, bound | 6, map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, unbound) == 1 && nhy_basis_sufficient(declared, bound | 7, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+fn nhy_pack(disposition: i64, certificate: i64) -> i64 {
+    return disposition + certificate * 8 + nhy_popcount(certificate) * 64
+}
+
+fn nhy_analyze(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    let issue = nhy_local_issue_mask(declared, map_ab, map_bc, map_ca)
+    if issue != 0 { return nhy_pack(4, issue) }
+    if nhy_has_global_section(declared, map_ab, map_bc, map_ca) == 0 {
+        return nhy_pack(3, declared)
+    }
+    let basis = nhy_minimal_basis(declared, bound, map_ab, map_bc, map_ca)
+    if basis >= 0 { return nhy_pack(1, basis) }
+    let binding = nhy_minimal_binding(declared, bound, map_ab, map_bc, map_ca)
+    if binding >= 0 { return nhy_pack(2, binding) }
+    return 5
+}
+
+fn nhy_repair_cut(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return -1 }
+    if nhy_local_issue_mask(declared, map_ab, map_bc, map_ca) != 0 { return -1 }
+    if nhy_has_global_section(declared, map_ab, map_bc, map_ca) == 1 { return 0 }
+    if nhy_subset(1, declared) == 1 && nhy_has_global_section(declared - (declared & 1), map_ab, map_bc, map_ca) == 1 { return 1 }
+    if nhy_subset(2, declared) == 1 && nhy_has_global_section(declared - (declared & 2), map_ab, map_bc, map_ca) == 1 { return 2 }
+    if nhy_subset(4, declared) == 1 && nhy_has_global_section(declared - (declared & 4), map_ab, map_bc, map_ca) == 1 { return 4 }
+    if nhy_subset(3, declared) == 1 && nhy_has_global_section(declared - (declared & 3), map_ab, map_bc, map_ca) == 1 { return 3 }
+    if nhy_subset(5, declared) == 1 && nhy_has_global_section(declared - (declared & 5), map_ab, map_bc, map_ca) == 1 { return 5 }
+    if nhy_subset(6, declared) == 1 && nhy_has_global_section(declared - (declared & 6), map_ab, map_bc, map_ca) == 1 { return 6 }
+    if nhy_subset(7, declared) == 1 && nhy_has_global_section(0, map_ab, map_bc, map_ca) == 1 { return 7 }
+    return -1
+}
+
+// Independent fixed-point oracle: a locally bijective forest always admits a
+// section. Only the complete triangle requires testing composite fixed points.
+fn nhy_reference_has_global_section(
+    declared: i64, map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if declared != 7 { return 1 }
+    let zero_after = nhy_apply_map(map_ca,
+        nhy_apply_map(map_bc, nhy_apply_map(map_ab, 0)))
+    if zero_after == 0 { return 1 }
+    let one_after = nhy_apply_map(map_ca,
+        nhy_apply_map(map_bc, nhy_apply_map(map_ab, 1)))
+    if one_after == 1 { return 1 }
+    return 0
+}
+
+fn nhy_reference_consider_basis(
+    current: i64, candidate: i64, declared: i64, allowed: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, allowed) == 0 { return current }
+    if nhy_basis_sufficient(declared, candidate, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_best_basis(
+    declared: i64, allowed: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    var best: i64 = -1
+    best = nhy_reference_consider_basis(best, 7, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 6, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 5, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 3, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 4, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 2, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 1, declared, allowed, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_basis(best, 0, declared, allowed, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_reference_consider_binding(
+    current: i64, candidate: i64,
+    declared: i64, bound: i64, unbound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, unbound) == 0 { return current }
+    if nhy_basis_sufficient(declared, bound | candidate, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_best_binding(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    let unbound = declared - (declared & bound)
+    var best: i64 = -1
+    best = nhy_reference_consider_binding(best, 7, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 6, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 5, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 3, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 4, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 2, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 1, declared, bound, unbound, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_binding(best, 0, declared, bound, unbound, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_reference_analyze(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return 0 }
+    let issue = nhy_local_issue_mask(declared, map_ab, map_bc, map_ca)
+    if issue != 0 { return nhy_pack(4, issue) }
+    if nhy_reference_has_global_section(declared, map_ab, map_bc, map_ca) == 0 {
+        return nhy_pack(3, declared)
+    }
+    let basis = nhy_reference_best_basis(declared, bound, map_ab, map_bc, map_ca)
+    if basis >= 0 { return nhy_pack(1, basis) }
+    let binding = nhy_reference_best_binding(declared, bound, map_ab, map_bc, map_ca)
+    if binding >= 0 { return nhy_pack(2, binding) }
+    return 5
+}
+
+fn nhy_reference_consider_cut(
+    current: i64, candidate: i64, declared: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Div {
+    if nhy_subset(candidate, declared) == 0 { return current }
+    let remaining = declared - (declared & candidate)
+    if nhy_reference_has_global_section(remaining, map_ab, map_bc, map_ca) == 0 {
+        return current
+    }
+    if current < 0 || nhy_score(candidate) < nhy_score(current) { return candidate }
+    return current
+}
+
+fn nhy_reference_repair_cut(
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if nhy_abi_valid(declared, bound, map_ab, map_bc, map_ca) == 0 { return -1 }
+    if nhy_local_issue_mask(declared, map_ab, map_bc, map_ca) != 0 { return -1 }
+    if nhy_reference_has_global_section(declared, map_ab, map_bc, map_ca) == 1 { return 0 }
+    var best: i64 = -1
+    best = nhy_reference_consider_cut(best, 7, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 6, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 5, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 3, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 4, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 2, declared, map_ab, map_bc, map_ca)
+    best = nhy_reference_consider_cut(best, 1, declared, map_ab, map_bc, map_ca)
+    return best
+}
+
+fn nhy_verify_case(actual: i64, expected: i64) -> i64 {
+    if actual == expected { return 0 }
+    return 1
+}
+
+fn nhy_exhaustive_walk(
+    depth: i64,
+    declared: i64, bound: i64,
+    map_ab: i64, map_bc: i64, map_ca: i64
+) -> i64 with Mut, Div {
+    if depth == 5 {
+        var failures: i64 = 0
+        failures = failures + nhy_verify_case(
+            nhy_analyze(declared, bound, map_ab, map_bc, map_ca),
+            nhy_reference_analyze(declared, bound, map_ab, map_bc, map_ca)
+        )
+        failures = failures + nhy_verify_case(
+            nhy_repair_cut(declared, bound, map_ab, map_bc, map_ca),
+            nhy_reference_repair_cut(declared, bound, map_ab, map_bc, map_ca)
+        )
+        return failures
+    }
+    if depth == 0 {
+        return
+            nhy_exhaustive_walk(1, 0, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 1, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 2, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 3, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 4, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 5, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 6, bound, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(1, 7, bound, map_ab, map_bc, map_ca)
+    }
+    if depth == 1 {
+        return
+            nhy_exhaustive_walk(2, declared, 0, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 1, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 2, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 3, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 4, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 5, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 6, map_ab, map_bc, map_ca) +
+            nhy_exhaustive_walk(2, declared, 7, map_ab, map_bc, map_ca)
+    }
+    if depth == 2 {
+        return
+            nhy_exhaustive_walk(3, declared, bound, 0, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 1, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 2, map_bc, map_ca) +
+            nhy_exhaustive_walk(3, declared, bound, 3, map_bc, map_ca)
+    }
+    if depth == 3 {
+        return
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 0, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 1, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 2, map_ca) +
+            nhy_exhaustive_walk(4, declared, bound, map_ab, 3, map_ca)
+    }
+    return
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 0) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 1) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 2) +
+        nhy_exhaustive_walk(5, declared, bound, map_ab, map_bc, 3)
+}
+
+fn nhy_exhaustive_self_check() -> i64 with Mut, Div {
+    return nhy_exhaustive_walk(0, 0, 0, 0, 0, 0)
+}
+
+fn main() -> i64 with Mut, Div {
+    var failures: i64 = nhy_exhaustive_self_check()
+    failures = failures + nhy_verify_case(nhy_analyze(1, 2, 2, 2, 2), 0)
+    failures = failures + nhy_verify_case(nhy_analyze(1, 1, 0, 2, 2), 76)
+    failures = failures + nhy_verify_case(nhy_analyze(0, 0, 2, 2, 2), 1)
+    failures = failures + nhy_verify_case(nhy_analyze(1, 1, 2, 2, 2), 73)
+    failures = failures + nhy_verify_case(nhy_analyze(1, 0, 2, 2, 2), 74)
+    failures = failures + nhy_verify_case(nhy_analyze(7, 3, 2, 2, 2), 153)
+    failures = failures + nhy_verify_case(nhy_analyze(7, 1, 2, 2, 2), 82)
+    failures = failures + nhy_verify_case(nhy_analyze(7, 7, 1, 2, 2), 251)
+    failures = failures + nhy_verify_case(nhy_repair_cut(7, 7, 1, 2, 2), 1)
+    failures = failures + nhy_verify_case(nhy_analyze(7, 7, 1, 1, 1), 251)
+    if failures == 0 { return 109 }
+    return 1
+}

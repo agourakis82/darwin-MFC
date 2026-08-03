@@ -30,6 +30,10 @@
     "audit:security-deps": "tsx scripts/audit-security-dependencies.ts",
     "plan:corte7": "tsx scripts/plan-corte7-security-deps.ts",
     "plan:corte8": "tsx scripts/plan-corte8-docs-strategy.ts",
+    "verify:normative-holonomy": "node scripts/verify-normative-holonomy-gate.mjs",
+    "verify:normative-holonomy:runtime": "node scripts/verify-normative-holonomy.mjs",
+    "verify:normative-holonomy:lean": "node scripts/verify-normative-holonomy-lean.mjs",
+    "generate:normative-holonomy-receipt": "node scripts/generate-normative-holonomy-receipt.mjs --write-receipt",
     "generate-icons": "node scripts/generate-pwa-icons.mjs"
   },
   "dependencies": {
